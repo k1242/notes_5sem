@@ -1,0 +1,12 @@
+
+*.out
+
+*.log
+
+*.aux
+
+*.gz
+
+*.toc
+
+template/name.pdf
