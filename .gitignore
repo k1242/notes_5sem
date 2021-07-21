@@ -14,3 +14,5 @@ template/name.pdf
 *.sublime-workspace
 
 qmec/rqc_orbitals_observation/orbitals.pdf
+
+*.nav
