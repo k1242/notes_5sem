@@ -1,0 +1,91 @@
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\subsection{Электродипольный переход \texorpdfstring{$1\textnormal{s}\to 2\textnormal{p}$}{1s -> 2p}}
+
+
+
+Поместим атом водорода в поле $\vc{E}$ вида
+\begin{equation*}
+    \vc{E} (z,\, t) = E_0 \vc{\sigma}_+ e^{-i \omega t + i k z} + \cc, 
+    \hspace{5 mm} 
+    \vc{\sigma}_+ = - \frac{\vc{x}_0 + i \vc{y}_0}{\sqrt{2}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    \vc{E} (z, t) = - \frac{{E}_0}{\sqrt{2}} \left(
+        \vp
+        \vc{x}_0 \cos(\omega t) + \vc{y}_0 \sin(\omega t - k z)
+    \right).
+\end{equation*}
+Гамильтониан, описывающий динамику тогда
+\begin{equation*}
+    \hat{H} = \frac{\hat{\vc{p}}^2}{2 m} - \frac{e^2}{\hat{r}} - \hat{\vc{d}} \cdot \vc{E} (\hat{z},\, t) = H_0 + V(t),
+\end{equation*}
+где возмущение, зависящее от времени,
+\begin{equation*}
+    \hat{V}(t) = - \frac{e E_0}{\sqrt{2}} \left( \vp
+        \hat{\vc{x}} \cdot\vc{x}_0 \cos(\omega t - kz) +\hat{\vc{x}} \cdot \vc{y}_0 \sin(\omega t - k z)
+    \right).
+\end{equation*}
+Сразу перейдём к рассмотрению электродипольного приближения и перейдём к сферическим координатам:
+\begin{equation*}
+    \hat{V}(t) = - \frac{e E_0}{\sqrt{2}} \left( \vp
+        \hat{\vc{x}} \cdot\vc{x}_0 \cos(\omega t) +\hat{\vc{x}} \cdot \vc{y}_0 \sin(\omega t)
+    \right)
+    =
+    - \frac{e E_0}{\sqrt{2}} \left( \vp
+        r \sin \theta \cos \varphi \cos \omega t +
+        r \sin \theta \sin \varphi \sin \omega t
+    \right)
+    .
+\end{equation*}
+
+Систему полагаем при $t=0$ в состоянии $\ket{i} = \ket{n=1,l=0,m=0}$. Из нестационарной теории возмущений можем найти оценку (в первом приближении) для вероятности перехода в состояние $\ket{n}$:
+\begin{equation*}
+    c_n (t) = \frac{1}{i \hbar} \int_0^t e^{i (E_2-E_1)t/\hbar} \bk{n}[V]{i} \d t.
+\end{equation*}
+
+
+
+Для состояний водорода знаем волновые функции, разложим их на сферический гармоники, и найдём матричные элементы $\hat{V}$:
+\begin{equation*}
+    \psi_{00} = \frac{1}{2\sqrt{\pi}},
+    \hspace{5 mm} 
+    \left.\begin{aligned}
+        \psi_{1,1} &= - \tfrac{1}{2} e^{i \varphi} \sqrt{\tfrac{3}{2\pi}} \sin \theta, \\
+        \psi_{1,1} &= \tfrac{1}{2} \sqrt{\tfrac{3}{\pi}} \cos \theta, \\ 
+        \psi_{1,-1} &=  \tfrac{1}{2} e^{-i \varphi} \sqrt{\tfrac{3}{2\pi}} \sin \theta, \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left.\begin{aligned}
+        \psi_{1,1} \hat{V} \psi_{00}\con &= -\tfrac{1}{4\pi} \sqrt{\tfrac{3}{2}} e^{i \varphi} \cos(\varphi - \omega t) \sin^2(\theta). \\
+        \psi_{1,0} \hat{V} \psi_{00}\con &= \tfrac{1}{4\pi} \sqrt{\tfrac{3}{4}} \cos(\varphi - \omega t) \sin (2\theta), \\
+        \psi_{1,-1} \hat{V} \psi_{00}\con &= \tfrac{1}{4\pi} \sqrt{\tfrac{3}{2}} e^{-i \varphi} \cos(\varphi - \omega t) \sin^2(\theta). \\
+    \end{aligned}\right.
+\end{equation*}
+Осталось проинтегрировать, и получить
+\begin{align*}
+    \bk{\psi_{1,1}}[\hat{V}]{\psi_{00}} &= -\tfrac{1}{8} \sqrt{\tfrac{3}{2}} \pi  e^{i \omega t}, \\
+    \bk{\psi_{1,0}}[\hat{V}]{\psi_{00}} &= 0 \\
+    \bk{\psi_{1,-1}}[\hat{V}]{\psi_{00}} &= \tfrac{1}{8} \sqrt{\tfrac{3}{2}} \pi  e^{-i \omega t}.
+\end{align*}
+Подставим это в выражение для $c_n (t)$, и получим
+\begin{align*}
+    c_{\ket{2,1,1}} (t) &= -\frac{\pi}{8} \sqrt{\frac{3}{4}} \frac{e E f_r}{\Delta E + \omega \hbar}
+    \left(1 - \exp\left(\frac{i t (\Delta E + \omega \hbar)}{\hbar}\right)\right)
+    , \\ 
+    c_{\ket{2,1,-1}} (t) &= \frac{\pi}{8} \sqrt{\frac{3}{4}} \frac{e E f_r}{\Delta E - \omega \hbar}
+    \left(1 - \exp\left(\frac{i t (\Delta E - \omega \hbar)}{\hbar}\right)\right)
+\end{align*}
+где $f_r$ возникает из интегрирования по $r$, -- некоторая размерная констанста для этого перехода.
+Вероятности же перехода получаются равными
+\begin{align*}
+    |c_{\ket{2,1,1}} (t)|^2 &= 
+        \frac{3\pi^2}{64} \left(\frac{E e f_r}{\Delta E + \omega \hbar}\right)^2  \sin^2\left(
+            \frac{1}{2} \frac{\Delta E + \omega \hbar}{ \hbar} t
+        \right);
+    \\
+    |c_{\ket{2,1,-1}} (t)|^2 &=  
+        \frac{3\pi^2}{64} \left(\frac{E e f_r}{\Delta E - \omega \hbar}\right)^2  \sin^2\left(
+            \frac{1}{2} \frac{\Delta E - \omega \hbar}{ \hbar} t
+        \right).
+    \\
+\end{align*}

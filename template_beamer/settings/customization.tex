@@ -1,0 +1,96 @@
+% \input{settings/headline_tree.tex}
+
+
+
+
+
+\newcommand{\progressbar}{% 
+	\pgfmathsetmacro{\slidewidth}{\paperwidth}
+	\pgfmathsetmacro{\progressstep}{\paperwidth/\inserttotalframenumber}
+	\pgfmathsetmacro{\progresspos}{(\insertframenumber - 0.5) * \progressstep}
+	\begin{tikzpicture}[scale = 0.035, line width = 1ex]
+		\node[inner sep=0pt] (cat) at (\progresspos,0)	{\includegraphics[width=30pt]{settings/cats/cat_red.pdf}};
+		\path[red] (0,0) -- (\slidewidth,0);
+	\end{tikzpicture}
+}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+\hfill 
+% \progressbar %включить котика
+    \leavevmode%
+    \hbox{
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}
+        \insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)} % раскомментить для авторов
+        % \insertshortinstitute % раскомментить для вуза
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}
+        % \insertshortdate{}
+        \insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+        \insertframenumber/\inserttotalframenumber \hspace{1mm}
+    \end{beamercolorbox}
+    }%
+}
+
+%
+% \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)} % раскомментить для авторов
+% \usebeamerfont{author in head/foot}\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute}
+% \usebeamerfont{title in head/foot}\insertshorttitle
+%   % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%   % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+% \insertshortinstitute \insertframenumber/\inserttotalframenumber
+
+
+%%% Логотип
+% \usepackage{tikz}
+% \addtobeamertemplate{headline}{}{%
+% \begin{tikzpicture}[remember picture,overlay]
+% \node at([shift={(5.5,-0.5)}]current page.north) {\includegraphics[height=.8\headheight]{settings/cat.png}};
+% \end{tikzpicture}}
+
+
+
+%%% добавить сетку %%%
+% \setbeamertemplate{background}{\tikz[overlay, remember picture, help lines]{
+%     \foreach \x in {0,...,12} \path (current page.south west) +(\x,0.5) node {\small$\x$};
+%     \foreach \y in {0,...,9} \path (current page.south west) +(0.5,\y) node {\small$\y$};
+%     \foreach \x in {0,0.5,...,12.5} \draw (current page.south west) ++(\x,0) -- +(0,9.6);
+%     \foreach \y in {0,0.5,...,9.5} \draw (current page.south west) ++(0,\y) -- +(12.8,0);
+%   }
+% }
+
+
+%%% верхняя полоска с точками %%%
+\setbeamertemplate{headline}
+{%
+  % \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  % \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip0pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+% \setbeamertemplate{headline}{}
+
+
+%%% добавить маленькие номера слайдов справа снизу %%%
+% \addtobeamertemplate{navigation symbols}{}{%
+%     \usebeamerfont{footline}%
+%     \usebeamercolor[myred]{footline}%
+%     \hspace{1em}%
+%     \insertframenumber/\inserttotalframenumber
+% }
+
+
+
+
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=0.6ex]{frametitle}
+        \hspace*{1ex}\insertframetitle%
+    \end{beamercolorbox}%
+}

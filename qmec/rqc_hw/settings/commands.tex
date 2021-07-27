@@ -53,28 +53,12 @@
 % специфично к квантам
 \newcommand{\ket}[1]{\left| #1 \right\rangle}
 \newcommand{\bra}[1]{\left\langle #1 \right|}
-
+\newcommand{\cc}{\textnormal{c.\,c.}}
 \newcommand{\dppp}{\frac{d^3 p}{(2 \pi \hbar)^3}}
 
 
 
 % декларируем команды
-% \DeclareDocumentCommand{\testCMD}{}{\alpha}
-
-\DeclareDocumentCommand{\testCMD}{m o}{
-    \IfNoValueTF{#2}{#1^2}{#1 \cdot #2}
-}
-
-
 \DeclareDocumentCommand{\bk}{m o m}{
-    \IfNoValueTF{#2}{
-        \langle #1 | #3 \rangle
-    }{
-        \langle #1 | #2 | #3 \rangle
-    }
+    \IfNoValueTF{#2}{\langle #1 | #3 \rangle}{\langle #1 | #2 | #3 \rangle}
 }
-% единичная матрица
-% диагональную
-% вектора
-% 
-
