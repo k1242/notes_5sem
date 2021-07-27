@@ -40,14 +40,31 @@
     \hspace{5 mm} 
     \hat{V}(t) = \hbar \omega_L \hat{S}_z \cos (\nu t).
 \end{equation*}
-Выразим $\hat{S}_z$ и $\hat{S}_x$ (для второй части задания) через базисные состояния $J_z, J^2, S^2, I^2$:
+Выразим $\hat{S}_z$ и $\hat{S}_x$ (для второй части задания) через базисные состояния $F_z, F^2, S^2, I^2$:
 \begin{align*}
-    \hat{S}_z &= \frac{1}{2} \left(\vp 
-        \kb{0}{0}{10} - \kb{1,-1}{1,-1} + \kb{10}{00} + \kb{11}{11}
-    \right),
+    \hat{S}_z &= \tfrac{1}{2}\kb{1,0}{0,0} + \\ 
+    &+\tfrac{1}{2} \kb{0,0}{1,0} - \tfrac{1}{2}\kb{1,0}{0,0}\kb{1,-1}{1,-1}  + \tfrac{1}{2}\kb{1,0}{0,0}\kb{1,1}{1,1}
+    , \\ 
+    \hat{S}_x &= \kb{1,-1}{0,0} + \kb{1,1}{0,0} + \\
+    &+ \kb{1,-1}{1,0} - \kb{1,1}{1,0} - \kb{0,0}{1,-1} - \kb{1,0}{1,-1} - \kb{0,0}{1,1} + \kb{1,0}{1,1},
 \end{align*}
-
-
+где только первые строчки будут влиять на $\bk{F=1, F_z=\{1,0,-1\}}[\hat{S}_{z, x}]{F=0}$. Отсюда сразу находим, что только при $\ket{n} = \ket{F=1, F_z=0}$ будет
+\begin{equation*}
+    \bk{1, 0}[\hat{S}_z]{0,0} \neq 0,
+    \hspace{5 mm} 
+    \bk{1, \pm 1}[\hat{S}_z]{0,0} = 0.
+\end{equation*}
+Также сразу видно, что если направить поле по $\vc{x}_0$: $\vc{B}(t) = B_0 \vc{x}_0 \cos (\nu t)$, то
+\begin{equation*}
+    \bk{1, 0}[\hat{S}_z]{0,0} = 0,
+    \hspace{5 mm} 
+    \bk{1, \pm 1}[\hat{S}_z]{0,0} \neq 0.
+\end{equation*}
+Также получили, что
+\begin{equation*}
+    \gamma = \frac{\omega_L}{2},
+\end{equation*}
+то есть нашли частоту Раби для резонанса. 
 
 
 \setcounter{subsection}{2}
@@ -156,4 +173,11 @@
 \begin{equation*}
     \gamma = \frac{e E_0 f_r}{\sqrt{2}} \approx e E_0 a_0,
 \end{equation*}
-где $a_0$ -- радиус Бора. 
+где $a_0$ -- радиус Бора.
+
+
+
+
+
+
+
