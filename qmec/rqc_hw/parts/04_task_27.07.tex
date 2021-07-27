@@ -1,0 +1,39 @@
+Дан гамильтониан двухуровневой системы
+\begin{equation*}
+	\hat{H} = \hbar \omega_\text{L} \ket{+} \bra{+} + \overbrace{\frac{\hbar \gamma}{2} e^{i \omega_\text{L}} \ket{+} \bra{-} + \frac{\hbar \gamma}{2}  e^{-i \omega_\text{L}} \ket{-} \bra{+}}^{\hat{V}}.
+\end{equation*}
+В начальный же момент времени система находится в состоянии $\ket{-}$, то есть $c_{-}(t = 0) = 1$. Посмотрим же как в зависимости от времени меняется вероятность системы находится в состоянии $\ket{+}$. Будем следить за $c_{+}(t)$ и надеяться, что $|c_{+}(t)|\ll 1$.
+
+Константа при переходе из состояния $\ket{-}$ в $\ket{+}$ выражается интегралом:
+\begin{equation*}
+	c_{+} (t) \approx \frac{1}{i \hbar} \int_{0}^{t} e^{i\tfrac{E_+ - E_-}{\hbar}\tau} \bra{+} \hat{V} \ket{-} d \tau.
+\end{equation*}
+Свертка с базисными бра-кетами оставит нам только первое слагаемое в $\hat{V}$, а получившееся выражение уже не сложно проинтегрировать:
+\begin{equation*}
+	c_{+} (t) \approx \frac{1}{i \hbar} \int_{0}^{t} \frac{\hbar \gamma}{2} e^{i\left(\frac{E_+ - E_-}{\hbar}- \omega_\text{L}\right)\tau} d \tau
+	=
+	\frac{\hbar \gamma}{2} \frac{1}{\hbar\omega_\text{L} - \Delta E} \left(e^{i \frac{\Delta E - \hbar \omega_\text{L}}{\hbar}t} - 1\right).
+\end{equation*}
+Её модуль:
+\begin{equation*}
+	c_+^2(t) = \frac{\hbar^2 \gamma^2}{(\hbar\omega_\text{L} - \Delta E)^2} \sin^2 \left(\frac{1}{2} \frac{\Delta E - \hbar \omega_\text{L}}{\hbar} t\right)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	|c_+(t)| = \frac{\hbar \gamma}{\Delta E -\hbar\omega_\text{L}} \sin \left(\frac{\Delta E - \hbar \omega_\text{L}}{2\hbar} t\right)
+\end{equation*}
+И оно действительно много меньше единицы, если коэффициент перед синусом мал.
+
+Однако, в нашей задаче собственные числа $\hat{H}_0$ как раз и дают $\Delta E = \hbar \omega_\text{L}$. При взятии интеграла мы и упустили эту точку, а именно, резонанс, то есть когда $\hbar\omega_\text{L} = E_+ - E_- (= \Delta E)$, тогда интеграл просто расходится при $t \to \infty$:
+\begin{equation*}
+	c_+^2(t)\big|_{\hbar \omega_\text{L} \to \Delta E} = \frac{\gamma^2 t^2}{4}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	|c_+^2(t)| = \frac{\gamma t}{2} 
+	\hspace{0.2 cm}
+	\overset{t \to \infty}{\longrightarrow} 
+	\hspace{0.2 cm}
+	\infty.
+\end{equation*}
+Однако при небольших временах, то есть $t \ll \gamma \left(= \frac{e \hbar B_\bot}{2 m_e c}\right)$, у нас всё ещё работает наша теория.
