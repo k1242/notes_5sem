@@ -1,4 +1,55 @@
 \setcounter{section}{1}
+
+\subsection{Спин электрона в переменном \texorpdfstring{$B$}{B}}
+
+Поместили атомы в переменное магнитное поле вида
+\begin{equation*}
+    \vc{B}(t) = B_0 \vc{z}_0 + B_\bot \vc{x}_0 \cos (\omega t) + B_\bot \vc{y}_0 \sin \omega t,
+\end{equation*}
+Тогда гамильтониан получился бы
+\begin{equation*}
+    \hat{V} = - \hat{\vc{\mu}} \cdot \vc{B} = \bigg/
+    \hat{\vc{\mu}} = \frac{e}{m_e c} \hat{\vc{S}} \bigg/
+    = -  \left(\frac{e \hbar B_\bot}{2 m_e c}\right) \left[ \vp
+        \cos (\omega t) (\kb{+}{-}  + \kb{-}{+})
+        - i \sin (\omega t) (\kb{+}{-} - \kb{-}{+}
+    \right],
+    % \hbar \omega_L  \hat{S}_z \cos (\omega T)
+     % \hbar \omega \hat{S}_z \cos (\nu t)
+\end{equation*}
+откуда и находим, что
+\begin{equation*}
+    \gamma = - \frac{e \hbar B_\bot}{2 m_e c}.
+\end{equation*}
+
+
+
+
+
+
+
+\subsection{Электронный парамагнитный резонанс}
+
+Теперь уже внешнее поле имеет вид
+\begin{equation*}
+    \vc{B}(t) = B_0 \vc{z}_0 \cos(\nu t),
+\end{equation*}
+с намильтонианом, вида
+\begin{equation*}
+    \hat{H} = \hat{H}_0  + \hat{V}(t),
+    \hspace{5 mm} 
+    \hat{V}(t) = \hbar \omega_L \hat{S}_z \cos (\nu t).
+\end{equation*}
+Выразим $\hat{S}_z$ и $\hat{S}_x$ (для второй части задания) через базисные состояния $J_z, J^2, S^2, I^2$:
+\begin{align*}
+    \hat{S}_z &= \frac{1}{2} \left(\vp 
+        \kb{0}{0}{10} - \kb{1,-1}{1,-1} + \kb{10}{00} + \kb{11}{11}
+    \right),
+\end{align*}
+
+
+
+
 \setcounter{subsection}{2}
 \subsection{Электродипольный переход \texorpdfstring{$1\textnormal{s}\to 2\textnormal{p}$}{1s -> 2p}}
 
@@ -25,7 +76,8 @@
         \hat{\vc{x}} \cdot\vc{x}_0 \cos(\omega t - kz) +\hat{\vc{x}} \cdot \vc{y}_0 \sin(\omega t - k z)
     \right).
 \end{equation*}
-Сразу перейдём к рассмотрению электродипольного приближения и перейдём к сферическим координатам:
+
+\textbf{Электродипольное приближение}. Сразу перейдём к рассмотрению электродипольного приближения и перейдём к сферическим координатам:
 \begin{equation*}
     \hat{V}(t) = - \frac{e E_0}{\sqrt{2}} \left( \vp
         \hat{\vc{x}} \cdot\vc{x}_0 \cos(\omega t) +\hat{\vc{x}} \cdot \vc{y}_0 \sin(\omega t)
@@ -89,3 +141,19 @@
         \right).
     \\
 \end{align*}
+Получается, что в резонансе при $\omega = \Delta E / \hbar$ будет происходить переход в $\ket{2,1,-1}$, а при $\omega = -\Delta E / \hbar$ будет происходить переход в $\ket{2,1,1}$.
+Аналогично можно показать, что при $\vc{E} \parallel \vc{z}_0$ будет происходить переход в $\ket{2,1,0}$.
+% , где в начале $|c_{\ket{2,1,-1}} (t)|^2 \sim \frac{3\pi}{256}\left( \frac{e f_r E}{\hbar} \right)^2 \, t^2$.
+
+
+\textbf{Условие резонанса}. Для резонанса необходимо
+\begin{equation*}
+    \omega = \frac{E_2 - E_1}{\hbar} \approx 1.5 \times 10^{16} \text{ Гц} \sim \lambda = 19 \text{ нм},
+\end{equation*}
+что соответствует сильно ультрафиолетовому свету. 
+
+Найдём частоту Раби, так как задача в резонансе сводится в системе с двумя состояниями, можем найти
+\begin{equation*}
+    \gamma = \frac{e E_0 f_r}{\sqrt{2}} \approx e E_0 a_0,
+\end{equation*}
+где $a_0$ -- радиус Бора. 
