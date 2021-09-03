@@ -6,3 +6,6 @@
 [*задание*](https://ibb.co/zNTVnNB),
 [*заметки*](https://ibb.co/zNTVnNB)
 );
+
+P.S. Если что, вот [*ссылка*](https://ibb.co/zNTVnNB) на много всяких книжек.
+
