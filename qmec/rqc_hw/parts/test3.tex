@@ -1,0 +1,114 @@
+% лекция АВ Турлапова
+
+\section{Квантовая электродинамика I}
+
+Рассмотрим эволюцию по Гейзенбергу: $\hat{A}^H (t) = \hat{U}\con \hat{A} \hat{U}$, тогда
+\begin{align*}
+    \frac{d }{d t} \hat{A}^H &= 
+    \bigg/
+        - i \hbar \frac{d \hat{U}\con}{d t}  = \hat{U}\con \hat{H}
+    \bigg/ = 
+    \frac{d \hat{U}\con}{d t}  \hat{A} \hat{U} + \hat{U}\con \hat{A} \frac{d \hat{U}}{d t} 
+    = \\ &=
+    - \frac{\hat{U}\con \hat{H} \hat{U}}{i \hbar} \hat{U}\con \hat{A} \hat{U} + \ldots = 
+    \frac{1}{i\hbar} \left[\hat{A}^H, \hat{U}\con \hat{H} \hat{U}\right].
+\end{align*}
+Так, например, при $\hat{H} = \frac{1}{2m} \hat{p}^2 + V(\hat{x})$, тогда
+\begin{equation*}
+    \frac{d }{d t} \hat{p}^H = - \frac{d }{d \hat{x}^H}  V(\hat{x}^H),
+\end{equation*}
+где 
+\begin{equation*}
+    \hat{x}^H = \exp\left(
+        \frac{i \hat{H} t}{\hbar}
+    \right) \hat{x} \exp\left(
+        - \frac{i \hat{H} t}{\hbar}
+    \right),
+    \hspace{0.5cm} \overset{?}{\Rightarrow}  \hspace{0.5cm}
+    \hat{x}^H = \hat{x} + \frac{\hat{p} t}{m}, 
+    \text{ при $\hat{V} = 0$.}
+\end{equation*}
+Движемся к квантовой электродинамике, хотим говорить про моды переменного 
+электромагнитного поля. Квантуем только энергию одной выбранной моды. Форма мод есть из классической теории поля. 
+Далее $\hat{H},\, \hat{\vc{E}},\, \hat{\vc{B}}$ -- операторы на состояния заданной моды, а $\vc{x}$ и $t$ -- параметры. 
+\begin{equation*}
+    \hat{H} = \int \frac{d^3 x}{8\pi} \ 
+    \left( \vp
+        \vc{E}^2 (\vc{x}, t) + \vc{B}^2 (\vc{x}, t)
+    \right), \hspace{5 mm} 
+    \text{ --- оператор энергии моды.}
+\end{equation*}
+\textit{Пастулируем}, что $\hat{\vc{E}}$ и $\hat{\vc{B}}$ удовлетворяют уравнениям Максвелла
+\begin{equation*}
+    \nabla^2 \hat{\vc{E}} -  \frac{1}{c^2} \frac{\partial^2 \hat{\vc{E}}}{\partial t^2} = 0.
+\end{equation*}
+В наиболее общем виде, будем считать
+\begin{equation*}
+    \hat{\vc{E}} (\vc{x}, t) = \hat{\alpha}(t) \vc{E}_0 (\vc{x}) + \hat{\alpha}\con (t)  \vc{E}_0^* (\vc{x}), 
+    \hspace{5 mm} 
+    \hat{\alpha}(t) = \hat{\alpha} (0) e^{- i \omega t}.
+\end{equation*}
+Пользуясь уравнениями Максвелла
+\begin{equation*}
+    \rot \hat{\vc{E}} = - \frac{1}{c} \frac{\partial \hat{\vc{B}}}{\partial t},
+    \hspace{5 mm} 
+    \partial_t = \pm i \omega.
+\end{equation*}
+Тогда Гамильтониан получается равным
+\begin{equation*}
+    \hat{H} = \hbar \omega \left(
+        \hat{a}\con (t) \hat{\alpha} (t) + 
+        \frac{1}{2}\left[
+            \hat{\alpha} (t),\, \hat{\alpha}\con (t)
+        \right]
+    \right) \underbrace{\frac{2}{\hbar \omega} \int \frac{d^3 x}{4\pi} |\vc{E}_0 (\vc{x})|^2}_{\equiv 1, \ \text{-- нормировка}.}
+\end{equation*}
+Здесь получается $E_0 \sim V^{-1/2}$, что немного контринтуитивно, но позже с эти поработаем. 
+Теперь
+\begin{equation*}
+    \text{\textit{Пастулируем}, что } [\hat{\alpha}(t),\, \hat{\alpha}\con(t)] = 1.
+\end{equation*}
+тогда
+\begin{equation*}
+    \hat{H} = \hbar \omega \left(
+        \hat{\alpha}\con (t) \hat{\alpha}(t) + \tfrac{1}{2}
+    \right).
+\end{equation*}
+Теперь и получаем, что
+\begin{equation*}
+    \hat{\alpha}^+ \hat{\alpha} \ket{n} = n \ket{n}, \hspace{5 mm} 
+    \hat{H} \ket{n} = \hbar \omega \left(
+        n + \frac{1}{2}
+    \right), 
+    \hspace{5 mm} 
+    \hat{\alpha}(t=0) \ket{n} = \sqrt{n} \ket{n-1},
+    \hspace{5 mm} 
+    \alpha\hbar^+ (t=0) \ket{n} = \sqrt{n+1} \ket{n+1}.
+\end{equation*}
+Посмотрим, что происходит с полем:
+\begin{equation*}
+    \bk{n}[\hat{\vc{E}}(\vc{x}, t)]{n} = 0, 
+    \hspace{5 mm} 
+    \bk{n}[\hat{\vc{B}} (\vc{x}, t)]{n} = 0.
+\end{equation*}
+Перейдём к рассмотрению когерентных состояний (как у осциллятора)
+\begin{equation*}
+    \bk{\lambda}[\hat{\vc{E}}(\vc{x}, t)]{\lambda} = \hat{E}_0 \lambda e^{- i \omega t} + \cc
+\end{equation*}
+где $\bra{\lambda} \hat{\alpha}^+ (t=0) = \bra{\lambda} \lambda^*$.
+
+
+
+
+% мнимая часть показателя преломления
+% посмотреть на действительную
+
+
+% \section{Реализация квнтовых вентилей}
+
+
+% https://quantumalgorithmzoo.org/
+% отрисовка квантовых цепей вычислений
+% вычисления для bra ket нотации
+
+

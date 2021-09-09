@@ -1,0 +1,162 @@
+% урматы
+
+\subsection*{Дифференцируемость}
+
+
+Проверим дифференцируемость
+\begin{equation*}
+    \alpha + i \beta = \partial-x  + i \partial_x v,
+\end{equation*}
+откуда находим
+\begin{equation*}
+    \left\{\begin{aligned}
+        \alpha &= \partial_x u \\
+        \beta &=1 \partial_x v
+    \end{aligned}\right.
+\end{equation*}
+При этом
+\begin{equation*}
+    - \beta + i \alpha  =\partial_y u + i \partial_y v.
+\end{equation*}
+Так получаем условия Коши-Римана (критерий):
+\begin{equation*}
+    \left\{\begin{aligned}
+        \partial_y u &= - \partial_x v \\
+        \partial_y v &= \partial_x u
+    \end{aligned}\right.
+\end{equation*}
+
+
+Какие функии дифференцируемы? Например полиномы вида $z^n$, иногда бесконченые
+\begin{equation*}
+    \sum_{n=0}^{\infty} a_n (z-z_0)^n,
+    \hspace{5 mm} 
+    R = \lim_{n \to \infty} \frac{1}{\sqrt[n]{|a_n|}},
+\end{equation*}
+который сходится внутри некоторого ряда. Так, например, экспонента
+\begin{equation*}
+    e^z = \sum_{n=0}^{\infty} \frac{z^n}{n!}. \hspace{5 mm} 
+    R = \lim_{n \to \infty} \sqrt[n]{n!} \to \infty.
+\end{equation*}
+Можно показать, что
+\begin{equation*}
+    e^{z_1 + z_2} = e^{z_1} e^{z_2}, 
+    \hspace{5 mm} 
+    \sin z = \frac{e^{iz}-e^{-iz}}{2i}.
+\end{equation*}
+
+
+
+
+\subsection*{Отсутствие дифференцируемости в точке}
+
+
+\textbf{Устранимая особая точка}. Устранимый выколотый разрыв с конечным значением, например $\frac{\sin z}{z},$.
+ % при $z=0$. 
+
+
+\textbf{Полюса}. $\lim_{z \to a} f(z) \to \infty$, например $\frac{1}{z}$. 
+
+
+\textbf{Существенная особая точка (гадость)}. Случай, когда предела не существует: $\sin(1/z)$, или $e^{1/z}$.
+
+
+\subsection*{Интегрируемость}
+
+
+Давайте, как и в Римане, интегрировать по некоторой кривой, параметризованной отрезком $z = z(t)$, $t \in [a, b]$. Определим интеграл первого рода
+\begin{equation*}
+    \sum f(z_i) |\Delta z_i | \to \int f(z) |d z|,
+\end{equation*}
+который встречается достаточно редко. Аналогично определим интеграл второго рода
+\begin{equation*}
+    \sum_i f(z_i) \Delta z_i \to \int_\gamma f(x) \d z,
+\end{equation*}
+где $f(x) = u + i v$ и $\d z = \d x + i \d y$. 
+
+
+
+\subsection*{Интегрируем по областям}
+
+Пусть есть некоторая область $D$, против часовой опоясываем кривой $\gamma$, введем некоторые области внутри и окружим их по часовой стрелке, введем $\Gamma$, как
+\begin{equation*}
+    \Gamma = \gamma + \gamma_1 + \gamma_2 + \ldots
+\end{equation*}
+
+Докажем теорему Коши:
+\begin{equation*}
+    \int_\Gamma f(z) \d z = 0.
+\end{equation*}
+если особенностей нет. 
+
+\begin{proof}[$\triangle$]
+Рассмотрим интеграл
+\begin{equation*}
+    \int_\Gamma (u + i v) (\d x + i \d y) = \int_\Gamma (u \d x - v \d y) + 
+    i \int_\Gamma (v \d x + u \d y).
+\end{equation*}
+Воспользуемся условием Коши-Римана и свойством
+\begin{equation*}
+    \int_\Gamma P \d x + Q \d y = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \d x \d y,
+\end{equation*}
+тогда
+\begin{equation*}
+    \int \ldots = 0
+\end{equation*}
+\end{proof}
+
+В частности можно показать, что для дифференцируемой функции интегрирование от $z_1$ до $z_2$ не зависит от пути интегрирования -- контур можно гнуть.
+
+Если есть особенности:
+\begin{equation*}
+    \int_\Gamma f(z) \d z = 2 \pi i \sum_n \textnormal{res}_{z=a_n} f(z),
+    \hspace{5 mm} 
+    \textnormal{res}_{z=a}\, f(z) = \lim_{r \to 0} \frac{1}{2 \pi i} \oint f(z) \d z.
+\end{equation*}
+
+\subsection*{Частности}
+
+Первая мысль. Если $a$ -- УОТ, то $\res_{z=a} f(z)= 0$. Вторая мысль, рассмотрим интеграл от $f(z)/z$:
+\begin{equation*}
+    \oint_\gamma \frac{f(z)}{z} \d z = \oint \frac{f(0) + \ldots}{z} \d z = 
+    \oint f(0) \frac{\d z}{z} = f(0) \int_{0}^{\pi} \frac{r i e^{i \varphi} \d \varphi}{r e^{i \varphi}} = 2 \pi i f(0),
+\end{equation*}
+где воспользовались $z = r e^{i \varphi}$, откуда
+\begin{equation*}
+    \res_{z=0} \frac{f(z)}{z} = f(0).
+\end{equation*}
+Посмотрим теперь на
+\begin{equation*}
+    \oint \frac{f(z)}{z^2} \d z = \oint \frac{f(0) + f'(0) z + \ldots}{z^2} \d z = 
+    \oint \left(
+        \frac{f(0)}{z^2} + \frac{f'(0)}{z} \d z
+    \right),
+\end{equation*}
+но, так как наличие первообразной гарантирует равенство нулю интеграла, $1/z^2$ выпадает, тогда
+\begin{equation*}
+    \oint \frac{f(z)}{z^2} \d z = \oint \frac{f'(0)}{z} \d z = 2 \pi i f'(0),
+    \hspace{5 mm} 
+    \res_{z = 0} \frac{f(z)}{z^2} = f'(0).
+\end{equation*}
+
+
+
+\subsection*{Ряд Лорана}
+
+Определим ряд вида
+\begin{equation*}
+    f(z) = \sum_{n=-\infty}^{\infty}  c_n (z-z_0)^n.
+\end{equation*}
+Если найти разложение до $-1$ члена, то можно получить, что
+\begin{equation*}
+    \int f(z) \d z = \oint \frac{c_{-1}}{z-z_0} \d z  = 2 \pi i c_{-1}.
+\end{equation*}
+
+
+% Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+% tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+% quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+% consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+% cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+% proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
