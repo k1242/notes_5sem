@@ -1,0 +1,100 @@
+
+
+\textbf{I}. Найдём уровни энергии и волновые функции связанных состояний ($E<0$) частицы в поле
+\begin{equation*}
+    U(x) = - \frac{\hbar^2 \kappa_0}{m} \left( \bp
+        \delta(x+a)+\delta(x-a)
+    \right).
+\end{equation*}
+Гамильтониан системы и стационарное уравнение Шрёдингера:
+\begin{equation*}
+    H = - \frac{\hbar^2 \partial_x^2}{2m} + U(x),
+    \hspace{5 mm}
+    - \frac{\hbar^2 \partial_x^2}{2m} \psi(x) + U(x) \psi(x) = - |E| \psi(x),
+\end{equation*}
+далее считая $E = - E$, будем решать уравнение
+\begin{equation*}
+    \psi''(x) - \frac{2m}{\hbar^2} (U(x) + E) \psi(x) = 0.
+\end{equation*}
+В местах, где не происходит скачков производной подходит в качестве решения экспонента, так что будем искать решение в виде
+\begin{equation*}
+    \psi(x) = \left\{\begin{aligned}
+        &A e^{\kappa (x+a)}, &x<-a \\
+        &B e^{-\kappa(x+a)} + C e^{\kappa(x-a)}, &|x| < a \\
+        &D e^{-\kappa (x-a)}, &x > a.
+    \end{aligned}\right.
+\end{equation*}
+где введено $\kappa^2 = {2 m E}/{\hbar^2}$. 
+
+Можно было бы заметить, что потенциал симметричен, а значит можно искать решение уравнения Шредингера, как собственные функции оператора инверсии: четные и нечетные решения ($A=D,\, B=C$ и $A=-D,\, B=-C$), но мы пойдём другим путём, чтобы посмотреть, как из уравнений вылезет симметрия задачи.
+
+
+Чтобы найти $\psi(x)$ запишем условия непрерывности и, интегрируя стационарное уравнение Шредингера, уравнение на скачок производной:
+\begin{equation*}
+    \left.\begin{aligned}
+        \psi(-a+\varepsilon) &= \psi(-a-\varepsilon), \\
+        \psi(a+\varepsilon) &= \psi(a-\varepsilon), \\
+        \psi'(-a+\varepsilon) - \psi'(-a-\varepsilon) &= -2 \kappa_0 \psi(-a) \\
+        \psi'(a+\varepsilon) - \psi'(a-\varepsilon) &= -2 \kappa_0 \psi(a) 
+    \end{aligned}\right\}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left.\begin{aligned}
+        A - C - B e^{2 a \kappa} = 0 \\
+        B - D + C e^{2 a \kappa} = 0 \\
+        -A + C - B e^{2 a \kappa} + 2 A \kappa_0/\kappa = 0 \\
+        B - D - C e^{2 a \kappa} + 2 d \kappa_0/\kappa = 0 \\
+    \end{aligned}\right\}
+\end{equation*}
+Для удобства введем $X = e^{2 a \kappa}$, и выразив из первого уравнения A, из второго B, из третьего C подставим и получим уравнение вида
+\begin{equation}
+    \frac{D  \kappa (\kappa-\kappa_0)}{(\kappa-\kappa_0)+\kappa_0 X^{-2}} = d \kappa_0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \kappa ^2-2 \kappa  \text{$\kappa $0}+\text{$\kappa $0}^2-\frac{\text{$\kappa $0}^2}{X^2}=0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{
+    \kappa_{\pm} = (1 \pm e^{-2 A \kappa}) \kappa_0
+    },
+    \label{T5}
+\end{equation}
+что составляет условие совместности полученной СЛУ,
+
+Забавный факт: составим матричку для СЛУ и найдём определитель
+\begin{equation*}
+    M = \left(
+    \begin{array}{cccc}
+     1 & -X & -1 & 0 \\
+     0 & 1 & X & -1 \\
+     \kappa -2 \text{$\kappa $0} & \kappa  X & -\kappa  & 0 \\
+     0 & \kappa  & -\kappa X & 2 \text{$\kappa $0}-\kappa  \\
+    \end{array}
+    \right), 
+    \hspace{10 mm} \det M = 4 (X^2 (\kappa-\kappa_0)^2-\kappa_0^2).
+\end{equation*}
+Решение уравнения $\det M = 0$ относительно $\kappa$ приводит к тем же корням, что и уравнение \eqref{T5}: $ \kappa = (1 \pm e^{-2 A \kappa}) \kappa_0$, таким образом СЛУ будет совместна, если вырождена. 
+
+Стоит заметить, что $\rg M (\kappa_{\pm}) = 3$, тогда, решая уравнение относительно $A, B, C$, находим
+\begin{align*}
+    &\kappa_+ \colon 
+    &A = D, \ B=C=\frac{A}{1 + e^{2 a \kappa}}, 
+    &&\text{четное решение} \\ 
+    &\kappa_- \colon 
+    &A = -D, \ B=-C=-\frac{A}{-1 + e^{2 a \kappa}}, 
+    &&\text{нечетное решение} \\ 
+\end{align*}
+Для наглядности можем их построить.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/T5.pdf}
+    \caption{Четное и нечётное решение к Т5}
+\end{figure}
+
+
+Стоит вспомнить, что уравнение \eqref{T5} -- трансцендентное уравнение, где $\kappa = \kappa(E)$, то есть уравнение на уровни энергии. Как мы показали, $\kappa_+$ соответствует четному решению и $\kappa_-$ нечётному. 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuresT5_fig2.pdf}
+    \caption{Решение трансцендентного уравнения к Т5}
+    %\label{fig:}
+\end{figure}
