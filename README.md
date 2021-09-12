@@ -3,7 +3,7 @@
 
 * **квантовой механике I**
 (
-[*задание*](https://ibb.co/zNTVnNB),
+[*задание*](https://github.com/k1242/notes_5sem/blob/main/qmec/hw/qmec_hw.pdf),
 [*заметки*](https://ibb.co/zNTVnNB)
 );
 
