@@ -1,0 +1,181 @@
+
+Рассмотрим связанное сферически симметричное состояние частицы в сфрически симметричной потенциальной яме, вида
+\begin{equation*}
+    U(r) = \left\{\begin{aligned}
+        - &U_0, &r < r_0, \\
+        &0, &r \geq r_0,
+    \end{aligned}\right.
+\end{equation*}
+в частности случаи $\dim \in \{1, 2, 3\}$.
+
+Как обычно, запищем стационарное уравнение Шрёдингера, в силу связного состояния ($E < 0$)переобозначим $E \to -E$:
+\begin{equation*}
+    \hat{H} \psi = \left(\frac{\hat{\vc{p}}^2}{2m} + U\right) \psi = - E \psi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \triangle \psi - \frac{2m}{\hbar^2}(U+E) \psi = 0.
+\end{equation*}
+Раскрывая $U(r)$, выделяем две области:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \triangle \psi + k^2 \psi &= 0,  &r < r_0; \\
+        \triangle \psi - \kappa^2 \psi &= 0, &r > r_0;
+    \end{aligned}\right.
+    \hspace{10 mm} 
+    k^2 = \frac{2m}{\hbar^2} (U_0 - E),
+    \hspace{5 mm} 
+    \kappa^2 = \frac{2m}{\hbar^2} E.
+\end{equation*}
+Осталось раскрыть лапласиан, считая $\psi \equiv \psi(r)$ (сферически симметричное состояние)
+\begin{equation*}
+    \triangle|_{\dim=1} = \partial_r^2, \hspace{5 mm} 
+    \triangle|_{\dim=2} = \tfrac{1}{r} \partial_r + \partial_r^2, \hspace{5 mm} 
+    \triangle|_{\dim=3} = \tfrac{2}{r} \partial_r + \partial_r^2.
+\end{equation*}
+
+\textbf{Одномерный случай}. Подробно разобран в Т2, здесь ограничимся только указанием итоговой охапки диффуров и ответа:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \psi'' + k^2 \psi &= 0,  &r < r_0; \\
+        \psi'' - \kappa^2 \psi &= 0, &r > r_0;
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \psi^+(r) = \left\{\begin{aligned}
+         & A \cos(k r), &r < r_0; \\
+         & B e^{- \kappa r}, &r>r_0;
+    \end{aligned}\right.
+    \hspace{10 mm}
+    \psi^- (r) = 
+    \left\{\begin{aligned}
+         & A \sin(k r), & r < r_0; \\
+        & B e^{- \kappa r}, & r > r_0;
+    \end{aligned}\right.
+\end{equation*}
+где $\psi^+$ и $\psi^-$ -- четное и нечетное решение (в силу симметричности потенциала), а $A$ и $B$ известны из условий нормировки, непрерывности и гладкости. 
+
+
+
+
+
+\textbf{Двухмерный случай}. Дифференциальное уравнение на $\psi(r)$ примет вид
+\begin{equation*}
+    \left\{\begin{aligned}
+        \psi'' + \tfrac{1}{r} \psi' + k^2 \psi &= 0, \\
+        \psi'' +  \tfrac{1}{r} \psi' - \kappa^2 \psi &= 0.
+    \end{aligned}\right.
+\end{equation*}
+В силу сферической симметрии задачи, решение может быть найден в виде функций Бесселя $J_n$ и $Y_n$:
+\begin{equation*}
+    \psi(r) = \left\{\begin{aligned}
+        &A_1 J_0 (k r) + B_1 Y_0 (k r), & r < r_0; \\
+        &A_2 J_0 (i \kappa r) + B_2 Y_0 (- i \kappa r), &r > r_0.
+    \end{aligned}\right.
+\end{equation*}
+В силу нормируемости $\psi$ должно выполняться равенство $B_2 = A_2/i$. 
+
+Дальше вспоминаем, что $\psi(r \leq r_0) |_{r=r_0} = \psi(r \geq r_0) |_{r=r_0}$, также $\psi(r \leq r_0)' |_{r=r_0} = \psi(r \geq r_0)' |_{r=r_0}$, плюс $\int |\psi(r)|^2 \d r = 1$, что даёт нам три уравнения, на три коэффициента. Однако ожидается дискретность спектра, так что необходимо дополнительное условие, чтобы прийти к уравнению на $E$. 
+
+\textcolor{gray}{
+Можно предположить, что волновой функции ненормально уходить в бесконечность (даже оставаясь $L_2$ интегрируемой), тогда $B_1 = 0$, и мы получаем дискретный спектр. 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Трёхмерный случай}. Попробуем найти решение в виде $\psi(r) = \mu(r) \nu(r)$, где $\mu(r) = \exp\left(
+    - \int \frac{f(r)}{2} \d r
+\right)$, иногда это помогает диффурах вида $F'' + f(r) F' + F = 0$:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \psi'' + \tfrac{2}{r} \psi' + k^2 \psi &= 0,  &r < r_0; \\
+        \psi'' + \tfrac{2}{r} \psi' - \kappa^2 \psi &= 0, &r > r_0;
+    \end{aligned}\right.
+    \hspace{10 mm} 
+    \nu(r) = e^{- \ln r} = \tfrac{1}{r},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+         \nu'' + k^2 \nu &= 0,  &r < r_0; \\
+         \nu'' - \kappa^2 \nu &= 0, &r > r_0.
+    \end{aligned}\right.
+\end{equation*}
+А такое уравнение на $\nu(r)$ уже решается, итого находим
+\begin{equation*}
+    \psi(r) = \left\{\begin{aligned}
+        &\tfrac{A_1}{r} e^{- i k r} + \tfrac{B_1}{r} e^{i k r}, &r<r_0; \\
+        &\tfrac{A_2}{r} e^{- \kappa r} + \tfrac{B_2}{r} e^{\kappa r}, &r>r_0.
+    \end{aligned}\right.
+\end{equation*}
+Осталось наполнить это физическим смыслом: при $r > r_0$ требование нормировки приведет к $B_2 = 0$, при $r < r_0$ для наглядности перепишем в тригонометрических функциях:
+\begin{equation*}
+    \psi(r < r_0) = -\frac{i A_1 \sin (k r)}{r}+\frac{A_1 \cos (k r)}{r}+\frac{i B_1 \sin (k r)}{r}+\frac{B_1 \cos (k r)}{r},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B_1 = -A_1,
+\end{equation*}
+из того же требования нормируемости функции. 
+
+Из непрерывности в $r=r_0$ находим:
+\begin{equation*}
+    \psi(r \leq r_0) |_{r=r_0} = 
+    \psi(r \geq r_0) |_{r=r_0},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A_2 = - 2 i A_1 e^{r_0 \kappa} \sin(k r_0).
+\end{equation*}
+Выразив все коэффициенты через $A_1$, подставим их в условие глакзкости $\psi(r)$:
+\begin{equation*}
+    \psi(r \leq r_0)' |_{r=r_0} = 
+    \psi(r \geq r_0)' |_{r=r_0},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    k \cos(k r_0) + \kappa \sin(k r_0) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{k[E] = - \kappa[E] \cdot \tg\left(k[E] r_0\right)},
+\end{equation*}
+это трансцендентное уравнение на $E$ имеет решения, соответсвенно выделяет дискретный спектр уровней энергии. 
+
+Осталось найти $A_1$ из условия нормировки, к сожалению через элементарные функции у меня это условие не выражается, возможно выше была вычислительная ошибка, но система $\pm$ физична. Для начала посчитаем плотность вероятности
+\begin{equation*}
+    |\psi(r < r_0)|^2 = 
+    \frac{4 A_1^2 \left(k \cos \left(k \left(r-r_0\right)\right)-\kappa  \sin \left(k \left(r-r_0\right)\right)\right){}^2}{r^2 \left(\kappa ^2+k^2\right)}
+    , \hspace{10 mm} 
+    |\psi(r > r_0)|^2 = \frac{4 A_1^2 k^2 e^{2 \kappa  \left(r_0-r\right)}}{r^2 \left(\kappa ^2+k^2\right)}.
+\end{equation*}
+тогда условие нормировки:
+\begin{equation*}
+    \int_0^{r_0} |\psi(r<r_0)|^2 \d r + 
+    \int_{r_0}^{\infty} |\psi(r>r_0)|^2 \d r  = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A_1^{-2} = 8 e^{2 \kappa r_0} \, \text{Ei}\,(-2 r_0 \kappa) \sin(k r_0)^2 + 
+    4 k \, \text{Si}\, (2 k r_0),
+\end{equation*}
+где Si -- интегральный синус, Ei -- интегральная экспонента, таким образом нашли волновую функцию и уровни энергии:
+\begin{equation*}
+    \psi(r) = 2 A_1 \left\{\begin{aligned}
+        &\sin(k r)/r, &r<r_0; \\
+        &\sin(k r_0) \,  e^{\kappa(r_0-  r)}/r ,  
+        &r>r_0.
+    \end{aligned}\right.
+\end{equation*}
+
+
+
+
+
+
+
+
+% В силу сферической симметрии задачи, разница будет сводиться к виду $\hat{\vc{p}}^2 = - \hbar^2 \nabla^2$, то есть виду лапплассиана:
+% \begin{equation*}
+%     \nabla^2 (\dim=1) = 
+% \end{equation*}
