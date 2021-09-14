@@ -1,0 +1,94 @@
+
+\textbf{Собственные функции}. 
+Рассмотрим частицу в очень глубокой потенциальной одномерной яме:
+\begin{equation*}
+    U(x) = \left\{\begin{aligned}
+        &\infty,  &x \notin [0, a]; \\
+        &0. &x \in [0, a];
+    \end{aligned}\right.
+    \hspace{5 mm} 
+    H(x,\, -  i \hbar \partial_x) \psi(x) = E \psi(x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \psi''(x) + \frac{2m E}{\hbar^2} \psi(x)  = 0.
+\end{equation*}
+Тогда решение может быть найдено в виде
+\begin{equation*}
+    \psi(x) = A \sin (kx) + B \cos(kx), \hspace{5 mm} 
+    k^2 = \tfrac{2m}{\hbar^2}E,
+\end{equation*}
+но в силу требования $\psi(x)|_{x \in \{0, a\}} = 0$, сразу получаем $B =0 $, и условие на $k$:
+\begin{equation*}
+    k = k_n = \frac{\pi n}{a},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    E_n = \frac{\hbar^2}{2m a^2} \pi^2 n^2,
+\end{equation*}
+то есть спектр дискретный. 
+
+Из нормировки $\psi$ можем найти
+\begin{equation*}
+    \bk{\psi}{\psi} = \int_0^a \d x |\psi(x)|^2 = \frac{|A|^2}{2} a = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A = \sqrt{\frac{2}{a}}.
+\end{equation*}
+Тогда искомая волнавая функция стационарных состояний и соответсвующие уровни энергии
+\begin{equation*}
+    \psi_n (x) = \sqrt{\frac{2}{a}} \sin \left(\tfrac{\pi n}{a} x\right) ,
+    \hspace{5 mm} 
+    E_n = \frac{\hbar^2}{2m a^2} \pi^2 n^2.
+\end{equation*}
+
+
+
+\textbf{Средние значения}. Найдём среднее значение для координаты
+\begin{equation*}
+    \langle x\rangle = \int_0^a x |\psi_n (x)|^2 \d x = 
+    \frac{2}{a} \int_0^a x \sin^ (k_n x) \d x = \frac{2}{a}\left(
+        \frac{a^2}{4} - \frac{1}{4 k_n } \frac{1}{2 k_n} \cos(2 k_n x) \pa_0^a
+    \right) = \frac{a}{2}.
+\end{equation*}
+Аналогично можем найти среднее значение импульса
+\begin{equation*}
+    \langle p\rangle = \int_0^a \d x \psi^* \hat{p} \psi = 
+    - i \hbar k_n \frac{2}{a} \int_0^a \sin(k_n x) \cos(k_n x) \d x = - \frac{i \hbar k_n}{a} \int_0^a \sin(2 k_n x) = 0,
+\end{equation*}
+в силу интегрирования по периоду. 
+
+Теперь можем посчитать дисперсию величин
+\begin{equation*}
+    (\Delta x)^2 = \bk{\psi}[(\hat{x} - \bar{x})^2]{\psi} = \bk{\psi}[x^2]{\psi} - \bar{x}^2,
+\end{equation*}
+и аналогично с $\hat{p}$. Для координаты среднее квадрата
+\begin{equation*}
+    \langle x^2\rangle = \frac{2}{a} x^2 \sin^2 (k_n x) \d x = \frac{a^2}{3} + \frac{1}{a k_n} \int_0^a \sin(2 k_n x) x \d x = 
+    \frac{a^2}{3} - \frac{1}{2 a k_n^2} x \cos(2 k_n x) \pa_0^a = \frac{a^2}{3} - \frac{a^2}{2 \pi^2 n^2},
+\end{equation*}
+а соответсвующая дисперсия 
+\begin{equation*}
+    (\delta x)^2 = a^2 \left(\frac{1}{12} - \frac{1}{2 \pi^2 n^2}\right).
+\end{equation*}
+Теперь для импульса
+\begin{equation*}
+    (\Delta p)^2 = \langle p^2\rangle = \int_0^a \d x \psi^* \left(
+        - \hbar^2 \partial_x^2
+    \right) \psi = \frac{2 k_n^2 \hbar^2}{2a} \int_0^a \d x \left(
+        1  =\cos (2 k_n x)
+    \right) = \frac{\pi^2 \hbar^2 n^2}{a^2}.
+\end{equation*}
+
+\textbf{Сравним с классикой}. Понятно, что частица равновероятно может находиться в любой части ящика (в классическом случае), тогда
+\begin{equation*}
+    \int_0^a P(x) \d x = 1, \hspace{0.25cm} \Rightarrow \hspace{0.25cm} P(x) = \frac{1}{a},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \langle x\rangle^{\text{кл}} = \int_0^a P(x) x \d x = \frac{a}{2} = \langle x\rangle.
+\end{equation*}
+Теперь для импульса, $p \in \{-p_0, p_0\}$, где $P(p_0) = P(-p_0) = 1/2$, тогда
+\begin{equation*}
+    \langle p\rangle^{\text{кл}} = P(p_0) p_0 + P(-p_0) (-p_0) = 0 = \langle p\rangle.
+\end{equation*}
+Аналогично с квадратом координаты
+\begin{equation*}
+    \langle x^2\rangle^{\text{кл}} = \int_0^a \frac{1}{a} x^2 \d x = \frac{a^2}{3} = 
+    \lim_{n \to \infty} \langle x^2\rangle,
+\end{equation*}
+что прекрасно сходится с принципом соответствия. 
+
