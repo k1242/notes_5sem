@@ -1,3 +1,31 @@
+\subsection*{a)}
+Задан потенциал, с учетом которого мы получаем оператор Гамильтона для нашей задачи:
+\begin{equation*}
+	U(x) = \left\{\begin{aligned}
+		-U_0 \ , \ &|x| \leq a \\
+		0 \ , \ &|x| \geq a
+	\end{aligned}
+	\right.
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\hat{H} = \left\{\begin{aligned}
+		\frac{p^2}{2m} - U_0 \ , \ &|x| \leq a \\
+		\frac{p^2}{2m} \ , \ &|x| \geq a	
+	\end{aligned}
+	\right.
+\end{equation*}
+Тогда решаем уравнение Шредингера $\hat{H} \psi = E \psi$ вне и снаружи ямы, помня что $\hat{p} = - i \hbar \frac{\partial}{\partial x}$
+\begin{equation*}
+\frac{- \hbar^2}{2 m} \psi + (\hat{U} - E) = 0
+\hspace{0.5 cm}
+\Rightarrow
+\hspace{0.5 cm}
+\left\{\begin{aligned}
+	\psi'' + \frac{2 m}{\hbar^2}(U_0 + E) \psi = 0 \\
+	\psi'' + \frac{2 m}{\hbar^2} E \psi = 0
+\end{aligned}\right.
+\end{equation*}
 Посмотрим теперь на движение частицы в неглубокой потенциальной яме 
 \begin{equation*}
     U(x) = \left\{\begin{aligned}
