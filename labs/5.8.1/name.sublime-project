@@ -8,5 +8,14 @@
 	"settings":
 	{
 		"TEXroot": "lab_5.8.1.tex",
-	}
+	},
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
 }
