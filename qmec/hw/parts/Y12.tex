@@ -1,0 +1,37 @@
+Найдём операторы рождения и уничтожения для гармонического осцилляора в представлении Гейзенберга. Запишем уравнение Гейзенберга
+\begin{equation*}
+    i \hbar \frac{\hat{d f}}{d t}  = i \hbar \frac{\partial \hat{f}}{\partial t} + \left[\hat{f},\, \hat{H}\right].
+\end{equation*}
+Запищем гамильтониан системы
+\begin{equation*}
+    \hat{H} = \hbar \omega \left(\hat{a}\con \hat{a} + \frac{1}{2}\right),
+\end{equation*}
+тогда можем найти
+\begin{equation*}
+    i \hbar \frac{\hat{d a}}{d t} = \hbar \omega \left[\hat{a},\, \hat{a}\con \hat{a}\right] = \hbar \omega \left(
+        \hat{a} \hat{a}\con \hat{a} - \hat{a}\con \hat{a} \hat{a}
+    \right) = \hbar \omega \left(
+        \left[\hat{a},\, \hat{a}\con\right] \hat{a}
+    \right) = \hbar \omega \hat{a},
+\end{equation*}
+и, решая диффур, находим
+\begin{equation*}
+    i \hbar \frac{\hat{d a}}{d t} = \hbar \omega \hat{a},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \hat{a}(t) &= e^{- i \omega t} \hat{a}, \\
+        \hat{a}\con(t) &= e^{i \omega t} \hat{a}\con.
+    \end{aligned}\right.
+\end{equation*}
+
+Или, можно было напрямую, воспользоваться
+\begin{equation*}
+    \hat{U}(t) = \exp\left(
+        - \frac{i}{\hbar} \hat{H} t
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{a}(t) = \hat{a} + (i \omega t) [
+        \hat{a}\con \hat{a},\, \hat{a}
+    ] + (i \omega t)^2 [\hat{a}\con \hat{a},\, -\hat{a}] + \ldots = \exp(- i \omega t) \hat{a}, 
+\end{equation*}
+где мы воспользовались равенством, доказанным в У6.

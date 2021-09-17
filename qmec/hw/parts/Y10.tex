@@ -1,0 +1,28 @@
+Для операторов рождения и уничтожения ($[\hat{a},\,  \hat{a}\con] \oeq  1$) найдём коммутатор вида 
+\begin{equation*}
+    [\hat{a},\, f(\hat{a}\con)] = \hat{a} f(\hat{a}\con) - f(\hat{a}\con) \hat{a}.
+\end{equation*}
+Глубоко. Допустим аналитичность $f$, и воспользуемся разложением по Тейлору $f(\hat{a}\con) = \sum_{n=0}^{\infty} c_n (\hat{a}\con)^n$:
+\begin{align*}
+    [\hat{a},\, f(\hat{a}\con)] 
+    &=
+    \sum_{n=0}^{\infty}  c_n \left(
+        \hat{a} (\hat{a}\con)^n - (\hat{a}\con)^n \hat{a}
+    \right) 
+    = 
+    \sum_{n=0}^{\infty} c_n \left(
+        (1 + \hat{a}\con \hat{a}) (\hat{a}\con)^{n-1} - (\hat{a}\con)^n \hat{a}
+    \right) 
+    = \\ &\oeq
+    \sum_{n=0}^{\infty}  c_n \left(
+        (\hat{a}\con)^{n-1} \hat{a}\con (1 + \hat{a}\con \hat{a}) (\hat{a}\con)^{n-2}- (\hat{a}\con)^n \hat{a}
+    \right) 
+    = \\ &= 
+    \sum_{n=0}^{\infty}  c_n \left(
+        2 (\hat{a}\con)^{n-1} + (\hat{a}\con)^2 \hat{a} (\hat{a}\con)^{n-2} - 
+        (\hat{a}\con)^n \hat{a}
+    \right) 
+    = 
+    \sum_{n=0}^{\infty}  c_n n \cdot (\hat{a}\con)^{n-1} = f'(\hat{a}\con),
+\end{align*}
+что достаточно забавно. 
