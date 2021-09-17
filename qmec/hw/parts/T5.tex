@@ -26,6 +26,16 @@
 \end{equation*}
 где введено $\kappa^2 = {2 m E}/{\hbar^2}$. 
 
+Внимательно приглядевшись к виду $\psi(x)$ понимаем, что $e^{\kappa a}$ можно спокойно закинуть в константы, что немного упростит вид уравнений:
+\begin{equation*}
+    \psi(x) = \left\{\begin{aligned}
+        &A e^{\kappa x}, &x<-a \\
+        &B e^{-\kappa x} + C e^{\kappa x}, &|x| < a \\
+        &D e^{-\kappa x}, &x > a.
+    \end{aligned}\right.
+\end{equation*}
+
+
 Можно было бы заметить, что потенциал симметричен, а значит можно искать решение уравнения Шредингера, как собственные функции оператора инверсии: четные и нечетные решения ($A=D,\, B=C$ и $A=-D,\, B=-C$), но мы пойдём другим путём, чтобы посмотреть, как из уравнений вылезет симметрия задачи.
 
 
@@ -49,10 +59,10 @@
 \begin{equation}
     \frac{D  \kappa (\kappa-\kappa_0)}{(\kappa-\kappa_0)+\kappa_0 X^{-2}} = d \kappa_0,
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
-    \kappa ^2-2 \kappa  \text{$\kappa $0}+\text{$\kappa $0}^2-\frac{\text{$\kappa $0}^2}{X^2}=0,
+    \kappa ^2-2 \kappa  \kappa_0+\kappa_0^2-\frac{\kappa_0^2}{X^2}=0,
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     \boxed{
-    \kappa_{\pm} = (1 \pm e^{-2 A \kappa}) \kappa_0
+    \kappa_{\pm} = (1 \pm e^{-2 a \kappa}) \kappa_0
     },
     \label{T5}
 \end{equation}
@@ -64,8 +74,8 @@
     \begin{array}{cccc}
      1 & -X & -1 & 0 \\
      0 & 1 & X & -1 \\
-     \kappa -2 \text{$\kappa $0} & \kappa  X & -\kappa  & 0 \\
-     0 & \kappa  & -\kappa X & 2 \text{$\kappa $0}-\kappa  \\
+     \kappa -2 \kappa_0 & \kappa  X & -\kappa  & 0 \\
+     0 & \kappa  & -\kappa X & 2 \kappa_0-\kappa  \\
     \end{array}
     \right), 
     \hspace{10 mm} \det M = 4 (X^2 (\kappa-\kappa_0)^2-\kappa_0^2).
@@ -121,7 +131,7 @@
 \begin{equation*}
     \left\{\begin{aligned}
         \psi_a &= \tfrac{1}{\sqrt{2}} \big( \psi_+ + \psi_- \big); \\
-        \psi_a &= \tfrac{1}{\sqrt{2}} \big( \psi_+ - \psi_- \big);
+        \psi_{-a} &= \tfrac{1}{\sqrt{2}} \big( \psi_+ - \psi_- \big);
     \end{aligned}\right.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     \left\{\begin{aligned}
