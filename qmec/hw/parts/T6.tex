@@ -1,0 +1,51 @@
+Возьмём операторы импульса $\hat{p} = - i \hbar \partial/\partial x$ и координаты $\hat{x}$.
+Сразу найдём их средние и коммутатор
+\begin{equation*}
+	\bar{x} = \bk{\psi}[\hat{x}]{\psi},
+	\hspace{1 cm}
+	\bar{p} = \bk{\psi}[\hat{p}]{\psi},
+	\hspace{1 cm}
+	[\hat{x}, \hat{p}] = i \hbar \mathbb{E}.
+\end{equation*}
+Если сейчас ввести такие величины, у которых ещё и оказывается коммутатор тот же
+\begin{equation*}
+	\hat{\kappa} = \hat{x} - \bar{x},
+	\hspace{1 cm}
+	\hat{\varpi} = \hat{p} - \bar{p}
+	\hspace{1 cm}
+	[\hat{\kappa},\hat{\varpi}] = i \hbar \mathbb{E}.
+\end{equation*}
+Это ещё что\footnote{это $\backslash$\textit{varpi}, классно выглядит же}, самое главное ещё и что помимо $\bar{\varpi} = \bar{\kappa} = 0$, так ещё
+\begin{equation*}
+	(\Delta \kappa)^2 = \bk{\psi}[(\hat{\kappa} - \bar{\kappa})]{\psi} = \bk{\psi}[(\hat{x} - \bar{x})]{\psi} = (\Delta x)^2,
+	\hspace{1 cm}
+	(\Delta \varpi)^2 = (\Delta p)^2.
+\end{equation*}
+Теперь введем функции по методу Вейля
+\begin{equation*}
+	\ket{\Phi} = (\hat{\kappa} - i \gamma \hat{\varpi}) \ket{\Psi}.
+\end{equation*}
+И так как по определению нормы $\bk{\Phi}{\Phi} \geq 0$ получим
+\begin{equation*}
+	\bk{\psi}[(\hat{\kappa} - i \gamma \hat{\varpi})^\dagger (\hat{\kappa} - i \gamma \hat{\varpi})]{\psi}
+	=
+	\bk{\psi}[\hat{\kappa}^2 - i \gamma (\hat{\kappa} \hat{\varpi} - \hat{\varpi} \hat{\kappa}) + \gamma^2 \hat{\varpi}^2]{\psi} \geq 0.
+\end{equation*}
+А значит неотрицательной должно быть и выражение
+\begin{equation*}
+	(\Delta x)^2 + \hbar \gamma \langle\mathbb{E}\rangle + \gamma^2 (\Delta p)^2) \geq 0
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\hbar^2 - 4 (\Delta p )^2 (\Delta x )^2 \leq 0,
+\end{equation*}
+что получилось просто из условия на дискриминант для квадратного уравнения на $\gamma$, тогда минимум достигнется просто при нулевом дискриминанте
+\begin{equation*}
+	(\Delta p)^2 (\Delta x)^2 = \frac{\hbar}{4},
+	\hspace{1 cm}
+	\gamma = - 2 \frac{(\Delta x)^2}{\hbar}.
+\end{equation*}
+Таким образом и нашли волновую функцию, которая удовлетворяет минимизации соотношения неопределенности, что мы четко и показали
+\begin{equation*}
+	\ket{\Phi} = [\hat{x} - \bar{x} + i \frac{2}{\hbar} (\Delta x)^2 (\hat{p} - \bar{p})] \ket{\Psi}.
+\end{equation*}
