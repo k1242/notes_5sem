@@ -1,0 +1,57 @@
+% базовая подстройка
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+
+% авторские команды
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\smallvc}[1]{\scalebox{0.65}{\mbox{\boldmath $#1$}}}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\con}{^{\dag}}
+\newcommand{\sub}[2]{#1_{\textnormal{#2}}}
+\newcommand{\vp}{\vphantom{\dfrac{1}{2}}}
+
+% операторы (просто прямой текст)
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+% \renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
+% \newcommand{\E}{\mathop{\mathrm{E}}\nolimits}
+% \newcommand{\D}{\mathop{\mathrm{D}}\nolimits}
+% \newcommand{\cov}{\mathop{\mathrm{cov}}\nolimits}
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\card}{\mathop{\mathrm{card}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{ker}}\nolimits}
+\newcommand{\spec}{\mathop{\mathrm{spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+\newcommand{\const}{\textnormal{const}}
+
+
+% цветной текст
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{urlcolor}{#1}}
+\newcommand{\blue}[1]{\textcolor{ublue}{#1}}
+
+
+% символы
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+
+
+% подгрузка pdf_tex картинок
+% \newcommand{\incfig}[1]{%
+%     \def\svgwidth{\columnwidth}
+%     \import{./figures/}{#1.pdf_tex}
+% }
+
+
+% специфично к квантам
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+
+\newcommand{\dppp}{\frac{d^3 p}{(2 \pi \hbar)^3}}
