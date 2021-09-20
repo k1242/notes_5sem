@@ -1,0 +1,95 @@
+\section{A2}
+
+\subsection*{№5}
+
+
+Рассмотрим многомерное нормаьное распределение для $\tilde{y}_i$ с симметричной матрицей ковариации $\Sigma$:
+\begin{equation*}
+    \tilde{y} = \frac{1}{(2\pi)^{l/2} \sqrt{\det \Sigma}} \exp\left(
+        - \tfrac{1}{2} (\tilde{y}-y) \Sigma^{-1} (\tilde{y} - y)
+    \right).
+\end{equation*}
+
+\textbf{Нормировка}. В силу симметричности $\Sigma$ существует $S$ такая, что $S\T \Sigma^{-1} S = E$, тогда $\det S = \sqrt{\det \Sigma}$. Тогда, в силу знания о линейной замене переменных в кратном интеграле, при замене $\tilde{y} - y = Sz$, верно:
+\begin{equation*}
+    \int \tilde{y} \d^l \tilde{y} =  
+    \frac{\det S}{\sqrt{\det \Sigma}} \int 
+    \frac{1}{(\sqrt{2\pi})^l} \exp\left(
+        - \tfrac{1}{2} z\T S\T \Sigma^{-1} S z
+    \right)
+    \d^l \tilde{y},
+\end{equation*}
+что приводит к факторизации, и, по теореме Фубини, можем записать
+\begin{equation*}
+    \int \tilde{y} \d^l \tilde{y} = 
+    \int \frac{1}{\sqrt{2\pi}} \exp\left(-\tfrac{1}{2} z_1^2 \right) \d z_1 
+    \ \cdot \
+    \ldots
+    \ \cdot \
+    \int \frac{1}{\sqrt{2\pi}} \exp\left(-\tfrac{1}{2} z_l^2 \right) \d z_l = 1,
+\end{equation*}
+следовательное, указанное распределение нормировано.
+
+
+\textbf{Парные корреляторы}. Вообще, говорят, что набор случайных величин $\xi$ имеет многомерноное нормальное распределение, если найдётся вектор $a$, невыроденная матрица $C$ и набор \textit{независимых} стандартных нормальных величин $\eta$ такие, что
+\begin{equation*}
+    \xi = a + C \eta.
+\end{equation*}
+Так гораздо удобнее найти $\cov (\xi_i,\, \xi_k)$:
+\begin{equation*}
+    \cor{\xi_i}{\xi_j} = \cor{(a + C \eta)_i}{(a + C \eta)_j} = 
+    \sum_{\alpha=1}^{l} \sum_{\beta=1}^{l} c_{i \alpha} c_{j \beta} 
+    \underbrace{\cor{\eta_{\alpha}}{\eta_\beta}}_{\delta_{\alpha \beta}} = 
+    \sum_{\alpha=1}^{l} c_{i\alpha} c_{j \alpha} = \left(C C\T\right)_{ij} = \Sigma_{ij},
+\end{equation*}
+где последнее равенство следует из факторизации распределения для $\eta$. 
+
+
+\textbf{Погрешности параметров}. Оценим погрешности парметров, аналогично расчёту с лекции:
+\begin{equation*}
+    \left.\begin{aligned}
+        w_\alpha = Q_{\alpha i} y_i \\
+        \tilde{w}_\alpha = Q_{\alpha i} \tilde{y}_i
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \cor{\tilde{w}_\alpha}{\tilde{w}_\beta} = \ldots = Q_{\alpha i} Q_{\beta j} \cor{\tilde{y}_i}{\tilde{y}_j} = Q_{\alpha i} Q_{\beta j} \Sigma_{ij} = (Q \Sigma Q\T)_{\alpha \beta},
+\end{equation*}
+что похоже на правду, по крайней мере формы совпадают. 
+
+
+\textbf{Погрешности в линейной регрессии}. Считая $A = \diag(A_1,\, \ldots,\, A_l)$, оценим погрешности $\var w_\alpha$. Рассмотрим, видимо,  линейную регрессию, тогда, как и раньше
+\begin{equation*}
+    X = \begin{pmatrix}
+        x_1 & 1 \\
+        \ldots & \ldots \\
+        x_l & 1
+    \end{pmatrix},
+    \hspace{5 mm} 
+    X\T X = l \begin{pmatrix}
+        \bar{x^2} & \bar{x}  \\
+        \bar{x} & 1  \\
+    \end{pmatrix},
+    \hspace{5 mm} 
+    (X\T X)^{-1} = \frac{1}{l \var x} \begin{pmatrix}
+        1 & - \bar{x}  \\
+        - \bar{x} & \bar{x^2}  \\
+    \end{pmatrix}.
+    .
+\end{equation*}
+Здесь, наверное, будет удобнее сразу найти
+\begin{equation*}
+        Q  = \left(X\T X\right)^{-1} X\T = \frac{1}{l \var x} \begin{pmatrix}
+        x_1-\bar{x} & \ldots & x_l - \bar{x}  \\
+        \xbar{x^2}- \bar{x} x_1 & \ldots & \xbar{x^2}- \bar{x} x_l  \\
+    \end{pmatrix}.
+\end{equation*}
+Тогда искомые погрешности могут быть найдены, как
+\begin{align*}
+    \var w_1 &= (Q \Sigma Q\T)_{11} = \frac{1}{l (\var x)^2} 
+    \bigg(\langle x_i^2 \sigma_i^2\rangle - 2 \bar{x} \langle x_i \sigma_i^2\rangle + \bar{x}^2 \langle \sigma_i^2\rangle\bigg)
+    , \\
+    \var w_0 &= (Q \Sigma Q\T)_{22} =  \frac{1}{l (\var x)^2} \bigg( 
+        (\xbar{x^2})^2 \langle \sigma_i^2\rangle - 2 \bar{x} \cdot \xbar{x^2} \langle x_i \sigma_i^2\rangle + \bar{x}^2 \langle x_i^2 \sigma_i ^2\rangle
+    \bigg).
+\end{align*}
+где $\Sigma = \diag(\sigma_1, \ldots, \sigma_l)$, и $\var \tilde{y}_i \sim \sigma_i^2$. Действительно, при $\sigma_i^2 = s^2 = \const$ всё сходится. 
