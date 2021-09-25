@@ -1,0 +1,163 @@
+\section{Семинар от 25.09.21}
+
+% трансляционно инвариантна система
+\textbf{Про Фурье}. 
+Как раньше нашли
+\begin{equation*}
+    L(\partial_t) G(t) = \delta(t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{x} (\omega) = \int_{\mathbb{R}} e^{- i \omega t} x(t) \d t,
+    \hspace{5 mm} 
+    x(t) = \int_{\mathbb{R}} e^{i \omega t} \hat{x}(\omega) \frac{\d \omega}{2\pi}.
+\end{equation*}
+Для этого должно выполняться
+\begin{equation*}
+    \int |x(t)| \d d < + \infty.
+\end{equation*}
+\textit{Например}, для $\partial_t + \gamma$:
+\begin{equation*}
+    (\partial_t + \gamma) G(t) = \delta(t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_{\mathbb{R}} \frac{\d t}{\ldots} e^{- i \omega t} \d t = x(t) e^{- i \omega t} \bigg|_{-\infty}^{+\infty},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (i \omega + \gamma) \hat{G} (\omega) = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{G}(\omega) = \frac{1}{i \omega + \gamma}.
+\end{equation*}
+Так приходим к уравнению
+\begin{equation*}
+    G(t) = \int_{\mathbb{R}} \frac{e^{i \omega t}}{\omega - i \gamma} \frac{\d \omega}{2\pi} = 
+    \left\{\begin{aligned}
+        &e^{- \gamma t}, &t > 0
+        &0, &t<0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{G}(\omega) = \theta(t) e^{- |t|}.
+\end{equation*}
+
+Однако, при $\hat{L} = \partial_t - \gamma$ мы бы получили
+\begin{equation*}
+    G_A (t) = \theta(-t) e^{\gamma t}, 
+\end{equation*}
+хотя вообще должно быть (если посчитать через неопределенные коэффициенты)
+\begin{equation*}
+    G_R (t) = \theta(t) e^{\gamma t},
+\end{equation*}
+которая растёт.
+
+
+В методе с Фурье будут получаться функции Грина затухающие, но, возможно, без причинности. 
+В методе неопределенных коэффициентов исходим из причинности, но может быть рост $\sim e^{\gamma t}$. 
+
+
+Кроме того, в Фурье всегда предполагается $x(t \to - \infty) = 0$ и $x(t \to + \infty) = 0$. Также может случиться
+\begin{equation*}
+    (\partial_t^2 + \omega_0^2) G(t) = \delta(t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{G}(\omega) = \frac{1}{\omega^2 - \omega_0^2},
+\end{equation*}
+с особенностями на вещественной оси, что можно решить, сместив полюса в $\mathbb{C}$.
+
+
+
+
+
+\textbf{Свёртка}. Рассмотрим уравнение
+\begin{equation*}
+    L(\partial_t) x(t) = f(t),
+    \hspace{5 mm} 
+    L(\partial_t) G(t) = \delta(t).
+\end{equation*}
+Фурье переводит 
+\begin{equation*}
+    \int_{\mathbb{R}} \partial_x^n x(t) e^{- i \omega t} \d t = (i \omega)^n \hat{x} (\omega).
+\end{equation*}
+Тогда
+\begin{equation*}
+    L(i \omega) \hat{x} (\omega) = \hat{f}(\omega),
+    \hspace{5 mm} 
+    L(i \omega)  \hat{G} (\omega) = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{G}(\omega) = \frac{1}{L(i \omega)}.
+\end{equation*}
+Также нашли, что
+\begin{equation*}
+    \hat{x}(\omega) = \frac{\hat{f}(\omega)}{L(i \omega)} = \hat{f}(\omega) \hat{G}(\omega),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x(t) = \int_{-\infty}^{+\infty} G(t-s) f(s) \d s.
+\end{equation*}
+
+
+
+\textbf{Преобразование Лапласа}. Пусть есть некоторое преобразование
+\begin{equation*}
+    \tilde{f}(p) = \int_0^{\infty} e^{- p t} f(t) \d t,
+\end{equation*}
+где подразумевается, что $\Re p \geq 0$ и, вообще, в Фурье можно $p \in \mathbb{C}$. 
+
+Пусть $p = i \omega$, где $\omega \in \mathbb{R}$. Тогда
+\begin{equation*}
+    \tilde{f} (i \omega) = \int_{\mathbb{R}} e^{- i \omega t} f(t) \d t = \hat{f} (\omega),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(t)  =\int_{\mathbb{R}} \hat{f}(\omega) e^{i \omega t} \frac{\d \omega}{2\pi} = 
+    \int_{\mathbb{R}} \tilde{f} (i \omega) e^{i \omega t} \frac{\d \omega}{2 \pi} = 
+    \int_{- i \infty}^{i \infty} e^{p t} \tilde{f} (p) \frac{\d p}{2\pi}.
+\end{equation*}
+В вычислениях выше мы предполагали, что $f(t \to \infty) = 0$. 
+
+Обойдём это, пусть $|f(t)| < M e^{s t}$, при $s > 0$. Возьмём $p_0 > s$, тогда
+\begin{equation*}
+    \tilde{f} (p) = \int_{\mathbb{R}} e^{- p_0 t} e^{-(p-p_0)t} f(t) \d t = \tilde{g}(p-p_0),
+\end{equation*}
+где вводе $g(t) = e^{- i p_0 t} f(t)$, которая уже убывает на бесконечности. Обратно:
+\begin{equation*}
+    g(t) = \int_{-i\infty}^{+i\infty}  \tilde{g}(p) e^{pt} \frac{\d p}{2\pi} = 
+    \int_{p_0 - i \omega}^{p_0 + i \omega} \tilde{g}(p-p_0) e^{- p_0 t} e^{pt} \frac{\d p}{2\pi i}.
+\end{equation*}
+Так пришли к форме обращения
+\begin{equation*}
+    f(t) = \int_{p_0 - i \infty}^{p_0 + i \omega} \tilde{f}(p) \frac{\d p}{2 \pi i},
+    \hspace{10 mm} 
+    \tilde{f}(p) = \int_{\mathbb{R}} e^{- p_0  t} e^{-(p-p_0)t} f(t) \d t = \tilde{g}(p-p_0),
+\end{equation*}
+где $g(t) = e^{- i p_0 t} f(t)$.
+
+
+
+Забавный факт, из леммы Жордана: при $t < 0$ $f(t<0) = 9$, по замыканию дуги по часовой стрелке (вправо). Выбирая $p_0$ так, чтобы все особенности лежали левее $p_0$, можем получать причинные функции. 
+
+
+
+
+\textbf{Примеры}. Найдём преобразование Лапласа для $\partial_t f(t)$:
+\begin{equation*}
+    \int_{0}^{\infty} \frac{d f}{d t} e^{- p t} \d t = f e^{- pt} \bigg|_0^{\infty} + p \int_{0}^{\infty} 
+    f(t) e^{-pt} \d t = p \tilde{f}(p) - f(+0).
+\end{equation*}
+Но, для функции Грина $L(\partial_t) G(t) = \delta(t)$, тогда
+\begin{equation*}
+    L(\partial_t) G_\varepsilon(t) = \delta(t-\varepsilon),
+    \hspace{10 mm} 
+    G_\varepsilon (t) = G(t-\varepsilon),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G_\varepsilon(0)=  0,
+\end{equation*}
+где $G_\varepsilon \to G(t)$ при $\varepsilon \to 0$. 
+
+Здесь и далее $f(t)$ -- функция, $f(\omega) = \hat{f}(\omega)$ -- Фурье образ, $f(p) = \tilde{f}(p)$ -- преобразование Лапласа. 
+
+Преобразуем по Лапласу уравнения выше
+\begin{equation*}
+     L(p) G(p) = e^{p \varepsilon} = 1,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     G_\varepsilon (p) = \frac{1}{L(p)},
+     \hspace{0.5cm} \overset{\varepsilon \to 0}{\Rightarrow}  \hspace{0.5cm}
+     G(p) = \frac{1}{L(p)}.
+ \end{equation*} 
+Так получаем
+\begin{equation*}
+    G(t) = \int_{p_0 - i \infty}^{p_0 + i \omega} \frac{e^{pt}}{L(p)} \frac{\d p}{2\pi i},
+\end{equation*}
+где $p_0$ правее всех особенностей. 
+
+
