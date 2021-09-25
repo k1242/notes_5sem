@@ -1,0 +1,16 @@
+\section*{ТеорМин}
+
+
+Интеграл по дуге может быть найден, как
+\begin{align*}
+    \int_C \d z f(z) = 2 \pi i \sum_{z_j} \res_{z_j} f(z),
+    \hspace{5 mm} 
+    \res_{z_j} f(z) &= \lim_{\varepsilon \to 0} \varepsilon \int_0^{2\pi} \frac{\d \varphi}{2\pi} e^{i \varphi} f(z_j + \varepsilon e^{i \varphi}) \\ 
+    &= \frac{1}{(m-1)!} \lim_{z \to z_j} \left(
+        \frac{d^{m-1} }{d z^{m-1}} (z-z_j)^m f(z)
+    \right),
+\end{align*}
+где $m$ -- степень полюса. 
+
+
+

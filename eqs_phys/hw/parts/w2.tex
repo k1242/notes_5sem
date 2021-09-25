@@ -137,5 +137,50 @@
 
 
 
-% \subsection*{№4}
+\subsection*{№4}
+
+
+В частотном представлении для оператора $\partial_t^2 + \omega_0^2$ можем <<найти>> функцию Грина, приводящую к
+\begin{equation*}
+    G(\omega) = \frac{1}{\omega_0^2 - \omega^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(t) = \int_{-\infty}^{+\infty}  \frac{e^{- i \omega t}}{\omega_0^2 - \omega^2} \frac{\d \omega}{2\pi},
+\end{equation*}
+с особенностями на вещественной оси.
+
+Регуляризуем интеграл, рассмотрением <<затухающего>> осцилятора, тогда
+\begin{equation*}
+    G(t) = \int_{-\infty}^{+\infty} \underbrace{\frac{e^{- i \omega t}}{(\omega_0 - \omega + i \varepsilon_1)(\omega_0 + \omega + i \varepsilon_2)}}_{F(w)} \frac{\d \omega}{2\pi}.
+\end{equation*}
+Получилось два полюса:
+\begin{equation*}
+    \omega_1 = \omega_0 + i \varepsilon_1,
+    \hspace{5 mm} 
+    \omega_2 = - \omega_0 - i \varepsilon_2.
+\end{equation*}
+Соответсвенно, по лемме Жордана, наличие/отсутствие вклада от $\varepsilon_{1,2}$ будет зависеть от выбора знаков в $\varepsilon_{1,2} \to \pm 0$. 
+
+Для начала найдём вычеты по каждому полюсу:
+\begin{equation*}
+    2 \pi i \cdot \res_{\omega_1} F(\omega) = 
+    i \varepsilon e^{i \varphi} F(\omega_1) = 
+    - i{\varepsilon e^{i \varphi}} \frac{e^{i t \omega_0}}{2 \omega_0 + i (\varepsilon_1 + \varepsilon_2) + \varepsilon e^{i \varphi}} \overset{\varepsilon \to 0}{\approx} 
+-\frac{i}{2 \omega_0} e^{- i t \omega_0}.
+\end{equation*}
+Аналогично, для второго полюса:
+\begin{equation*}
+    2 \pi i \cdot \res_{\omega_2} F(\omega) =  \ldots = \frac{i}{2 \omega_0} e^{i t \omega_0}.
+\end{equation*}
+
+Сразу заметим, что при вхождение только отного вычета невозможно выполнение условия о $G(0) = 0$, тогда рассмотрим $\varepsilon_1 \to + 0$ и $\varepsilon_2 \to - 0$, тогда оба полюча находятся в верхней полуплоскости, по которой и происходит обход \textit{по} часовой стрелке:
+\begin{equation*}
+    G(t) =  \textcolor{grey}{\theta (-t)} \frac{1}{\omega_0} \sin(- \omega_0 t),
+\end{equation*}
+что соответствует опережающей функции Грина ($\partial_t G(t=0) = -1$). 
+
+Теперь найдём, что при $\varepsilon_1 \to -0$ и $\varepsilon_2 \to + 0$ оба вычета в нижней полуплоскости, что приведет к смене знака:
+\begin{equation*}
+    G(t) = \textcolor{grey}{\theta (t)} \frac{1}{\omega_0} \sin(\omega_0 t),
+\end{equation*}
+что и соответствует запаздывающей функции Грина (см. ур. \eqref{w1osc}, $\partial_t G(t=0) = 1$), что не может не радовать. 
 
