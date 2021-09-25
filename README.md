@@ -9,7 +9,8 @@
 ([*задание*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw_tfcv/hw.pdf));
 
 * **уравнениям математической физики**
-([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys.pdf));
+([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
+[*заметки*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/notes/eqs_phys_notes.pdf),);
 
 * **вычислительной математике**
 ([*задание (код)*](https://github.com/k1242/notes_5sem/tree/main/comp_math),
