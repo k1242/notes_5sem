@@ -7,7 +7,7 @@
 	],
 	"settings":
 	{
-		"TEXroot": "eqs_phys.tex",
+		"TEXroot": "eqs_phys_hw.tex",
 	},
 	"build_systems":
 	[

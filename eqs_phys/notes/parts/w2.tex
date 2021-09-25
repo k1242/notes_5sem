@@ -1,0 +1,186 @@
+% напомнить про лишние штрихи в #1 (упс)
+
+\section{Неделя II}
+
+\subsection*{№1 (1.1.4)}
+
+Найдём функию Грина $G(t)$ уравнения
+\begin{equation*}
+    L(\partial_t) x(t) = \varphi(t),
+    \hspace{5 mm} 
+    L(\partial_t) = \partial_t^4 + 4 \nu^2 \partial_t^2 + 3 \nu^4.
+\end{equation*}
+Функция Грина может быть найдена, как решение уравнения
+\begin{equation*}
+    L(\partial_t) G(t) = \delta(t)l,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    G(t) = \theta(t) \cdot \left(b_1 e^{-\nu t} + b_2 e^{i \nu t} + b_3 e^{- i \sqrt{3} \nu t} + b_4 e^{i \sqrt{3} \nu t}\right),
+\end{equation*}
+где воспользовались разложением
+\begin{equation*}
+    L(z) = (z + i \nu) (z- i \nu) (z - i \sqrt{3} \nu) (z + i \sqrt{3} \nu).
+\end{equation*}
+Интегрируя от $-\varepsilon$ до $+\varepsilon$ уравнение на $G(t)$ находим, что
+\begin{equation*}
+    \partial_t^3 G(+0)  = 1, \hspace{5 mm} \partial_t^2 G(+0) = \partial_t^1 G(+0) = G(+0) = 0,
+\end{equation*}
+откуда получаем СЛУ на $\{b_1,\, b_2,\, b_3,\, b_4\}$:
+\begin{equation*}
+    \left.\begin{aligned}
+        b_1+b_2+b_3+b_4 &=0, \\ 
+        b_1-b_2+\sqrt{3} \left(b_3-b_4\right)  &=0, \\
+        b_1+b_2+3 \left(b_3+b_4\right)  &=0, \\
+        b_1-b_2+3 \sqrt{3} \left(b_3-b_4\right)  &=-\tfrac{i}{ \nu^3}, \\
+    \end{aligned}\right\}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_1 = \frac{i}{4 \nu^3}, \hspace{2.5 mm}, 
+    b_2 = -\frac{i}{4 \nu^3}, \hspace{2.5 mm},
+    b_3 = -\frac{i}{4 \sqrt{3} \nu^3}, \hspace{2.5 mm},
+    b_4 = \frac{i}{4 \sqrt{3} \nu^3}.
+\end{equation*}
+Так получаем решение, вида
+\begin{equation*}
+    G(t) = \frac{\theta(t)}{2 \sqrt{3}\,  \nu^3} \left(
+        \sqrt{3}  \sin(\nu t) - \sin(\sqrt{3} \nu t)
+    \right).
+\end{equation*}
+
+
+
+
+
+
+\subsection*{№2 (1.1.5)}
+
+Найдём функцию Грина для уравнения, вида
+\begin{equation*}
+    (\partial_t^2 + \nu^2)^2 x (t) = \varphi(t).
+\end{equation*}
+
+Аналогично предыдущему номеру, сначала находим $G(t>0)$:
+\begin{equation*}
+    G(t>0) = b_1 e^{i \nu t} + b_2 t e^{i \nu} + b_3 e^{- i \nu t} + b_4 t e^{- i \nu t},
+\end{equation*}
+где секулярные члены возникли из-за кратности корней.
+
+Также, интегрируя уравнение на $G(t)$ от $-\varepsilon$ до $\varepsilon$, получаем аналогичное условие
+\begin{equation*}
+    \partial_t^3 G(+0)  = 1, \hspace{5 mm} \partial_t^2 G(+0) = \partial_t^1 G(+0) = G(+0) = 0,
+\end{equation*}
+и приходим к СЛУ на коэффициенты $\{b_1,\, b_2,\, b_3,\, b_4\}$:
+\begin{equation*}
+    \left.\begin{aligned}
+        b_1+b_3&=0, \\
+        i \left(b_1-b_3\right) \nu +b_2+b_4&=0, \\ 
+        \nu  \left(\left(b_1+b_3\right) \nu -2 i \left(b_2-b_4\right)\right)&=0, \\
+        \nu ^2 \left(-3 \left(b_2+b_4\right)-i \left(b_1-b_3\right) \nu \right)&=1, \\
+    \end{aligned}\right\}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_1 = -\frac{i}{4 \nu ^3}, \hspace{2.5 mm} 
+    b_2 = -\frac{1}{4 \nu ^2}, \hspace{2.5 mm} 
+    b_3 = \frac{i}{4 \nu ^3}, \hspace{2.5 mm} 
+    b_4 = -\frac{1}{4 \nu ^2}.
+\end{equation*}
+Получаем решение, вида
+\begin{equation*}
+    G(t) = \frac{\theta(t)}{2 \nu^3} \left( \vp
+        \sin(\nu t) - \nu t \cos(\nu t)
+    \right).
+\end{equation*}
+
+
+
+
+\subsection*{№3 (1.1.8)}
+
+Для системы уравнений, вида
+\begin{equation*}
+    (\partial_t + \hat{\Gamma}) \vc{y}(t)  = \vc{\xi}(t),
+    \hspace{5 mm} 
+    \Gamma = \lambda \delta_{i,j} + \delta_{i,j-1},
+\end{equation*}
+найдём функцию Грина $G(t)$, как решение уравнения
+\begin{equation*}
+    (\partial_t +   \hat{\Gamma}) G(t) = \delta(t) \mathbb{E},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(t) = \theta(t) \exp\left(- \hat{\Gamma} t\right).
+\end{equation*}
+Осталось найти $\exp(-\hat{\Gamma} t)$, как матричную экспоненту, от жордановой клетки. 
+
+Для начала заметим, что
+\begin{equation*}
+    \delta_{i,j-1}^2 = \delta_{i,j-1} \delta_{j, k} = \delta_{i+1, k-1} = \delta_{i, k-2},
+\end{equation*}
+и так далее, то есть $\delta_{i, j-1}$ -- нильпотентный оператор, с $\delta_{i, j-1}^4 = 0$.
+
+Посмотрим на степени $\hat{\Gamma}$:
+\begin{align*}
+    \hat{\Gamma}^2 &= \delta_{i,j} + 2 \delta_{i,j-1} + \delta_{i, j-2} \\
+    \hat{\Gamma}^3 &= \delta_{i,j} + 3 \delta_{i,j-1} + 3 \delta_{i, j-2} + \delta_{i, j-3}\\
+    \hat{\Gamma}^4 &= \delta_{i,j} + 4 \delta_{i,j-1} + 6 \delta_{i, j-2} + 4\delta_{i, j-3} + 
+    \delta_{i,j-4}, 
+\end{align*}
+но $\delta_{i,j-4} = 0$, так что можем явно выделить на побочных диагоналях соответсвтующие экспоненты:
+\begin{equation*}
+    G(t) = \theta(t) e^{- \lambda t} 
+    \left(
+        \begin{array}{cccc}
+         1 & -t & \tfrac{t^2}{2} & -\tfrac{t^3}{6} \\
+         0 & 1 & -t & \tfrac{t^2}{2} \\
+         0 & 0 & 1 & -t \\
+         0 & 0 & 0 & 1 \\
+        \end{array}
+    \right),
+\end{equation*}
+где появившиеся $t^k$ -- секулярные члены. 
+
+
+
+
+\subsection*{№4}
+
+
+В частотном представлении для оператора $\partial_t^2 + \omega_0^2$ можем <<найти>> функцию Грина, приводящую к
+\begin{equation*}
+    G(\omega) = \frac{1}{\omega_0^2 - \omega^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(t) = \int_{-\infty}^{+\infty}  \frac{e^{- i \omega t}}{\omega_0^2 - \omega^2} \frac{\d \omega}{2\pi},
+\end{equation*}
+с особенностями на вещественной оси.
+
+Регуляризуем интеграл, рассмотрением <<затухающего>> осцилятора, тогда
+\begin{equation*}
+    G(t) = \int_{-\infty}^{+\infty} \underbrace{\frac{e^{- i \omega t}}{(\omega_0 - \omega + i \varepsilon_1)(\omega_0 + \omega + i \varepsilon_2)}}_{F(w)} \frac{\d \omega}{2\pi}.
+\end{equation*}
+Получилось два полюса:
+\begin{equation*}
+    \omega_1 = \omega_0 + i \varepsilon_1,
+    \hspace{5 mm} 
+    \omega_2 = - \omega_0 - i \varepsilon_2.
+\end{equation*}
+Соответсвенно, по лемме Жордана, наличие/отсутствие вклада от $\varepsilon_{1,2}$ будет зависеть от выбора знаков в $\varepsilon_{1,2} \to \pm 0$. 
+
+Для начала найдём вычеты по каждому полюсу:
+\begin{equation*}
+    2 \pi i \cdot \res_{\omega_1} F(\omega) = 
+    i \varepsilon e^{i \varphi} F(\omega_1) = 
+    - i{\varepsilon e^{i \varphi}} \frac{e^{i t \omega_0}}{2 \omega_0 + i (\varepsilon_1 + \varepsilon_2) + \varepsilon e^{i \varphi}} \overset{\varepsilon \to 0}{\approx} 
+-\frac{i}{2 \omega_0} e^{- i t \omega_0}.
+\end{equation*}
+Аналогично, для второго полюса:
+\begin{equation*}
+    2 \pi i \cdot \res_{\omega_2} F(\omega) =  \ldots = \frac{i}{2 \omega_0} e^{i t \omega_0}.
+\end{equation*}
+
+Сразу заметим, что при вхождение только отного вычета невозможно выполнение условия о $G(0) = 0$, тогда рассмотрим $\varepsilon_1 \to + 0$ и $\varepsilon_2 \to - 0$, тогда оба полюча находятся в верхней полуплоскости, по которой и происходит обход \textit{по} часовой стрелке:
+\begin{equation*}
+    G(t) =  \textcolor{grey}{\theta (-t)} \frac{1}{\omega_0} \sin(- \omega_0 t),
+\end{equation*}
+что соответствует опережающей функции Грина ($\partial_t G(t=0) = -1$). 
+
+Теперь найдём, что при $\varepsilon_1 \to -0$ и $\varepsilon_2 \to + 0$ оба вычета в нижней полуплоскости, что приведет к смене знака:
+\begin{equation*}
+    G(t) = \textcolor{grey}{\theta (t)} \frac{1}{\omega_0} \sin(\omega_0 t),
+\end{equation*}
+что и соответствует запаздывающей функции Грина (см. ур. \eqref{w1osc}, $\partial_t G(t=0) = 1$), что не может не радовать. 
+
