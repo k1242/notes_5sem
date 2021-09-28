@@ -1,9 +1,10 @@
 \section*{ТеорМин}
 
 
-Интеграл по дуге может быть найден, как
+
+\textbf{Вычеты}. Интеграл по дуге может быть найден, как
 \begin{align*}
-    \int_C \d z f(z) = 2 \pi i \sum_{z_j} \res_{z_j} f(z),
+    \int_C f(z) \d z = 2 \pi i \sum_{z_j} \res_{z_j} f(z),
     \hspace{5 mm} 
     \res_{z_j} f(z) &= \lim_{\varepsilon \to 0} \varepsilon \int_0^{2\pi} \frac{\d \varphi}{2\pi} e^{i \varphi} f(z_j + \varepsilon e^{i \varphi}) \\ 
     &= \frac{1}{(m-1)!} \lim_{z \to z_j} \left(
@@ -13,4 +14,91 @@
 где $m$ -- степень полюса. 
 
 
+
+\begin{to_lem}[лемма Жордана]
+    Пусть $f(z)$ непрерывна в замкнутой области $G = \{z \mid \Im z \geq 0,\,  |z| \geq R_0 > 0\}$. Обозначим через $C_R$ полуокружность $|z| = R,\, \Im x \geq 0$ и пусть верно, что $\lim_{R \to \infty} \max |f(z)| =0$. тогда при $a > 0$
+    \begin{equation*}
+        \lim_{R \to \infty} \int_{C_R} f(z) e^{i a z} \d z = 0,
+    \end{equation*}
+    аналогичное верно при $C_R$ с $\Im x \leq 0$ и $a < 0$. 
+\end{to_lem}
+
+
+
+\textbf{Матричное уравнение}. Решение линейного уравнения для векторной величины $\vc{y}$
+\begin{equation*}
+    \frac{d \vc{y}}{d t} + \hat{\Gamma} \vc{y} = \vc{\chi},
+\end{equation*}
+может быть найдено, через функцию Грина, вида
+\begin{equation*}
+    \hat{G} (t) = \theta(t) \exp\left(- \hat{\Gamma} t\right),
+    \hspace{10 mm} 
+    \vc{y}(t) = \int_{-\infty}^{t}  \hat{G}(t-s) \vc{\chi}(s) \d s.
+\end{equation*}
+
+
+% \textbf{Преобразование Фурье}. 
+
+
+
+\textbf{Преобразование Лапласа}. Преобразование Лапласа функциии $\Phi(t)$ определяется, как
+\begin{equation*}
+    \tilde{\Phi}(p) = \int_{0}^{\infty}  \exp(-pt) \Phi(t) \d t,
+    \hspace{10 mm} 
+    \Phi(t) = \int_{c-i \infty}^{c+i \infty} \frac{\d p}{2 \pi i} \exp(pt) \tilde{\Phi}(p),
+\end{equation*}
+где далее $c$ выбираем правее всех особенностей для причинности. 
+
+Решение уравнения $L(\partial_t) G(t) = \delta(t)$ может быть найдено, как
+\begin{equation*}
+    G(t) = \int_{c-i \infty}^{c+i \infty} \frac{\d p}{2 \pi i} \exp(p t) \tilde{G}(p),
+    \hspace{10 mm} \tilde{G} (p) = \frac{1}{L(p)},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(t) = \sum_i \res_i \frac{\exp(pt)}{L(p)},
+\end{equation*}
+где суммирование идёт по полюсам $1/L(p)$. 
+
+Важно, что можно делать функции маленькими
+\begin{equation}
+    \int_{p_0 - i \infty}^{p_0 + i \omega} \tilde{f}(p) e^{pt} \frac{\d p}{2 \pi i} = 
+    \left(\frac{d }{d t} \right)^n \int_{p_0 - i \infty}^{p_0 + i \omega} \frac{\tilde{f}(p)}{p^n} e^{pt} \frac{\d p}{2 \pi i}.
+\end{equation}
+
+
+
+
+\textbf{Уравнение Вольтерра}. Интегральное уравнение Вольтерра первого рода с однородным ядром:
+\begin{equation*}
+    \int_{0}^{t}  K(t-s) f(s) \d s = \varphi(t).
+\end{equation*}
+Решение может быть найдено через обратное преобразование Лапласа
+\begin{equation*}
+    f(t) = \int_{c-i \infty}^{c+i \infty} \frac{d p}{2 \pi i} \exp(pt) \tilde{f}(p),
+    \hspace{10 mm} 
+    \tilde{f}(p) = \frac{\tilde{\varphi}(p)}{\tilde{K}(p)}.
+\end{equation*}
+Но есть один нюанс. При $K(t),\, \varphi(t) \overset{p \to \infty}{\to} K_0,\, \varphi_0$ получается, что $\tilde{K}(p),\, \tilde{\varphi}(p) \approx \frac{K_0}{p},\, \frac{\varphi_0}{p}$, тогда
+\begin{equation*}
+    f(t) = \frac{\varphi_0}{K_0} \delta(t) + \int_{c-i \infty}^{c+i \infty} \frac{d p}{2 \pi i} \exp(p t)
+    \left(
+        \frac{\tilde{\varphi}}{\tilde{K}} - \frac{\varphi_0}{K_0}
+    \right),
+\end{equation*}
+при этом в отсутствие аналитичности в нуле нет ничего страшного. 
+
+
+\textbf{Неоднородная релаксация}. Для одномерного случая
+\begin{equation*}
+    \big(\partial_t + \gamma(t)\big) x(t) = \varphi(t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x(t) = \int_{-\infty}^{+\infty}  G(t,s) \varphi(s) \d s,
+    \hspace{5 mm} 
+    G(t,\,  s) = \theta(t-s) \exp\left(
+        - \int_{s}^{t} \gamma(\tau) \d \tau
+    \right),
+\end{equation*}
+где всё также $G(t, s>t) = 0$ в силу стремления к принципу причинности. 
+
+
+% многомерная неоднородная релаксация
 
