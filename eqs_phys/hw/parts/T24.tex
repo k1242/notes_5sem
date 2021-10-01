@@ -1,0 +1,35 @@
+\subsection*{Т24}
+
+
+Свели задачу к поиску нулей функции, вида
+\begin{equation*}
+    f(x, y) = 2 y \cos(y) - 2 y \ch(x) + (x^2 + y^2) \sin(y).
+\end{equation*}
+Вспомним, что
+\begin{equation*}
+    \sin y = \sum_{n=0}^{\infty} \frac{(-1)^n y^{2n+1}}{(2n+1)!},
+    \hspace{5 mm} 
+    \cos y = \sum_{n=0}^{\infty} \frac{(-1)^n y^{2n}}{(2n)!},
+    \hspace{5 mm} 
+    \ch x = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!}.
+\end{equation*}
+Посмотрим на раложение в ряд $f(x, y)$ вблизи точки $x = y = 0$:
+\begin{align*}
+    f(x, y) &= \sum_{n=0}^{\infty} \left(
+        2 \frac{(-1)^n y^{2n+1}}{(2n)!} - 2 \frac{y x^{2n}}{(2n)!} + 
+        \frac{(-1)^n x^2 y^{2n+1}}{(2n +1)!} + \frac{(-1)^n y^{2n+3}}{(2n+1)!}
+    \right) 
+    = \\ &= 
+    y \sum_{n=0}^{\infty} \left(
+        2 \frac{(-1)^n y^{2n}}{(2n)!} - 2 \frac{x^{2n}}{(2n)!} + 
+        \frac{(-1)^n x^2 y^{2n}}{(2n +1)!} + \frac{(-1)^n y^{2n+1}}{(2n+1)!}
+    \right).
+\end{align*}
+Понятно, что $y=0$ -- корень уравнения $f(x, y) = 0$. Покажем, что других не существует на $x, y \in[-1, 1]$. Пусть $y \neq 0$, тогда рассмотрим функцию $g(x, y) = f(x, y)/y$:
+\begin{equation*}
+    g(x, y) = - \frac{(x^2 + y^2)^2}{12} + \frac{(x^2+y^2)y^4}{120} + \sum_{n=3}^{\infty} \left(
+        2 \frac{(-1)^n y^{2n}}{(2n)!} - 2 \frac{x^{2n}}{(2n)!} + 
+        \frac{(-1)^n x^2 y^{2n}}{(2n +1)!} + \frac{(-1)^n y^{2n+1}}{(2n+1)!}
+    \right).
+\end{equation*}
+

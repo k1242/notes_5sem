@@ -232,3 +232,59 @@
         \frac{1}{\sqrt{p + \alpha}}
     \right] = \frac{e^{- \alpha t}}{\sqrt{\pi t}}.
 \end{equation*}
+
+
+\newpage
+
+
+\subsection*{№5}
+
+
+Рассмотрим маятник, совершающий маленькие колебания под действием вынуждающей силы $f(t) = F e^{-t^2/\tau^2}$:
+\begin{equation*}
+    \left(\partial_t^2 + \omega^2\right) \varphi(t) = f(t),
+\end{equation*}
+где мы знаем, что при $t \to - \infty$:
+\begin{equation*}
+    \varphi(t) = A_- \sin(\omega t + \theta_-).
+\end{equation*}
+Функция Грина, как известно,
+\begin{equation*}
+    G(t) = \theta(t) \frac{1}{\omega} \sin(\omega t).
+\end{equation*}
+Тогда, после возмущения, при $t \to \infty$:
+\begin{equation*}
+    \varphi(t) = A_- \sin(\omega t + \theta_-) + \int_{T_-}^{T_+} 
+    \frac{F}{\omega} \sin\left[\omega(t-s)\right] \exp\left(- \tfrac{s^2}{\tau^2}\right) \d s,
+\end{equation*}
+где $\omega T_- \ll 0$ и $\omega T_+ \gg 0$, так что экспонента там ноль. Раскрывая и группируя, находим
+\begin{equation*}
+    \varphi(t) -  A_- \sin(\omega t + \theta_-) =\sin(\omega t) \int_{T_-}^{T_+}  \frac{F}{\omega} \cos(\omega s) \exp\left(-\frac{s^2}{\tau^2}\right) \d s,
+\end{equation*}
+где интеграл по $\sin \omega s$ опустили, так как интеграл о произведения четной и нечетной функции ноль.  Далее,
+\begin{align*}
+    \int \cos(\omega s) \exp\left(- \frac{s^2}{\tau^2}\right) \d s &= \frac{1}{2} \int \exp\left(-\frac{1}{4} \tau ^2 \omega ^2-\frac{\left(s+\frac{1}{2} i \tau ^2 \omega \right)^2}{\tau ^2}\right) \d s  + \frac{1}{2}
+    \int \exp\left(
+        -\frac{1}{4} \tau ^2 \omega ^2-\frac{\left(s-\frac{1}{2} i \tau ^2 \omega \right)^2}{\tau ^2}
+    \right) \d s,
+\end{align*}
+раскрывая два гауссовых интеграла, находим
+\begin{equation*}
+    \int \cos(\omega s) \exp\left(- \frac{s^2}{\tau^2}\right) \d s = \frac{1}{\omega }\sqrt{\pi } F \tau  e^{-\frac{1}{4} \tau ^2 \omega ^2}.
+\end{equation*}
+Тогда, искомое поведение при $t \to \infty$:
+\begin{equation*}
+    \varphi(t)  = A_- \sin(\omega t + \theta_-)  + 
+    \frac{1}{\omega }\sqrt{\pi } F \tau  e^{-\frac{1}{4} \tau ^2 \omega ^2}
+    \sin(\omega t),
+\end{equation*}
+что осталось засунуть в один синус.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/w3.pdf}
+    \caption{Изменение амплитуды и фазы синса в w3, №5 }
+    \label{fig:w3}
+\end{figure}
+
+На \ref{fig:w3} явно видно, как невозмущенный синус (красная линяя) переходит в возмущенный синус (синяя линяя), в итоге и получается наше решение (фиолетовая линия). 
