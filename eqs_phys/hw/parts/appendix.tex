@@ -1,0 +1,58 @@
+
+\newpage
+\section{Приложение}
+
+
+\textbf{Преобразование Лапласа}. Выпишем несколько пар оригинал-изображение:
+\begin{align*}
+    &\mathcal L \left[
+        t^n e^{\lambda t}
+    \right] =  
+        \frac{n!}{(p-\lambda)^{n+1}},
+    &\mathcal L \left[
+        t^\alpha e^{\lambda t}
+    \right] =  
+        \frac{\Gamma(\alpha+1)}{(p-\lambda)^{n+1}},
+    &&\mathcal L \left[
+        \frac{\left(1-e^{-t}\right)}{t}
+    \right] =  
+        \ln \left(1 + \frac{1}{p}\right),
+    &&\mathcal L \left[
+        \frac{\sin t}{t}
+    \right] =  
+        \arctg p
+    \\
+    &\mathcal L \left[
+        \sin(\nu t)
+    \right] =  
+        \frac{\nu}{p^2 + \nu^2},
+    &\mathcal L \left[
+        \cos(\nu t)
+    \right] =  
+        \frac{p}{p^2 + \nu^2},
+    &&\mathcal L \left[
+        t \sin(\nu t)
+    \right] =  
+        \frac{\2 p \nu}{(p^2 + \nu^2)^2}, 
+    &&\mathcal L \left[
+        t \cos (\nu t)
+    \right] =  
+        \frac{p^2 - \nu^2}{(p^2 + \nu^2)^2}, \\
+    &\mathcal L \left[
+        \sh(\nu t)
+    \right] =  
+        \frac{\nu}{p^2 - \nu^2},
+    &\mathcal L \left[
+        \ch(\nu t)
+    \right] =  
+        \frac{p}{p^2 - \nu^2},
+    &&\mathcal L \left[
+        e^{\lambda t} \sin(\nu t)
+    \right] =  
+        \frac{\nu}{(p-\lambda)^2 + \nu^2}, 
+    &&\mathcal L \left[
+        e^{\lambda t} \cos(\nu t)
+    \right] =  
+        \frac{p-\lambda}{(p-\lambda)^2 + \nu^2}, 
+\end{align*}
+Также помним, что $\mathcal L [\delta(t)] = 1$, и $L[\delta(t-a)] = e^{-ap}$, при $a > 0$. 

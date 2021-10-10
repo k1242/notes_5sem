@@ -25,6 +25,22 @@
 
 
 
+\textbf{Функция Грина}. Всегда и всюду, уравнение вида
+\begin{equation*}
+    L x(t) = \varphi(t), 
+    \hspace{5 mm}   
+    x(t) = \int_{-\infty}^{t} G(t-s) \varphi(s) \d s,
+    \hspace{5 mm} 
+    L G = \delta(t).
+\end{equation*}
+И, если хочется добавить начальные условия, то например, для $L = \partial_t^2$ будет
+\begin{equation*}
+    x(t) = \dot{x}(0) G(t) + x(0) \dot{G}(t) + \int_{0}^{t} G(t-s) \varphi(s) \d s.
+\end{equation*}
+
+
+
+
 \textbf{Матричное уравнение}. Решение линейного уравнения для векторной величины $\vc{y}$
 \begin{equation*}
     \frac{d \vc{y}}{d t} + \hat{\Gamma} \vc{y} = \vc{\chi},

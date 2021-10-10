@@ -1,0 +1,144 @@
+\newpage
+
+\section{A3}
+
+\subsection*{№1}
+
+Запишем теорему Байеса
+\begin{equation*}
+    P(A|B) = \frac{P(B|A) P(A)}{P(B)} = \frac{P(B|A) P(A)}{\sum_A P(B|A) P(A)}.
+\end{equation*}
+По условиям, количество срабатываний счетчика Гейгера за минуту $n$ подчиняется распределению Пуассона
+\begin{equation*}
+    P_\lambda (n) = \frac{\lambda^n}{n!} e^{-\lambda}.
+\end{equation*}
+В ходе эксперимента счётчик сработал $m$ раз за минуту. Будем считать априорную вероятность $p(\lambda)$ константной, тогда
+\begin{equation*}
+    P(\lambda|m) = p(\lambda) \frac{P(m|\lambda)}{\int_{0}^{\infty} p(\alpha) P(m|\alpha) \d \alpha} = \frac{P(m|\lambda)}{\int_{0}^{\infty}  \frac{\alpha^m}{m!} e^{- \alpha} \d \alpha} = P(m|\lambda) = \frac{\lambda^m}{m!} e^{- \lambda}.
+\end{equation*}
+Наша априорная вероятность обновилась, теперь априорной вероятностью считаем $p(\lambda) = P(\lambda|m)$. Тогда после второго эксперимента, опять же по теореме Байеса
+\begin{equation*}
+    P(\lambda|m') = \frac{\lambda^m}{m!} e^{- \lambda} 
+    \frac{\frac{\lambda^{m'}}{m!}e^{-\lambda}}{\int_{0}^{\infty} \frac{\alpha^m}{m!} e^{-\alpha} \cdot \frac{\alpha^{m'}}{m'!} e^{-\alpha} \d \alpha} = 
+    \frac{(2 \lambda)^{m + m'}}{m'! m!} e^{- 2 \lambda} \cdot \frac{2 m! m'!}{(m+m')!} = 2 \frac{(2 \lambda)^{m+m'}}{(m+m')!} e^{- 2 \lambda},
+\end{equation*}
+с максимум $\lambda = \frac{1}{2} \left(m + m'\right)$, что вполне логично. 
+
+
+
+
+\subsection*{№2}
+
+Снова запишем теорему Байеса, считая априорную вероятность быть заболевшим $p = 10^{-5}$:
+\begin{equation*}
+    P(\text{болен}|+) = 
+    \frac{P(+|\text{болен}) \cdot p}{
+        P(+|\text{болен}) \cdot p
+        + P(+|\text{здоров}) \cdot (1-p)
+    } = \frac{0.99 \cdot 10^{-5}}{0.99 \cdot 10^{-5} + 0.01 \cdot (1-10^{-5})} = 10^{-3},
+\end{equation*}
+то есть получив положительный тест ($+$) на вирус, Петя действительно заболевший с вероятностью $0.1 \%$.
+
+
+\subsection*{№3}
+
+см. блокнот
+
+
+\subsection*{№4}
+
+см. блокнот
+
+
+
+
+\subsection*{№5}
+
+Покажем, что задача минимизации квадратичной функции потерь с дополнительным ограничением (лассо Тибширани):
+\begin{equation*}
+    \mathcal L = \|X w - y\|^2 \to \min_w, 
+    \hspace{5 mm} 
+    \sum_\alpha
+    |w_\alpha| < C,
+\end{equation*}
+эквивалентна $L_1$-регуляризации. 
+
+Действительно, введем 
+\begin{equation*}
+    w_\alpha^+ = \left\{\begin{aligned}
+        &0, &w_\alpha \leq 0, \\
+        &w_\alpha, &w_\alpha \geq 0, \\
+    \end{aligned}\right.
+    ,
+    \hspace{10 mm} 
+    w_\alpha^- = \left\{\begin{aligned}
+        &w_\alpha, &w_\alpha \leq 0, \\
+        &0, &w_\alpha \geq 0, \\
+    \end{aligned}\right.
+    \hspace{5 mm} 
+    w_\alpha = w_\alpha^+ + w_\alpha^-,
+    \hspace{5 mm} 
+    |w_\alpha| = w_\alpha^+ - w_\alpha^-.
+\end{equation*}
+По условим Каруша-Куна-Таккера, задача о поиске экстремума на компакте, эквивалентна
+\begin{equation*}
+    \mathcal L = \text{RSS} + \lambda_i g_i \to \min,
+    \hspace{5 mm} 
+    \lambda_i \geq 0, 
+    \hspace{5 mm} 
+    \lambda_i g_i = 0.
+\end{equation*}
+То есть задача действительно эквивалентна $L_1$-регуляризации. 
+
+
+
+
+\subsection*{№6. Bias-Variance decomposition}
+
+Упростим задачу, уйдя от распределения, как введению некоторого шума $\varepsilon_i$, тогда
+\begin{equation*}
+    \tilde{y}_i = y(x_i) + \varepsilon_i,
+\end{equation*}
+где $\varepsilon_i \in \mathcal N(0, \sigma^2)$, соответсвенно $\E \varepsilon = 0$. Соответственно есть некоторая оценка $\hat{y}$. Также учтём, что $\varepsilon_i$ и $\hat{y}_i (x_i)$  независимы. В общем, 
+\begin{align*}
+    \mathcal L = \E\left[
+        (\tilde{y} - \hat{y})^2
+    \right] &= \E\left[
+        (y(x) + \varepsilon - \hat{y})^2
+    \right] = 
+    \E\left[
+        (
+            y(x) + \varepsilon - \hat{h} + \E \hat{y} - \E \hat{y}
+        )^2
+    \right] = \\
+    &= \E\left[
+        (y - \E \hat{y})^2
+    \right] + \E \varepsilon^2 + 
+    \E \left[
+        (\E \hat{y} - \hat{y})^2
+    \right] + 2\underbrace{ \E \left[
+        (y - \E \hat{y}) \varepsilon
+    \right]}_{\E \left[(y - \E \hat{y})\right] \cdot \E \varepsilon = 0} + 
+    2 \underbrace{\E\left[
+        \varepsilon (\E \hat{y} - \hat{y})
+    \right]}_{\E \left[(\hat{y} - \E \hat{y})\right] \cdot \E \varepsilon = 0} + 
+    2 \underbrace{\E \left[
+        (\E \hat{y} - \hat{y})(y - \E \hat{y})
+    \right]}_{(\E \hat{y} - \E \hat{y}) \cdot \E \left[(y - \E \hat{y})\right]= 0}
+    \\
+    &= \underbrace{\E \varepsilon^2}_{\text{noize}} + \underbrace{\E \left[
+         (y - \E \hat{y})^2
+    \right]}_{\text{bias}} + \underbrace{\E \left[
+        (\E \hat{y} - \hat{y})^2
+    \right]}_{\text{variance}},
+\end{align*}
+что и требовалось доказать: $\mathcal L$ факторищуется на шум, смещение и разброс. 
+
+
+
+
+
+
+
+
+

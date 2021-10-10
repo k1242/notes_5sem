@@ -1,0 +1,154 @@
+\section{А3}
+
+\subsection{\texorpdfstring{$L_2$}{L2}-регуляризация}
+
+В качестве некоторой эфристики рассмотрим введение дополнительного штрафа к <<обучению>> в виде
+\begin{equation*}
+    R(w) = \tau \|w\|^2 = \tau w\T w,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \mathcal L = \|X w - y\|^2 + \tau \|w\|^2.
+\end{equation*}
+Всё также есть выпуклая функция, так что её экстремум
+\begin{equation*}
+    \partial_w \mathcal L = 2 X\T (X w - y) + 2 \tau w = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    X\T X + \tau \cdot \mathbbm{1} =  X\T y,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    w = \left(X\T X + \tau \cdot \mathbbm{1}\right)^{-1} X\T y.
+\end{equation*}
+Остается только определиться с выбором параметра $\tau$, которая происходит через кроссвалидацию. 
+
+
+
+\subsection{\texorpdfstring{$L_1$}{L1}-регуляризация}
+
+ В качестве альтернативной эвристики можно рассмотреть $L_1$-регуляризацию:
+ \begin{equation*}
+     R(w) = \mu \|w\|_1 = \mu \sum_{\alpha=1}^{F} |w_\alpha|,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \mathcal L = \|X w - y\|^2 + \mu \sum_\alpha |w_\alpha|.
+ \end{equation*}
+ Теперь функцию потерь не аналитична. Теперь минимум может располагаться на изломах, что будет соответствовать обнулению некоторых признаков. То есть $L_1$-регуляризация -- отбор признаков. 
+
+ Можно совместить $L_2 + L_1$, тогда получится ElasticNet, что в среднем работает лучше. 
+
+
+
+
+
+\subsection{Гауссова вероятностная модель}
+
+Рассмотрим некоторую модель
+\begin{equation*}
+    y = X w + \varepsilon, 
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    y_i = X_{i \alpha} w_\alpha + \varepsilon_i,
+    \hspace{5 mm} 
+    \varepsilon_i \sim \mathcal N[0, \sigma^2].
+\end{equation*}
+Для поиска оптимальных весов попробуем применить \textit{принцип максимизации правдоподобия}. Пусть зафиксирован некоторые $x_i$, тогда
+\begin{equation*}
+    P_w (y) \to \max_w
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    \log P_w (y) \to \max_w.
+\end{equation*}
+Вероятность можно переписать, как
+\begin{equation*}
+    P_w (y) = \prod_{i=1}^l \mathcal N [0, \sigma^2] [\varepsilon_i] = \prod_{i=1}^{l} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(
+        - \frac{(y_i - X_{i \alpha} w_\alpha)}{2 \sigma^2}
+    \right),
+\end{equation*}
+логарифмируя, получаем плюшку:
+\begin{equation*}
+    \log P_w (y) = \sum_{i=1}^l \left(
+        - \frac{1}{2} \log 2 \pi \sigma^2 - 
+        \frac{(y_i - X_{i \alpha} w_\alpha)}{2 \sigma^2}
+    \right) \Longrightarrow \max_w,
+\end{equation*}
+где $(y_i - X_{i \alpha} w_\alpha) \sim \mathcal L$. 
+
+То есть можно утвеждать, что МНК $\sim$ максимизацияя правдоподобия с гауссовой ошибкой:
+\begin{equation*}
+    L = - 2 \sigma^2 \log P_w (y) + \const.
+\end{equation*}
+Дифференцируя, находим
+\begin{equation*}
+    \frac{\partial \log P_w (y)}{\partial \sigma^2} = - \frac{l}{\sigma^2} + \frac{\mathrm{RSS}}{2 \sigma^4} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{\sigma^2} = \frac{\textnormal{RSS}}{l}.
+\end{equation*}
+Вообще, можно встретить
+\begin{equation*}
+    \hat{\sigma^2} = \frac{\textnormal{RSS}}{l-F},
+\end{equation*}
+где $l$ -- объем выборки, $F$ -- количество параметров, $l-F$ -- количество степеней свободы. 
+
+
+
+\subsection{Вероятностный смысл регуляризации}
+
+
+Пусть также зафиксированы $x_i$, а правдоподие -- вероятность пронаблюдать $y$ при выбранных $w$. Тогда
+\begin{equation*}
+    P_w (y) = P(y | w, x),
+    \hspace{5 mm} 
+    P(A|B) = \frac{P(A, B)}{P(B)}.
+\end{equation*}
+Можно модифицировать эту схему, введя априорное распределение $p_\gamma (w)$, где $\gamma$ -- гиперпараметр, тогда $w$ -- случайная величина. В таких моделях обычно максимизируют правдоподобие данных + модели:
+\begin{equation*}
+    \tilde{P}(y, w | x)  \to \max_w,
+    \hspace{5 mm} 
+    \tilde{P}(y, w | x) = 
+    \underbrace{p(y | x, w) }_{P_w (y)}\cdot
+    \underbrace{ p_\gamma(w)}_{\text{апр. по } w}.
+\end{equation*}
+Отсуюда найдём, что
+\begin{equation*}
+    \log \tilde{P} = \log P + \log p_\gamma (w) = 
+    \const - \frac{1}{2 \sigma^2} \mathcal L + \log p_\gamma (w).
+\end{equation*}
+Занятно, при $p_\gamma$ -- гауссово, получим $L_2$-регуляризацию:
+\begin{equation*}
+    p_\gamma (w_\alpha) = \frac{1}{\sqrt{2 \pi \gamma}} \exp\left(
+        - \frac{w_\alpha^2}{2 \gamma}
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \log p_\gamma = \const - \frac{w_\alpha^2}{\gamma},
+\end{equation*}
+и получившийся параметр регуляризации -- $\tau = \frac{\sigma^2}{\gamma}$. 
+
+Альтернативный вариант -- распределение $p_\gamma$ по Лапласу:
+\begin{equation*}
+    p_{\tilde{\gamma}} = \frac{1}{2 \tilde{\gamma}} \exp\left(
+        - \frac{|w_\alpha|}{\tilde{\gamma}}
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \mu = \frac{2 \sigma^2}{\tilde{\gamma}},
+\end{equation*}
+то есть получили $L_1$-регуляризацию. 
+
+Подчеркнем, что регуляризация эквивалентна некоторому априорному распредлению. 
+
+
+\subsection{Погрешность весов}
+
+Вспомним теорему Байеса:
+\begin{equation*}
+    P(A|B) = \frac{P(B|A) P(A)}{P(B)} = 
+    \frac{P(B|A) \cdot P(A)}{\sum_A P(B|A) \cdot P(A)}.
+\end{equation*}
+Действительно,
+\begin{equation*}
+    P(A, B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A).
+\end{equation*}
+Также можно записать, что
+\begin{equation*}
+    P(B) = \sum_A P(A, B) = \sum_A P(B|A) \cdot P(A).
+\end{equation*}
+
+Итого: априорное распределение на $A$ -- $p_\gamma (w)$;
+функция апостериорного распределения на $A$ -- $p(w | x, y)$;
+и модель $p(y|w, x)$ -- $P(B|A)$. Тогда
+\begin{equation*}
+    p(w|x, y) = \frac{p(y | w, x) \cdot p_\gamma(w)}{\int \d w\, p(y|w, x) p_\gamma(w) }.
+\end{equation*}
