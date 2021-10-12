@@ -337,3 +337,179 @@
 
 
 
+\subsection{Другой способ}
+
+Дорустим мы $\mathcal H$, соответственно есть $\langle x | y\rangle$ -- эрмитово. Допустим есть некоторый сопряженный оператор $\langle A x | y\rangle = \langle x | A^* y \rangle$. При чём требуем, что $y \colon $ обе части непрерывны по $x$:
+\begin{equation*}
+    \mathcal D (A^*) = \left\{
+        y \colon  \langle A x | y\rangle \text{ непр. по } x,
+        \ \ x \in \mathcal D A.
+    \right\}
+\end{equation*}
+Получается, что было бы здорово, если бы выполнялось $\mathcal D (A) = \mathcal D(A^*)$ и $A = A^*$, тогда $\langle A x | y\rangle = \langle x | A y\rangle$, и $A$ -- ССО.
+
+
+\begin{to_thr}[thr Гильберта-Шмидта]
+    Если $A$ -- компактный\footnote{
+        $\mathcal D (A)$ -- компакт в гильбертовом пространстве.
+    }  ССО, то у $A$ есть ОНБ из собственных векторов. 
+\end{to_thr}
+
+
+Далее верим, что базис счётный, есть условие ортогональности и $A e_n = \lambda_n e_n$. Вернемся к оператору Штурма-Лиувилля:
+\begin{equation*}
+    \hat{L} = A(x) \partial_x^2 + B(x) \partial_x + C(x),
+\end{equation*}
+и живем мы в $\mathcal H = L_2[a, b]$, со скалярным произведением, вида
+\begin{equation*}
+    \langle f|g\rangle = \int_{a}^{b} f \bar{g} \d x.
+\end{equation*}
+
+Покажем, что для задачи\footnote{
+    с периодическими гран. усовиями?
+}  Штурма-Лиувилля $\hat{L}$  симметричен, при $B(x) = A'(x)$. 
+
+Действительно, 
+\begin{equation*}
+    \langle \hat{L} f | g\rangle = \int_{a}^{b} 
+    \left(
+        \partial_x (A \partial_x) + C 
+    \right) f \bar{g} \d x,
+\end{equation*}
+где  $\langle C f | g\rangle = \langle  f  | C g\rangle$, так что дальше опустим.
+\begin{equation*}
+    \langle \hat{L} f | g\rangle \sim
+    \int_{a}^{b} \partial_x (A \partial_x f) g \d x = 
+    \ldots + A \partial_x f \bar{g} \bigg|_a^b - 
+    \int_{a}^{b}  \frac{d \bar{g}}{d x}  \d f = 
+    A \frac{d f}{d x} g \bigg|_a^b - A f \frac{d \bar{g}}{d x}  \bigg|_a^b + \langle f | \hat{L} g\rangle.
+\end{equation*}
+% Рассмотрим теперь периодические граничные условия:
+% \begin{equation*}
+%     f
+% \end{equation*}
+
+
+\textbf{Задача Штурма-Лиувилля}. Для $f$ и $g$ верно, что
+\begin{equation*}
+    \left.\begin{aligned}
+        \alpha_1 f(a) + \beta_1 f'(a) = 0 \\
+        \alpha_2 f(b) + \beta_2 f'(b) = 0
+    \end{aligned}\right.
+    \hspace{10 mm} 
+    A(b) \left[
+        f'(b) \bar{g}(b) - f(b) \bar{g}'(b)
+    \right] - A(a) \left[\ldots\right] \sim
+    \det \begin{pmatrix}
+        \bar{g} & f  \\
+        \bar{g}' & f'  \\
+    \end{pmatrix} = 0,
+\end{equation*}
+в силу граничных условий, а значит концов не будет:
+\begin{equation*}
+    \langle \hat{L} f | g\rangle = \langle f | \hat{L} g\rangle,
+\end{equation*}
+ура!)
+
+Аналогично для периодических граничных условий:
+\begin{equation*}
+    \langle \hat{L} f | g\rangle = A f' \bar{g} \bigg|_a^b - A f \bar{g}' \bigg|_a^b + \langle f | \hat{L} g\rangle,
+\end{equation*}
+но из периодических граничных условий сразу получаем, что $\hat{L}$ симметричный, а значт, скорее всего, $\hat{L}$ -- ССО. 
+
+А теперь внимание:
+\begin{equation*}
+    \hat{L} f = \varphi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f = \underbrace{\int_{a}^{b}  dt\, G(x, y)}_{\text{комп } \hat{L}^{-1}} \varphi(y) = \hat{L}^{-1} \varphi,
+\end{equation*}
+где 
+\begin{equation*}
+    \hat{L} = A \partial_x^2 + A' \partial_x + C,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    L^{-1} \text{ симметричный}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(x, y) = G(y, x).
+\end{equation*}
+
+Итак, для операторов Штурма-Лиувилля ищем собственные функции:
+\begin{equation*}
+    \left\{\begin{aligned}
+        &\hat{L} e_n (x) = \lambda_n e_n (x) \\
+        &\text{гран. усл.}
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(x) = \sum_n f_n e_n(x),
+\end{equation*}
+домножая на $e_m$, находим, что
+\begin{equation*}
+    \langle f | e_m\rangle = f_m \langle e_m | e_n\rangle,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f_m = \frac{\langle f | e_m\rangle}{\langle e_m | e_n\rangle},
+    \hspace{10 mm} 
+    \langle f | e_m\rangle = \int_{a}^{b}  f(x) \bar{e}_m (x) \d x.
+\end{equation*}
+
+Метод Фурье решения краевых задач:
+\begin{equation*}
+    L(\partial_t) u(x, t) = \hat{A}_x u(x, t) + f(x, t),
+\end{equation*}
+плюс граничные условия.  Раскладывая,
+\begin{equation*}
+    \hat{A}_x e_n = \lambda_n e_n,
+    \hspace{10 mm} 
+    u = \sum_n u_n(t) e_n (x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(x, t) = \sum f_n (t) e_n (x),
+\end{equation*}
+а значит
+\begin{equation*}
+    \sum_n \left(
+        L(\partial_t) u_n (t) - \lambda_n u_n (t) - f_n (t)
+    \right) e_n (x) = 0,
+\end{equation*}
+откуда можем находить $u_n (t)$:
+\begin{equation*}
+    u(x, t) = \sum_n u_n (t) e_n (x). 
+\end{equation*}
+
+
+\textbf{Пример}. Рассмотрим снова задачу, вида
+\begin{equation*}
+    (\partial_x^2 + \kappa^2) G(x, y) = \delta(x-y)
+\end{equation*}
+и решим методом Фурье. Получим систему, вида
+\begin{equation*}
+    \left\{\begin{aligned}
+        \partial_x^2 e_n = \lambda_n e_n \\
+        e_n (-\pi) = e_n (\pi) \\ 
+        e_n'(-\pi) = e_n'(\pi) \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    e = \alpha e^{i q x} + \beta e^{- i q x}, 
+    \hspace{5 mm} 
+    \alpha e^{i q \pi} + \beta e^{- i q \pi} = \alpha e^{- i q \pi} + \beta e^{i q \pi}.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \alpha \sin \pi q = \beta \sin \pi q,
+\end{equation*}
+а значит $q = n$, $n \in \mathbb{Z}$, вот и дискретность:
+\begin{equation*}
+    \lambda^2 = - n^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    e_n = e^{i n x}, \hspace{5 mm} 
+    e_{-n} = e^{- i nx}.
+\end{equation*} 
+
+...
+
+
+\subsection{Суммирование рядов в ТФКП}
+
+
+
+
+
+
+\subsection{Асимптотика решений}
+
+
