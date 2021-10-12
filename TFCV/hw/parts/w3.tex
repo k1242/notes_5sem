@@ -1,0 +1,304 @@
+\Tsec{T15}
+
+Найдём радиус сходимости ряда, где
+\begin{equation*}
+    \frac{1}{R} = \uplim_{n \to \infty} |a_n|^{1/n},
+    \hspace{10 mm} 
+    \text{if } \exists \ \Rightarrow \ 
+    R = \lim \frac{|a_{n+1}|}{|a_n|}.
+\end{equation*}
+\textbf{а)}. Для начала,
+\begin{equation*}
+    f = \sum_{n=1}^{\infty} \left(\frac{1-in}{1+in}\right)^{n^2} z^n,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sqrt[n]{a_n} = \left(\frac{1-in}{1+in}\right)^n = 
+    \left(\frac{1 - n^2 - 2 in}{1-n^2}\right)^n = \left(1 - \frac{2 i n}{1-n^2}\right)^n,
+\end{equation*}
+где можно увидеть замечательный предел, тогда
+\begin{equation*}
+    \bigg|
+        \lim_{n \to \infty} \left(1 + \frac{2i}{n}\right)^n
+    \bigg| = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R = 1.
+\end{equation*}
+\textbf{б)}. Аналогично,
+\begin{equation*}
+    f = \sum_{n=1}^{\infty} (1 + i^n)^n z^n,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{1}{R} = 
+    \uplim_{n \to \infty} \sqrt[n]{|1+i^n|^n} = 
+    \uplim_{n \to \infty} (1 + i^n) = 
+    \uplim_{n \to \infty} (1 + i^{4n}) = 2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R = \frac{1}{2}.
+\end{equation*}
+\textbf{в)}. Здесь немного видоизменяется выражение для $R$:
+\begin{equation*}
+    \frac{1}{R} = \uplim_{n \to \infty} \sqrt[n!]{2^n} = 
+    \lim_{n \to \infty} 2^{n/n!} = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R = 1.
+\end{equation*}
+\textbf{г)}. Здесь перейдем к записи через экспоненту
+\begin{equation*}
+    f = \sum_{n=1}^{\infty} \left((1+i)^n + (1-i)^n\right) z^n,
+    \hspace{10 mm}  
+    (1+i)^n + (1-i)^n = 2^{n/2} e^{i n \pi/4} + 2^{n/2} e^{- i n \pi /4},
+\end{equation*}
+тогда выбирая $n = 4 k$, получим
+\begin{equation*}
+    \frac{1}{R} = \lim_{n \to \infty} (\sqrt{2})^{\frac{n+2}{n}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R = \frac{1}{\sqrt{2}}.
+\end{equation*}
+
+
+
+\subsection*{\S3, №10}
+
+\textbf{3)}. Покажем, что
+\begin{equation*}
+    \ch^2 z - \sh^2 z = 1.
+\end{equation*}
+Разложим в ряд:
+\begin{equation*}
+    (\ch z - \sh z) (\ch z + \sh z) = 
+    \left(
+        \sum_{n=1}^{\infty} \frac{(-z)^n}{n!}
+    \right) \left(
+        \sum_{n=1}^{\infty} \frac{z^n}{n!}
+    \right) = e^{-z} \cdot e^z = 1.
+\end{equation*}
+
+\textbf{4)}.  Покажем, что
+\begin{equation*}
+    \ch (a + b) = \ch a \ch b + \sh a \sh b.
+\end{equation*}
+Действительно,
+\begin{equation*}
+    \ch a \ch b + \sh a \sh b = \frac{1}{4} \left(e^a + e^{-a}\right) \left(e^b + e^{-b}\right) + \frac{1}{4} (e^a - e^{-a})(e^b - e^{-b}) = \frac{1}{2} (e^{a+b} + e^{-a - b}) = \ch(a + b).
+\end{equation*}
+
+
+\subsection*{\S3, №12 (1)}
+
+Найдём Re и Im от $\sin z$. Считая $z = x + i y$:
+\begin{equation*}
+    \sin z = \frac{1}{2i}\left(e^{ix} e^{-y} - e^{-ix} e^y\right) = 
+    \sin (x) \ch(y) + i \cos(x) \sh (y).
+\end{equation*}
+
+
+\subsection*{\S3, №13}
+
+\textbf{1)}. Покажем, что
+\begin{equation*}
+    |\sin z|^2 = \sin^2 (x) \ch^2 (y) + \cos^2 (x) \sh^2 (y) = 
+    (1 - \cos^2 x) \ch^2 y + \cos^2 x (ch^2 y -1) = \ch^2 y - \cos^2 x.
+\end{equation*}
+
+
+\textbf{3)}. Аналогично:
+\begin{align*}
+    |\sh z|^2 &= |-i \sin i z|^2 = |\sin(-y + ix)|^2 =  \sin^2 (-y) \ch^2 x + \cos^2 y \sh^2 x = \\
+    &= (1- \cos^2 y) \ch^2 x + \cos^2 y (\ch^2 x - 1) = \ch^2 x - \cos^2 y.
+\end{align*}
+
+
+
+
+\subsection*{\S3, №17}
+
+
+\textbf{3)}. Решим уравнение, вид
+\begin{equation*}
+    \cos z = \frac{3i}{4}
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    \left\{\begin{aligned}
+        \cos x \ch y &= 0 \\
+        -\sin x \sh y &= 3/4 
+    \end{aligned}\right.
+    \hspace{5 mm} \Leftrightarrow^* \hspace{5 mm} 
+    \left\{\begin{aligned}
+        \cos x &= 0 \\
+        \sh y &= \pm 3/4 
+    \end{aligned}\right.
+    \hspace{5 mm} \Leftrightarrow^* \hspace{5 mm} 
+    \left\{\begin{aligned}
+        x &= \tfrac{\pi}{2} + \pi k, \\
+        y &= \pm \ln 2.
+    \end{aligned}\right.
+\end{equation*}
+где в $^*$ подразумевалось соответствие знаков. Тогда находим
+\begin{equation*}
+    z = \pm \left(\tfrac{\pi}{2} + i \ln 2\right) + 2 \pi k.
+\end{equation*}
+
+\textbf{4)}. Аналогично,
+\begin{equation*}
+    \cos z = \frac{3}{4} + \frac{i}{4}
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    \left\{\begin{aligned}
+        \cos x \ch y &=  3/4 \\
+        - \sin x \sh y &= 1/4        
+    \end{aligned}\right.
+\end{equation*}
+Из тригонометрии можем записать, что
+\begin{equation*}
+    \frac{9}{16} \frac{1}{\ch^2 y} + \frac{1}{16} \frac{1}{\sh^2 y} =1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    16 \left(\sh^2 y + \frac{1}{2}\right) \left(\sh^2 - \frac{1}{8}\right) = 0,
+\end{equation*}
+а тогда
+\begin{equation*}
+    \sh y = \pm \sqrt{\frac{1}{8}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    y = \pm \ln \left(\sqrt{\frac{1}{8}} +\sqrt{1 + \frac{1}{8}}\right) = \pm \frac{1}{2} \ln 2.
+\end{equation*}
+Отсуюда находим, что
+\begin{equation*}
+    \sin x = \mp \frac{\sqrt{2}}{2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x = \mp \frac{\pi}{2} - \frac{\pi}{4} + 2 \pi k.
+\end{equation*}
+Собирая всё вместе, находим
+\begin{equation*}
+    z = \pm \tfrac{1}{2}\left(\ln 2 - \pi\right) + \frac{\pi}{4} + 2 \pi k.
+\end{equation*}
+
+
+\textbf{4)}. Наконец, решим
+\begin{equation*}
+    \tg z = \frac{5i}{3}.
+\end{equation*}
+Так как синус и косинус расписывать уже умеем, рассмотрим
+\begin{equation*}
+    \frac{a + i b}{c + i d} = 
+    \frac{a c + b d}{c^2 + d^2} + i \frac{bc - ad}{c^2 + d^2},
+\end{equation*}
+где $a = \sin x \ch y$, $b = \cos x \sh y$, $c = \cos x \ch y$, $d = - \sin x \sh y$, соответственно, приходим к системе
+\begin{equation*}
+    \left\{\begin{aligned}
+        \sin x  \cos x &= 0 \\
+        \th y = 3/5
+    \end{aligned}\right.,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    \left\{\begin{aligned}
+        x &= \tfrac{\pi}{2} + \pi k, \\
+        y &= \ln 2, \\
+    \end{aligned}\right.
+\end{equation*}
+где мы учли, что $\th x \in [-1, 1] \ \forall x \in \mathbb{R}$. 
+
+
+\Tsec{T16}
+
+Найдём несколько значений:
+\begin{gather*}
+    \sin i = i \sin (1), 
+    \hspace{10 mm} 
+    \cos i = \ch 1,
+    \\
+    \tg(1 + i) =  
+    \frac{i (e^{-1 + i}) + e^{1-i}}{e^{-1 + i} e^{1-i}}
+    = \frac{2 e^2 \sin 2 + i(e^4-1)}{1 + e^4 + 2 e^2 \cos(2)}.
+\end{gather*}
+
+
+\Tsec{T17}
+
+\textbf{a)}. Докажем, что
+\begin{align*}
+    \sh z = i \frac{2^{- i i z} - e^{i i z}}{2 i} = - i \sin(i z), \\
+    \ch z = \frac{1}{2}\left(e^{- iiz} + e^{iiz}\right) = \cos(iz).
+\end{align*}
+\textbf{б)}. Раскроем левую и правую части:
+\begin{align*}
+    2 \lhs &= e^{z_1} - e^{- z_1} + e^{z_2} - e^{-z_2}, \\
+    2 \rhs &= \left(
+        \exp\left(\frac{z_1 + z_2}{2}\right) - \exp\left(- \frac{z_1 + z_2}{2}\right) \right)
+        \cdot \left(
+            \exp\left(\frac{z_1 - z_2}{2}\right)  + \exp\left(
+                \frac{z_1 - z_2}{2}
+            \right)
+    \right) = e^{z_1} - e^{- z_1} + e^{z_2} - e^{-z_2},
+\end{align*}
+что и требовалось доказать: $\lhs = \rhs$.
+
+\textbf{в)}. Очень внимательно посмотрев на бином Ньютона, можно заметить, что равенство степений будет достигаться в $C^n_{2n}$, остальные же слагаемые продублируются,тогда
+\begin{equation*}
+    \cos^{2n} x = 
+    \frac{1}{2^{2n}}\left(e^{ix} + e^{-ix}\right)^{2n} = 
+    \frac{1}{2^{2n}} C_{2n}^n + \frac{2}{2^{2n}} \sum_{k=1}^{n} C_{2n}^{n+k} \cos (2 k z).
+\end{equation*}
+
+
+
+\Tsec{T18}
+
+Ну, посчитаем, что
+\begin{equation*}
+    2^i = e^{i (\ln 2 + 2 \pi i n)} =  e^{- 2\pi n}\left[\cos (\ln 2) + i \sin (\ln 2)\right]
+    , \hspace{5 mm} 
+    n \in \mathbb{Z}.
+\end{equation*}
+Аналогично
+\begin{equation*}
+    i^i = \exp\left(i (\tfrac{\pi}{2} + 2 \pi k)\right)^i = e^{- \pi /2} e^{- 2 \pi n},
+    \hspace{5 mm} 
+    n \in \mathbb{Z}.
+\end{equation*}
+Аналогично
+\begin{equation*}
+    (-1)^{2 i} = \exp\left(i (\pi  + 2 \pi k)\right)^i = e^{-2 p} 2^{- 4 \pi n},
+    \hspace{5 mm} 
+    n \in \mathbb{Z}.
+\end{equation*}
+
+
+\Tsec{T19}
+
+Пусть $\{a_n\}$ -- последовательность ненулевых комплексных чисел такая, что
+\begin{equation*}
+    \lim_{n \to \infty}\frac{|a_{n+1}|}{|a_n|} = L,
+    \hspace{0.5cm} \overset{?}{\Rightarrow}  \hspace{0.5cm} \lim_{n \to \infty} \sqrt[n]{|a_n|} = L.
+\end{equation*}
+
+\begin{proof}[$\triangle$]
+
+По определению, 
+\begin{equation*}
+    \forall  \varepsilon > 0,
+    \ \exists  N \colon  \forall  n \geq N \ 
+    \bigg| \frac{|a_{n+1}|}{|a_n|} - L \bigg| < \varepsilon.
+\end{equation*}
+Занятный факт:
+\begin{equation*}
+    |a_n| = \underbrace{\frac{|a_n|}{|a_{n-1}|} \cdot \frac{|a_{n-1}|}{|a_{n-2}|} \cdot \ldots
+    \cdot 
+    \frac{|a_{N+1}|}{|a_N|}}_{n-N \ \text{штук}} \cdot |a_N| < (L + \varepsilon)^{n-N} |a_N|.
+\end{equation*}
+А теперь получим два ограничения: при фиксированном $N$  и $n \to \infty$:
+\begin{equation*}
+    \lim_{n \to \infty} \sqrt[n]{a_n} < L + \varepsilon,
+\end{equation*}
+и при фиксированном $n$ и $N \to \infty$:
+\begin{equation*}
+    \left(
+        (L+\varepsilon)^{\frac{n + N}{n}} (a_n)^{\frac{1}{n}}
+    \right)^{\frac{n}{N}} < 
+    \left(
+        a_N^{\frac{1}{n}}
+    \right)^{\frac{1}{N}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (L + \varepsilon)^{1- \frac{n}{N}} \sqrt[N]{a_n} < \sqrt[N]{a_N},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lim_{N \to \infty} \sqrt[N]{a_N} \geq L -\varepsilon.
+\end{equation*}
+Таким образом, ограничив сверху и снизу, действительно находим, что
+\begin{equation*}
+    \lim_{n \to \infty} \sqrt[n]{a_n} = L.
+\end{equation*}
+
+\end{proof}

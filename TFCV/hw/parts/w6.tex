@@ -1,0 +1,302 @@
+\subsection*{\S11, №3(4)}
+
+Разложим в ряд Лорана по степеням $z$ в кольце $1 < |z| < 2$, функцию
+\begin{equation*}
+    f(z) = \frac{1}{(z-1)62 (z+2)} = 
+    \frac{Az + B}{(z-1)^2} + \frac{C}{z+2},
+    \hspace{5 mm} 
+    \left\{\begin{aligned}
+        2 B + C &= 1 \\
+        C + A &= 0 \\
+        2 A + B &= 2C \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(z) = - \frac{z - 4}{9 (z-1)^2} + \frac{1}{9 (z+2)},
+\end{equation*}
+где, выделяя удобные слагаемые, находим
+\begin{equation*}
+    f(z) = \frac{1}{3(1-z)^2} + \frac{1}{9} \left(
+        \frac{1}{2 (1 + z/2)} + \frac{1}{1-z}
+    \right),
+    \hspace{5 mm} 
+    \frac{1}{z + 2} = \sum_{n=0}^{\infty} \frac{(-1)^n}{2^{n+1}} z^n,
+    \hspace{5 mm} 
+    \frac{1}{(1-z)^2} = \sum_{n=1}^{\infty} (n-1) \frac{1}{z^n},
+\end{equation*}
+таким образом искомое разложение:
+\begin{equation*}
+    f(z) = \frac{1}{9} \sum_{n=0}^{\infty} \frac{(-1)^n}{2^{n+1}} z^n + 
+    \sum_{n=1}^{\infty} \frac{-3 n - 4}{9} \frac{1}{z^n}. 
+\end{equation*}
+
+
+
+
+\subsection*{\S11, №4(6)}
+
+Разложим в ряд Лорана по степеням $z-a$ в кольце $D$ функцию, вида
+\begin{equation*}
+    f(z) = \frac{2 z}{z^2 - 2 i},
+    \hspace{5 mm} 
+    a = 1, 
+    \hspace{5 mm} 
+    -1 \in D.
+\end{equation*}
+Для начала подставим $t = z - 1$:
+\begin{equation*}
+    f(t) = \frac{1}{2 + i} \frac{1}{1 + \frac{t}{2+i}} + \frac{i}{1 - \frac{t}{i}},
+    \hspace{5 mm} 
+    \frac{i}{1 + t/i} = \sum_{n=1}^{\infty}  \frac{i^{n+1}}{(z-1)^n},
+    \hspace{5 mm} 
+    \frac{1}{1 + \frac{t}{2+i}} = \sum_{n=0}^{\infty}  \frac{(-1)^n}{(2+i)^n} t^n.
+\end{equation*}
+Собирая все вместе, находим
+\begin{equation*}
+    f(z) = \sum_{n=0}^{\infty}  \frac{(-1)^n}{(2 + i)^{n+1}} (z-1)^n + 
+    \sum_{n=1}^{\infty} i^{n-1} (z-1)^n.
+\end{equation*}
+
+
+
+
+
+\subsection*{\S11, №7(3)}
+
+
+
+
+Разложим в ряд Лорана по степеням $z-a$ в кольце $D$ функцию, вида
+\begin{equation*}
+    f(z) = \frac{5 - 4z}{(z+1) (z^2 -1)^2}, 
+    \hspace{5 mm} 
+    a= 1, 
+    \hspace{5 mm} 
+    z_0 = 0.
+\end{equation*}
+Сделаем подстановку $t = z-1$, тогда
+\begin{equation*}
+    f(t) = \frac{1-4 t}{t^2 (t+2)^3} = \frac{-\frac{11}{16} t + \frac{1}{8}}{t^2} + 
+    \frac{\frac{11}{16} t^2 + 4 t + \frac{15}{2}}{(t+2)^3},
+\end{equation*}
+где разложение было получено, как решение
+\begin{equation*}
+    A + C = 0, 
+    \hspace{5 mm} 
+    6 A + D + B = 0,
+    \hspace{5 mm} 
+    8 A + 12 B = -4,
+    \hspace{5 mm} 
+    8 B = 1,
+\end{equation*}
+решая которую, нашли, что
+\begin{equation*}
+    A = - \frac{11}{16}, \hspace{5 mm} 
+    B = \frac{1}{8}, \hspace{5 mm} 
+    C = \frac{11}{16},     \hspace{5 mm} 
+    D = 4, \hspace{5 mm} 
+    E = \frac{15}{2}.
+\end{equation*}
+Раскрывая, до удобного вида, находим
+\begin{equation*}
+    f(t) = - \frac{11}{16 t} + \frac{1}{8 t^2} + \frac{1}{(t+2)^3} \left(
+        \frac{11}{16} t^2 + 4 4t + \frac{15}{2}
+    \right).
+    % +  \frac{1}{8} \frac{1}{(1 + t/2)^3} \left(\frac{11}{16} t^2 + 4 t + \frac{15}{2}\right).
+\end{equation*}
+Вспоним, что
+\begin{equation*}
+    \frac{1}{1 + t/2} = \sum_{n=0}^{\infty} (-1)^n \left(\frac{t}{2}\right)^n,
+    \hspace{5 mm} 
+    \bigg| \frac{t}{2} \bigg| < 1,
+    \hspace{10 mm} 
+    \frac{1}{2} \frac{1}{(1 + t/2)^3} = \sum_{n=2}^{\infty} \frac{(-1)^n}{2^n} n (n-1) t^{n-2}.
+\end{equation*}
+Собирая всё вместе находим, что
+\begin{equation*}
+    f(t) = \frac{1}{8 t^2} - \frac{11}{16 t} + \frac{1}{64} \sum_{n=0}^{\infty} 
+    (-1)^n \frac{t^n}{2^n} (3+n) (20 + 9n),
+    \hspace{5 mm} 
+    0 < |t| < 2,
+\end{equation*}
+или, возвращаясь к $z$:
+\begin{equation*}
+    f(z) = \frac{1}{8 (z-1)^2} - \frac{11}{16 (z-1)} + \frac{1}{64} \sum_{n=0}^{\infty} 
+    (-1)^n \frac{(z-1)^n}{2^n} (3+n) (20 + 9n),
+    \hspace{5 mm} 
+    0 < |z-1| < 2.
+\end{equation*}
+
+
+
+\subsection*{\S11, №10(6)}
+
+Разложим функцию $f(z)$ в ряд Лорана по степеням $z-2i$, считая, что $0$ принадлежит кольцу, где $f(z)$ вида
+\begin{equation*}
+    f(z) = \frac{z-1- 5i}{z^2 -2z + 2} + \frac{3z - 1 - 3i}{z^2 - z(1 + 2i) - 1 + 1}.
+\end{equation*}
+Для начла перейдём к переменной $t = z - 2i$:
+\begin{equation*}
+    f(t) = \frac{t-1-3i}{(t-1+i)(t-1+3i)} + \frac{3t - 1 + 3i}{(t+i)(t-1+i)} = 
+    \underbrace{\frac{1}{i + t}}_{\text{по Лорану}} + \underbrace{\frac{3}{t + (1 + 3i)}}_{\text{по Тейлору}}.
+\end{equation*}
+В частности:
+\begin{equation*}
+    \frac{1}{t(1 + i/t)} = \sum_{n=1}^{\infty}  (-1)^{n-1} i^{n-1} t^n,
+    \hspace{10 mm} 
+    \frac{3}{- \left(\frac{t}{1-3i}\right) + 1} = 3 \sum_{n=0}^{\infty} \frac{1}{(1-3i)^{n+1}} t^n,
+\end{equation*}
+собирая всё вместе, находим
+\begin{equation*}
+    f(t) = \sum_{n=1}^{\infty} (-i)^{n-1} \frac{1}{t^n} -3 \sum_{n=0}^{\infty} \frac{1}{(1-3i)^{n+1}} t^n,
+    \hspace{5 mm} 
+    1 < |t| < \sqrt{10},
+\end{equation*}
+где ограничения продиктованы сходимостью указанных разложений по Лорану и по Тейлору. Возвращаясь к $z$:
+\begin{equation*}
+    f(t) = \sum_{n=1}^{\infty} (-i)^{n-1} \frac{1}{(z-2i)^n} -3 \sum_{n=0}^{\infty} \frac{1}{(1-3i)^{n+1}} (z-2i)^n,
+    \hspace{5 mm} 
+    1 < |z - 2i| < \sqrt{10}.
+\end{equation*}
+
+
+\subsection*{\S12, №2(7)}
+
+Покажем, что $z = \pi i $ -- полюс функции
+\begin{equation*}
+    f(z) = \frac{z}{(e^z + 1)^2}.
+\end{equation*}
+Действительно,
+\begin{equation*}
+    \lim_{z \to \pi i} f(z) (z - \pi i)^2 = \pi i \lim_{\varepsilon \to 0}
+    \frac{\varepsilon^2}{(\cos (\pi + \varepsilon) + 1  + i \sin(\pi + \varepsilon))^2} = 
+    \pi i \lim_{\varepsilon \to 0} \frac{\varepsilon^2}{(- i \varepsilon)^2} = \pi i,
+\end{equation*}
+а значит $z = \pi i $ -- полюс второго порядка.
+
+
+
+\subsection*{\S12, №8}
+
+
+\textbf{3)}. Найдём все изолированные особые точки однозначного характера для $f(z)$, вида
+\begin{equation*}
+    f(z) = z^2 \sin \frac{z}{z+1}.
+\end{equation*}
+Для начала заметим, что $z = -1$: $\not \exists \lim$, ($\lim_{z \to -1+0} \neq \lim_{z \to -1-0}$), а значит $z = -1$ -- существенная особая точка. 
+
+Также можем найти, что
+\begin{equation*}
+    \lim_{z \to \infty} \frac{f(z)}{z^2} = \sin 1,
+\end{equation*}
+а значит $z = \infty$ -- полюс II порядка. 
+
+
+\textbf{7)}. Теперь рассмотрим функцию, вида
+\begin{equation*}
+    f(z) = e^{\ctg \pi/z}. 
+\end{equation*}
+Во-первых, $z = 1/ k$, $k \in \mathbb{Z}\ \{0\}$ -- СОТ, т.к.
+\begin{equation*}
+    \underbrace{\lim_{\varepsilon \to 0} f\left(\frac{\pi}{\pi + \varepsilon}\right)}_{- \infty} \neq \underbrace{\lim_{\varepsilon \to 0} f\left(\frac{\pi}{\pi-\varepsilon}\right)}_{+ \infty}.
+\end{equation*}
+Точка $z = 0$ не является изолированной, а $z = \infty$ -- СОТ, т.к. $\ctg t$ испытывает разрыв в $t = 0$. 
+
+
+
+
+\subsection*{\S12, №17(9)}
+
+Рассмотрим функцию, вида
+\begin{equation*}
+    f(z) = \frac{e^{1/(z-2i)}}{1 - \cos i \pi z}.
+\end{equation*}
+Для начала заметим, что $z = 2 i$ -- СОТ ($1/x$ разрывна в 0). 
+
+Рассмотрим точки такие, что $\cos i \pi z = 1$:
+\begin{equation*}
+    \lim_{z \to 2 i k} \frac{(z - 2 i k)^2}{1 - \cos (i \pi z)} = 
+    \lim_{\varepsilon \to 0} \frac{\varepsilon^2}{1 - \cos \varepsilon} = 2 = \const \neq 0,
+\end{equation*}
+а значит $z = 2 i k$, где $k \in \mathbb{Z}$ -- полюса II порядка. Точка $z = \infty$ не является изолированной. 
+
+
+
+
+\subsection*{\S12, №20(5)}
+
+Повторим указанную выше процедуру для функции, вида
+\begin{equation*}
+    f(z) = \frac{\sin \pi z - \ch \pi/z}{(i - e^{\pi/z})^2}.
+\end{equation*}
+Стоит обратить внимание на точки $e^{\pi/z} = i \ \Leftrightarrow \ \frac{\pi}{z} = \frac{\pi}{2} + 2 \pi k$, $z = 0$ и $z = \infty$, где $k \in \mathbb{Z}$. 
+
+Для начала заметим, что
+\begin{equation*}
+    z_k = - i\left(\frac{1}{2}  + 2k\right)^{-1},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lim_{\varepsilon \to 0} f(z_k + \varepsilon) \varepsilon^2 = 
+    \left(\sin \pi z_k - \ch \pi/z_k \right) \cdot \lim_{\varepsilon \to 0} \frac{\varepsilon^2}{- \frac{1}{16} (1 + 4k)^4 \pi^2 \varepsilon^2 + o(\varepsilon^2)} = \const \neq 0,
+\end{equation*}
+а значит $z_k$ -- полюса II порядка. 
+Сразу получаем, что $z = 0$ не является изолированным.  
+
+Осталось показать, что $z = \infty$ -- СОТ. Действительно, при $z \to \infty$ из $f(z)$ можно выделить $\sin z$, который является целой трансцендентной функцией, а значит $z = \infty$ -- СОТ. 
+
+
+
+
+\Tsec{T29}
+
+Пусть функция $f$ голоморфна в проколотом единичном круге $0 < |z| < 1$, и при некоторых $A > 0$и $\alpha \in [0, 1]$ выполняется неравенство
+\begin{equation*}
+    |f(z) | \leq \frac{A}{|z|^\alpha}.
+\end{equation*}
+Логично выделить случаи $\alpha = 1$ и $\alpha \in [0, 1)$. 
+
+При $\alpha = 1$, $a$ -- устранимая особая точка или полюс первого порядка, т.к. 
+\begin{equation*}
+    \lim_{z \to 0} f(z) \cdot z^{1} \leq A, 
+\end{equation*}
+а значит в разложении $c_{k\leq -2} =0$, и $c_{-1}$ может быть не равно 0.
+
+
+При $\alpha \in [0, 1)$ верно, что $c_{k \leq -1} = 0$, а значит $z = 0$  не более, чем УОТ.
+
+
+
+
+\Tsec{T30}
+
+Найдём главную часть ряда Лорана, функции
+\begin{equation*}
+    f(z) = \frac{1}{\sin z}.
+\end{equation*}
+Представим функцию, виде
+\begin{equation*}
+    f(z) = \frac{1}{z} \frac{z}{\sin z},
+\end{equation*}
+и воспользуемся методом неопределенных коэффициентов для нахождения разложения ${z}/{\sin z}$:
+\begin{equation*}
+    \underbrace{\left(\sum_{k=0}^{\infty} a_k z^k \right)}_{\sin z} \cdot
+    \underbrace{\left(\sum_{k=0}^{\infty} b_k z^k\right)}_{z/\sin z} = 
+    \underbrace{\sum_{k=0}^{\infty} c_k z^k}_{\equiv z}.
+\end{equation*}
+Само собой, выбираем кольцо, не содержащее точек, вида $z = \pi k$, $k \in \mathbb{Z}$. 
+
+Вспоним, что
+\begin{equation*}
+    \sin z = \sum_{k=0}^{\infty}  \frac{(-i)^k}{(2k+1)!} z^{2k + 1},
+\end{equation*}
+тогда получаем набор уравнений на $b_k$, из которых нас интересует только $b_0$ (ищем главную часть $f(z)$):
+\begin{equation*}
+    \left\{\begin{aligned}
+        a_0 b_0 &= c_0
+        a_1 b_0 + a_0 b_1 &= c_1
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_0 = 1,
+\end{equation*}
+т.к. $a_0 = 0$, $a_1 = 1$ и $c_0 = 0$, $c_1 = 1$. А значит искомая главная часть $f(z)$:
+\begin{equation*}
+    f(z) = \boxed{\frac{1}{z}} + \text{TheilorSeries}[f](z).
+\end{equation*}

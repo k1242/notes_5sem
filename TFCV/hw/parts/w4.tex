@@ -1,0 +1,168 @@
+\Tsec{T20}
+
+Вычислим интеграл, вида
+\begin{equation*}
+    \int_{\mathbb{T}} |z-1| \, |dz| = 
+    \int_{0}^{2 \pi} |\cos \varphi - i \sin \varphi - 1| \d \varphi
+    =
+    \int_{0}^{2\pi} \sqrt{(\cos \varphi - 1)^2 + \sin^2 \varphi} \d \varphi = 
+    4 \int_{0}^{2\pi} |\cos \tfrac{\varphi}{2} | \d \tfrac{\varphi}{2} = 
+    4 \int_{0}^{\pi}  |\cos \varphi| \d \varphi = 8
+    ,
+\end{equation*}
+где $\mathbb{T}$ -- единичная окружность.
+
+Теперь вычислим интеграл, вида
+\begin{align*}
+    \int_{\mathbb{T}} |z-1| \, dz &= 
+    i \int_{0}^{2\pi} |e^{i \varphi} - 1| e^{i \varphi} \d \varphi = 
+    i \int_{0}^{2 \pi}  \sqrt{(\cos \varphi -1)^2 + \sin^2 \varphi} \ (\cos \varphi + i \sin \varphi) \d \varphi = 
+    \\ &= 
+   \underbrace{ 2 i \int_{0}^{2\pi} |\sin \tfrac{\varphi}{2}| \cos \varphi \d \varphi}_{-4 i \int_0^\pi |\cos \varphi| \cos 2 \varphi \d \varphi} - \underbrace{2 i \int_{0}^{2\pi} |\sin \tfrac{\varphi}{2}| \sin \varphi \d \varphi}_{\equiv 0} = - 16 i \int_{0}^{\pi/2}  \cos^3 \varphi \d \varphi + 8 i \int_{0}^{\pi/2} |\cos \varphi| \d \varphi 
+   % = - 16 i \frac{4}{6} + 8 i 
+   = - \frac{8}{3}i,
+\end{align*}
+где мы воспользовались выражением
+\begin{equation*}
+    \int_{0}^{\pi/2}  \sin^a(x) \cos^b (x) \d x = 
+    \frac{\Gamma\left(\frac{a+1}{2}\right) \cdot \Gamma\left(\frac{b+1}{2}\right)}{2 \Gamma\left(1 + \frac{a + b}{2}\right)}.
+\end{equation*}
+
+
+
+\Tsec{T21}
+
+Пусть $P(z)$ -- полином, а $\gamma$ -- положительно ориентированная окружность с центром в точке $a$ и радиуса $R$. Докажем, что
+\begin{equation*}
+    \int_\gamma P(z) \d \bar{z} = - 2 \pi i R^2 P'(a).
+\end{equation*}
+
+\begin{proof}[$\triangle$]
+    
+Запишем $z = a + R e^{i t}$, тогда $\d \bar{z} = - i t R e^{- i t} \d t$, тогда
+\begin{equation*}
+    - i \int_{0}^{2\pi} P(a + R e^{i t}) t R e^{- i t} \d t = 
+    - \int_\gamma P(z) e^{- 2 i t} \d z = 
+    - R^2 \int_\gamma \frac{ P(z)}{(z-a)^2} \d z = - 2 \pi i P' (a) R^2.
+\end{equation*}
+Последнее равенство тут можно получить или из
+\begin{equation*}
+     \res_a P(z) = 
+    \frac{1}{(m-1)!}  \lim_{z \to a} \frac{d^{m-1}}{d z^{m-1}} f(z) (z-a)^2,
+\end{equation*}
+где $m=1$ -- порядок полюса. 
+
+\end{proof}
+
+
+
+\Tsec{T22}
+
+Вычислим интеграл, вида
+\begin{equation*}
+     I = \int_\gamma \cos^8 z \d z,
+     \hspace{5 mm} 
+     \gamma \colon  z(t) = \pi + \pi e^{i t}, \ \ t \in[\pi, 2 \pi].
+\end{equation*}
+Так как подынтегральная функция голоморфна, то можем стянуть контур интегрирования к вещественной оси:
+\begin{equation*}
+    I = \int_{-\pi}^{+\pi} \cos^8 (z) \d z = 4 \frac{\Gamma\left(\frac{1}{2}\right) \, \Gamma\left(\frac{9}{2}\right)}{2 \Gamma(5)} = 4 \pi \frac{7 \cdot 5 \cdot 3}{16 \cdot 2 \cdot 4 \cdot 3 \cdot 2} = \frac{35}{64}\pi.
+\end{equation*}
+
+
+\Tsec{T23}
+
+Покажем, что 
+\begin{equation*}
+    |e^{-z} - 1| \leq |z|,
+\end{equation*}
+где $z \in \mathbb{C}$, $\Re z > 0$. Представим через интеграл экспоненту:
+\begin{equation*}
+    |e^{-z} - 1|  = 
+    \bigg|
+        \int_{0}^{z} e^{-t} \d t
+    \bigg| \leq \int_{0}^{z} |e^{-t}| \, |dt| \leq \int_{0}^{z} \, |d t| = |z|,
+\end{equation*}
+для $\Re z > 0$ и $t \in [0, z]$. Q.E.D.
+
+
+
+
+\Tsec{T24}
+
+Докажем, что для $z \in \mathbb{C}$ и $|z| \leq 1$ выполняются неравенства:
+\begin{equation*}
+    \frac{1}{4} |z| \leq |e^z - 1| \leq \frac{7}{4}|z|,
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    \frac{1}{4} \leq \frac{|e^z - 1|}{|z|}    \leq \frac{7}{4}.
+\end{equation*}
+
+\begin{proof}[$\triangle$]
+
+Пусть $z = x + i y$, тогда наща задача равносильна
+\begin{equation*}
+    \frac{1}{16} \leq 
+    F(x, y)
+    \leq \frac{49}{16},
+    \hspace{10 mm} 
+    F(x, y) = \frac{(e^x \cos y - 1)^2 + (e^x \sin y)^2}{x^2 + y^2}.
+\end{equation*}
+Заметим, что
+\begin{equation*}
+    \partial_y F(x, y) = \frac{2 e^x}{(x^2 + y^2)^2} \left(
+        2 y \cos y - 2 y \cosh x + (x^2 + y^2) \sin y
+    \right),
+\end{equation*}
+где уравнение $2 y \cos y - 2 y \cosh x + (x^2 + y^2) \sin y = 0$ имеет единственный корень в $y =0$ при $x, y \colon  x^2 + y^2 < 1$. Более того, пусть $y = \varepsilon > 0$, тогда
+\begin{align*}
+    \partial_y F(x, \varepsilon) &= \varepsilon ( 2 + x^2 - \cosh x) < 0, \\
+    \partial_y F(x, -\varepsilon) &= -\varepsilon ( 2 + x^2 - \cosh x) > 0.
+\end{align*}
+Таким образом максимум/минимум $F(x, y)$ достигается при $y = 0$:
+\begin{equation*}
+    F(x, 0) = \frac{(e^x - 1)^2}{x^2}, 
+    \hspace{5 mm} 
+    \partial_x F(x, 0) > 0,
+\end{equation*}
+то есть минимум достигается в $F(-1, 0)$ и максимум в $F(1, 0)$, тогда
+\begin{equation*}
+    \frac{1}{16} <
+        \underbrace{\left(1 - \frac{1}{e}\right)^2}_{\approx 6/15}
+    \leq 
+    F(x, y) =  \frac{|e^z - 1|^2}{|z|^2}
+    \leq
+    \underbrace{(e-1)^2 \vphantom{\bigg|}}_{\approx 53/18}  
+    < \frac{49}{16},
+\end{equation*}
+что и требовалось доказать. 
+
+\end{proof}
+
+
+
+\Tsec{T25}
+
+Покажем, что формулу Стокса (Грина) можно записать в виде
+\begin{equation*}
+    \iint_D \frac{\partial f (z)}{\partial \bar{z}} \d x \d y = 
+    \frac{1}{2i} \int_{\partial D} f(z) \d z.
+\end{equation*}
+
+\begin{proof}[$\triangle$]
+Для начала распишем
+\begin{equation*}
+    d f = \partial_x f d x + \partial_y f d y = 
+    \frac{1}{2} \partial_x f (d z + d \bar{z}) + \frac{1}{2i} \partial_y f (d z - d \bar{z}) = 
+    \underbrace{\frac{1}{2} (\partial_x f - i \partial_y f)}_{\partial_z f} d z
+    +\underbrace{\frac{1}{2} (\partial_x f + i \partial_y f)}_{\partial_{\bar{z}} f} d \bar{z}.
+\end{equation*}
+Теперь можем подставить:
+\begin{equation*}
+    \frac{1}{2i} \int_{\partial D} f(z) \d z = \frac{1}{2i} \iint_D  \d f(z) \d z =
+    \frac{1}{2i} \iint_D \partial_{\bar{z}} f \d \bar{z} \wedge \d z = \frac{1}{2i} \iint_D \partial_{\bar{z}} f \left(
+        \d x \wedge i \d y - i \d y \wedge \d x
+    \right) = 
+    \iint \frac{\partial f}{\partial \bar{z}} \d x \d y.
+\end{equation*}
+
+\end{proof}

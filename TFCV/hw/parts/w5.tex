@@ -1,0 +1,318 @@
+\subsection*{\S7, №5}
+
+Разложим в ряд Тейлора функцию
+\begin{equation*}
+    f(z) = \frac{z^2 + 2 z}{(z+1)^3},
+\end{equation*}
+в окрестности точки $z = 1$. 
+
+Заметим, что
+\begin{equation*}
+    \left(\frac{1}{z+1}\right)' = - \frac{1}{(z+1)^2},
+    \hspace{5 mm} 
+    \left(\frac{1}{(z+1)^2}\right)' = - \frac{2}{(z+1)^3},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{1}{2} \left(\frac{1}{z+1}\right)'' = \frac{1}{(z+1)^3}.
+\end{equation*}
+Тогда
+\begin{equation*}
+    f(z) = \frac{(z+1)^2 - 1}{(z+1)^3} = \frac{1}{z + 1} - \frac{1}{2} \left(\frac{1}{z + 1}\right)''.
+\end{equation*}
+Вспомним, что
+\begin{equation*}
+    \frac{1}{1 + z} = \sum_{n=0}^{\infty} (-z)^n,
+    \hspace{5 mm} 
+    \frac{1}{1+z} = \frac{1}{2} \frac{1}{\frac{z-1}{2}+1} = \frac{1}{2} \sum_{n=0}^{\infty} (-1)^n \frac{(z-1)^n}{2^n}.
+\end{equation*}
+Теперь можем найти
+\begin{equation*}
+    f(z) = \frac{1}{2} \sum_{n=0}^{\infty}  (-1)^n \frac{(z-1)^n}{2^n} - 
+    \frac{1}{4} \sum_{n=2}^{\infty}  (-1)^n n (n-1) \frac{(z-1)^{n-2}}{2^n} = 
+    \frac{3}{8} - \frac{1}{16}(z-1) + 
+    \sum_{n=2}^{\infty} \frac{(-1)^n}{2^{n+1}} (z-1)^n \left(
+        1 - \frac{1}{8}(n+2) (n+1)
+    \right),
+\end{equation*}
+то есть получили разложение по Тейлору. 
+
+
+
+
+\subsection*{\S7, №6(2)}
+
+Разложим в ряд Тейлора в окрестности точки $z= 0$ функции:
+\begin{equation*}
+    f(z) = \cos^3 z = \frac{1}{4} \cos(3x) + \frac{3}{4} \cos(x) = 
+    \sum_{n=0}^{\infty} z^{2n} \frac{(-1)^n}{4 (2n)!} \left(3^{2n} + 3\right).
+\end{equation*}
+
+
+\subsection*{\S7, №11}
+
+Определим порядок нуля $m$ функции $f(z)$ в точке $a$.
+
+\textbf{2)}. Во-первых рассмотрим
+\begin{equation*}
+    f(z) = (z^2 - \pi^2)^4 \sin^3 z, \hspace{5 mm} 
+    a = \pi.
+\end{equation*}
+Можем представить функции в виде
+\begin{align*}
+    z^2 - \pi^2 &= (z-\pi) h_1 (z), \hspace{5 mm} h_1 (z) \neq 0, \\
+    \sin z &= (z-\pi) h_2 (z), \hspace{5 mm} h_2 (z) \neq 0,
+\end{align*}
+где $h$ -- голоморфная функция. Тогда
+\begin{equation*}
+    f(z) = (z-\pi)^{3+3} h_1(z)^3 h_2^3(z),
+\end{equation*}
+таким образом нашли, что $m=6$.
+
+
+
+\textbf{3)}. Во-вторых рассмотрим
+\begin{equation*}
+    f(z) = (z^2 + \pi^2)^2 (e^{2z} -1)^4, \hspace{5 mm} 
+    a = \pi i.
+\end{equation*}
+Аналогично раскрываем
+\begin{align*}
+    z^2 + \pi^2 &= (z-i\pi) h_1 (z), \hspace{5 mm} h_1 (z) \neq 0, \\
+    e^{2z}-1 &= (z - i \pi) h_2 (z), \hspace{5 mm} h_2 (z) \neq 0,
+\end{align*}
+и снова получаем $m=6$.
+
+
+
+
+
+\subsection*{\S7, №12 (3)}
+
+Найдем, какая же функция является решением для гармонического осциллятора, вида
+\begin{equation*}
+    f''(z) + \lambda^2 f(z) = 0,
+    \hspace{10 mm} f(0) = 0, \hspace{5 mm} 
+    f'(0) = \lambda.
+\end{equation*}
+Считая $f(z)$ голоморфной, запишем
+\begin{equation*}
+    f(z) = \sum_{k=0}^{\infty}  c_k x^k,
+    \hspace{10 mm} 
+    f''(z) = \sum_{k=2}^{\infty}  
+    k (k-1) c_k x^{k-2} = 
+    \sum_{k=0}^{\infty} c_{k+2} (k+1) (k+2) x^k.
+\end{equation*}
+Подставляя в уравнение, находим
+\begin{equation*}
+    (c_0 \lambda^2 + 2 c_2) z^0 + 
+    (c_1 \lambda^2 + 6 c_3) z^1 + 
+    \sum_{k=2}^{\infty} \left(
+        c_{k+2} (k+2)(k+1) + \lambda^2 c_k
+    \right) z^k = 0.
+\end{equation*}
+Приравнивая к $0$ коэффициенты при всех степенях, находим
+\begin{equation*}
+    c_0 = c_2 = c_{2k} =  0,
+    \hspace{5 mm} 
+    c_1 = \lambda,
+    \hspace{5 mm} 
+    c_3 = - \frac{\lambda^3}{6},
+    \hspace{5 mm} 
+    c_5 = \frac{\lambda^5}{5!}, \hspace{5 mm} \ldots
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(z) = \sin (\lambda z).
+\end{equation*}
+
+
+
+
+\subsection*{\S9, №2}
+
+
+\textbf{1)}. Покажем, что не существует голоморфной функции такой, что
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = \sin \frac{\pi n}{2}.
+\end{equation*}
+Действительно, рассмотрим $g = f - f(0)$, где $f(0) \in [-1, 1]$, тогда $g(0) = 0$ -- не изолированный 0 функции, соответсвенно $f$ не могла быть голоморфной. 
+
+
+\textbf{2)}. Аналогично рассмотрим
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = \frac{1}{n} \cos(\pi n),
+\end{equation*}
+при чем при $n = 2 k$ $f > 0$ и $n = 2 k +1$ $f < 0$, тогда где-то между случается, что $f = 0$, а значит снова $0$ -- не изолированный 0 функции, соответственно $f$ не может быть голоморфной. 
+
+
+\textbf{3)}. Просто подберем нужную функцию
+\begin{equation*}
+    f(z) = \frac{z}{2 + z}, 
+    \hspace{10 mm} 
+    f\left(\frac{1}{n}\right) = \frac{1}{2n  +1}. 
+\end{equation*}
+
+\textbf{4)}. Аналогичная функция подойдёт и здесь:
+\begin{equation*}
+    f(z) = \frac{z}{2 + z},
+    \hspace{10 mm} 
+    f\left(\frac{1}{n}\right) = \frac{\cos^2 \pi n}{2 n + 1},
+\end{equation*}
+где $\cos^2 \pi n = \const$, при $n \in \mathbb{N}$.
+
+\textbf{5)}. Рассмотрим функцию, вида
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = \frac{1}{2n + \cos \pi n}.
+\end{equation*}
+Заметим, что при $n_1 = 2k$ и при $n_2 = 2k + 1$:
+\begin{equation*}
+    f\left(\frac{1}{n_1}\right) = \frac{1}{4k+1}.
+    \hspace{5 mm} 
+    f\left(\frac{1}{n_2}\right) = \frac{1}{4k+1}.
+\end{equation*}
+Рассмотрим функцию $f(z) - \frac{z}{2}$, которая будет иметь не изолированный 0 в $z = 0$, т.к. $z/2$ голоморфная функция, можем сделать вывод, что $f(z)$ не могла быть голоморфной.
+
+
+\textbf{6)}. Просто подберем подходящую функцию:
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = f\left(- \frac{1}{n}\right) = \frac{1}{n^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(z) = z^2.
+\end{equation*}
+
+\textbf{7)}. Рассмотрим
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = f\left(-\frac{1}{n}\right) = \frac{1}{2n + 1}.
+\end{equation*}
+С одной стороны, из (3), следует, что
+\begin{equation*}
+    g(z) = \frac{z}{2 + z},
+\end{equation*}
+<<подходит>>, но $g\left(- \frac{1}{n}\right) \neq g \left(\frac{1}{n}\right)$, так что существование такой голоморфной $f$ противоречило бы теореме о единственности. 
+
+
+\textbf{8)} Немного по-другому покажем, что
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = e^{-n},
+    \hspace{0.5cm} \overset{?}{\Rightarrow}  \hspace{0.5cm}
+    f(z) = e^{-1/|z|},
+\end{equation*}
+но такая функция не аналитична в нуле, так что такой голоморфной $f$ не существует.
+
+
+
+\textbf{9)}. Аналогично (7):
+\begin{equation*}
+    f\left(\frac{1}{n}\right) = f\left(-\frac{1}{n}\right) = \frac{1}{n^3}.
+\end{equation*}
+По теореме о единственности, если такая голоморфная $f$ существует, то $f(z) = g(z) = z^3$, но $g(-z) \neq g(z)$, а значит такой голоморфной $f$ не существует. 
+
+
+
+
+\subsection*{\S9, №3}
+
+
+Пусть функции $f_1$  и $f_2$ регулярны в области $D$ и удовлетворяют уравнения $f'(z) = P(z,\, f(z))$, где $P$ -- многочлен. Покажем, что если в некоторой точке $z_0 \in D$ имеет место равенство $f_1 (z_0) = f_2 (z_0)$, то $f_1 (z) \equiv  f_2 (z)$.
+
+\begin{proof}[$\triangle$]
+
+Для начала заметим, что
+\begin{equation*}
+    f_1 (z_0) = f_2 (z_0),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f_1'(z_0) = P(z_0, f_1(z_0)) = f_2'(z_0) = P(z_0,\, f_2(z_0)).
+\end{equation*}
+Также заметим, что
+\begin{equation*}
+    f'(z_0) = \sum_{k,\, m}^{n} c_{mk} z_0^k f(z_0)^m,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f''(z_0) = \sum_{k, m}^{n} c_{mk} \left(
+        k z_0^{k-1} f^m (z_0) + z_0^k m f^{m-1} (z_0) f'(z_0)
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f_1^{(2)}(z_0) = f_2^{(2)} (z_0),
+\end{equation*}
+и аналогично для всех остальных производных: $f_1^{(n)}(z_0) = f_2^{(n)} (z_0)$, а значит, по аналитичности $f_1$ и $f_2$ можем сделать вывод, что $f_1 \equiv f_2$. 
+
+
+\end{proof}
+
+
+
+
+\Tsec{T26}
+Фунция $f(z) = \sum_{n=1}^{\infty}  a_n z^n$. Выразим через $f$ сумму ряда $\sum_{n=1}^{\infty} n^3 a_n z^n$. Можем просто несколько раз продифференцировать:
+\begin{equation*}
+    z f'(z) = \sum_{n = 0}^{\infty} n a_n z^n,
+    \hspace{5 mm} 
+    z (z f')' = \sum_{n=0}^{\infty} n^2 a_n z^n,
+    \hspace{5 mm} 
+    z (z (z f')')' = \sum_{n=0}^{\infty} n^3 a_n z^n.
+\end{equation*}
+Тогда не сложно выразить
+\begin{equation*}
+    \sum_{n=0}^{\infty} n^3 a_n z^n = z (z (z f')')' = (z f' + f'' z^2)' = 
+    f''' z^3 + 3 f'' z^2 + f' z.
+\end{equation*}
+
+
+
+
+\Tsec{T27}
+
+Пусть $f(z)$  -- целая функция и для каждого $z_0 \in \mathbb{C}$ в разложении по Тейлору найдётся нулевой коэффициент. Покажем, что $f(z)$ -- полином. 
+
+\begin{proof}[$\triangle$]
+
+Построим множество
+\begin{equation*}
+    E_n = \left\{
+        z \in \mathbb{C} \mid f^{(n)} (z) = 0
+    \right\}.
+\end{equation*}
+При чем множество всех $\{E_n\}$ счётно, $\mathbb{C}$ несчётно, 
+и по условию $\forall  z \ \exists n \colon  z \in E_n$, 
+ а значит найдётся $N$ такой, что $E_N$ несчётно. Тогда, по теореме о единственности, $f^{(N)} \equiv 0$, а значит $f(z)$ -- полином. 
+
+
+\end{proof}
+
+
+\Tsec{T28}
+
+Пусть целая функция $f(z)$ удовлетворяет условию $\Re f' (z) > 0 \ \forall  z \in \mathbb{C}$. Докажем, что $f(z)$ -- полином первой степени с положительным коэффициентом при $z^1$. 
+
+\begin{proof}[$\triangle$]
+
+Воспользуемся теоремой Пикара или теоремой Лиувилля (\href{https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%9B%D0%B8%D1%83%D0%B2%D0%B8%D0%BB%D0%BB%D1%8F_%D0%BE%D0%B1_%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D1%86%D0%B5%D0%BB%D1%8B%D1%85_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F%D1%85}{доказательство}). 
+
+\begin{to_thr}[теорема Пикара]
+    Образ целовй функции $\neq \const$ тождественно равен $\mathbb{C}$, без, быть может, одной точки. 
+\end{to_thr}
+
+\begin{to_thr}[теорема Лиувилля]
+    Если целая функция $f(z)$ ограничен, то $f(z)$ константа. 
+\end{to_thr}
+
+Построим функцию $g(z)$ вида
+\begin{equation*}
+    g(z) = \frac{1}{1 + f'(z)},
+\end{equation*}
+которая по условию ($\Re f' > 0$ и $f$ -- целая) является целой. Тогда
+\begin{equation*}
+    g(z) = \frac{1}{(x+1) + i y} = \underbrace{\frac{x + 1}{(x+1)^2 + y^2}}_{< 1} - i \underbrace{\frac{y}{(x+1)^2 + y^2}}_{< 1},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |g(z)| \leq \sqrt{2},
+\end{equation*}
+а значит, по теореме Лиувилля:
+\begin{equation*}
+    g(z) = \const,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f'(z) = \const,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(z) = a z + b, \ \ a > 0.
+\end{equation*}
+
+
+
+
+\end{proof}
+
