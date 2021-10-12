@@ -6,7 +6,8 @@
 [*заметки*](https://ibb.co/zNTVnNB));
 
 * **ТФКП**
-([*задание*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw_tfcv/hw.pdf));
+([*задание (III-VI, от меня)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw/hw_tfcv.pdf),
+[*задание (I, от Паши)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw_tfcv/hw.pdf));
 
 * **уравнениям математической физики**
 ([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
