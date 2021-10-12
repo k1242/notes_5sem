@@ -1,0 +1,339 @@
+\section{Семинар от 12.09.21}
+
+Раннее решалась задача Коши, вида $L(\partial_t) x(t) = \varphi(t)$. Можо рассмотреть другой класс задач:
+\begin{equation*}
+    f(0) = f(\pi) = 0,
+    \hspace{5 mm} 
+    (\partial_x^2 + 1) f(x) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(x) = A \sin x,
+\end{equation*}
+где $A$ -- любая, то есть решение не единственно. Более того, решение может не существовать. 
+
+Однако, покуда мы рассматриваем диффуры первого порядка, граничное условие всего одно: значение функции в точке: $x(0) = x_0$, что эквивалентно задаче Коши. 
+
+
+\subsection{Задача Штурма-Лиувилля}
+
+
+% \textbf{Задача Штурма-Лиувилля}. 
+Интереснее на диффурах II порядка, один из наиболее ярких примеров: \textit{задача Штурма-Лиувилля}:
+\begin{equation*}
+    \hat{L} = \partial_x^2 + Q(x) \partial_x + U(x),
+    \hspace{5 mm} 
+    \hat{L} f(x) = \varphi(x),
+    \hspace{5 mm} 
+    \left\{\begin{aligned}
+        \alpha_1 f(a) + \beta_1 f'(a) &= 0 \\
+        \alpha_2 f(b) + \beta_2 f'(b) &= 0,
+    \end{aligned}\right.
+\end{equation*}
+где\footnote{
+    Часто можно встретить нулевые граничные условия: $f(a) = f(b) = 0$. 
+}  $|\alpha_1| + |\beta_2| \neq 0$ и $|\alpha_2| + |\beta_2| \neq 0$.
+
+Заметим, что уравнение линейно: если $\varphi = \varphi_1 + \varphi_2$, то $f = f_1 + f_2$, а значит ответ можно найти в виде
+\begin{equation*}
+    f(x) \int_{a}^{b} G(x,y) \varphi(y) \d y,
+\end{equation*}
+однако система теперь не является транслционно инвариантной. 
+
+
+Граничные условия на $G$:
+\begin{equation*}
+    \alpha_1 f(a) + \beta_1 f'(a) = \int_{a}^{b} 
+    \underbrace{\left(\alpha_1 G(a, y) + \beta_1 G'_x (a, y)\right) }_{\text{непрерывен}}\varphi(y) \d y = 0,
+\end{equation*}
+что верно $\forall  \varphi$. По лемме Дюбуа-Реймона, можем свести уравнение к виду
+\begin{equation*}
+    \alpha_1 G(a, y) + \beta_1 G'_x (a, y) \equiv 0,
+\end{equation*}
+то есть функция Грина $G$ наследует граничные условия.  Аналогично,
+\begin{equation*}
+    \alpha_2 G(b, y) + \beta_2 G'_x (b, y) = 0.
+\end{equation*}
+
+Запищем уравнение на $G(x, y)$:
+\begin{equation*}
+    \varphi(y) = \delta(y-y'),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(x) = \int_{a}^{b} G(x, y) \delta(y-y') \d y = G(x, y'),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{L} G(x, y) = \delta(x-y).
+\end{equation*}
+Решения имеет смысл разбить на $x \neq y$, и, в частности, рассмотрим $x < y$:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \hat{L} G(x, y) &= 0 \\
+        \alpha_1 G(a, y) + \beta_1 G'_x (a, y) &= 0
+    \end{aligned}\right.
+    ,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(x,y) = A(y) \cdot u(x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \hat{L} u(x) &= 0 \\
+        \alpha_1 u(a) + \beta_1 u'(a) &= 0
+    \end{aligned}\right.
+\end{equation*}
+Более того, почему бы и не доопределить $u(a) = - \beta_1$ и $u'(a) = \alpha_1$, таким образом свели задачу к задаче Коши, решение которой существует и единственно. 
+
+
+Аналогично для $x > y$:
+\begin{equation*}
+    \hat{L} G(x, y) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(x, y) = B(y) v(x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \hat{L} v &= 0 \\
+        \alpha_2 v(b) + \beta_2 v'(b) &= 0
+    \end{aligned}\right.
+\end{equation*}
+где снова есть задача Коши, решение которой существует и единственно. 
+
+\textbf{Сшивка}. Во-первых заметим, что $G$ непрерывна, а $G'$ испытыывает скачок:
+\begin{equation*}
+    G(y + 0, y) = G(y-0, y),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A(y) u(y) = B(y) v(y).
+\end{equation*}
+Интегрируя, находим
+\begin{equation*}
+    G'_x (y + 0, y) - G'_x (y-0, y) = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B(y) v'(y) - A(y) u'(y) = 1.
+\end{equation*}
+Собирая уравнения вместе, находим, что
+\begin{equation*}
+    B(y) \underbrace{\left(
+        \frac{v' (y) u(y) - v(y) u'(y)}{u(y)}
+    \right)}_{W[u, v]} = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B(y) = \frac{u(y)}{W},\hspace{5 mm} 
+    A(y) = \frac{v(y)}{W(y)},
+\end{equation*}
+где $W[u, v]$ -- вронскиан. Итого, можем выписать ответ:
+\begin{equation*}
+    G(x, y) = \frac{1}{W(y)} \left\{\begin{aligned}
+        &v(y) u(x), &x < y; \\
+        &v(x) u(y), &x > y.
+    \end{aligned}\right.
+\end{equation*}
+Можем записать, когда решение $\exists$ и $!$:
+\begin{equation*}
+    W \neq 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \text{Sol} \  \exists \& !.
+\end{equation*}
+Отсюда вытекает теорема Стеклова:
+
+\begin{to_thr}[теорема Стеклова]
+    Если $u,\, v$ -- спец. ФСР, то решение существует и единственно:
+    \begin{equation*}
+        f(x) = \int_{a}^{b} G(x, y) \varphi(y) \d y,
+        \hspace{10 mm} \hat{L}^{-1} \varphi = f.
+    \end{equation*}
+    Если $W = \const$, то $G(x, y) =G(y,x)$ -- симметричное ядро, а значит $L^{-1}$ -- симметричный, самосапряженный оператор $\Rightarrow$ у $\hat{L}$ есть ОНБ из собственных функций. 
+\end{to_thr}
+
+
+
+
+\textbf{Про вронскиан}. Можно записать формулу Лиувилля-Остроградского
+\begin{equation*}
+    W(x) = 
+    \det \begin{pmatrix}
+        u & v  \\
+        u' & v'  \\
+    \end{pmatrix}
+    =
+    W(x_0) \exp\left(
+        - \int_{x_0}^{x}  Q(z) \d z
+    \right).
+\end{equation*}
+
+\begin{to_def}
+    \textit{Специальной ФСР} называется решение уравнении $\hat{L} u = 0$ и $\alpha_1 u(a) + \beta_1 u'(a) = 0$, и аналогичного уравнения по $v(x)$ с граничным условием в $b$, 
+    если $W[u, v] \neq 0$, то есть $u$ и $v$ линейной независимы. 
+\end{to_def}
+
+
+
+\textbf{Пример I}. Рассмотрим уравнения
+\begin{equation*}
+    \left\{\begin{aligned}
+        \partial_x^2 f(x) = \varphi(x) \\
+        f(a) = f(b) = 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u(x) = x - a,
+    \hspace{5 mm} 
+    v(x) = x - b,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    W = \begin{pmatrix}
+        u & v  \\
+        u' & v'  \\
+    \end{pmatrix} = b-a = \const,
+\end{equation*}
+а значит
+\begin{equation*}
+    G(x, y) = \frac{1}{b-a} \left\{\begin{aligned}
+        &(y-b)(x-a), &x < y \\
+        &(x-b)(y-a), &x > y.
+    \end{aligned}\right.
+\end{equation*}
+
+
+\textbf{Пример II}. Рассмотрим двумерный цилиндр, радуса $R$, вне которого $\rho(r > R) = 0$, $\rho(\vc{r}) = \rho(r)$. Рассмотрим уравнения Лапласа:
+\begin{equation*}
+    \nabla^2 \varphi = - 4 \pi \rho,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (\partial_r^2 + \tfrac{1}{r} \partial_r) \varphi = - 4 \pi \rho.
+\end{equation*}
+Добавим граничные условия: потенциал определен с точностью до константы, так что пусть $\varphi(R) = 0$, также хотим конечность $\varphi$ при $r=0$, так что пусть $\varphi(0) = 1$.
+
+Получили задачу, где при $r < r'$
+\begin{equation*}
+    \left\{\begin{aligned}
+        &\left(\partial_r^2 + \tfrac{1}{r} \partial_r\right) u(r) = 0,
+        &u(0) = 1
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u' = \frac{C}{r},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u(r) = C \ln r + D = 1.
+\end{equation*}
+Аналогично, рассмотрим $r > r'$:
+\begin{equation*}
+    \left\{\begin{aligned}
+        &\left(\partial_r^2 + \tfrac{1}{r} \partial_r\right) v(r) = 0,
+        &v(R) = 0,
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    v(R) = C' \ln r + D',
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    v = \ln \left(\frac{r}{R}\right).
+\end{equation*}
+Сразу вычислим 
+\begin{equation*}
+    W[u,\,  v] = \det \begin{pmatrix}
+        1 & \ln r/R  \\
+        0 & 1/r  \\
+    \end{pmatrix} = \frac{1}{r},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(r, r') = r' \left\{\begin{aligned}
+        & \ln \tfrac{r'}{R}, & r < r'
+        & \ln \frac{r}{R}, & r > r'
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \varphi(r) = \int_{0}^{R} G(r, r') \left(- 4 \pi \rho(r')\right) \d r'.
+\end{equation*}
+
+
+
+
+\subsection{Задача с периодическими условиями}
+
+Рассмотрим такой же $\hat{L}$, и граничные условия в виде
+\begin{equation*}
+    \left\{\begin{aligned}
+        f(a) &= f(b) \\
+        f'(a) &= f'(b),
+    \end{aligned}\right.
+\end{equation*}
+то есть решение периодично. 
+
+
+
+\textbf{Пример}.  Рассмотрим задачу
+\begin{equation*}
+    \hat{L} = \partial_x^2 + \kappa^2,
+\end{equation*}
+с условиями на $[-\pi, \pi]$. 
+
+При $x < y$:
+\begin{equation*}
+    G(x, y) = A_1 (y) \sin \kappa(x + \pi) + B_1 (y) \cos \kappa( x + \pi),
+\end{equation*}
+и аналогично для $x > y$:
+\begin{equation*}
+    G(x, y) = A_2 \sin \kappa (x - \pi) + B_2 (y) \cos \kappa (x - \pi).
+\end{equation*}
+Запишем граничные условия:
+\begin{align*}
+    G(- \pi, y) = G(\pi, y), \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B_1 (y) = B_2 (y) \overset{\mathrm{def}}{=} B(y) \\
+    G'_x (-\pi, y) = G'_x (\pi, y),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A_1 (y) = A_2 (y) \overset{\mathrm{def}}{=}  A(y).
+\end{align*}
+Тогда нашли, что
+\begin{equation*}
+    G(x, y) = \left\{\begin{aligned}
+        &A \sin \kappa (x + \pi) + B \cos \kappa (x + \pi) \\
+        &A \sin \kappa (x - \pi) + B \cos \kappa (x - \pi) \\
+    \end{aligned}\right.
+\end{equation*}
+Теперь запишем непрерывность:
+\begin{equation*}
+     A \sin \kappa (x + \pi) + B \cos \kappa (x + \pi) 
+     = 
+     A \sin \kappa (x - \pi) + B \cos \kappa (x - \pi).
+\end{equation*}
+А также скачок производной
+\begin{equation*}
+    G'_x(y + 0, y) - G'_x (y-0, y) = 1,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+        A \cos \kappa (x - \pi) - B \sin \kappa (x - \pi)  - 
+        A \cos \kappa (x + \pi) + B \cos \kappa (x + \pi)
+        = \kappa^{-1}.
+\end{equation*}
+Решая эту систему находим, что
+\begin{equation*}
+    2 \sin \pi \kappa 
+    \begin{pmatrix}
+        \cos \kappa y & - \sin \kappa y  \\
+        \sin \xi y & \cos \kappa y  \\
+    \end{pmatrix} \begin{pmatrix}
+        A  \\
+        B  \\
+    \end{pmatrix}
+    = \begin{pmatrix}
+        0 \\ 1/\kappa
+    \end{pmatrix},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \begin{pmatrix}
+        A \\ B
+    \end{pmatrix} = 
+    \frac{1}{2 \sin \pi \kappa} \begin{pmatrix}
+        \cos \kappa y & \sin \kappa y  \\
+        \sin \kappa y & \cos \kappa y  \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 \\ 1/\kappa
+    \end{pmatrix} = 
+    \frac{1}{2 \kappa \sin \pi \kappa} \begin{pmatrix}
+        \sin xy \\ \cos xy
+    \end{pmatrix}.
+\end{equation*}
+Подставляя в $G(x, y)$, находим\footnote{
+    К дз будет полезно заметить, что $G(x, y) = G(x-y)$ -- задача трансляционно инвариантна. 
+} 
+\begin{equation*}
+    G(x, y) = \frac{1}{2 \kappa \sin \pi \kappa}
+    \left\{\begin{aligned}
+        &\cos \left(\kappa(x-y) + \kappa \pi\right), & x < y\\
+        &\cos(\kappa (x-y) - \kappa \pi), & x > y.
+    \end{aligned}\right.
+\end{equation*}
+Всё это было, повторимся, для уравнения:
+\begin{equation*}
+    \left(\partial_x^2 + \kappa^2\right) f(x) = \varphi(x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    f(x) = 
+    \int_{-\pi}^{+\pi} G(x, y) \varphi(y) \d y. 
+\end{equation*}
+
+
+
