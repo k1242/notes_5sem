@@ -1,0 +1,209 @@
+\section{Семинар от 16.09.21}
+
+Рассмотрим снова некоторую граничную задачу:
+\begin{equation*}
+    \hat{L} G(x, y) = \delta(x-y).
+\end{equation*}
+Запишем граничные условия:
+\begin{equation*}
+    \alpha_1 G(a. y) + \beta_1 G'_x(a, y) = 0,
+    \hspace{10 mm} 
+    \alpha_2 G(b, y) + \beta_2 G'_x (b, y) = 0,
+\end{equation*}
+где  $|\alpha_1| + |\beta_2| \neq 0$ и $|\alpha_2| + |\beta_2| \neq 0$.
+Можем выписать ответ:
+\begin{equation*}
+    G(x, y) = \frac{1}{W(y)} \left\{\begin{aligned}
+        &v(y) u(x), &x < y; \\
+        &v(x) u(y), &x > y,
+    \end{aligned}\right.
+\end{equation*}
+где Вронскиан можно запсиать, как
+\begin{equation*}
+    W(x) = W(x_9) \exp\left(
+        - \int_{x_0}^{x}  Q(t) \d t,
+    \right)
+\end{equation*}
+где $Q(t)$ -- из оператора Штурма-Лиувилля. 
+
+Также решали задачу с периодическими гран. условиями, где $G$ наследовала гран. условия. 
+Решать это всё умеем двумя способами: разделяя на $x  > y$ и $x < y$, и через метод Фурье:
+\begin{equation*}
+    \hat{L} e_n  = \lambda_n e_n,
+    \hspace{10 mm} 
+    \langle e_n | e_m \rangle = \int_{a}^{b} e_n (x) \bar{e}_m(x)  \d x.
+\end{equation*}
+Тогда можем найти функцию Грина, как
+\begin{equation*}
+    G(x, y) = \sum_n g_n (y) e_n (x),
+    \hspace{5 mm} 
+    \delta(x-y) = \sum_n \delta_n ( y) e_n (x).
+\end{equation*}
+Находим коэффициенты Фурье:
+\begin{equation*}
+    g_n (y) = 
+    \frac{\langle G | e_n\rangle}{\langle e_n | e_n\rangle},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \delta_n (y) = \frac{\bar{e}_n (y)}{\langle e_n | e_n\rangle},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    g_n (y) = \frac{1}{\lambda_n} \frac{\bar{e}_n (y)}{\langle e_n | e_n\rangle},
+\end{equation*}
+где мы решали уравнение, вида $\hat{L} G = \delta(x-y)$. 
+Проблема возникает при $\lambda_n = 0$. 
+
+
+
+\textbf{Решение}. Наличие у оператора собственного числа $\lambda_n = 0$ называется нулевой модой. Рассмотрим оператор:
+\begin{equation*}
+    \hat{L} = \partial_x^2,
+\end{equation*}
+для которого $e_n (x) = e^{i n x}$, где $\langle e_n | e_n\rangle = 2 \pi$, где $e_0 = 1$ и $\lambda_{0} = 0$. Пусть тогда
+\begin{equation*}
+    \delta(x) = \sum \frac{\bar{e}_n (0) e_n (x)}{\langle e_n | e_n\rangle} = \sum \frac{e^{i n x}}{2 \pi},
+    \hspace{10 mm} 
+    G(x) = \sum  g_n e_n (x). 
+\end{equation*}
+но для $\hat{L} G = \delta(x)$ оказывается нет решений (справа $e_0$ есть, а слева нет). То есть
+\begin{equation*}
+    \Ker \hat{L} \neq \{0\},
+    \hspace{10 mm} 
+    \Ker \hat{L} + \Im \hat{L} = \mathcal H,
+\end{equation*}
+поэтому всегда имеем ввиду, что $\hat{L} \hat{L}^{-1} = \mathbbm{1}$, но только для $\im \hat{L}$. 
+
+В общем, проблему уйдёт, если рассмотрим уравнение, вида
+\begin{equation*}
+    \hat{L} G(x) = \delta(x) - e_0(x) = \delta(x) - \frac{1}{2 \pi},
+\end{equation*}
+то есть справа единичный оператор только на образе $\im \hat{L}$. 
+
+
+
+Если в источнике есть нулевая мода, то уравнение не имеет решений. 
+
+
+
+\textbf{Алгоритм (Фурье)}. Раскладываем 
+\begin{equation*}
+    G(x) = \sum_{n \neq 0} g_n e_n,
+    \hspace{10 mm} 
+    \delta(x) = \sum \frac{e_n (x)}{2 \pi},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{L} G = \delta(x) - \frac{1}{2\pi}.
+\end{equation*}
+Знаем, что $\lambda_n g_n = \frac{1}{2\pi}$, а значит
+\begin{equation*}
+    g_n(x) = \frac{1}{2\pi} \frac{1}{- n^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    G(x) = \sum_{n \neq 0} \frac{1}{2\pi} \frac{1}{-n62} e^{i n x},
+\end{equation*}
+и рассмотрим $0 < x < \pi$, суммирая это через вычеты, записываем
+\begin{equation*}
+    f(z) = \frac{e^{zx}}{2 \pi z^2}, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    G(x) = \sum \oint_{in} \frac{\d z}{2 \pi i} f(z) g(z).
+\end{equation*}
+Соответственно, выберем
+\begin{align*}
+    g(z) = \frac{\pi e^{- \pi z}}{\sh (\pi z)}
+\end{align*}
+тогда
+\begin{equation*}
+    f(z) g(z) = \frac{\pi}{z^2} \frac{e^{(x-\pi)z}}{\sh \pi z},
+\end{equation*}
+получаем, что интеграл по душам вправо/влево  равен $0$, и остается только вычет в $z = 0$:
+\begin{equation*}
+    G(z) = - \res_0 f(z) g(z) = \ldots = - \frac{x^2}{4 \pi} + \frac{x}{2} - \frac{\pi}{6}.
+\end{equation*}
+
+
+
+\textbf{Алгоритм (сшивка)}. Решим задачу
+\begin{equation*}
+    \partial_x^2 G(x) = \delta(x) - \frac{1}{2\pi}.
+\end{equation*}
+Разбиваем $x < 0$ и $x > 0$:
+\begin{align*}
+    &x < 0, 
+    & G = -\tfrac{x^2}{4 \pi} + a x + b, \\
+    &x > 0, 
+    & G = -\tfrac{x^2}{4 \pi} + c x + \varpi, 
+\end{align*}
+учитываем граничные условия:
+\begin{equation*}
+    G(-0) = G(+0),
+    \hspace{5 mm} 
+    G'(+0) - G'(-0) = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    b = \varpi.
+\end{equation*}
+Также получаем, что $-a = b$.
+
+Учтём, что $e_0$ не входит в $G$:
+\begin{equation*}
+    \langle G | e_0\rangle = 0 = \int_{-\pi}^{+\pi}G(x) \d x = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b = - \frac{\pi}{6},
+\end{equation*}
+так и получаем все необходиме условия на $G(x, y)$. 
+
+
+
+\subsection{Многомерие}
+
+Рассмотрим $\mathbb{R}^3$:
+\begin{equation*}
+    \nabla^2 f = \varphi,
+\end{equation*}
+где все линейно, всё хорошо. Как обычно будем искать функцию, виде
+\begin{equation*}
+    f(\vc{r}) = \int_{\mathbb{R}^3} G(\vc{r}  - \vc{r}') \varphi(\vc{r}) \d^3 r. 
+\end{equation*}
+Функцию Грина найдём в виде
+\begin{equation*}
+    \nabla^2 G(\vc{r}) = \delta(r^3) = \delta(x) \delta(y) \delta(z),
+    \hspace{10 mm}  
+    \int f(\vc{r}) \delta(\vc{r}- \vc{r}') \d^3 \vc{r}' = f(\vc{r}').
+\end{equation*}
+Можем свести уравнение Лапласа, к уравнению Дебая:
+\begin{equation*}
+    (\nabla^2 - \kappa^2) G(\vc{r}) = \delta(\vc{r}),
+\end{equation*} 
+которое очень удобно раскладывать по Фурье:
+\begin{align*}
+    &\text{ПФ}: 
+    &G(\vc{k}) &= \int_{\mathbb{R}^3} G(\vc{r}) e^{- i \smallvc{k} \cdot \smallvc{r}} \d \vc{r}, \\
+    &\text{ОПФ}: 
+    &G(\vc{r}) &= \int_{\mathbb{R}^3} G(\vc{r}) e^{i \smallvc{k} \cdot \smallvc{r}} \frac{\d \vc{k}}{(2 \pi)^3}.
+\end{align*}
+Также вспомним, что
+\begin{equation*}
+    \partial_m G(\vc{r}) e^{- i \smallvc{k} \cdot \smallvc{r}} \d \vc{r} = i k_m G(\vc{k}),
+\end{equation*}
+а значит
+\begin{equation*}
+    (-k^2 - \kappa^2) G(\vc{k}) = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(\vc{k})=- \frac{1}{k^2 + \kappa^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    G(\vc{r}) = \int_{\mathbb{R}^3} \frac{e^{i \smallvc{k} \cdot \smallvc{r}}}{k^2 + \kappa^2} \frac{\d \vc{k}}{(2 \pi)^3}.
+\end{equation*}
+Переходим в сферические координаты, получаем, что
+\begin{equation*}
+    G(\vc{r}) = - \frac{2 \pi}{(2 \pi)^3} \int_{0}^{\infty} \frac{k^2}{k^2 + \kappa^2} \int_{0}^{\pi} 
+    \sin \theta  e^{i k r \cos \theta}  \d \theta \d k = 
+    - \frac{e^{- \kappa r}}{4 \pi r}
+    .
+\end{equation*}
+Устремляя $\kappa \to 0$, находим
+\begin{equation*}
+     \nabla^2 G = \delta(\vc{r}),
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     G = - \frac{1}{4 \pi r}.
+ \end{equation*} 
+
+
+
+
+
+% \textbf{Пример}. Пусть 
