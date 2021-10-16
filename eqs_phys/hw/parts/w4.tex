@@ -1,0 +1,189 @@
+\section{Неделя IV}
+
+\subsection*{№1}
+
+Рассмотрим сумму, вида
+\begin{equation*}
+    S(a) = \sum_{n=-\infty}^{\infty}  \frac{1}{n^2 + a^2}.
+\end{equation*}
+Будем считать, что в $n \in \mathbb{Z}$, у некоторой функции $g(z)$ случается полюс первого порядка, например у функции:
+\begin{equation*}
+    g(z) = \pi \ctg(\pi z), 
+    \hspace{5 mm} \res_n g(z) = 1.
+\end{equation*}
+Тогда сумму $S(a)$ можно переписать через проивезедение $f(z) g(z)$, где 
+\begin{equation*}
+    f(z) = \frac{1}{n^2 + a^2},
+\end{equation*}
+тогда
+\begin{equation*}
+    S(a) = \int \frac{\d z}{2 \pi i} \frac{\pi}{z^2 + a^2} \ctg (\pi z) = 
+    \bigg/
+        \res_{\pm ia}
+    \bigg/ = \frac{\pi}{a} \cth (a \pi),
+\end{equation*}
+где воспользовались равенством $\ctg i x = - i \cth x$.
+
+
+\subsection*{№2}
+
+Теперь рассмотрим сумму, вида
+\begin{equation*}
+    G(x) = \sum_{n=-\infty}^{\infty} \frac{e^{i n x}}{\kappa^2 - n^2},
+    \hspace{5 mm} x \in (-\pi, \pi).
+\end{equation*}
+Аналогично №1, представим $G(x)$ в виде интеграла:
+\begin{equation*}
+    G(x) = \int \frac{\d z}{2 \pi i} \frac{\pi e^{i n x}}{\kappa^2-z^2} (\ctg (\pi z) + \tilde{g}),
+\end{equation*}
+где регулярную $\tilde{g}$ выберем так, чтобы независимо от направления дуги  в больших полуокружностях $e^{n x} g(z) \sim \const$, достаточно рассмотреть пределы и сдвинуть на них $\ctg z$:
+\begin{equation*}
+    \lim_{z \to \infty} \cth (-  i z) = i,
+    \hspace{10 mm} 
+    \lim_{z \to \infty} \cth ( i z) = -i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tilde{g}(x) = - i \sign x.
+\end{equation*}
+Тогда $G(x)$ можем найти, как
+\begin{equation*}
+    G(x) = \int \frac{\d z}{2 \pi i} \frac{\pi e^{i n x}}{\kappa^2-z^2} (\ctg (\pi z) - i \sign x),
+\end{equation*}
+где такой интеграл будет равен сумме интегралов по полуокружностям (особенностей нет, $\equiv 0$), минус вычеты в точках $\pm k$:
+\begin{equation*}
+    G(x) = \frac{\pi}{\kappa}\left( \vphantom{\bigg|}
+        \ctg \pi \kappa \cos \kappa x + \sign x \sin \kappa x
+    \right)
+\end{equation*}
+
+
+
+
+\subsection*{№3 (2.1.3)}
+
+Найдём решение задачи
+\begin{equation*}
+    \hat{L} f = \varphi(x),
+    \hspace{10 mm} 
+    \hat{L} = \partial_x^2 + \kappa^2,
+    \hspace{5 mm} 
+    \varphi(x) = \sign x,
+\end{equation*}
+на классе периодических фнкций на интервале $(- \pi, \pi)$.
+
+
+\textbf{Функция Грина}. 
+Повторм выкладки с семинара, а именно найдём функцию Грина, оператора $\hat{L}$
+с периодическими граничными условиями на $[-\pi, \pi]$. 
+
+При $x < y$:
+\begin{equation*}
+    G(x, y) = A_1 (y) \sin \kappa(x + \pi) + B_1 (y) \cos \kappa( x + \pi),
+\end{equation*}
+и аналогично для $x > y$:
+\begin{equation*}
+    G(x, y) = A_2 \sin \kappa (x - \pi) + B_2 (y) \cos \kappa (x - \pi).
+\end{equation*}
+Запишем граничные условия:
+\begin{align*}
+    G(- \pi, y) = G(\pi, y), \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B_1 (y) = B_2 (y) \overset{\mathrm{def}}{=} B(y) \\
+    G'_x (-\pi, y) = G'_x (\pi, y),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A_1 (y) = A_2 (y) \overset{\mathrm{def}}{=}  A(y).
+\end{align*}
+Тогда нашли, что
+\begin{equation*}
+    G(x, y) = \left\{\begin{aligned}
+        &A \sin \kappa (x + \pi) + B \cos \kappa (x + \pi) \\
+        &A \sin \kappa (x - \pi) + B \cos \kappa (x - \pi) \\
+    \end{aligned}\right.
+\end{equation*}
+Теперь запишем непрерывность:
+\begin{equation*}
+     A \sin \kappa (x + \pi) + B \cos \kappa (x + \pi) 
+     = 
+     A \sin \kappa (x - \pi) + B \cos \kappa (x - \pi).
+\end{equation*}
+А также скачок производной
+\begin{equation*}
+    G'_x(y + 0, y) - G'_x (y-0, y) = 1,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+        A \cos \kappa (x - \pi) - B \sin \kappa (x - \pi)  - 
+        A \cos \kappa (x + \pi) + B \cos \kappa (x + \pi)
+        = \kappa^{-1}.
+\end{equation*}
+Решая эту систему находим, что
+\begin{equation*}
+    2 \sin \pi \kappa 
+    \begin{pmatrix}
+        \cos \kappa y & - \sin \kappa y  \\
+        \sin \xi y & \cos \kappa y  \\
+    \end{pmatrix} \begin{pmatrix}
+        A  \\
+        B  \\
+    \end{pmatrix}
+    = \begin{pmatrix}
+        0 \\ 1/\kappa
+    \end{pmatrix},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \begin{pmatrix}
+        A \\ B
+    \end{pmatrix} = 
+    \frac{1}{2 \sin \pi \kappa} \begin{pmatrix}
+        \cos \kappa y & \sin \kappa y  \\
+        \sin \kappa y & \cos \kappa y  \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 \\ 1/\kappa
+    \end{pmatrix} = 
+    \frac{1}{2 \kappa \sin \pi \kappa} \begin{pmatrix}
+        \sin xy \\ \cos xy
+    \end{pmatrix}.
+\end{equation*}
+Подставляя в $G(x, y)$, находим
+% \footnote{К дз будет полезно заметить, что $G(x, y) = G(x-y)$ -- задача трансляционно инвариантна.} 
+\begin{equation*}
+    G(x, y) = \frac{1}{2 \kappa \sin \pi \kappa}
+    \left\{\begin{aligned}
+        &\cos (\kappa(x-y) + \kappa \pi), &x < y,\\
+        &\cos(\kappa (x-y) - \kappa \pi), &x > y.
+    \end{aligned}\right.
+    \ \
+    \overset{\mathrm{def}}{=} 
+    \ \ 
+    \left\{\begin{aligned}
+        &G_1(x-y), &x<y, \\ 
+        &G_2(x-y), &x>y.
+    \end{aligned}\right.
+\end{equation*}
+
+
+\textbf{Решение с возмущением}. Подставим теперь возмущение, вида 
+\begin{equation*}
+    \varphi(x)  = \sign x,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(x) = 
+    \int_{-\pi}^{+\pi} G(x, y) \varphi(y) \d y,
+\end{equation*}
+а дальше разделим задачу на две части $x<0$ и $x > 0$:
+\begin{align*}
+    &x<0:
+    &f(x) &= \int_{-\pi}^{x} (-G_2) \d y  + \int_{x}^{0} (-G_1) \d y + \int_{0}^{\pi} G_1 \d y, \\
+    &x >0:
+    &f(x) &= \int_{-\pi}^{0} (-G_2) \d y + \int_{0}^{x}  G_2 \d y + \int_{x}^{\pi} G_1 \d y.
+\end{align*}
+Осталось посчитать шесть интегралов, так находим:
+\begin{equation*}
+    f(x) = \frac{1}{\kappa^2} \left(
+         1 - \frac{\sin \kappa (\pi - |x|) }{\sin  \pi \kappa}
+    \right) \sign x - 
+    \frac{\sin \kappa x}{\kappa^2 \sin \kappa \pi}.
+\end{equation*}
+
+
+
+\subsection*{№4 (2.1.6)}
+
+
+
+
