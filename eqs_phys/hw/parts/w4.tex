@@ -187,3 +187,45 @@
 
 
 
+Найдём поведение решения уравнения Бесселя
+\begin{equation*}
+    \hat{L} f(x) = 0,
+    \hspace{5 mm} 
+    \hat{L} = \partial_x^2 + Q(x) \partial_x - U(x),
+    \hspace{5 mm} 
+    Q(x) = \frac{1}{x}, 
+    \hspace{5 mm} U(x) = 1 - \frac{\nu^2}{x^2}.
+\end{equation*}
+Перейдём к уравнени, вида
+\begin{equation*}
+    x^2 \partial_x^2 u + x \partial_x u + x^2 u - \nu^2 u = 0.
+\end{equation*}
+Вблизи $x = 0$, приведенное уравнение имеет степенные решения $f \sim x^{\alpha}$, где 
+\begin{equation*}
+    x^2 \alpha (\alpha-1) x^{\alpha-2} + x \alpha x^{\alpha-1} + \cancel{x^2 x^{\alpha}} - \nu^2 x^{\alpha} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \alpha = \pm \nu,
+\end{equation*}
+откуда находим $f \sim x^\nu$ -- регулярное решение и $f \sim 1/x^{\nu}$ -- нерегулярное решение. 
+
+
+% При $\nu = 1$, регулярное решение $f \sim x$ сохранится, как и нерегулярное решение $f \sim 1/x$. 
+При $\nu = 0$, регулярное решение выродится в $f \sim \const$ вблизи $x=0$, а асимптотику нерегулярного найдём из:
+\begin{equation*}
+    x^2 u'' + x u' + x^2 u = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x u'' + u' + x u = 0,
+\end{equation*}
+решение которого можно попробовать найти в виде $c \ln x$:
+\begin{equation*}
+    -\frac{c}{x} + \frac{c}{x} + x c \log x = 0,
+\end{equation*}
+ну, похоже на $\ln x$. Надо бы показать, что $c = 2 / \pi$, но кроме как численно пока не придумал. 
+
+% Решаем уравнение:
+% \begin{equation*}
+%     x \partial_x^2 f + \partial_z f =0,
+%     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+%     f(x) = c_1 + c_2 \ln x,
+% \end{equation*}
+% откуда находим асимптотику: $f(x) \sim \log x$. 
