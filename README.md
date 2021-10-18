@@ -5,13 +5,17 @@
 ([*задание*](https://github.com/k1242/notes_5sem/blob/main/qmec/hw/qmec_hw.pdf),
 [*заметки*](https://ibb.co/zNTVnNB));
 
+* **уравнениям математической физики**
+([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
+[*заметки*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/notes/eqs_phys_notes.pdf));
+
 * **ТФКП**
 ([*задание (III-VI, от меня)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw/hw_tfcv.pdf),
 [*задание (I, от Паши)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw_tfcv/hw.pdf));
 
-* **уравнениям математической физики**
-([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
-[*заметки*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/notes/eqs_phys_notes.pdf));
+* **физике**
+([*билеты к ГОСу*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_tickets/gos_tickets.pdf),
+[*программа ГОСа*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_list/name.pdf));
 
 * **вычислительной математике**
 ([*задание (код)*](https://github.com/k1242/notes_5sem/tree/main/comp_math),
