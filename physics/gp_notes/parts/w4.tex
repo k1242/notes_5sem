@@ -1,0 +1,62 @@
+
+\textbf{Уравнение Шредингера}. 
+Уравнение Шредингера:
+\begin{equation*}
+    i \hbar \partial_t \Psi = \hat{H} \psi, 
+    \hspace{5 mm} 
+    \hat{H} = \frac{\hat{p}^2}{2m} + U = - \frac{\hbar^2}{2m} \nabla^2 + U
+    \hspace{5 mm} 
+    \hat{p} = - i \hbar \nabla.
+\end{equation*}
+Плотность потока вероятности  для частицы:
+\begin{equation*}
+    \vc{j} = \frac{i\hbar}{2m} \left(
+        \psi \nabla \psi^* - \psi^* \nabla \psi
+    \right),
+    \hspace{5 mm} 
+    \div \vc{j} + \partial_t \rho = 0,
+\end{equation*}
+где $\rho$ -- плотность вероятности $\psi^* \psi$. 
+
+Среднее значение величины, с оператором $\hat{A}$:
+\begin{equation*}
+    \langle A\rangle = \int \psi^* \hat{A} \psi \d V.
+\end{equation*}
+
+\textbf{Условие квантования}. Условие квантования Бора-Зоммерфельда:
+\begin{equation*}
+    \oint p \d x = 2 \pi \hbar (n + \tfrac{1}{2}) \approx  2 \pi \hbar n,
+\end{equation*}
+что верно при больших $n$. 
+
+
+
+\textbf{Потенциальные барьеры}. Коэффициент пропускания (прозрачности) барьера:
+\begin{equation*}
+    D \overset{\mathrm{def}}{=}  \frac{|\sub{j}{out}|}{|\sub{j}{in}|},
+\end{equation*}
+где для свободной частицы $\vc{j} = \rho \vc{v}$.  Коэффициент отражения, соответственно
+\begin{equation*}
+    R = \overset{\mathrm{def}}{=}  \frac{|\sub{j}{back}|}{|\sub{j}{in}|} = 1 - D.
+\end{equation*}
+Для случая, когда барьер выше энергии частицы:
+\begin{equation*}
+    D = D_0 e^{- 2 \chi l} = D_0 \exp\left(
+        - \frac{2 l}{\hbar} \sqrt{2m (U - E)}
+    \right) = 
+    D_0 \exp\left(
+        - \frac{2}{\hbar} \int\nolimits_{x_1}^{x_2}  \sqrt{2m(U-E)} \d x
+    \right),
+    \hspace{5 mm} 
+    D_0 \sim 1.
+\end{equation*}
+Стоит заметить, что коэффициенты прохождения волной потенциала в прямом и обратном направлении совпадают. 
+
+Для ступеньки верно, что
+\begin{equation*}
+    k^2 = \frac{2m}{\hbar}(E-U),
+    \hspace{5 mm} 
+    D = \frac{4 k_1 k_2}{(k_1 + k_2)^2}.
+\end{equation*}
+
+

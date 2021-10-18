@@ -1,0 +1,256 @@
+% пылинка, что несет баланс
+
+Введем лучистую энергию, раскладывая по частотам или длинам волн:
+\begin{equation*}
+    u = \int_0^\infty u_\omega \d \omega = \int_{0}^{\infty} u_\lambda \d \lambda,
+\end{equation*}
+где $u_\lambda$ и $u_\omega$ -- спектральные плотности лучистой энергии. При этом
+\begin{equation*}
+    \lambda = \frac{2 \pi c}{\omega},
+    \hspace{5 mm} 
+    \frac{d \lambda}{\lambda} = - \frac{d \omega}{\omega},
+    \hspace{10 mm} 
+    u_\lambda = \frac{\omega}{\lambda} u_\omega,
+    \hspace{5 mm} 
+    u_\omega = \frac{\lambda}{\omega}  u_\lambda.
+\end{equation*}
+В теорфизе обычно $u_\omega$, в эксперименте чаще $u_\lambda$ (как удобно). 
+
+Поток лучистой энергии, проходящий за время $\d t$ через площадку $\d s$ в пределах телесного угла $\d \Omega$, ось которого перпендикулярна к площадке $\d s$, можно представить, как
+\begin{equation*}
+    \d \Phi = I \d s \d \Omega \d t,
+    \hspace{10 mm} 
+    I = \int_{0}^{\infty} I_\omega \d \omega,
+\end{equation*}
+где $I$ -- удельная интенсивность излучения, а $I_\omega$ -- удельная интенсивность излучения частоты $\omega$. 
+
+
+Для равновесного излучения несложно выписать связь:
+\begin{equation*}
+    u = \frac{4 \pi}{c} I,
+    \hspace{5 mm} 
+    u_\omega = \frac{4 \pi}{c} I_\omega. 
+\end{equation*}
+
+
+
+\textbf{Закон Кирхгофа}. Для непрозрачного и поглощающего тела верно, что поток лучистой энергии, излучаемый площадкой $\d s$ поверхности тела внутрь телесного угла $\d \Omega$:
+\begin{equation*}
+    \d \Phi = E_\omega \d s \cos \varphi \d \Omega \d \omega \d t,
+\end{equation*}
+где $\varphi$ -- угол между направлением излучения и нормалью к площадке $\d s$. Велична $E_\omega$ -- \textit{излучаетльная способность} поверхности тела, в направлении угла $\varphi$. 
+
+
+\textit{Поглощательной способностью} $A_\omega$ поверхности для излучения той же частоты, называется величина, показывающая, какая доля энергии падающего излучения, поглощается рассматриваемой поверхностью. Величины $E_\omega$ и $A_\omega$ -- характеристики тела, определяемые только температурой. 
+
+
+Рассмотрев тело в ящике, можем получить, что
+\begin{equation*}
+    \frac{E_\omega}{A_\omega} =  I_\omega,
+\end{equation*}
+таким обрахом $\frac{E_\omega}{A_\omega}$ -- универсальная функция только частоты и температуры для каждого тела. 
+
+
+
+\begin{to_def}
+    \textit{Абсолютно черным} называется телос $A_\omega = 1 \ \forall \omega$.
+\end{to_def}
+
+Далее излучательную способность АЧТ примем за $e_\omega \equiv I_\omega$. Излучение АЧТ изотропно, а значит подчиняется \textit{закону Ламберта}:
+\begin{equation*}
+    \frac{\d \Phi}{\d \Omega \d s \cos \theta} = B_\theta = \const(\theta).
+\end{equation*}
+
+
+\textbf{Закон Стефана-Больцмана}. Выведем этот закон, \textit{методом циклов}. Пусть есть некоторая оболочка, при увеличении объема на $\d V$ за счёт давления света совершается работа $\mathcal P \d V$, где $\mathcal P = \frac{1}{3} u$,  а $u$ --интегральная плотность лучистой энергии. Внутренняя энергия излучения в оболочке  $uV$, откуда находим
+\begin{equation*}
+    \mathcal P \d V = - d(uV),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{4}{3} u \d V + V \d u = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u V^{4/3} = \const, \hspace{5 mm} \mathcal P V^{4/3} = \const,
+\end{equation*}
+так получили \textit{уравнения адиабаты} для изотропного изучения, с постоянной адиабаты $\gamma = 4/3$. 
+
+
+
+В силу эффекта Дполера, при адиабатическом сжатии должен меняться спектральный состав, пусть $\omega \to \omega'$, при этом:
+\begin{equation*}
+    u_\omega \d \omega \cdot V^{4/3} = u'_{\omega'} \d \omega \cdot V'{}^{4/3} = \const,
+\end{equation*}
+где $V'$ и $u'_{\omega'}$ -- объем и спектральная плотность энергии излучения частоты $\omega'$ в конце процесса. 
+
+
+Произведем теперь над излучением АЧТ \textit{цикл Карно} (см. Сивухин, т. IV, \S 115).  А можно этого и не делать, а подставить $U = V u(T)$ и $\mathcal P = \frac{1}{3} u(T)$ в формулу
+\begin{equation*}
+    \left(\frac{\partial U}{\partial V} \right)_T = T \left(\frac{\partial \mathcal P}{\partial T} \right)_V - \mathcal P,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u/T^4 = \const,
+\end{equation*}
+что и составляет закон Стефана-Больцмана. 
+
+
+Пользуясь формулой Планка, можем уточнить, что
+\begin{equation*}
+    u = \frac{h}{\pi^2 c^3} \int_{0}^{\infty} \frac{\omega^3 \d \omega}{e^{\hbar \omega / k T} - 1} = 
+    \frac{k^4 T^4}{\pi^2 c^3 \hbar^3} \int_{0}^{\infty} \frac{x^3 e^{-x}}{1 - e^{-x}} \d x = \frac{8}{15} \frac{\pi^5 k^4}{c^3 h^3} T^4 = \frac{\pi^2 k^4}{15 c^3 \hbar^3}.
+\end{equation*}
+
+На практике удобнее говорить про энергетическую светимость $S$ для АЧТ, которая связана с яркостью $B$ излучающей поверхности соотношением $S = \pi B = \pi I = c u/4$, а значит
+\begin{equation*}
+    S = \sigma T^4,
+    \hspace{10 mm} 
+    \sigma = \frac{\pi^2 k^4}{60 c^2 /\hbar^3} = \frac{2 \pi^5 k^4}{15 c^2 h^3} = 5.670 \times 10^{-8} 
+    \ \text{Вт}\cdot\text{м}^{-2}\cdot\text{К}^{-4},
+\end{equation*}
+где $\sigma$ -- \textit{постоянная Стефана-Больцмана}.
+
+
+
+\textbf{Теорема Вина}. Рассмотрим сферически симметричную систему (вообще вроде можно показать что в общем случае изотропия излучения сохраняется), сожмем от $V_1$ до $V_2$, уравновесим (необратимый процесс), расщирим от $V_2$ до $V_1$, получим адиабатический \textit{обратимый} круговой процесс, что невозможно, а значит верна следующая теорема:
+
+\begin{to_thr}[теорема Вина]
+    Равновесное излучение, в оболочке с идеально отражающими стенками, остается равновесным при квазистатическом изменении объема системы.
+\end{to_thr}
+
+
+Рассмотрим сферическую оболочку с идеально зеркальными стенками. Рассмотрим луч, падающий под углом $\theta$, тогда время между думя последовательными отражениями равно $\Delta t = (2r/c) \cos \theta$, за это время радиум оболочки получит приращение $\Delta r = r\delta \Delta t$. При При каждом отражении происходит доплеровское изменение частоты:
+\begin{equation*}
+    \frac{\Delta \omega}{\omega} = - \frac{2 \dot{r} \cos \theta}{c} = - \frac{2 \Delta r \cos \theta}{c \Delta t} = - \frac{\Delta r}{r},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\d \omega}{\omega} + \frac{\d r}{r} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \omega r = \const.
+\end{equation*}
+Так как $r \sim V^{1/3}$, то можно записать в чуть более общем виде:
+\begin{equation*}
+    \omega^3 V = \const,
+\end{equation*}
+что объединяя с другми адиабатическими инвариантами и законом Стефана-Больцмана, находим \textit{закон смещения Вина} в наиболее общей форме:
+\begin{equation*}
+    \frac{\omega^4}{u} = \const,
+    \hspace{5 mm} 
+    \frac{\omega}{T} = \const,
+    \hspace{5 mm} 
+    \frac{u_\omega \d \omega}{\omega^4} = \const.
+\end{equation*}
+По теореме Вина излучение остается равновесным, так что можно было бы такж и нагревать/охлаждать стенки, да и вообще: полученные результаты -- свойства только самого равновесного излучения, не связанные с процессами.
+
+
+\textbf{Максимумы спектральной плотности}. 
+Их последней формулы можем получить\footnote{
+    Интегрируя $u_\omega (\omega, T) = T^3 \cdot \varphi_1\left(\frac{\omega}{T}\right)$, находим, что
+    $u = \int_{0}^{\infty} u_\omega \d \omega = T^4 \int_{0}^{\infty} \varphi(\omega/T) \d (\omega/T) = a T^4$.
+}   
+\begin{equation*}
+    u_\omega (\omega, T) = \frac{\omega^4}{\omega'{}^4} \frac{d \omega'}{d \omega} u'_{\omega'} (\omega', T) = \frac{T^3}{T'{}^3} u'_{\omega'} \left(\frac{T'}{T} \omega,\, T'\right) = \const(T'),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    u_\omega (\omega, T) = T^3 \cdot \varphi_1\left(\frac{\omega}{T}\right) = \omega^3 f_1\left(\frac{\omega}{T}\right)
+    ,
+\end{equation*}
+где $\varphi,\,  f$ -- универсальные функции. Аналогично можно переписать, в виде
+\begin{equation*}
+    u_\lambda = T^5 \varphi_2 (\lambda T),
+    \hspace{10 mm}  
+    u_\lambda = \frac{1}{\lambda^5} f_2(\lambda T).
+\end{equation*}
+
+
+Найдём теперь максимумы $u_\lambda$ обозначив, за $\sub{\lambda}{max}$:
+\begin{equation*}
+    \frac{d \varphi_2}{d \lambda} = T \frac{d \varphi_2}{d (\lambda T)} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{d \varphi_2}{d (\lambda T)} = 0.
+\end{equation*}
+Таким образом, при всех температурах максимум получается при одном и том же значении $\lambda T$, а значит выполняется \textit{закон смещения Вина}:
+\begin{align*}
+    \sub{\lambda}{max} \cdot T &= b_\lambda = \const ,
+    &b_\lambda &= 2.898 \times 10^{6} \ \,  \unm{нм}{К} \\
+    \sub{\nu}{max} /T &= b_\nu = \const,
+    &b_\nu &= 5.879 \times 10^{10} \, \unm{Гц}{К}.
+\end{align*}
+
+ 
+
+ Введем $\beta = h c / \lambda kT$, тогда задача сводится к отысканию минимума: 
+ \begin{equation*}
+     \frac{1}{\beta^5}(e^\beta - 1) \to \min,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     e^{-\beta} + \frac{\beta}{5} - 1 =0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \beta = 4.9651142,
+     \hspace{1cm}
+     b_\lambda = \sub{\lambda}{max} T = \frac{h c}{k \beta}.
+ \end{equation*}
+
+
+При поиске $\beta_\omega$ уравнение получится, вида
+\begin{equation*}
+    (3-\beta_\omega)e^{\beta_\omega} - 3 =0,
+    \hspace{0.5cm} 
+    \beta_\omega = \frac{\hbar \omega}{kT} = \frac{h c}{\lambda k T},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \beta_\omega = 2.821,
+    \hspace{5 mm} 
+    \sub{\lambda}{max}^{\text{по }\omega} = \frac{h c}{k \beta_\omega} \frac{1}{T}.
+\end{equation*}
+Стоит заметить, что $\sub{\lambda}{max}^{\text{по }\omega} / \sub{\lambda}{max} = \beta / \beta_\omega \approx 1.76$.
+
+
+
+
+
+\textbf{Формула Планка}. \red{опускаем кусок вывода про стоячие волны}
+\\
+ Итак, считая, что на каждую стоячую волну приходится $\bar{\E} = kT$, то записав энергию равновесного излучения в полости в спектральном интервале $\d \omega$ в виде $V u_\omega \d \omega$, получаем:
+ \begin{equation}
+     u_\omega  = \frac{\omega^2}{\pi^2 c^3} \bar{\E} \overset{*}{=}  \frac{kT}{\pi^2 c^3} \omega^2,
+     \label{rj0}
+ \end{equation}
+где равенство со звёздочкой -- формула Рэлея-Джинса, верная при малых $\omega$. 
+
+Однако, считая, что существует минимальный квант энергии света, по теореме Больцмана, вероятности возбуждения энергетических уровней осциллятора пропорциональны
+\begin{equation*}
+    1,\, e^{-\E_0/kT}, e^{- 2 \E_0/kT}, \ldots,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \bar{\E} = \frac{\sum_{n=0}^{\infty}  n \E_0 e^{- n \E_0 / kT}}{\sum_{n=0}^{\infty} e^{-n \E_0 / kT}} = \E_0 \frac{\sum_{n=0}^{\infty} n e^{-n x}}{\sum_{n=0}^{\infty} e^{-nx}},
+\end{equation*}
+где введено обозначение $x = \E_0 / kT$. Вспоминая, что
+\begin{equation*}
+    \sum_{n=0}^{\infty} e^{-n x} = \frac{1}{1 - e^{-x}},
+    \hspace{5 mm} 
+    \sum_{n=0}^{\infty} n e^{-nx} = \frac{e^{-x}}{(1-e^{-x})^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \bar{\E} = \frac{\E_0}{e^{\E_0/ k T} - 1}.
+\end{equation*}
+Подставляя это в формулу \eqref{rj0}, находим
+\begin{equation*}
+    u_\omega (\omega, T) = \frac{\omega^2}{\pi^2 c^3} \frac{\E_0}{e^{\E_0/ kT}-1}.
+\end{equation*}
+А теперь внимание, гений Планка предложил подобрать $\E_0$ так, чтобы выполнялся закон смещения Вина:
+\begin{equation*}
+     u_\omega (\omega, T) = \omega^3 f_1\left(\frac{\omega}{T}\right),
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \frac{1}{\pi^2 c^3} \frac{\E_0 / \omega}{e^{\E_0 / kT} - 1} = f\left(\frac{\omega}{T}\right),
+\end{equation*}
+но $\E_0$ -- характеристика только самого осциллятора, а значит $\E_0 = \const (T)$, тогда $\E_0 = \E_0(\omega)$, откуда находим
+\begin{equation*}
+    \E_0 = \hbar \omega,
+\end{equation*}
+где $\hbar$ -- постоянная Планка. Подставляя, находим
+\begin{equation}
+    u_\omega = \frac{\hbar \omega^3}{\pi^2 c^3} = \frac{1}{e^{\hbar \omega /  kT} - 1},
+    \hspace{5 mm} 
+    u_\nu = \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / kT}-1},
+    \hspace{10 mm} 
+    u_\lambda = \frac{8 \pi h c}{\lambda^5} \frac{1}{e^{h c / \lambda k T} - 1},
+\end{equation}
+что и называют \textit{формулой Планка}.
+
+% В пределе $\hbar \omega / k T \gg 1$, получается
+% \begin{equation*}
+%     u_\omega = \frac{\hbar \omega^3}{\pi^2 c^3} e^{- \hbar \omega / kT}.
+% \end{equation*}
+
+
+% дописать 5. -- вывод из статистики Бозе-Эйнтштейна.
