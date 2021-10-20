@@ -1,0 +1,123 @@
+\textbf{Оценки Бора}. 
+Для водорода:
+\begin{equation*}
+   \hbar \omega = \hbar \frac{2 \pi c}{\lambda} = \R \left(
+        \frac{1}{n_0^2} - \frac{1}{n^2}
+    \right),
+    \hspace{10 mm} 
+    \R = 13.6 \ev.
+\end{equation*}
+Различают серии Лаймана при $n_0 = 1$, серии Бальмера при $n_0 = 2$, Пашена при $n_0 = 3$, и Брэкета при $n_0 = 4$. 
+
+
+
+Момент импульса квантуется:
+\begin{equation*}
+    p r = n \hbar,
+    \hspace{5 mm} 
+    2 \pi r = n \lambda.
+\end{equation*}
+В первом приближении, можем найти \textit{боровский радиус}:
+\begin{equation*}
+    \frac{m v^2}{r} = \frac{e^2}{r^2},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    r_n = \frac{\hbar^2}{m e^2} \frac{1}{n^2},
+    \hspace{5 mm} 
+    r_1 = 0.529 \times  10^{-8} \text{ см}.
+\end{equation*}
+Полную энергию можно было бы найти, считая $U = -2 K$,  а значит $\sub{E}{full} = - me^4/(2 \hbar^2 n^2)$, где число $n$ -- \textit{главное квантовое число}.
+
+
+Абсолютную величину энергитического уровня называют \textit{термом}, разница которых составляет спектральные линии. 
+
+\textbf{Принцип соответствия}. При $n \to \infty$ квантовые соотношения должны переходить в классические. Тогда 
+\begin{equation*}
+    \frac{m v^2}{2} - \frac{e^2}{r} = 0,
+    \hspace{5 mm} 
+    \frac{m v^2}{2} = m \frac{2 \pi r^2}{T^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{r^3}{T^2}= \frac{e^2}{2m \pi^2} = \const,
+\end{equation*}
+что соответствует классической связи.
+
+
+\textbf{Водородоподобные атомы}. Таковыми называют ионы, с одним электроном на орбите и зарядом ядра $eZ$. Повторяя выкладки водорода, находим
+\begin{equation*}
+    r_n = \frac{\hbar^2 n^2}{m e^2 Z},
+    \hspace{5 mm} 
+    E_n = - \frac{m e^4 Z^2}{2 \hbar^2 n^2},
+    \hspace{5 mm} 
+    \hbar \omega = \R Z^2 \left(\frac{1}{n_0^2}-\frac{1}{n^2}\right),
+    \hspace{5 mm} 
+    \R^* = \frac{m^* e^4}{2 \hbar^3},
+\end{equation*}
+где под $m^*$ подразумевается приведенная масса:
+\begin{equation*}
+    \R / \text{R}_{\text{D}} = \frac{1 + m/\sub{M}{D}}{1 + m/\sub{M}{H}}.
+\end{equation*}
+Иногда используют $\text{R}^\lambda = \frac{m e^4}{4 \pi c \hbar^3}$:
+\begin{equation*}
+    \frac{1}{\lambda} = \text{R}^{\lambda} Z \left(\frac{1}{n_0^2} - \frac{1}{n^2}\right),
+    \hspace{5 mm} 
+    \sub{\text{R}}{H} = 10.967 \times  10^6 \text{ м}^{-1}, \hspace{5 mm} 
+    \sub{\text{R}}{В} = 10.970 \times  10^6 \text{ м}^{-1}, \hspace{5 mm} 
+    \sub{\text{R}}{He} = 10.972 \times  10^6 \text{ м}^{-1},
+\end{equation*}
+где в пределе $\text{R}_\infty = 10.973 \times  10^6 \text{ м}^{-1}$.
+
+К слову, частота из-за доплеровского сдвига меняется, как:
+\begin{equation*}
+    \omega_1 = \omega_0 \sqrt{\frac{1 + \beta}{1-\beta}}.
+\end{equation*}
+
+Волновая функция, основного состояния электрона в атоме водорода:
+\begin{equation*}
+    \psi = \frac{1}{\sqrt{\pi r_1^3}} e^{- r/r_1},
+    \hspace{5 mm} 
+    \langle r\rangle = \frac{3 r_1}{2}.
+\end{equation*}
+Вообще, повторимся, должно выполняться уравнения Шредингера:
+\begin{equation*}
+    \hat{H} \psi = - \frac{\hbar^2}{2m} \nabla^2 \psi + U \psi = E \psi,
+    \hspace{5 mm} 
+    \nabla^2|_{\dim=n} = \partial_r^2 + \tfrac{n-1}{r}\partial_r.
+\end{equation*}
+
+
+\textbf{Молекулы}. В первом приближении энергия молекулы:
+\begin{equation*}
+    E = \sub{E}{эл} + \sub{E}{колеб} + \sub{E}{вращ}.
+\end{equation*}
+
+\textit{Колебательные возбуждения}. Вблизи минимума $U(r)$ мало отличается от параболы и нижние уровни энергии близки к уровням гармонического осциллятора:
+\begin{equation*}
+    \sub{E}{колеб} = \hbar \omega_0 \left(n + \frac{1}{2}\right) - 
+    \hbar \omega_0 x_n \left(n + \frac{1}{2}    \right)^2,
+\end{equation*}
+где $x_n$ -- коэффициент ангармонизма, который мал. 
+
+
+Вблизи минимума кривую можно представить в виде
+\begin{equation*}
+    U(r) = U(r_0) + \frac{(r-r_0)^2}{a^2} \R,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sub{\omega}{колеб} = \sqrt{\frac{k}{M}} = \sqrt{\frac{U''}{M}} \approx \alpha^2 \frac{m c^2}{\hbar} \sqrt{\frac{m}{M}},
+\end{equation*}
+где $M$ -- масса молекулы, $m$ -- масса электрона. 
+
+Эту часоту естественно сравнить с храктерной частотой эдектронных уровней:
+\begin{equation*}
+    \sub{\omega}{эл} = \frac{\R}{\hbar} \approx \frac{mc^2}{\hbar} \alpha^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\sub{\omega}{колеб}}{\sub{\omega}{эл}} \approx \sqrt{\frac{m}{M}}.
+\end{equation*}
+
+
+\textit{Вращательные возбуждения}. Рассмотрим двухатомную молекулу, с
+\begin{equation*}
+    J = M a^2,
+    \hspace{5 mm} 
+    \sub{E}{вращ} = \frac{\hbar^2}{2J} l(l+1) \overset{l=1}{\approx} \frac{\hbar^2}{M a^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\sub{\omega}{вращ}}{\sub{\omega}{эл}} \approx \frac{m}{M}.
+\end{equation*}
