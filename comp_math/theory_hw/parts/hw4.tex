@@ -1,0 +1,124 @@
+\newpage
+
+\section{A4}
+
+
+% \subsection*{№1}
+
+% см. блокнот.
+
+
+
+\subsection*{№2}
+
+Знаем, что верно разложение $X = V \sqrt{\Lambda} U\T$, также $\Lambda = \diag(\lambda_1, \ldots, \lambda_{\tilde{F}}, \ldots, \lambda_F)$, и вводим $\tilde{\Lambda} = \diag(\lambda_1,\ldots,\lambda_{\tilde{F}},0,\ldots,0)$. Тогда можем найти норму $\tilde{X} = V \sqrt{\tilde{\Lambda}} U\T$:
+\begin{equation*}
+    \|\tilde{X} - X\|^2 = \|
+        V \underbrace{\left(
+            \sqrt{\tilde{\Lambda}} - \sqrt{\Lambda}
+        \right)}_{\Delta} U\T
+    \|^2   = \tr \left(
+        U \Delta\T V\T V \Delta U\T 
+    \right) = \tr\left(
+        U\T U \Delta\T \Delta
+    \right) = \tr\left(\Delta\T \Delta\right) = \sum_{k=\tilde{F}+1}^{F}  \lambda_i,
+\end{equation*}
+что и требовалось доказать.
+
+
+
+
+\subsection*{№3}
+
+Покажем, что сингулярный вектор матрицы $X$, отвечающий наибольшему сингелярному числу, является решением задачи
+\begin{equation*}
+    \vc{u} = \text{argmax}\,_{\|u\|=1} \left(X \vc{u}\right)^2.
+\end{equation*}
+Само собой считаем $\lambda_1 > \lambda_2 > \ldots > \lambda_F$, также знаем, что
+\begin{equation*}
+    \|X \vc{u}\|^2 = \langle X \vc{u} | X \vc{u} \rangle = \langle \vc{u}| X\T X| \vc{u}\rangle,
+    \hspace{10 mm} 
+    \|X\T X\| = \lambda_1, 
+\end{equation*}
+а норма где-то достигается, и достигается как раз на первом сингулярном векторе.
+
+Действительно, по определению $X U = V \sqrt{\Lambda}$, где $U = \left(\vc{u}_1,\, \ldots,\, \vc{u}_F\right)$ -- собственные вектора $X\T X$, и $X \vc{u}_1 = \sqrt{\lambda_1} v_1$. 
+
+
+
+
+\subsection*{№4}
+
+
+Сведем задачу к предыдущей (№3). Для этого запишем дисперсию вдоль вектора $\vc{a}$:
+\begin{equation*}
+    S^2 = \frac{1}{l} \sum_{i=1}^{l} \langle \vc{a} | \vc{x}_i\rangle = \frac{1}{l} \sum_{i=1}^{l}  \sum_{j=1}^{F} (X_{ij} a_j)^2 \to \max,
+\end{equation*}
+где $X\T = \left(\vc{x}_1,\, \ldots,\, \vc{x}_l\right)$. По теореме Пифагора верно, что
+\begin{equation*}
+    \|\vc{x}_i - \vc{a} \langle \vc{a} | \vc{x}_i\rangle\| = \|\vc{x}_i\| - \langle \vc{a} | \vc{x}_i\rangle^2,
+\end{equation*}
+тогда, суммируя по $i$, находим
+\begin{equation*}
+    \underbrace{\sum_i \|\vc{x}_i - \vc{a} \langle \vc{a} | \vc{x}_i\rangle\|}_{\to \min} 
+    = 
+    \underbrace{\sum_i  \|\vc{x}_i\|}_{\equiv \const}
+     -
+    \underbrace{\sum_i  \langle \vc{a} | \vc{x}_i\rangle^2}_{\to \max}.
+\end{equation*}
+Осталось заметить, что
+\begin{equation*}
+    \sum_i \langle \vc{a} | \vc{x}_i\rangle^2 = (X \vc{a})\T (X \vc{a}) = 
+    \langle \vc{a}| X\T X | \vc{a} \rangle,
+\end{equation*}
+которая достигает максимума на $\vc{a}$ -- первом сингулярном векторе (см. №3), а значит поставленные задачи равносильны.
+
+
+
+
+
+\subsection*{№5}
+
+
+Посмотрим на $X$:
+\begin{equation*}
+    X = \begin{pmatrix}
+        x_1 & y_1 & z_1 \\
+         & \ldots &  \\
+        x_N & y_N & z_N \\
+    \end{pmatrix},
+    \hspace{10 mm} 
+    X\T X = 
+    \begin{pmatrix}
+        x_i x_i & x_i y_i & x_i z_i \\
+        x_i y_i & y_i y_i & y_i z_i \\
+        x_i z_i & y_i z_i & z_i z_i \\
+    \end{pmatrix},
+\end{equation*}
+где подразумевается суммирование при повторяющемся индексе. 
+
+Вспомним, что тензор инерции выглядит, как
+\begin{equation*}
+    I = \begin{pmatrix}
+        x_i x_i + z_i z_i & - x_i y_i & - x_i z_i \\
+        - x_i z_i & x_i x_i + z_i z_i & - y_i z_i \\
+        -x_i z_i & -y_i z_i & x_i x_i + y_i y_i \\
+    \end{pmatrix},
+\end{equation*}
+так что осталос только заметить, что $I$ и $X\T X$ диагонализируются одновременно, а значит задачи равносильны. 
+
+
+
+
+% \subsection*{№6}
+
+% см. блокнот
+
+
+
+
+\phantom{42}
+
+
+\noindent
+\textbf{P.S.} задачи №1 и №6 см. в блокноте.
