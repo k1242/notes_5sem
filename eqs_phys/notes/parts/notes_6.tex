@@ -1,0 +1,257 @@
+\section{Семинар от 23.10.21}
+
+
+\textbf{$\Gamma$-функция}. Найдем некоторые интересные свойства:
+\begin{equation*}
+    \Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \d t \overset{t = \tau x}{=} 
+    x^z \int_{0}^{\infty} \tau^{z-1} e^{- \tau x} \d \tau,
+    \hspace{10 mm} 
+    \frac{1}{x^z} = \frac{1}{\Gamma(z)} \int_{0}^{\infty} \tau^{z-1} e^{- \tau x} \d \tau.
+\end{equation*}
+Также знаем $\Gamma(n+1) = n!$, $\Gamma(2n+1)$, $\Gamma(1/2) = \sqrt{\pi}$ и т.д.
+
+
+
+\textbf{Аналитическое продолжение $\Gamma$-функции}. Пусть есть две функции $\varphi_1$ и $f_2$, равные друг другу на сходящемся множестве точек $z_i \in \mathcal D_1 \cap \mathcal D_2$. Так и строим аналитическое продолжение для $f_1$ функуцией $f_2$.
+% обнудение тригонометрии, Карлов.
+
+
+Можно сказать, что 
+\begin{equation*}
+    \Gamma(z-1) = \frac{\Gamma(z)}{z-1}, \hspace{10 mm} \Re z > 0.
+\end{equation*}
+Но давайте сыграем в чудеса. Изначально определяли
+\begin{equation*}
+    \Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \d t,
+    \hspace{5 mm} 
+    t^{z-1} = e^{(z-1) \ln t}.
+\end{equation*}
+Выберем такую связную область, чтобы точку $t = 0$ нельзя было бы обойти, и получим $\ln t = \ln |t| + i \varphi$. 
+
+Сверху $\ln (|t| + i 0) = \ln |t| + 2 \pi i$, и снизу $\ln (|t| + i 0) = \ln |t| + 2 \pi i$. Тогда верно, что
+\begin{equation*}
+    \int_{0}^{\infty} e^{(z-1)\ln t} e^{-t} \d t,
+    \hspace{10 mm} 
+    \text{up}: \ \ e^{(z-1) \ln |t|} e^{-|t|},
+    \hspace{10 mm} 
+    \text{down}: \ \ e^{(z-1) \ln |t|} e^{-|t|} e^{2 \pi i z}.
+\end{equation*}
+Сложим интеграл поверху и понизу, получим 
+\begin{equation*}
+    I = \int e^{(z-1)\ln t} e^{-t} \d t = (1 -e^{2 \pi i z}) \Gamma(z) 
+    = \int_C e^{(z-1) \ln t} e^{- t} \d t = \int_C t^{z-1} e^{-t} \d t.
+\end{equation*}
+Особенность есть только в точке $0$. Таким образом находим аналитическое продолжение:
+\begin{equation}
+    \Gamma(z) = \frac{1}{1-e^{2 \pi i z}} \int_C t^{z-1} e^{-t} \d t.
+\end{equation}
+Видим, что у $\Gamma(z)$ есть особенности $z \in \mathbb{Z}$, где $z \in \mathbb{N}$ -- УОТ, и $z \in \mathbb{Z}\ \mathbb{N}$ -- полюса первого порядка.
+
+
+Рассмотрим $z = -n$, тогда интегрируем
+\begin{equation*}
+    \int_C t^{-n-1} e^{-t} \d t = 2 \pi i \frac{1}{n!} \left(\frac{d }{d t} \right)^n e^{-t} = 
+    - \frac{2\pi i (-1)^n}{n!}.
+\end{equation*}
+Итого находим, что
+\begin{equation*}
+    \res_{-n} \Gamma(z) = \frac{(-1)^n}{n!},
+\end{equation*}
+что позволяет определить преобразование Мелина от $\Gamma(z)$:
+\begin{equation*}
+    \int_{-i\infty}^{+i\infty}  \Gamma(z) x^{-z} \d x,
+    \hspace{10 mm} 
+    M(f(z)) = \int_{0}^{\infty} t^{z-1} f(t) \d t,
+\end{equation*}
+но это к слову. 
+
+
+Найдём теперь $\Gamma(n)$:
+\begin{equation*}
+    \Gamma(n) = \lim_{z\to n} \frac{1}{1 - e^{2 \pi i z}} \int_C t^{z-1 + n  -n} e^{-t} \d t = 
+    \bigg/
+        t^{z-n} \approx 1 + (z-n) \ln t
+    \bigg/ \overset{\frac{a}{b}\to \frac{a'}{b'}}{=}  
+    \frac{1}{2\pi i} \int_C t^{n-1} \ln t e^{-t} \d t.
+\end{equation*}
+Теперь делаем обратную интерацию, <<сдувая>> логарифм к $\Re t$. Здесь всё также $\ln (|t| + i0) = \ln |t|$ и $\ln (|t| - i 0) = \ln |t| + 2 \pi i$. Тогда
+\begin{equation*}
+    \left(\int_C = \int_{\text{up}} + \int_{\text{down}}\right) 
+    \frac{1}{1-e^{2 \pi i z}} \int_C t^{z-1} e^{-t} \d t
+    = - 2 \pi i \int_0^{\infty} t^{n-1} e^{-t} \d t = (n-1)!.
+\end{equation*}
+
+
+\textbf{$B$-функция}. Рассмотрим функцию, вида
+\begin{equation*}
+      B(\alpha,\, \beta) = \int_{0}^{1} t^{\alpha-1} (1-t)^{\beta-1} \d t,
+      \hspace{5 mm} 
+      \Re \alpha, \beta > 0.
+\end{equation*}  
+Сделаем замену переменных
+\begin{equation*}
+    B(\alpha,\, \beta) = \int_{0}^{1}  t^{\alpha-1} (1-t)^{\beta-1} \d t \overset{t = y/s}{=} 
+    \int_{0}^{s} d y\ y^{\alpha-1} (s-y)^{\beta-1} / s^{\alpha + \beta -1}.
+\end{equation*}
+Нетрудно получить, что
+\begin{equation*}
+    B(\alpha, \beta) \Gamma(\alpha + \beta) = \int_{0}^{\infty}  d s\ e^{-s} \int_{0}^{s} dy\ y^{\alpha-1} (s-y)^{\beta-1} = 
+    \int_{0}^{\infty} dy\ y^{\alpha-1} \int_y^{\infty} ds\ e^{-s + y - y} (s-y)^{\beta-1} = 
+    \int_{0}^{\infty}  dy \ y^{\alpha-1} e^{-y} \int_{0}^{\infty} dx\ e^{-x} x^{\beta-1},
+\end{equation*}
+а значит
+\begin{equation}
+    B(\alpha,\, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)},
+\end{equation}
+что и является аналитическим продолжением $B$-функции. 
+
+
+Например,
+\begin{equation*}
+    \int_0^{\pi/2} \sin^\alpha \varphi \cos^\beta \varphi \d \varphi =  \frac{1}{2} B\left(\frac{a+1}{2},\, \frac{b+1}{2}\right).
+\end{equation*}
+Также верно, что
+\begin{equation*}
+    \int_{0}^{\infty}  \frac{x^m}{(1+x^n)^k} \d x = \bigg/
+        t = \frac{1}{1+x^n}
+    \bigg/.
+\end{equation*}
+Аналогично можем получить, что
+\begin{equation}
+    \Gamma(z) \Gamma\left(z + \tfrac{1}{2}\right) = \frac{\sqrt{\pi}}{2^{2z-1}} \Gamma(2 z).
+\end{equation}
+Ну действительно, представим
+\begin{equation*}
+    \Gamma(z) \Gamma(z + \tfrac{1}{2}) = \frac{\Gamma(\frac{1}{2}) \Gamma(z)^2}{B(z,\, \tfrac{1}{2})} = 
+    \frac{\sqrt{\pi} B(z, z)}{B(z,\, \frac{1}{2})} \Gamma(2z).
+\end{equation*}
+Осталось раскрыть
+\begin{equation*}
+    B(z, z) = 2 \int_{0}^{\pi/2} d \varphi\ \left(\sin \varphi \cos \varphi\right)^{2z-1} = 
+    \frac{2}{2^{2z-1}} \int_{0}^{\pi/2} d \varphi \ \sin^{2 z-1} \varphi.
+\end{equation*}
+Теперь, уже интегрируя двойной угол, находим
+\begin{equation*}
+    B(z, z) =  = \frac{2}{2^{2z-1}} \frac{1}{2} B(z,\, \tfrac{1}{2}) = \frac{1}{2^{2z-1}} B(z,\, \tfrac{1}{2}).
+\end{equation*}
+
+Ещё один забавный факт:
+\begin{equation*}
+    \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z},
+\end{equation*}
+что также совершает аналитическое продолжение. Действительно,
+\begin{equation*}
+    B(z,\, 1-z) = \int_{0}^{1}  t^{z-1} (1-t)^{-z} \d t = \int_0^1 \left(\frac{t}{1-t}\right)^z \frac{\d t}{t}.
+\end{equation*}
+Тут логично ввести $x = \frac{t}{1-t} = -1 + \frac{1}{1-t}$, а значит
+\begin{equation*}
+    t = \frac{x}{x+1}, \hspace{5 mm} 
+    \d t = \frac{\d x}{(x+1)^2}.
+\end{equation*}
+Продолжая жонглировать переменными
+\begin{equation*}
+    B(z,\, 1-z) = \int_{0}^{\infty} x^z \frac{x+1}{x} \frac{\d x}{(x + 1)^2} = 
+    \int_{0}^{\infty} \frac{x^{z-1}}{x+1} \d x.
+\end{equation*}
+Который снова удобно посчитать через разрезы. 
+\begin{equation*}
+    B(z,\, 1-z) = \int_{\text{up}} \frac{x^{z-1}}{1+x} \d x =
+    \frac{1}{1-e^{2 \pi i z}} \int_C \frac{x^{z-1}}{1+x} \d x,
+\end{equation*}
+но тут уже можно замкнуть дугу на бесконечности, вклад от котрой нулевой.  Осталось найти вычет в точке $-1$, тогда
+\begin{equation*}
+    \int_{\text{up}} \frac{x^{z-1}}{1+x} \d x = \frac{1}{1-e^{2\pi i z}}    \res_{-1} = \frac{2 \pi i (-1) e^{\pi i z}}{1 - e^{2 \pi i z}} = \frac{2 \pi i}{e^{\pi i z} - e^{-i \pi z}} = \frac{\pi}{\sin \pi z}.
+\end{equation*}
+
+\textbf{Дигамма-функция}. По определнию $\psi(z)$:
+\begin{equation*}
+    \psi(z) \overset{\mathrm{def}}{=}  \left(\ln \Gamma(z)\right)' = \frac{\Gamma'(z)}{\Gamma(z)}.
+\end{equation*}
+Заметим, что $\psi(1) = - \gamma$, где $\gamma$ -- постоянная Эйлера-Маскерони. Найдём
+\begin{equation*}
+    \psi(z+1)= \left(\ln z + \ln \Gamma(z)\right) = \frac{1}{z} + \psi(z)/
+\end{equation*}
+Забавынй факт:
+\begin{equation*}
+    \psi(N+1) = \frac{1}{N} + \psi(N) = \sum_{n=1}^{N} \frac{1}{n} + \psi(1),
+\end{equation*}
+где $\sum_{n=1}^{N} \frac{1}{n}$ -- $N$-е гармоническое число. 
+
+
+Также найдем, что
+\begin{equation*}
+    \psi(x + N + 1) = \frac{1}{x + N} + \psi(x+ N) = \frac{1}{x+N} + \ldots + \frac{1}{x+1} + \psi(x+1).
+\end{equation*}
+Вспомним, что $\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z}$. Тогда
+\begin{equation*}
+    \psi(-z) - \psi(z) = \pi \ctg \pi z.
+\end{equation*}
+Найдём асимптотику 
+\begin{equation*}
+    \Gamma(z \to \infty) = \sqrt{2 \pi z} e^{z \ln z - z} = \sqrt{2 \pi z} \left(\frac{z}{e}\right)^{z},
+\end{equation*}
+что и составляет формулу Стирлинга. 
+
+Также для $\psi(z\to \infty)$:
+\begin{equation*}
+    \psi(z\to \infty) = \left(\ln \Gamma(z)\right)' = \ln z + \frac{1}{2z} + o(1) = \ln z + o(1).
+\end{equation*}
+
+
+
+
+% асимптотика интегралов Лапласа
+\textbf{Метод перевала}.  Представим семейство интегралов с параметром $\lambda$:
+\begin{equation*}
+    I_\lambda = \int_{-\infty}^{+\infty} g(x) e^{\lambda f(x)} \d x.
+\end{equation*}
+При этом предположим, что $f(x)$ такая, что существует единственный максимум в точке $x_0$. Тогда
+\begin{equation*}
+    I_\lambda \approx g(x_0) \int_{-\infty}^{+\infty} e^{\lambda f(x)} \d x.
+\end{equation*}
+Теперь воспользуемся аналитичностью функции $f(x)$:
+\begin{equation*}
+    f(x) = f(x_0) + \frac{f'(x_0)}{2} (x-x_0)^2 + \frac{f''(x_0)}{2} (x-x_0)^2 + o(x-x_0)^2.
+\end{equation*}
+Подставляя в интеграл, находим
+\begin{equation*}
+    I_\lambda= = g(x_0) e^{\lambda f(x_0)} \int_{-\infty}^{+\infty} e^{\lambda f'(x_0) (x-x_0)^2/2} \d x = g(x_0) e^{\lambda f(x_0)} \sqrt{\frac{2\pi}{|\lambda f'' (x_0) |}}.
+\end{equation*}
+
+Пусть $\lambda$ нет. Тогда достаточно потребовать $|f''(x_0)|$ большой -- максимум резкий. 
+Тогда
+\begin{equation*}
+    |f''(x_0) (x-x_0)^2| \sim 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    |x-x_0| \frac{1}{\sqrt{f'(x_0)}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    |f'''(x_0) (x-x_0^3)| \ll 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (f'')^3 \gg (f''')^2.
+\end{equation*}
+
+Посмотрим на $\Gamma$-функцию:
+\begin{equation*}
+    \Gamma(z+1) = \int_{0}^{\infty}  t^{z} e^{-t} \d t  = \int_0^\infty 
+    e^{z \ln t - t} \d t.
+\end{equation*}
+Тогда $f(t) = z \ln t - t$. Подставляем в критерий, видим что макимум у $f$ резкий.
+
+Подставляем, находим
+\begin{equation*}
+    \Gamma(z+1) \approx e^{z \ln z - z} \sqrt{2 \pi z},
+\end{equation*}
+что и составляет формулу Стирлинга, верной на всей комплексной плоскости.
+
+
+
+
+
+
+
+
+
+
+
+
+
