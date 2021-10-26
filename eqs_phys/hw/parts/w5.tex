@@ -62,7 +62,7 @@
 Таким образом, искомая функция Грина:
 \begin{equation*}
    G(x) =  (\theta[x] - \tfrac{1}{2}) (x - \sin x) 
-    -\frac{x^2}{4\pi} + \frac{5 \cos x}{2\pi} + \frac{x \sin x}{2\pi} + \frac{1}{2\pi}-\frac{\pi}{6}.
+    -\frac{x^2}{4\pi} + \frac{5 \cos x}{4\pi} + \frac{x \sin x}{2\pi} + \frac{1}{2\pi}-\frac{\pi}{6}.
 \end{equation*}
 
 
@@ -101,7 +101,7 @@
 \end{equation*}
 Считая, что $\phi(\vc{r}) \equiv \phi(r)$, находим:
 \begin{equation*}
-    f(\vc{r}) = \frac{4\pi}{r} \int_0^r \phi(r') r'^2 \d r' + \int_r^\infty \phi (r') r' \d r'.
+    f(\vc{r}) = \frac{1}{r} \int_0^r \phi(r') r'^2 \d r' + \int_r^\infty \phi (r') r' \d r'.
      % = - \int_0^{\pi} \sin \theta \d \theta \int_{0}^{2\pi} \d \varphi \int_0^{\infty}
     % \frac{\phi(r) r^2 }{2 \pi |\vc{r}-\vc{r}'|}
     % \d r  = - \int
@@ -168,7 +168,6 @@
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     R^{\text{norm}} = \frac{r}{4} e^{-r/2}.
 \end{equation*}
-
 
 
 

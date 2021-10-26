@@ -1,0 +1,77 @@
+\section{B1}
+
+
+\subsection*{Рещение СЛАУ}
+
+Рассмотрим систему линейный алгебраических уравнений:
+\begin{equation*}
+    A \vc{x} = \bar{b}, \hspace{5 mm} 
+    A \equiv \alpha_{ij}.
+\end{equation*}
+
+\textbf{I}. Как можно решать? через правило Крамера:
+\begin{equation*}
+    x_i = \frac{\Delta_i}{\Delta}, \hspace{5 mm} i = 1,\, 2,\, \ldots,\, n,
+    \hspace{5 mm} 
+    \Delta = \det A \neq 0, \hspace{5 mm} 
+    \Delta_1 = \det A^i,
+\end{equation*}
+где $A^i$ -- матрица $A$, в которой заменили $i$-й столбец на $\vc{b}$.  
+
+Сложность вычисления $\sub{O}{det} = O(n!)$, а ещё мы должны посчитать $n+1$ определитель.  
+Зато можно находить конкретные $x_i$. 
+
+
+\textbf{II}.  Альтернатива: поиск обратной матрицы:
+\begin{equation*}
+    A \vc{x} = \vc{b},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{x} = A^{-1} \vc{b}.
+\end{equation*}
+Сложность вычислений: $O(n^3)$ или $O(n^2) \cdot \sub{O}{det}$. 
+
+\textbf{III}. Метод Гаусса:
+\begin{equation*}
+    \begin{pmatrix}
+        \alpha_{11} & \alpha_{12} & \ldots & \alpha_{1n} &b_1 \\
+        &&&& \\
+        \alpha_{n1} & \alpha_{n2} & \ldots & \alpha_{nn} &b_1 \\
+    \end{pmatrix}
+    \to
+    \begin{pmatrix}
+        \beta_{11} & \beta_{12} & \ldots & \beta_{1n} &b_1 \\
+        &&&& \\
+        0 & 0 & \ldots & \beta_{nn} &b_1 \\
+    \end{pmatrix},
+\end{equation*}
+который реализуется элементарными преобразованиями. 
+
+Берем и считаем $k_i = \frac{\alpha_{i \rho}}{\alpha_{11}}$, и меняем $a_i = a_i - k_i \cdot a_i$.
+После обнуления первого столца образуется новая матрица $A'$ размера $n-1$, где мы игнорируем первую строку и первый столбец.
+
+
+Решение ищем уже через обратный метод Гаусса:
+\begin{equation*}
+    x_n = \frac{b_n^*}{\beta_{nn}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x_{n-1} = \frac{b_{n-1}^* - b_n^* \tfrac{\beta_{n-1 \ n}}{\beta_{nn}}}{\beta_{n-1 \ n-1}}.
+\end{equation*}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
