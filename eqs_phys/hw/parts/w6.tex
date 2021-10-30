@@ -20,9 +20,9 @@
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     B_n = \frac{\pi^{n/2}}{\Gamma\left(\tfrac{n}{1}+1\right)},
 \end{equation*}
-где $I$ -- гауссов интеграл: $I = \sqrt{\pi}$. Нетрудно от объема шара перейти к площади сферы, дифференцируя $B_n r^{n/2}$ по $r$:
+где $I$ -- гауссов интеграл: $I = \sqrt{\pi}$. Нетрудно от объема шара перейти к площади сферы, дифференцируя $B_n r^n$ по $r$:
 \begin{equation*}
-    S_n = \frac{n \pi^{n/2}}{2 \Gamma\left(\tfrac{n}{2}+1\right)}.
+    S_n = \frac{n \pi^{n/2}}{ \Gamma\left(\tfrac{n}{2}+1\right)}.
 \end{equation*}
 
 
@@ -130,13 +130,24 @@
 \begin{equation*}
     \lim_{N \to \infty} \left(
         \psi(N+2) - \psi\left(N+1 +z\right)
+    \right) =
+     \lim_{N \to \infty} \left(
+     \frac{1}{N+1} + \frac{1}{N} + 
+            \psi(N) - \frac{1}{N+z} -\psi\left(N +z\right)
+        \right) = \lim_{N \to \infty} \left(
+            \psi(N) - \psi(N+z)
+        \right),
+\end{equation*}
+и так далее вплоть до поиска предела разницы $\psi(N) - \psi(N+\alpha)$, где $\alpha \in (0, 1)$. Асимптотикой $\psi (z)$ является $\ln z$, так что 
+\begin{equation*}
+    \lim_{N \to \infty} \left(
+        \psi(N) - \psi\left(N+\alpha\right)
     \right) = 0,
 \end{equation*}
 а значит искомое значение $S(z)$:
 \begin{equation*}
     S(z) = \psi(z) - \psi(1).
 \end{equation*}
-
 
 
 
