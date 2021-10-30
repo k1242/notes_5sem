@@ -1,0 +1,144 @@
+\section{Неделя VI}
+
+
+
+
+
+\subsection*{№1 (3.1.1)}
+
+Найдём объём $d$-мерного единичного шара $B_n$. Для этого рассмотрим интеграл от $f(\vc{x}) = e^{-|\smallvc{x}|^2}$:
+\begin{equation*}
+    I^n = \int_{\mathbb{R}^n} e^{-|\smallvc{x}|^2} \d \vc{x} = \int_0^1 \mu\left[e^{-|\smallvc{x}|^2} \leq y\right] \d y = \int_{0}^{1} \mu\left[|\vc{x}|^2 \leq - \ln y\right] \d y.
+\end{equation*}
+Заметим, что справа стоит объем шара, радиуса $r = \sqrt{-\ln y}$, равный $r^{n} B_n$. Тогда
+\begin{equation*}
+    I^n = B_n \int_{0}^{1} (- \ln y)^{n/2} \d y.  
+\end{equation*}
+Заменяя $- \ln y = t$, находим
+\begin{equation*}
+    I^n = B_n \int_{0}^{\infty} t^{n/2} e^{-t} \d t = B_n \Gamma\left(\tfrac{n}{2}+1\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B_n = \frac{\pi^{n/2}}{\Gamma\left(\tfrac{n}{1}+1\right)},
+\end{equation*}
+где $I$ -- гауссов интеграл: $I = \sqrt{\pi}$. Нетрудно от объема шара перейти к площади сферы, дифференцируя $B_n r^{n/2}$ по $r$:
+\begin{equation*}
+    S_n = \frac{n \pi^{n/2}}{2 \Gamma\left(\tfrac{n}{2}+1\right)}.
+\end{equation*}
+
+
+
+
+\subsection*{№2 (3.1.3)}
+
+Найдём значение
+\begin{equation*}
+    I_c = \int_{0}^{\infty}  u^{z-1} \cos u \d u = \frac{1}{2} \int_{0}^{\infty} u^{z-1} \left(e^{i u} + e^{-iu}\right) \d u.
+\end{equation*}
+Для этого вычислим интегралы, вида
+\begin{equation*}
+    I_1 = \int_{0}^{\infty} u^{z-1} e^{i u} \d u = \bigg/ u = i \alpha \bigg/ = 
+    i^z \int_{0}^{\infty} \alpha^{z-1} e^{-\alpha} \d \alpha = i^{z} \Gamma(z).
+\end{equation*}
+Аналогично находим
+\begin{equation*}
+    I_2 = \int_{0}^{\infty} u^{z-1} e^{-i u} \d u = \bigg/ u = -i \alpha \bigg/ = 
+    (-i)^z \int_{0}^{\infty} \alpha^{z-1} e^{-\alpha} \d \alpha = (-i)^{z} \Gamma(z).
+\end{equation*}
+Вспоминая, что
+\begin{equation*}
+    i^{z} = e^{z \ln i} = e^{i \pi z /2}, \hspace{10 mm} 
+    (-i)^z = e^{z \ln -i} = e^{- i \pi z  /2}.
+\end{equation*}
+Тогда
+\begin{equation*}
+    I_c = \frac{1}{2}\left(I_1 + I_2\right) = \frac{1}{2} \Gamma(z) \left(e^{i \pi z / 2} + e^{- i \pi z/2}\right) = \Gamma(z) \cos \left(\tfrac{\pi z}{2}\right).
+\end{equation*}
+Аналогично находим, что
+\begin{equation*}
+    I_s = \int_{0}^{\infty} u^{z-1} \sin u \d u = \frac{1}{2i}\left(I_1-I_2\right) = \Gamma(z) \sin\left(\tfrac{\pi z}{2}\right).
+\end{equation*}
+
+
+
+
+
+
+\subsection*{№4 (3.1.7)}
+
+Найдём значение интеграла,  вида
+\begin{equation*}
+    I = \int_{0}^{1}  \ln \Gamma(z) \d z.
+\end{equation*}
+Делая замену $z = 1 - z$, находим, что
+\begin{equation*}
+    I = - \int_{1}^{0} \ln \Gamma(1-z) \d z = \int_{0}^{1} \ln \Gamma(1-z) \d z.
+\end{equation*}
+Вспоминая, что
+\begin{equation*}
+    \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z},
+\end{equation*}
+и складывая два представления, находим:
+\begin{equation*}
+    2 I = \int_{0}^{1} \d z \ln \left[
+        \Gamma(z) \Gamma(1-z)
+    \right] \d z = \ln \pi - \int_{0}^{1} \ln \sin \pi z \d z
+     = \ln \pi - \frac{2}{\pi} \int_{0}^{\pi/2} \ln \sin z \d z
+    .
+\end{equation*}
+Введем $I_1 = \int_{0}^{\pi/2} \ln \sin  z \d z$, тогда
+\begin{equation*}
+    I_1 = \int_{0}^{\pi/2} \ln \sin  z \d z = \int_{0}^{\pi/2} \ln \cos z \d z,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    2 I_1 = \int_{0}^{\pi/2} \ln\left[\tfrac{\sin 2z}{2}\right] \d z = 
+    \int_{0}^{\pi/2} \ln \sin 2 x - \frac{\pi}{2} \ln 2.
+\end{equation*}
+Заметим, что
+\begin{equation*}
+    \int_{0}^{\pi/2} \ln \sin 2 z = \frac{1}{2}\int_{0}^{\pi} \ln \sin z \d z = I_1,
+\end{equation*}
+а значит мы нашли значения для $I_1$:
+\begin{equation*}
+    I_1 = \int_{0}^{\pi/2} \ln \sin  z \d z = - \frac{\pi}{2} \ln 2.
+\end{equation*}
+Подставляя $I_1$ в выражение для $I$, находим
+\begin{equation*}
+    2 I = \ln \pi - \frac{2}{\pi} \left(-\frac{\pi}{2} \ln 2\right) = \ln \pi + \ln 2 = \ln 2 \pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    I = \int_{0}^{1} \ln \Gamma(z) \d z = \frac{1}{2}\ln 2 \pi.
+\end{equation*}
+
+
+
+
+\subsection*{№5}
+Найдём значение функции $S(z)$, вида
+\begin{equation*}
+    S(z) = \sum_{n=0}^{\infty} \left(\frac{1}{n+1}-\frac{1}{n+z}\right).
+\end{equation*}
+Для этого рассотрим только сумму до некоторого $N$ следующих рядов:
+\begin{align*}
+    \sum_{n=0}^{N} \frac{1}{n+1} &= \sum_{n=1}^{N+1} \frac{1}{n} = - \psi(1) + \psi(N+2), \\
+    \sum_{n=0}^{N} \frac{1}{n+z} &\overset{*}{=}  - \psi(z) + \psi(N+1+z),
+\end{align*}
+где $\psi(z)$ -- дигамма функция: $\psi(z) = \Gamma'(z)/\Gamma(z)$. Равенство со звёздочкой можно получить из следующих соображений:
+\begin{equation*}
+    \psi(z+1) = \frac{1}{z} + \psi(z),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \psi(N + z + 1) = \frac{1}{N+z} + \psi(N+z) = \ldots = \psi(z) + \sum_{n=0}^{N} \frac{1}{n+z}.
+\end{equation*}
+Также заметим, что
+\begin{equation*}
+    \lim_{N \to \infty} \left(
+        \psi(N+2) - \psi\left(N+1 +z\right)
+    \right) = 0,
+\end{equation*}
+а значит искомое значение $S(z)$:
+\begin{equation*}
+    S(z) = \psi(z) - \psi(1).
+\end{equation*}
+
+
+
+
+
+
