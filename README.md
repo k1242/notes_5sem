@@ -15,7 +15,7 @@
 
 * **физике**
 ([*билеты к ГОСу*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_tickets/gos_tickets.pdf),
-[*программа ГОСа*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_list/name.pdf)),
+[*программа ГОСа*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_list/name.pdf),
 [*cеминары Раевского А.О.*](https://github.com/k1242/notes_5sem/blob/main/physics/raevskii/raevskii.pdf));
 
 * **вычислительной математике**
