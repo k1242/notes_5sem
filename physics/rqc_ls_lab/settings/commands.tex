@@ -2,7 +2,6 @@
 \renewcommand{\d}{\, d}
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
-\renewcommand{\kappa}{\varkappa}
 
 
 % авторские команды
@@ -16,28 +15,22 @@
 % операторы (просто прямой текст)
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+% \renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
+% \newcommand{\E}{\mathop{\mathrm{E}}\nolimits}
+% \newcommand{\D}{\mathop{\mathrm{D}}\nolimits}
+% \newcommand{\cov}{\mathop{\mathrm{cov}}\nolimits}
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \newcommand{\card}{\mathop{\mathrm{card}}\nolimits}
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 \renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
 \newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{ker}}\nolimits}
-\newcommand{\Ai}{\mathop{\mathrm{Ai}}\nolimits}
-\newcommand{\Bi}{\mathop{\mathrm{Bi}}\nolimits}
 \newcommand{\spec}{\mathop{\mathrm{spec}}\nolimits}
 \newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
 \newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
 \newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
 \newcommand{\const}{\textnormal{const}}
-\newcommand{\res}{\mathop{\mathrm{res}}\limits}
 
-% теорвер
-% \renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
-% \newcommand{\E}{\mathop{\mathrm{E}}\nolimits}
-% \newcommand{\D}{\mathop{\mathrm{D}}\nolimits}
-\newcommand{\cov}{\mathop{\mathrm{cov}}\nolimits}
-\newcommand{\var}{\mathop{\mathrm{var}}\nolimits}
-\newcommand{\cor}[2]{\langle\hspace{-1.2pt}\langle #1,\, #2 \rangle\hspace{-1.2pt}\rangle}
 
 % цветной текст
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -51,10 +44,10 @@
 
 
 % подгрузка pdf_tex картинок
-% \newcommand{\incfig}[1]{%
-%     \def\svgwidth{\columnwidth}
-%     \import{./figures/}{#1.pdf_tex}
-% }
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
 
 
 % специфично к квантам
@@ -62,18 +55,3 @@
 \newcommand{\bra}[1]{\left\langle #1 \right|}
 
 \newcommand{\dppp}{\frac{d^3 p}{(2 \pi \hbar)^3}}
-
-
-\newcommand*\xbar[1]{%
-  \hbox{%
-    \vbox{%
-      \hrule height 0.4pt % The actual bar
-      \kern0.2ex%         % Distance between bar and symbol
-      \hbox{%
-        \kern-0.1em%      % Shortening on the left side
-        \ensuremath{#1}%
-        \kern-0.1em%      % Shortening on the right side
-      }%
-    }%
-  }%
-} 

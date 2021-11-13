@@ -1,0 +1,164 @@
+\newpage
+\section*{ТеорМин №2}
+\addcontentsline{toc}{section}{ТеорМин №2}
+
+\textbf{Задача Штурма-Лиуилля}. Рассмотрим оператор, вида
+\begin{equation*}
+    \hat{L} = \partial_x^2 + Q(x) \partial_x + U(x),
+    \hspace{5 mm} 
+    \hat{L} f(x) = \varphi(x),
+    \hspace{5 mm} 
+    \left\{\begin{aligned}
+        \alpha_1 f(a) + \beta_1 f'(a) &= 0 \\
+        \alpha_2 f(b) + \beta_2 f'(b) &= 0,
+    \end{aligned}\right.
+\end{equation*}
+где\footnote{
+    Часто можно встретить нулевые граничные условия: $f(a) = f(b) = 0$. 
+}  $|\alpha_1| + |\beta_2| \neq 0$ и $|\alpha_2| + |\beta_2| \neq 0$.
+
+Функция Грина оператора Штурма-Лиуилля может быть найдена, как
+\begin{equation*}
+    G(x, y) = \frac{1}{W(y)} \left\{\begin{aligned}
+        &v(y) u(x), &x < y; \\
+        &v(x) u(y), &x > y.
+    \end{aligned}\right.
+    \hspace{10 mm} 
+    W(y) = u v' - v u' =
+    W(x_0) \exp\left(
+        - \int_{x_0}^{x}  Q(z) \d z
+    \right)
+\end{equation*}
+Где функции $u$ и $v$, соотвтственно решения уравнений:
+\begin{equation*}
+    \hat{L} u = 0, \hspace{5 mm} \alpha_1 u(a) + \beta_1 u'(a) = 0,
+    \hspace{10 mm} 
+    \hat{L} v = 0, \hspace{5 mm}  \alpha_2 v(b) + \beta_2 v'(b) = 0.
+\end{equation*}
+
+
+\textbf{Периодические граничные условия}. Рассмотрим теперь оператор Штурма-Лиуилля  в контексте
+\begin{equation*}
+    \hat{L} = \partial_x^2 + Q(x) \partial_x + U(x), 
+    \hspace{10 mm} 
+    \left\{\begin{aligned}
+        f(a) &= f(b), \\
+        f'(a) &= f'(b).
+    \end{aligned}\right.
+\end{equation*}
+Задача решается аналогично для $x > y$ и $x < y$, $\int_{-\varepsilon}^{+\varepsilon} \d x$, и требования наследования периодических граничных условий:
+\begin{equation*}
+    G^{(m)}(y+0, y)-G^{(m)}(y-0, y)  = \left\{\begin{aligned}
+        &0, &m < \deg[L]-1, \\
+        &1, &m = \deg[L]-1,
+    \end{aligned}\right.
+    \hspace{20 mm} 
+    \left\{\begin{aligned}
+        G(a, y) &= G(b, y), \\
+        G_x'(a, y) &= G_x'(b, y).
+    \end{aligned}\right.
+\end{equation*}
+А сама функция Грина ищется базисе ФСР $\hat{L} G(x) = 0$.
+
+Например, для задачи с $\hat{L} = \partial_x^2 + \kappa^2$ можем найти, что
+\begin{equation*}
+    \hat{L} = \partial_x^2 + \kappa^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     G(x, y) = \frac{1}{2 \kappa \sin \pi \kappa}
+    \left\{\begin{aligned}
+        &\cos \left(\kappa(x-y) + \kappa \pi\right), & x < y\\
+        &\cos(\kappa (x-y) - \kappa \pi), & x > y.
+    \end{aligned}\right.
+\end{equation*}
+
+
+\textbf{Гамма-функция}. По определнию
+\begin{equation*}
+    \Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \d t,
+    \hspace{10 mm} 
+    \Gamma(z) = \frac{1}{1-e^{2 \pi i z}} \int_C t^{z-1} e^{-t} \d t,
+\end{equation*}
+где $C$ -- контур, обхатывающий $z = 0$. 
+
+Верно, что
+\begin{equation*}
+    \Gamma(z+1) = z \Gamma(z),
+    \hspace{5 mm} 
+    \Gamma(n+1) = n!,
+    \hspace{5 mm} 
+    \Gamma\left(\tfrac{1}{2}+n\right) = 
+    \frac{(2n)!}{4^n n!} \sqrt{\pi} = \frac{(2n-1)!!}{2^n} \sqrt{\pi},
+\end{equation*}
+где $\Gamma(\tfrac{1}{2}) = \sqrt{\pi}$. 
+
+Справедлива формула умножения Гаусса:
+\begin{equation*}
+    \Gamma(z) \Gamma\left(z + \tfrac{1}{n}\right) \ldots \Gamma\left(z + \tfrac{n-1}{n}\right) = n^{\frac{1}{2} - nz} \cdot (2\pi)^{\frac{n-1}{2}} \cdot \Gamma(nz),
+\end{equation*}
+где, в частности, при $n=2$:
+\begin{equation*}
+    \Gamma(z) \Gamma\left(z + \tfrac{1}{2}\right) = 2^{1-2z} \sqrt{\pi} \Gamma(2z).
+\end{equation*}
+
+
+Гамма функция имеет полюсы первого порядка  $z = \mathbb{Z}\backslash \mathbb{N}$, а именно
+\begin{equation*}
+    \res_{z=-n} \Gamma(z) = \frac{(-1)^n}{n!},
+    \hspace{5 mm} n \in \mathbb{N}\cup \{0\},
+    \hspace{10 mm} 
+    \overline{\Gamma(z)} = \Gamma(\bar{z}).
+\end{equation*}
+Также справедлио
+\begin{equation*}
+    \Gamma(1-z) \Gamma(z) = \frac{\pi}{\sin \pi z},
+    \hspace{10 mm} 
+    \frac{1}{x^z} = \frac{1}{\Gamma(z)} \int_{0}^{\infty} \tau^{z-1} e^{- \tau x} \ \tau.
+\end{equation*}
+
+
+\textbf{$B$-функция}. Рассмотрим функцию, вида
+\begin{equation*}
+    B(\alpha,\, \beta) = \int_{0}^{1} t^{\alpha-1} (1-t)^{\beta-1} \d t = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)}.
+\end{equation*}
+Полезно, например
+\begin{equation*}
+    \int_{0}^{\pi/2} \sin^a x \cos^b x \d x = 
+    \frac{1}{2} B\left(\tfrac{a+1}{2},\, \tfrac{b+1}{2}\right) = 
+    \frac{\Gamma\left(\frac{a+1}{2}\right) \Gamma\left(\frac{b+1}{2}\right)}{2 \Gamma(1 + \frac{a+b}{2})} .
+\end{equation*}
+
+Также, заменой $x = \sqrt{t}/\sqrt{\alpha}$ может решать интегралы, вида
+\begin{equation*}
+    \int_{0}^{\infty} x^{2n} e^{-\alpha x^2} \d x = \frac{1}{2 \alpha^{n+1/2}} \int_{0}^{\infty} t^{n+1/2} e^{-t} \d t = \frac{1}{2 \alpha^{n + 1/2}} \Gamma(n+1/2).
+\end{equation*} 
+Также можем найти
+\begin{equation*}
+    I = \int_{0}^{\infty} \cos (x^2) \d x = \int_{0}^{\infty} \frac{\cos t}{2 \sqrt{t}} \d t = \frac{1}{2} \sqrt{\frac{\pi}{2}}.
+\end{equation*}
+
+
+\textbf{Дигамма-функция}. По определнию $\psi(z)$:
+\begin{equation*}
+    \psi(z) \overset{\mathrm{def}}{=}  \left(\ln \Gamma(z)\right)' = \frac{\Gamma'(z)}{\Gamma(z)}.
+\end{equation*}
+Заметим, что $\psi(1) = - \gamma$, где $\gamma$ -- постоянная Эйлера-Маскерони. 
+
+Забавный факт:
+\begin{equation*}
+    \psi(N+1) = \frac{1}{N} + \psi(N) = \sum_{n=1}^{N} \frac{1}{n} + \psi(1),
+\end{equation*}
+где $\sum_{n=1}^{N} \frac{1}{n}$ -- $N$-е гармоническое число. 
+
+Вспомним, что $\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z}$. Тогда
+\begin{equation*}
+    \psi(-z) - \psi(z) = \pi \ctg \pi z.
+\end{equation*}
+
+Найдём асимптотику 
+\begin{equation*}
+    \Gamma(z \to \infty) = \sqrt{2 \pi z} e^{z \ln z - z} = \sqrt{2 \pi z} \left(\frac{z}{e}\right)^{z}.
+\end{equation*}
+Также для $\psi(z\to \infty)$:
+\begin{equation*}
+    \psi(z\to \infty) = \left(\ln \Gamma(z)\right)' = \ln z + \frac{1}{2z} + o(1) = \ln z + o(1).
+\end{equation*}

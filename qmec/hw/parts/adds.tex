@@ -165,3 +165,20 @@
     \hat{Q}_{\text{H}} (t) = \cos (\omega t) \hat{Q} + \sin(\omega t) \hat{P}, \\
     \hat{P}_{\text{H}} (t) = \cos (\omega t) \hat{P} -\sin (\omega t) \hat{Q}.
 \end{align*}
+
+
+\textbf{Матричный элемент оператора эволюции}. 
+
+Дейстительно, в представлении когерентных состояний:
+\begin{equation*}
+    \bk{\beta}[\hat{U}]{\alpha} = \exp\left(\bar{\beta} \alpha e^{i \omega t}\right).
+\end{equation*}
+Чуть хуже в координатном предсталении:
+\begin{equation*}
+\langle x | \hat{U}| y\rangle = 
+    \int_{\mathbb{C}^2} \frac{ d\alpha \d \bar{\alpha}}{2 \pi i} \frac{ d\beta \d \bar{\beta}}{2 \pi i}  \exp\left(
+        - \alpha \bar{\alpha} - \beta \bar{\beta} - \frac{x^2}{2} + \sqrt{2} \beta x - \frac{\beta^2}{2} - \frac{y^2}{2} + \sqrt{2} \bar{\alpha} y - \frac{\bar{\alpha}^2}{2} + \bar{\beta} \alpha e^{i \varphi}
+    \right)
+    = \frac{1}{8}
+    \frac{\exp \left(- i\frac{  \left(x^2+y^2\right)\cos \varphi -2 x y}{2 \sin \varphi }\right)}{| \sin \varphi | }
+\end{equation*}

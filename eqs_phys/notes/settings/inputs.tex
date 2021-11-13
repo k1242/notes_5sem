@@ -16,6 +16,8 @@
 
 \input{parts/notes_6}
 
+\input{parts/notes_7}
+
 
 
 % 12:30
@@ -33,3 +35,63 @@
 % (True, True): 139
 % (False, True): 27
 % (True, False): 55}
+
+
+
+% Brain tumor localization and segmentation from magnetic resonance imaging (MRI) are hard and important tasks for several applications in the field of medical analysis.
+
+
+% Automatic segmentation of brain tumors from medical images is important for clinical assessment and treatment planning of brain tumors. Recent years have seen an increasing use of convolutional neural networks (CNNs) for this task
+
+
+подходящий
+% suitable
+% 
+
+So, we decided to take advantage of convolutional neural networks, work with brain images:
+in particular, we made some successes in solving the problem
+Brain tumor localization and segmentation from magnetic resonance imaging (MRI) 
+
+its important tasks for several applications in the field of medical analysis.
+
+The slide shows an example of MRI Image and the area with anomaly, which is necessary to allocate.
+
+
+The development of the algorithm looks like this: 
+
+A MRI picture is  the neuralnet input and 
+expected output: the mask of the brain tumor area.
+
+we minimize the difference on the training set,
+ then test out neural net on data, that Neuranet before did not see
+
+ Results are presented on the slide,
+
+For better clarity, results are given in training on different amounts of data, the second column corresponds to two times more volume of the training data.
+ As you can see the generalizing ability of the algorithm  very sensitive to data. 
+
+ However, in any case, it was possible to correctly detect 94 percent of cases of the disease, which is a fairly good result in this area.
+
+
+
+
+
+Moreover, the algorithm with an accuracy of 96 percent correctly segmented the area of the disease, 
+
+The slide is demonstrated for comparison made by manual segmentation, and segmentation obtained automatically using our algorithm.
+
+So, it can potentially easily simplify (automate), speed up and improve solving the problem of Brain Tumor Localization and Segmentation, especially after learning and testing on large amounts of data.
+
+
+The amazing feature of the deep learning algorithms, which I would like to highlight, that a very wide class of tasks related with segmenting/classification  the image or signals can be resolved (Automated improved) 
+
+only by the presence of a sufficient number of marked examples for learning
+
+
+
+
+
+
+
+
+
