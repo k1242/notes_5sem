@@ -40,3 +40,42 @@
     \right)
     \d t = \frac{\Gamma \left(\frac{2}{3}\right)}{\sqrt[3]{3} \pi } + \frac{\Gamma \left(\frac{2}{3}\right)}{2 \sqrt[3]{3} \pi } = \frac{3^{2/3} \Gamma \left(\frac{2}{3}\right)}{2 \pi } = \frac{3^{1/6}}{\Gamma\left(\frac{1}{3}\right)}.
 \end{equation*}
+
+
+\subsection*{№2 (3.2.2)}
+
+Найдём асимптотику $\Bi(x \to +\infty)$, где $\Bi$:
+\begin{equation*}
+    \Bi (x) = \frac{1}{2\pi} \int_{C_3-C_2} \exp\left(- \frac{p^3}{3} + xp\right) \d p, \hspace{10 mm} 
+    F(p) = - \frac{p^3}{3} + x p.
+\end{equation*}
+Аналогично $\Ai$ для $\Bi$, методом перевала, при $x \to + \infty$, заметим, что контура $C_2$ и $C_3$ задевают только $+\sqrt{x}$:
+\begin{equation*}
+    F(\sqrt{x}) = \frac{2}{3} x^{3/2}, \ \ 
+    F''(\sqrt{x}) = - 2 \sqrt{x}, \ \ 
+    \varphi = \pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \underset{x\to \infty}{\Bi (x)} = 2 \times \frac{1}{2\pi} \sqrt{\frac{2\pi}{2 \sqrt{x}}} \exp \left(\frac{2}{3} x^{3/2}\right) = \frac{1}{\sqrt{\pi} x^{1/4}} \exp\left(\frac{2}{3} x^{3/2}\right).
+\end{equation*}
+
+Теперь найдём асимптотику $\Bi(x \to -\infty)$. Для начала, как и для $\Ai$:
+\begin{equation*}
+    F\left(\pm i \sqrt{|x|}\right) = \pm \left(
+        i \frac{|x|^{3/2}}{3} - i |x|^{3/2}
+    \right) = \mp \frac{2}{3} i |x|^{3/2}.
+\end{equation*}
+Отличие от $\Ai$ будет только в фазе, из-за другого напраления контура в точке $-i\sqrt{|x|}$:
+\begin{align*}
+    \varphi|_{+i \sqrt{\pi}} &= - \frac{\pi}{2},
+    &&\Rightarrow \hspace{0.5cm}   
+    \phi = - \frac{\varphi}{2} + \frac{\pi}{2} = +\frac{3}{4} i \pi, \\
+    \varphi|_{-i \sqrt{\pi}} &=  \frac{\pi}{2},
+    &&\Rightarrow \hspace{0.5cm}
+    \phi = - \frac{\varphi}{2} - \frac{\pi}{2} = -\frac{3}{4} i \pi.
+\end{align*}
+А значит, с учётом раскрытя $\sqrt{2} \cos (a + \pi/4) = \cos a - \sin a$, получаем выражение для $\Bi$ при  $x \to - \infty$:
+\begin{equation*}
+    \underset{x\to -\infty}{\Bi (x)} = \frac{1}{\sqrt{\pi} |x|^1/4} \cos\left(
+        \frac{2}{3} |x|^{3/2} + \frac{\pi}{4}
+    \right).
+\end{equation*}
