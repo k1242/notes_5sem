@@ -1,0 +1,31 @@
+Найдём интеграл, вида
+\begin{equation*}
+    I_n = \int_{0}^{\infty}  \frac{J_n (z)}{z^n} \d z.
+\end{equation*}
+Вспомним, что
+\begin{equation*}
+    \partial_z \left(z^m J_m[z]\right) = z^m J_{m-1}[z],
+    \hspace{5 mm} 
+    \text{или}
+    \hspace{5 mm} 
+    J_m [z] = \frac{1}{z^{m+1}} \partial_z \left(z^{m+1} J_{m+1}[z]\right).
+\end{equation*}
+Подставляя в $I_n$, и, интегрируя по частям, находим
+\begin{equation*}
+    I_n (z) = \frac{J_{n+1}}{z^n} \bigg|_0^{\infty} - \int_{0}^{+\infty} z^{n+1} J_{n+1} \frac{-2n-1}{z^{2n+2}} \d z = (2n + 1) \int_{0}^{\infty} \frac{J_{n+1}}{z^{n+1}} \d z = (2n + 1) I_{n+1},
+\end{equation*}
+откуда
+\begin{equation*}
+    I_n = \frac{1}{(2n-1)!!} I_0.
+\end{equation*}
+Осталось найти $I_0$, как, например, $\Lambda[J_0](1)$:
+\begin{equation*}
+    I_0 = \int_{0}^{\infty} J_0  (z) \d z =
+    \int_{0}^{\infty} J_0  (z) \d z = \Lambda[J_0](0) = 1,
+\end{equation*}
+а значит исходный интеграл:
+\begin{equation*}
+    I_n = \int_{0}^{\infty}  \frac{J_n (z)}{z^n} \d z = \frac{1}{(2n-1)!!},
+    \hspace{10 mm} 
+    I_2 = \frac{1}{3}.
+\end{equation*}

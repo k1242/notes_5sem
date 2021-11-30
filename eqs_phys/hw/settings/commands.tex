@@ -63,6 +63,10 @@
 
 \newcommand{\dppp}{\frac{d^3 p}{(2 \pi \hbar)^3}}
 
+\DeclareDocumentCommand{\bk}{m o m}{
+    \IfNoValueTF{#2}{\langle #1 | #3 \rangle}{\langle #1 | #2 | #3 \rangle}
+}
+
 
 \newcommand*\xbar[1]{%
   \hbox{%

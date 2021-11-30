@@ -1,0 +1,35 @@
+Функции Бесселя $J_n$ ортогональны с весом $x$, в смысле
+\begin{equation*}
+    \int_{0}^{\infty} x J_n (kx) J_n (qx) \d x = k^{-1} \delta(k-q),
+    \hspace{10 mm} 
+    \bk{f}{g} = \int_{0}^{\infty} x g(x) g(x) \d x.
+\end{equation*}
+Что позволяет сформулировать разложение, вида
+\begin{equation*}
+    f(x) = \int_{0}^{\infty} q J_n (qx) f_q \d q,
+    \hspace{10 mm} 
+    f_q = \int_{0}^{\infty} x J_n (q x) f(x) \d x.
+\end{equation*}
+Найдём подобное разложение для функции $f(x)$
+\begin{equation*}
+    f(x) = e^{- p^2 x^2},
+\end{equation*}
+при $n = 0$. 
+
+
+Переставляя сумму и интеграл, находим
+\begin{equation*}
+    J_m (x) = \frac{z^m}{2^m}\sum_{k=0}^{\infty} \frac{(-1)^k z^{2k}}{4^k k ! (n + k)!},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f_q = \sum_{k=0}^{\infty}  \frac{(-1)^k }{2^{2k} (k!)^2} q^{2k}
+     \underbrace{\int_{0}^{\infty} x^{2k+1} e^{-p^2 x^2} \d x}_{p^{-2k-2} \Gamma(k+1) /2} = 
+     \sum_{k=0}^{\infty} 
+     \frac{(-1)^k}{k!} \frac{1}{2p^2}\left(\frac{q}{2p}\right)^{2k} = \frac{e^{-q^2/4 p^2}}{2 p^2}
+     ,
+\end{equation*}
+а значит $f(x)$ может быть представлена в виде
+\begin{equation*}
+    f(x) = \int_{0}^{\infty} q J_0 (qx) 
+    \frac{e^{-q^2/4 p^2}}{2 p^2}
+    \d q.
+\end{equation*}

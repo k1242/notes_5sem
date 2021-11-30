@@ -1,0 +1,30 @@
+Найдём вид преобразования Лапласа (далее $p \equiv a$ из условия) от функций Бесселя $J$:
+\begin{equation*}
+    \Lambda[J_m] (p) = \int_{0}^{\infty} e^{- p z} J_m (z) \d z.
+\end{equation*}
+Воспользуемся интегральным представлением и переставим интегралы:
+\begin{equation*}
+    \Lambda[J_m] (p) =  \int_{0}^{\infty} e^{-p z} \frac{1}{2\pi} \int_{-\pi}^{+\pi} e^{i z \sin \varphi} e^{- i m \varphi} 
+    \d \varphi \d z = 
+    \frac{1}{2\pi} \int_{-\pi}^{+\pi} e^{i m \varphi} \d \varphi \int_{0}^{\infty} 
+    e^{-z(p - i \sin \varphi)} \d z = \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{e^{- i m \varphi}}{p - i \sin \varphi} \d \varphi.
+\end{equation*}
+Сведем происходящее к интегралу по окружности, вводя $t = e^{i \varphi}$:
+\begin{equation*}
+    \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{e^{- i m \varphi}}{p - i \sin \varphi} \d \varphi = 
+    \frac{1}{i \pi} \int_{-\pi}^{+\pi} i \frac{e^{i m \varphi} e^{i \varphi}}{2 p e^{i \varphi} - e^{2 i \varphi} + 1} = \frac{1}{\pi i} \oint_{|t|=1} \frac{1}{2 p t - t^2 + 1}\frac{d t}{t^m},
+\end{equation*}
+где $t = 0$ -- полюс $m$-го порядка,  зато
+\begin{equation*}
+    \frac{1}{2 p t - t^2 - 1} =  - \frac{1}{2 \sqrt{p^2 +1 }} \left(
+        \frac{1}{pt \sqrt{p^2+1}} - \frac{1}{pt + \sqrt{p^2 + 1}}
+    \right),
+\end{equation*}
+а значит
+\begin{equation}
+    \Lambda[J_m] (p) = \ldots = \frac{1}{\sqrt{p^2 + 1}} \frac{1}{(p + \sqrt{p^2+1})^m}.
+\end{equation}
+В частности,
+\begin{equation*}
+    \Lambda[J_1] (a) = \frac{1}{\sqrt{a^2+1} \left(\sqrt{a^2+1}+a\right)} = 1-\frac{a}{\sqrt{a^2+1}}.
+\end{equation*}
