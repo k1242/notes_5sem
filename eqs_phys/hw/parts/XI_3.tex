@@ -1,0 +1,24 @@
+Найдём значение интеграла 
+\begin{equation*}
+    I_n = \int_{-1}^{1} P_{n-1}(x) P_{n+1}(x) \d x.
+\end{equation*}
+Вспоминая, что $P_n \bot x^k \ \forall  k < n$, переходим к интегралу, вида
+\begin{equation*}
+    I_n = \int_{-1}^{1} a_{n-1} x^{n+1} P_{n+1} \d x = \frac{a_{n-1}}{a_{n+1}}
+    \int_{-1}^{1} a_{n+1} x^{n+1} P_{n+1} \d x = \frac{a_{n-1}}{a_{n+1}} \|P_{n+1}\|^2,
+\end{equation*}
+где $a_n$ -- коэффициент при старшей степени:
+\begin{equation*}
+    P_n (x) = \frac{1}{2^n n!} \partial_x^n (x^2-1)^n,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    a_n = \frac{(2n)_n}{2^n n!}.
+\end{equation*}
+Норму полиномов Лежандра можно найти, как
+\begin{equation*}
+     \|P_n\|^2 = \int_{-1}^{1} P_n^2 (x) \d x = \frac{2}{2n+1}.
+ \end{equation*} 
+ Собирая все вместе, находим:
+ \begin{equation*}
+     I_n = \frac{8}{2n+3} \frac{(2n-2)!}{(2n+2)!} =  \frac{8}{(2n+3)_5}\big[n (n+1)\big]^2.
+ \end{equation*}
+

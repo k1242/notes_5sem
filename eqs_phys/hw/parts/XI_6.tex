@@ -1,0 +1,41 @@
+Найдём значение интеграла
+\begin{equation*}
+    I_n = \int_{-\infty}^{+\infty} x^n \exp(-x^2) H_n (xy) \d x.
+\end{equation*}
+Заметим, что
+\begin{equation*}
+    \partial_y H_{2n } (xy) = x \cdot 2n \cdot H_{2n-1} (xy) \cdot 2, 
+    \hspace{5 mm} 
+    % \partial_y^2 H_{2n } (xy) = x^2 (2n)(2n-1) H_{2n-1} (xy) \cdot 2^2, 
+    % \hspace{5 mm} 
+    \ldots,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \partial_y^n H_{2n} (xy) = x^n 2^n \frac{(2n)!}{n!} H_n (xy) = x^n 2^n (2n)_n H_n (xy).
+\end{equation*}
+А значит исходный интеграл можем представить в виде
+\begin{equation*}
+    I_n = \frac{1}{2^n (2n)_n} \partial_y^n \int_{-\infty}^{+\infty} e^{-x^2} H_{2n} (xy) \d x =
+     \frac{1}{2^n (2n)_n} \partial_y^n J_{2n} (y),
+     \hspace{10 mm} 
+     J_{n}(y) = \int_{-\infty}^{+\infty} e^{-x^2} H_n (xy) \d x.
+\end{equation*}
+Найдём значение $J_{n}(y)$ через производящую функцию, а именно рассмотрим $f(z)$:
+\begin{equation*}
+    f(z) = \sum_{n=0}^{\infty} \frac{J_n z^n}{n!} = \int_{-\infty}^{+\infty} dx\, e^{-x^2} 
+    \sum_{n=0}^{\infty} \frac{z^n}{n!} H_n (xy) = 
+    \int_{-\infty}^{+\infty} e^{-x^2}  e^{-z^2 + 2 z \cdot xy} = \sqrt{\pi} e^{z^2 (y^2 - 1)},
+\end{equation*}
+где мы, зная, что все сходится равномерное, переставили сумму и интеграл. Раскладывая ответ в ряд, находим
+\begin{equation*}
+    f(z) =  \sum_{n=0}^{\infty} \frac{J_n z^n}{n!}= \sqrt{\pi} e^{z^2 (y^2 - 1)} = \sum_{n=0}^{\infty} \frac{z^{2n}}{n!} (y^2-1)^n \sqrt{\pi},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    J_{2n} (y) = \sqrt{\pi} (2n)_n (y^2-1)^n.
+\end{equation*}
+Осталось вспомнить, что полиномы Лежандра выражаются, как
+\begin{equation*}
+    P_n (y) = \frac{1}{2^n n!} \partial_y^n (y^2-1)^n,
+\end{equation*}
+так что, собирая всё вместе, находим, что
+\begin{equation*}
+    I_n = \frac{\sqrt{\pi} }{2^n} \partial_y^n (y^2 -1)^n = n! \sqrt{\pi} P_n (y).
+\end{equation*}

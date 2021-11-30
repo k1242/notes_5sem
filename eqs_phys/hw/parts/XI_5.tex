@@ -1,0 +1,16 @@
+Найдём значение интеграла 
+\begin{equation*}
+    I_n = \int_{-\infty}^{+\infty} \exp(-(x-y)^2) H_n (x) \d x.
+\end{equation*}
+Вспоминая, что
+\begin{equation*}
+    H_n (x) = (-1)^n e^{x^2} \partial_x^n e^{-x^2},
+\end{equation*}
+переписываем $I_n$, как
+\begin{equation*}
+    I_n = (-1)^n e^{-y^2} \int_{-\infty}^{+\infty}  e^{2 xy} \partial_x^n e^{-x^2} \d x = e^{-y^2} \int_{-\infty}^{+\infty} 2^n y^n e^{2xy} e^{-x^2} \d x = 2^n y^n \sqrt{\pi},
+\end{equation*}
+где мы просто много раз проинтегрировали по частям. Итого, исходный интеграл:
+\begin{equation*}
+    I_n =\int_{-\infty}^{+\infty} \exp(-(x-y)^2) H_n (x) \d x= 2^n y^n \sqrt{\pi}.
+\end{equation*}

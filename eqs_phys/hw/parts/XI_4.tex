@@ -1,0 +1,18 @@
+Найдём нормировку $\|H_n\|$ из формулы Родрига:
+\begin{equation*}
+    \|H_n\|^2 = \int_{-\infty}^{+\infty} e^{-x^2} H_n^2(x) \d x,
+\end{equation*}
+Для этого вычислим коэффициент при старшей степени:
+\begin{equation*}
+    H_n = (-1)^n e^{x^2} \partial_x^n e^{-x^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    a_n = 2^n.
+\end{equation*}
+Вспоминая, что $H_n \bot x^k \ \forall k < n$, переписываем исходный интеграл в виде
+\begin{equation*}
+    \|H_n\|^2 = a_n \int_{-\infty}^{+\infty} e^{-x^2} x^n H_n \d x = a_n (-1)^n \int_{-\infty}^{+\infty} x^n \partial_x^n e^{-x^2} \d x =2^n n! \int_{-\infty}^{+\infty} e^{-x^2} \d x =  2^n n!  \sqrt{\pi}.
+\end{equation*}
+Итого, нормировка полиномов Эрмита:
+\begin{equation*}
+    \|H_n\|^2  = \int_{-\infty}^{+\infty} e^{-x^2} H_n^2(x) \d x = 2^n n!  \sqrt{\pi}.
+\end{equation*}

@@ -1,0 +1,43 @@
+Докажем формулу Кристоффеля-Дарбу для ортогональных полиномов:
+\begin{equation*}
+    \sum_{k=0}^{n} \frac{p_k (x) p_k (y)}{\|p_k\|^2} = \frac{1}{A_n \|p_n\|^2} \frac{p_{n+1} (x) p_n (y) - p_{n+1} (y) p_n (x)}{x-y}.
+\end{equation*}
+Для начала вспомним рекуррентное соотношение для полиномов:
+\begin{align*}
+    p_{n+1} (x) &= (A_n x + B_n) p_n (x) + C_n p_{n-1} (x) \\
+    p_{n+1} (y) &= (A_n y + B_n) p_n (y) + C_n p_{n-1} (y).
+\end{align*}
+Посмотрим, в частности, на $p_n (y) p_{n+1} (x) - p_n (x) p_{n+1} (y)$:
+\begin{equation*}
+    p_n (y) p_{n+1} (x) - p_n (x) p_{n+1} (y) = 
+    A_n \left[(x-y) p_n (x) p_n (y)\right] - 
+    C_n \left[
+        p_n (x) p_{n-1} (y) - p_n (y) p_{n-1} (x)
+    \right].
+\end{equation*}
+Вспомним, что $C_n$ выражается, как
+\begin{equation*}
+    C_n = - \frac{A_n}{A_{n-1}} \frac{\|p_n\|^2}{\|p_{n-1}\|^2},
+\end{equation*}
+а значит мы получили новое рекуррентное соотношение, которым и воспользуемся
+\begin{equation*}
+    \frac{p_{n+1} (x) p_n (y) - p_{n+1} (y) p_n (x)}{A_n \|p_n\|^2} = 
+    \frac{p_n (x) p_n (y)}{\|p_n\|^2} + 
+    \frac{p_n (x) p_{n-1} (y) - p_n (y) p_{n-1} (x)}{A_{n-1} \|p_{n-1}\|^2(x-y)} = \sum_{k=0}^{n} 
+    \frac{p_k (x) p_k (y)}{\|p_k\|^2},
+\end{equation*}
+окуда и получаем искомое соотношение. 
+
+Осталось подставить значение коэффициентов для полиномов Лежандра:
+\begin{equation*}
+    A_{n} = \frac{a_{n+1}}{a_n} = \frac{2n+1}{n+1},
+    \hspace{5 mm} 
+    a_n = \frac{(2n)_n}{2^n n!},
+    \hspace{5 mm} 
+    \|P_n\|^2 = \frac{2}{2n+1}.
+\end{equation*}
+где $a_n$ -- кэффициент при старшей степени. Подставляя, находим
+\begin{equation*}
+    \sum_{k=0}^{n} (2k + 1) P_k (x) P_k (y) = (n+1) \frac{P_n (x) P_{n+1} (y) - P_{n+1} (x) P_n (y)}{y-x},
+\end{equation*}
+что и требовалось доказать.
