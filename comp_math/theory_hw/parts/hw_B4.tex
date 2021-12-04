@@ -2,14 +2,41 @@
 
 \section{B4}
 
-\textbf{Заголовок}, \textit{курсив}
-\begin{equation*}
-    \bar{\vc{\alpha}} + \sqrt{\beta} + \begin{pmatrix}
-        2 & 2  \\
-        2 & 1  \\
-    \end{pmatrix} + \ldots + e^{\smallvc{v} \times \ldots}
-\end{equation*}
-Начинается $\alpha + \beta$ к русскому $\alpha + b$ русский 
-\begin{equation*}
-    h + f
-\end{equation*}
+\begin{to_thr}[]
+    Если $\forall i$  $|a_{ii}| \geq \sum_{i,j} |a_{ij}| +\varepsilon$, то метод Зейделя сходится.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Введем погрешность решения $\delta^{(k+1)} = x^{(k)}-x^{(*)}$, для которой верно, что $\hat{^(k+1)} = R \delta^{(k)}$, а значит
+    \begin{equation*}
+        \delta_i^{(k+1)} = \frac{1}{a_{ii}}\left(
+            \sum_{j=1}^{i-1} a_{ij} \delta_j^{(k+1)} + \sum_{j=i+1}^{n} a_{ij} \delta_j^{k}
+        \right),
+    \end{equation*}
+    откуда получаем оценку
+    \begin{equation*}
+        |\delta_i^{(k+1)}| \leq \max_{1 \leq j < i} |\delta_j^{k+1}| \alpha_i  + \max_{i < j \leq n} |\delta_j^{(k)}| \beta_i,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \|\delta^{(k+1)}\| \leq 
+         \alpha_i \|\delta^{(k+1)}\| + \beta_i \|\delta^{(k)}\|,
+         \hspace{5 mm} 
+         \alpha_i+ \beta_i < 1,
+    \end{equation*}
+    в силу диагонального преобладания. 
+    Выражая норму, находим
+    \begin{equation*}
+        \|\delta^{(k+1)}\| \leq \frac{\beta_i}{1-\alpha_i} \|\delta^{(k)}\| = \sub{q}{seid}\|\delta^{(k)}\|,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \sub{q}{seid} = \frac{\beta_i}{1-\alpha_i}.
+    \end{equation*}
+\end{proof}
+
+    Осталось вспомнить, что $\sub{q}{gauss} = \alpha_i + \beta_i$, и сравнить $\beta_i/(1-\alpha_i)$  и $\alpha_i + \beta_i$, для которых верно
+    \begin{equation*}
+        \frac{\beta_i}{1-\alpha_i} < \alpha_i + \beta_i,
+        \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+        \alpha_1 (\alpha_i + \beta_i) > \alpha_i,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \sub{q}{seid} < \sub{q}{gauss},
+    \end{equation*}
+    а значит метод Зейделя сходится быстрее.
