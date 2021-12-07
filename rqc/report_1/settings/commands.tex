@@ -16,29 +16,22 @@
 % операторы (просто прямой текст)
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+% \renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
+% \newcommand{\E}{\mathop{\mathrm{E}}\nolimits}
+% \newcommand{\D}{\mathop{\mathrm{D}}\nolimits}
+% \newcommand{\cov}{\mathop{\mathrm{cov}}\nolimits}
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \newcommand{\card}{\mathop{\mathrm{card}}\nolimits}
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 \renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
 \newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{ker}}\nolimits}
-\newcommand{\im}{\mathop{\mathrm{im}}\nolimits}
 \newcommand{\spec}{\mathop{\mathrm{spec}}\nolimits}
 \newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
 \newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
 \newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
 \newcommand{\const}{\textnormal{const}}
-\newcommand{\Ai}{\textnormal{Ai}}
-\newcommand{\Bi}{\textnormal{Bi}}
-\newcommand{\res}{\mathop{\mathrm{res}}\nolimits}
 
-% теорвер
-% \renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
-% \newcommand{\E}{\mathop{\mathrm{E}}\nolimits}
-% \newcommand{\D}{\mathop{\mathrm{D}}\nolimits}
-\newcommand{\cov}{\mathop{\mathrm{cov}}\nolimits}
-\newcommand{\var}{\mathop{\mathrm{var}}\nolimits}
-\newcommand{\cor}[2]{\langle\hspace{-1.2pt}\langle #1,\, #2 \rangle\hspace{-1.2pt}\rangle}
 
 % цветной текст
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -62,24 +55,8 @@
 \newcommand{\ket}[1]{\left| #1 \right\rangle}
 \newcommand{\bra}[1]{\left\langle #1 \right|}
 
-
 \newcommand{\dppp}{\frac{d^3 p}{(2 \pi \hbar)^3}}
 
-\DeclareDocumentCommand{\bk}{m o m}{
-    \IfNoValueTF{#2}{\langle #1 | #3 \rangle}{\langle #1 | #2 | #3 \rangle}
-}
 
-
-\newcommand*\xbar[1]{%
-  \hbox{%
-    \vbox{%
-      \hrule height 0.4pt % The actual bar
-      \kern0.2ex%         % Distance between bar and symbol
-      \hbox{%
-        \kern-0.1em%      % Shortening on the left side
-        \ensuremath{#1}%
-        \kern-0.1em%      % Shortening on the right side
-      }%
-    }%
-  }%
-} 
+\renewcommand{\ne}{\sub{N}{e}}
+\renewcommand{\ng}{\sub{N}{g}}

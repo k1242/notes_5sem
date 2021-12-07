@@ -1,0 +1,262 @@
+\section{ТеорМин 3}
+
+\textbf{Всякое}. Может быть полезно:
+\begin{equation*}
+    \int_{-\infty}^{+\infty} e^{\pm i z^2} \d z = \sqrt{\pi} e^{\pm i \pi / 4}.
+\end{equation*}
+Также полезно
+\begin{equation*}
+    \int_{-\infty}^{+\infty} \cos z^2 \d z = \int_{-\infty}^{+\infty} \sin z^2 \ z = \sqrt{\frac{\pi}{2}}.
+\end{equation*}
+
+\textbf{Метод Лапласа}. Рассмотрим дифференциральное уравнение, вида
+\begin{equation*}
+    (a_n z + b_n) f^{(n)} + \ldots + (a_1 z + b_1) f^{(1)} + (a_0 z + b_0) f^{(0)} = 0,
+    \hspace{10 mm} 
+    f(z) = \int_C \tilde{f} (p) e^{pz} \d p,
+\end{equation*}
+где $f(p) e^{pz} |_{\partial C}^{\forall  z} = 0$. Тогда
+\begin{equation*}
+    - \partial_p \left[ A(p) f(p)\right] + B(p) f(p) = 0,
+    \hspace{5 mm} 
+    A(p) = a_n p^n +\ldots + a_1 p + a_0,
+    \hspace{5 mm} 
+    B(p) = b_n p^n + b_{n-1} p^{n-1} + \ldots + b_1 p + b_0.
+\end{equation*}
+Решая, находим
+\begin{equation*}
+    \tilde{f}(p) = \frac{1}{A(p)} \exp\left(
+        \int_{p_0}^{p} \frac{B(t)}{A(t)}\d t
+    \right).
+\end{equation*}
+
+
+\textbf{Метод перевала}. Действительный метод перевала:
+\begin{equation*}
+    \int_{-\infty}^{+\infty} e^{f(x)} g(x) \d x = g(x_0) e^{f(x_0)} \sqrt{\frac{2\pi}{|f''(x_0)|}}.
+\end{equation*}
+Для стационарной фазы:
+\begin{equation*}
+    \int_{-\infty}^{+\infty} e^{i f(x)} g(x) \d x = g(x_0) e^{i f (x_0)} 
+    \sqrt{\frac{2\pi}{|f''(x_0)}} e^{\pm i \pi/4},
+\end{equation*} 
+где $\pm$ согласован с $\sign f''$. 
+
+Для комплексного метода перевала
+\begin{equation*}
+    I = \int_C e^{f(z)} g(z) \d z = g(z_0) e^{f(z_0)} e^{i \varphi} \sqrt{\frac{2\pi}{|f''|}},
+    \hspace{5 mm} 
+    \varphi = \frac{1}{2}\left(\pm \pi - \arg f''(z_0) \right).
+\end{equation*}
+
+
+
+
+\textbf{Функция Эйри}. Решаем уравнение, вида
+\begin{equation*}
+    \partial_x^2 Y - x Y = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    Y(x) = \int_C e^{x t - t^3/3} \d t.
+\end{equation*}
+Так приходим к
+\begin{equation*}
+    \Ai (x) = 
+    \frac{1}{2 \pi i} \int_{- i \infty}^{+i \infty} e^{xt - t^3/3} \d t= 
+    \frac{1}{\pi} \int_{0}^{\infty} \cos(x u + u^3/3) \d u.
+\end{equation*}
+В качетсве второго решения выбрается 
+\begin{equation*}
+    \Bi (x) = \frac{1}{\pi} \int_{0}^{\infty} \left[
+        e^{xu - u^3/3}  + \sin (xu + u^3/3)
+    \right]\d u.
+\end{equation*}
+
+
+
+\textbf{Функции Бесселя}. Уравнение Бесселя:
+\begin{equation*}
+    \partial_z^2 J_m + \frac{1}{z} J_m + \left(1 - \frac{m^2}{z^2}\right) J_m = 0,
+\end{equation*}
+где $J_m(0) \in \mathbb{R}$. Знаем, что
+\begin{equation*}
+    e^{i p r \sin \varphi} = \sum_{m \in \mathbb{Z}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    J_m (z) = \frac{1}{2\pi} \int_{-\pi}^{+\pi}e^{i z \sin \varphi} e^{- i m \varphi} \d \varphi,
+    \hspace{5 mm} 
+    \Leftrightarrow
+    \hspace{5 mm} 
+    J_m (z) = \frac{1}{\pi} \int_{0}^{\pi} \cos(z \sin \varphi - m \varphi) \d \varphi.
+\end{equation*}
+Умеем дифференцировать:
+\begin{equation*}
+    \frac{d J_m}{d z} = \frac{J_{m-1} (z)}{2} - \frac{J_{m+1}(z)}{2},
+    \hspace{5 mm}
+    \frac{m}{z} J_m (z) = \frac{1}{2} \left(J_{m+1} (z) + J_{m-1}(z)\right),
+    \hspace{5 mm} 
+    \frac{d }{d z} \left(z^m J_m (z)\right) = J_{m-1} (z) z^m.
+\end{equation*}
+Откуда сразу находим
+\begin{equation*}
+    J_{-m} (z) = (-1)^m J_m (z).
+\end{equation*}
+Умеем раскладывать в ряд и уходить на бесконечность:
+\begin{equation*}
+    J_m (z) = \frac{z^m}{2^m} \sum_{k=0}^{\infty} \frac{(-1)^k z^{2k}}{4^k k! (m+k)!},
+    \hspace{5 mm} 
+    J_m (z \to \infty) = \sqrt{\frac{2 \pi}{z}} \cos\left(
+        z - \frac{\pi n }{2} - \frac{\pi}{4}
+    \right),
+\end{equation*}
+соответственно с нулями в $\frac{\pi}{2} + \pi m$. 
+
+Преобразование Фурье от функции:
+\begin{equation*}
+    F[J_m (z)] (k) = \int_{-\infty}^{+\infty} J_m (z) e^{-ikz} \d z 
+    % = \int_{-\infty}^{+\infty} \d z e^{i kz} \frac{1}{2\pi} \int_{-\pi}^{+\pi} e^{i z \sin \varphi} e^{-i m \varphi} \d \varphi 
+    = \frac{(-1)^m e^{i m \varphi_0} + e^{- i m \varphi_0}}{\sqrt{1 - k^2}}, \hspace{5 mm} 
+    \varphi_0 = \arcsin k.
+\end{equation*}
+В частности
+\begin{equation*}
+    F[J_0](k) = \frac{2}{\sqrt{1-k^2}} \theta(1-k^2), \hspace{10 mm} 
+    F[J_1](k) = \frac{2 i k}{\sqrt{1 - k^2}} \theta(1-k^2).
+\end{equation*}
+Преобразование Лапласа:
+\begin{equation*}
+    \Lambda[J_m] (p)=  \int_{0}^{\infty}  e^{- p z} J_m (z) \d z = 
+    \frac{1}{\sqrt{p^2 + 1} (p + \sqrt{p^2 + 1})^m}.
+\end{equation*}
+Например,
+\begin{equation*}
+    \int_{0}^{\infty} \frac{J_n (z)}{z^n} \d z = \frac{1}{(2n-1)!!}.
+\end{equation*}
+
+
+\textbf{Ортогональные полиномы}. Знаем, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        (\sigma \rho f')' = - \lambda \rho f, \\
+        (\sigma \rho)' =  \tau \rho,
+    \end{aligned}\right.
+    \hspace{5 mm} 
+    \rho(x) = \frac{1}{\sigma(x)} \exp\left(
+        \int_{}^{x} \frac{\tau(y)}{\sigma(y)} \d y
+    \right),
+    \hspace{5 mm} 
+    \bk{f}{g} = \int_{a}^{b} \rho(x) f(x) g(x) \d x.
+\end{equation*}
+Для ортогональных полиномов обязательно $\deg \sigma \leq 2$, $\deg \tau \leq 1$, $|\sigma''|+ |\tau'| \neq 0$. Тогда
+\begin{equation*}
+    f_n (x) = \frac{\alpha_n}{\rho(x)} \partial_x^n \left(\sigma^n (x) \times \rho(x)\right), \hspace{5 mm}     
+    \alpha_n = (-1)^n a_n n! \prod_{k=0}^{n-1} \frac{1}{\lambda_n^{(k)}},
+\end{equation*}
+где 
+\begin{equation*}
+    \lambda_n = - n \tau' - \frac{n (n-1)}{2} \sigma'',
+    \hspace{5 mm} 
+    \lambda_n^{(k)} = \lambda_n + k \tau' + \frac{k (k-1)}{2} \sigma'',
+\end{equation*}
+что гордо именуется обобщенной формулой Родрига. 
+
+Важно помнить, что $\forall$ клоп $\deg n$ $\bot$ $x^m$ при $m < n$. Можем составить рекуррентное соотношение:
+\begin{equation*}
+    p_{n+1} (x) = (A_n x + B_n) p_n (x) + X_n p_{n-1} (x),
+    \hspace{5 mm} 
+    A_n = \frac{
+        \bk{p_{n+1}}{p_{n+1}}
+    }{
+        \bk{p_{n+1}}{x p_n}
+    },
+    \hspace{5 mm} 
+    B_n = -A_n \frac{\bk{x p_n}{p_n}}{\bk{p_n}{p_n}},
+    \hspace{5 mm} 
+    C_n = - \frac{A_n}{A_{n-1}} \frac{\|p_n\|^2}{\|p_{n-1}\|^2}.
+\end{equation*}
+Нормировка может быть найдена, как
+\begin{equation*}
+    \|p_n\|^2 = (-1)^n \alpha_n a_n n! \int_{a}^{b} \sigma^n (x) \rho(x) \d x.
+\end{equation*}
+Производящая функция может быть найдена, как
+\begin{equation*}
+    \Psi(x, z) = \sum_{n=0}^{\infty}  \frac{\tilde{p}_n (\lambda)}{n!} z^n = 
+    \frac{\tau(t_0)/ \rho(x)}{1 - z \sigma' (t_0)},
+    \hspace{5 mm} 
+    t_0 - x -  z \sigma(t_0) = 0.
+\end{equation*}
+Обычно $\alpha_n$ такой, что
+\begin{equation*}
+    \Psi(x, z) = \sum_{n=0}^{\infty} p_n (x) z^n.
+\end{equation*}
+
+
+\textbf{Полиномы Лежандра}. Дифференциральное уравнение ($a,\, b = -1,\, 1$):
+\begin{equation*}
+    \sigma(x) = 1-  x^2, 
+    \hspace{5 mm} 
+    \tau(x) = -2 x = \sigma',
+    \hspace{5 mm} \rho = 1,
+    \hspace{10 mm} 
+    (1- x^2) P_n'' - 2 x P_n' + n(n+1)P_n = 0.
+\end{equation*}
+Формула Родрига:
+\begin{equation*}
+    P_n (x) = \frac{(-1)^n}{2^n n!} \partial_x^n (1-x^2)^n, 
+    \hspace{5 mm} 
+    \alpha_n = \frac{(-1)^n}{2^n n!},
+    \hspace{5 mm} 
+    a_n = \frac{(2n)!}{2^n (n!)^2}.
+\end{equation*}
+Нормировка:
+\begin{equation*}
+    \|P_n\|^2 = \frac{2}{2n + 1}.
+\end{equation*}
+Рекуррентное соотноешение:
+\begin{equation*}
+    A_n = \frac{\|p_n+1\|^2}{\bk{p_{n+1}}{x p_n}} = \frac{a_{n+1}}{a_n} = \frac{2n + 1}{n+1},
+    \hspace{5 mm} 
+    B_n = 0,
+    \hspace{5 mm} 
+    C_n = - \frac{n}{n+1},
+\end{equation*}
+подставляя, приходим к
+\begin{equation*}
+    (n+1) P_{n+1} (x) - (2n+1) x P_n + n  P_{n-1} (x) = 0.
+\end{equation*}
+Производяшая функция:
+\begin{equation*}
+    \psi(x, z) = \sum_{n=0}^{\infty} P_n (x) z^n = \frac{1}{\sqrt{z^2 - 2 z x + 1}}.
+\end{equation*}
+Умеем дифференцировать
+\begin{equation*}
+    (x^2-1) \frac{d P_n}{d x}  = n (x P_n (x) - P_{n-1} (x)).
+\end{equation*}
+
+
+\textbf{Полиномы Эрмита}. Дифференциральное уравнение
+\begin{equation*}
+    \sigma = 1, \hspace{5 mm} 
+    \tau = - 2 x,
+    \hspace{5 mm} \rho(x)  = e^{-x^2},
+    \hspace{5 mm} 
+    H_n'' - 2 x H_n' + 2 n H_n = 0, 
+    \hspace{5 mm} 
+    (e^{-x^2} H_n')' = -2 n e^{-x^2} H_n.
+\end{equation*}
+Знаем, что формула Родрига примет вид
+\begin{equation*}
+    H_n (x) = (-1)^n e^{x^2} \partial_x^n e^{-x^2},
+    \hspace{5 mm} 
+    a_n = 2^n,
+\end{equation*}
+тогда
+\begin{equation*}
+    \|H_n\|^2 =  2^n n! \sqrt{\pi}.
+\end{equation*}
+Рекуррентное соотношение:
+\begin{equation*}
+    H_{n+1} (x) = 2 x H_n (x) - 2 n H_{n-1} (x).
+\end{equation*}
+Производящаяя функция:
+\begin{equation*}
+    \psi(x,z) = e^{-z^2+2 zx} = \sum_{n=0}^{\infty}  \frac{H_n (x)}{n!} z^n.
+\end{equation*}
