@@ -1,0 +1,66 @@
+\subsection*{Полиномы Лежандра в атоме водорода}
+
+
+\begin{flushright}
+    \textit{Хоружий Кирилл}
+\end{flushright}
+
+\textbf{Intro}.
+Вспоминаем вид лестничных операторов
+\begin{equation*}
+    \hat{l}_{\pm} = e^{\pm i \varphi} \left(
+        \pm \partial_\theta + i \ctg \theta \partial_\varphi
+    \right).
+\end{equation*}
+А также $Y_{l,l}$:
+\begin{equation*}
+    Y_{l,l} (\theta, \varphi) = (-1)^l \sqrt{\frac{(2l+1)!}{4 \pi}} \frac{1}{2^l l!} \sin^l \theta e^{i l \varphi}.
+\end{equation*}
+Применяем несколько раз $\hat{l}_-$:
+\begin{equation*}
+    \hat{l}_-^l Y_{l,l} (\theta, \varphi) = \partial_{\cos \theta}^l \sin^l \theta Y_{l,l} (\theta),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    Y_{l,0} (\theta, \varphi) = \sqrt{\frac{2l + 1}{4 \pi}} \frac{(-1)^l}{2^l l!} \partial_{\cos \theta}^l \sin^{2l} \theta,
+\end{equation*}
+что удобно переписать в терминах полиномов Лежандра:
+\begin{equation*}
+    P_n (x) = \frac{1}{2^n n!} \partial_x^n (x^2-1)^n,
+    \hspace{10 mm} 
+    Y_{l,0} (\theta, \varphi) = \sqrt{\frac{2l+1}{4 \pi}} P_l (\cos \theta).
+\end{equation*}
+
+
+\textbf{Решение}.
+Для начала 
+\begin{equation*}
+    \hat{l}_- \ket{l, m} = \sqrt{(l+m)(l-m+1)} \ket{l,m-1},
+    \hspace{5 mm} 
+    \hat{l}_- \ket{l, l} = \sqrt{2l} \ket{l, l-1}.
+\end{equation*}
+Подсталяя дифференциальное представление $\hat{l}_-$, находим
+\begin{equation*}
+    Y_{1,0} = \frac{\hat{l}_- Y_{1, 1}}{\sqrt{2}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    Y_{1, 0} = \frac{1}{2} \sqrt{\frac{3}{\pi}} \cos \theta.
+\end{equation*}
+Теперь
+\begin{equation*}
+    Y_{2,0} (\theta, \varphi) = \sqrt{\frac{5}{4 \pi}} P_2 (\cos \theta),
+\end{equation*}
+где $P_2$ можем найти, как
+\begin{equation*}
+    P_2 (x) = \frac{3 x P_1 (x) - P_0(x)}{2} = \frac{3 x^2 -1}{2},
+\end{equation*}
+а значит
+\begin{equation*}
+    Y_{2, 0} = 
+    \frac{1}{4} \sqrt{\frac{5}{\pi}} (3 \cos \theta^2 -1) 
+    = \frac{1}{8} \sqrt{\frac{5}{\pi}} \left(3 \cos (2 \theta) + 1\right).
+\end{equation*}
+Теперь с помощью $\hat{l}_+$, находим
+\begin{align*}
+    \hat{l}_+ Y_{l,m} (\theta, \varphi) = \sqrt{l (l+1) - m (m+1)} Y_{l, m+1} (\theta, \varphi),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    Y_{2, 1} &= \frac{\hat{l}_+ Y_{2,0}}{\sqrt{6}} = - \frac{1}{4} \sqrt{\frac{15}{2 \pi}} e^{i \varphi} \sin(2 \theta), \\
+    Y_{2, 2} &= \frac{\hat{l}_+ Y_{2,1}}{2} =  \frac{1}{4} \sqrt{\frac{15}{\pi}} e^{2 i \varphi} \sin^2 (\theta).
+\end{align*}

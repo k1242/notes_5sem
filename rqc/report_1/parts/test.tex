@@ -64,12 +64,13 @@
 \end{align*}
 где первое слагаемое отвечает спонтанной эмиссии, и второе насыщению лазером. $\Phi = I / h \nu$ -- насыщающий поток фотонов. Учитывая, что $\ng + \ne = N = \const $, можем получить диффур первого порядка на $\ne$:
 \begin{equation*}
-    \dot{\ne} = - (\Gamma \ne + 2 \sigma \Phi) \ne + \sigma \Phi N.
+    \dot{\ne} = - (\Gamma + 2 \sigma \Phi) \ne + \sigma \Phi N.
 \end{equation*}
 Решение можем быть найдено в виде
 \begin{equation*}
+% ошибка
     \ne (t) = \left[
-        \Gamma \ne(0) - \frac{N \sigma \Phi}{\Gamma + 2 \sigma \Phi} 
+         \ne(0) - \frac{N \sigma \Phi}{\Gamma + 2 \sigma \Phi} 
     \right] e^{-(\Gamma + 2 \sigma \Phi) t} + \frac{N \sigma \Phi}{\Gamma + 2 \sigma \Phi}.
 \end{equation*}
 
@@ -89,7 +90,8 @@
 
 Также наблюдается увеличение <<мощности>> ширины линии перехода, в пределе $(\Gamma + 2 \sigma \Phi) t \gg 1$, получаем
 \begin{equation*}
-     \frac{\ne (\infty)}{N} = \frac{\sigma \Phi}{\Gamma + 2 \sigma \Gamma}.
+% ошибка
+     \frac{\ne (\infty)}{N} = \frac{\sigma \Phi}{\Gamma + 2 \sigma \Phi}.
 \end{equation*} 
 Вспоминая уранение \eqref{1_4} с $\Delta \nu = \nu - \nu_0(1+  v /c)$ (минус, т.к. допплеровский сдвиг в другую сторону), можем переписать уравнение в виде
 \begin{equation*}
