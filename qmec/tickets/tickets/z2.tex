@@ -1,0 +1,47 @@
+\Tsec{Задача №2}
+
+
+
+В координатном представлении $\hat{x} = x$ и $\hat{p}_x = - i \hbar \partial_x$, тогда $\hat{p}_x^2 = - \hbar^2 \partial_x^{2}$. 
+\\
+\textbf{0)} Начнём с нулевого примера, чтобы убедиться, что правильно смотрим на мир:
+\begin{align*}
+    [\hat{x},\, \hat{p}] &\psi(x) = 
+    x (-i \hbar) \partial_x \psi - (-i \hbar) \partial_x (x \psi) = i \hbar \psi + i \hbar x \partial_x \psi - i \hbar x \partial_x \psi = i \hbar \psi,  \\ 
+    \Rightarrow \ \ [\hat{x},\, \hat{p}] &= i \hbar.
+\end{align*}
+\textbf{a)} Аналогично, в смысле операторного равенства,
+\begin{align*}
+    [\hat{x},\, \hat{p}^2] &\psi(x) 
+    = 
+    x (-i \hbar)^2 \partial_x^2 \psi - (-i \hbar)^2 \partial_x^2 (x \psi) 
+    = 
+    - \hbar^2 x \partial_x^2 \psi + \hbar^2 \partial_x (\psi + x \partial_x \psi) 
+    = \\ &\phantom{\psi(x)}= 
+    - \hbar^2 x \partial_x^2 \psi + \hbar^2 \partial_x \psi + \hbar^2 \partial_x \psi + \hbar^2 x \partial_x^2 \psi = 2 i \hbar \hat{p} \psi,
+    \\ \Rightarrow [\hat{x},\, \hat{p}^2] &= 2 i \hbar \hat{p}.
+\end{align*}
+\textbf{б)} Теперь найдём коммутатор с некоторой функцией $U(x)$:
+\begin{align*}
+    [U(\hat{x}),\, \hat{p}]&\psi(x) 
+    = 
+    U(x) (- i \hbar \partial_x \psi) + i \hbar \partial_x (U \psi) 
+    = 
+    U (- i \hbar \partial_x \psi) + i \hbar  (\psi \partial_x U + U \partial_x \psi)
+    = 
+    i \hbar (\partial_x U) \psi,
+    \\ \Rightarrow [U(\hat{x}),\, \hat{p}] &= 2 i \hbar \hat{p}.
+\end{align*}
+\textbf{в)} Наконец, 
+\begin{align*}
+    [U(\hat{x}),\, \hat{p}^2]&\psi(x) 
+    = 
+    U (-\hbar^2) \partial_x^2 \psi + \hbar^2 \partial_x^2 U \psi
+    =
+    U (- \hbar^2) \psi'' + \hbar^2 (\psi U'' + 2 U' \psi' + \psi'' U) 
+    = \\ &\phantom{\psi(x)}= 
+    \hbar^2 (\psi U'' + 2 U' \psi') 
+    =
+    (\hbar^2 U'' + \hbar 2i U' \hat{p} )\psi,
+    \\ \Rightarrow [U(\hat{x}),\, \hat{p}^2] &= \hbar^2 U'' + 2 i \hbar U' \hat{p}.
+\end{align*}
