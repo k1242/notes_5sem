@@ -1,0 +1,56 @@
+Найдём уровни энергии трёхмерного изотропного гармонического осциллятора в ПДСК. Запишем уравнение Шрёдингера примет вид
+\begin{equation*}
+    \hat{H} \psi = E \psi, 
+\end{equation*}
+и перейдём к безразмерным величинам
+\begin{equation*}
+    \hat{\vc{Q}} = \frac{\hat{\vc{q}}}{q_0}, \hspace{5 mm} 
+    \hat{\vc{P}} = \frac{\hat{\vc{p}}}{p_0} = - i \partial_{\smallvc{Q}},
+    \hspace{10 mm} 
+    p_0 = \sqrt{m \omega \hbar}, \hspace{5 mm} 
+    q_0 = \sqrt{\frac{\hbar}{m \omega}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{H}_Q = \frac{1}{2}\left(Q^2 + \hat{P}^2\right) = \hat{H}/(\hbar \omega).
+\end{equation*}
+Для благоприятного разделения переменных\footnote{
+    Здесь и далее $\vc{Q} = (x,\, y,\, z)\T$ -- обезразмеренные для удобства перменные.
+}  представим $\psi(x, y, z) = \psi_x(x) \psi_y (y) \psi_z (z)$, и $E = E_x + E_y + E_z$:
+\begin{equation*}
+    \frac{1}{2} \left({x^2 + y^2 + z^2} - \left(\partial_x^2 + \partial_y^2 + \partial_z^2\right)\right) \psi_x \psi_y \psi_z = \frac{1}{\hbar \omega}(E_x + E_y + E_z) \psi_x \psi_y \psi_z.
+\end{equation*}
+Нетрудно получить
+\begin{equation*}
+    \left(x^2 - \frac{\psi_x''(x)}{\psi_x(x)} - \frac{2 E_x}{\hbar \omega}\right) \psi_x \psi_y \psi_z + \ldots \left(z^2 - \frac{\psi_z''(z)}{\psi_z(z)} - \frac{2 E_z}{\hbar \omega}\right) \psi_x \psi_y \psi_z = 0,
+\end{equation*}
+таким образом переменные разделились и мы получили три независимых уравнения одномерных осцилляторов:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \psi_x''(x) + \left(\tfrac{2 E_x}{\hbar \omega} - x^2\right) \psi_x(x) &= 0, \\
+        \psi_y''(y) + \left(\tfrac{2 E_y}{\hbar \omega} - y^2\right) \psi_y(y) &= 0, \\
+        \psi_z''(z) + \left(\tfrac{2 E_z}{\hbar \omega} - z^2\right) \psi_z(z) &= 0. \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    E_i = \hbar \omega \left(\frac{1}{2} + n_i\right).
+\end{equation*}
+Так приходим к выражению для энергии изотропного гармонического осциллятора через число квантов по каждой из осей:
+\begin{equation*}
+    E = E_x + E_y + E_z = \hbar \omega \left(\frac{3}{2}+ n_x + n_y + n_z\right),
+\end{equation*}
+где явно видно вырождение уровней энергии, при $n_x + n_y + n_z = n$. Нетруно посчитать\footnote{
+    $n \geq 0$.
+} , что
+\begin{equation*}
+    \#(n) = \card \left\{
+        (n_x,\, n_y,\, n_z) \mid 
+        n_x + n_y + n_z = n
+    \right\}  = \frac{(n+1)(n+2)}{2},
+\end{equation*}
+что и является кратностью вырождения.
+
+Заметим, что $\#(0) = 1$, $\#(1) = 3$, $\#(2) = 6$, тогда
+\begin{align*}
+    2 \cdot \big(\#(0)\big) &= 2, \\
+    2 \cdot \big(\#(0)+\#(1)\big) &= 8, \\
+    2 \cdot \big(\#(0)+\#(1)+\#(2)\big) &= 20,
+\end{align*}
+что намекает на некоторую связь с магическими числами (ЛЛ3, \S 118: модель оболочек).

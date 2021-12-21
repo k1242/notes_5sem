@@ -1,0 +1,62 @@
+В нашем гармоническом осцилляторе посмотрим на коммутатор оператора уничтожения с гамильтонианом
+\begin{equation*}
+	[\hat{H}, \hat{a}]
+	= 
+	[\hbar \omega \left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right) , \hat{a}]
+	=
+	\hbar \omega [\hat{a}^\dagger \hat{a}, \hat{a}] = - \hbar \omega [ \hat{a}, \hat{a}^\dagger] \hat{a} = - \hbar \omega \hat{a}.
+\end{equation*}
+Как видим, этот коммутатор не обращается в нуль, если собственное значение $\hat{a}$ -- не ноль. То есть энергия такого состояния $\ket{\alpha}$ флуктуирует вокруг своего среднего значения\footnote{Эта энергия определена как
+$\langle E \rangle = \hbar \omega (\langle N \rangle + 1/2).$ А вот $\langle N \rangle = |\alpha|^2$}. Разложим это состояния по базису стационарных состояний
+\begin{equation*}
+	\ket{\alpha} = \sum_n C_n (\alpha) \ket{n}.
+\end{equation*}
+Найдём $C_n$ из уравнения на собственные значения
+\begin{equation*}
+	C_n(\alpha) = \bk{n}{\alpha} = \frac{1}{\alpha}\bk{n}{\hat{a}\, \alpha} = \frac{1}{\alpha} \bk{\hat{a}^\dagger n}{\alpha}
+\end{equation*}
+Сопряженный оператор уничтожения работает как
+\begin{equation*}
+	\hat{a}^\dagger \ket{n} = \sqrt{n+1} \ket{n+1}, 
+	\hspace{1 cm}
+	(\hat{a}^\dagger \ket{n})^\dagger = \bra{n} \hat{a} = \bra{\hat{a}^\dagger n}.
+\end{equation*}
+То есть получили рекурентную формулу с помощью которой $C_n$ уже вычисляется
+\begin{equation*}
+	\alpha C_n(\alpha) = \sqrt{n+1} \bk{n+1}{\alpha} = \sqrt{n+1} C_{n+1}(\alpha)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	C_n(\alpha) = \frac{\alpha^n}{\sqrt{n!}} C_0(\alpha).
+\end{equation*}
+
+Теперь посмотрим на вид нашего разложения
+\begin{equation*}
+	\ket{\alpha} = C_0(\alpha) \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n} = C_0(\alpha) \sum_n \frac{(\alpha \hat{a}^\dagger)^n}{\sqrt{n!}} \ket{0} = C_0(\alpha) = e^{\alpha \hat{a}^\dagger} \ket{0}.
+\end{equation*}
+Теперь по условию единично нормировки находим $C_0(\alpha)$ и ликуем
+\begin{equation*}
+	\bk{\alpha}{\alpha} = |C_0(\alpha)|^2 \bk{0}[e^{\alpha^* \hat{a}} e^{\alpha \hat{a}^\dagger}]{0}
+	=
+	|C_0(\alpha)|^2 \sum_n \frac{(\alpha^* \alpha)^n}{n!} = 1,
+\end{equation*}
+и тут под суммой снова удобный ряд
+\begin{equation*}
+	|C_0(\alpha)|^2 e^{|\alpha|^2} = 1
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	C_0(\alpha) = e^{- |\alpha|^2/2}.
+\end{equation*}
+Окончательно получили
+\begin{equation*}
+	\ket{\alpha} = e^{- |\alpha|^2/2} e^{\alpha \hat{a}^\dagger} \ket{0} = e^{- |\alpha|^2/2} \sum_n \frac{\alpha^2}{\sqrt{n!}} \ket{n}.
+\end{equation*}
+
+Теперь мы готовы искать распределение по числу квантов, ведь вероятность, что в $\ket{\alpha}$ найдётся $n$ квантов это
+\begin{equation*}
+	P_n = |\bk{n}{\alpha}|^2 = \frac{|\alpha|^{2n}}{n!} e^{- |\alpha|^2}
+	=
+	\frac{\langle N \rangle^n}{n!} e^{- \langle N \rangle}.
+\end{equation*}
+Получили распределение Пуассона для числа квантов со средним значением $\langle N \rangle$.

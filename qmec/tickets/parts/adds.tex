@@ -1,0 +1,306 @@
+
+\subsection*{Дополнение к Т10}
+
+% Найдём состояния, эволюция которых близка к классическим. Рассмотрим, в частности, гауссов колокол и его разложение в Фурье.
+
+\textbf{I}. 
+Пусть есть некоторое состояние, которое соответствует 
+\begin{equation*}
+    \alpha = \frac{1}{\sqrt{2}} (Q_0 + i P_0),
+    \hspace{5 mm} 
+    \hat{a}\, \ket{\alpha} = \alpha \ket{\alpha}.
+\end{equation*}
+В Т10 мы показали, что состояние $\ket{\alpha}$ можно разложить по базису собственных состояний $\hat{N} \colon  \hat{N} \ket{n} = n \ket{n}$:
+\begin{equation*}
+    \ket{\alpha} = \exp\left(- \frac{|\alpha|^2}{2}\right) e^{\alpha \hat{a}\con} \ket{0} =
+    \exp\left(- \frac{|\alpha|^2}{2}\right) \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n},
+\end{equation*}
+где воспользовались представлением
+\begin{equation*}
+    \ket{n} = \frac{(\hat{a}\con)^n}{\sqrt{n!}} \ket{0}.
+\end{equation*}
+Также можно переписать волновую функцию $\ket{\psi}$ в виде
+\begin{equation*}
+    \ket{\psi} = \sum_{n=0}^{\infty} c_n  \ket{n} = \sum_{n=0}^{\infty} c_n \frac{(\hat{a}\con)^n}{\sqrt{n!}} \ket{0} = \left(
+        \sum_{n=0}^{\infty} \frac{c_n}{\sqrt{n!}} (\hat{a}\con)^n
+    \right) \ket{0} = f(\hat{a}\con) \ket{0}.
+\end{equation*}
+То есть волновая функция может быть представлена, как действие $f(\hat{a}\con)$ на состояние $\ket{0}$, где $f(x)$:
+\begin{equation*}
+    f(x) = \sum_{n=0}^{\infty} \frac{c_n}{\sqrt{n!}} x^n.
+\end{equation*}
+
+
+\textbf{II}. Посмотрим на действие операторов $\hat{a}\con$ и $\hat{a}$ на $\ket{\psi}$ в новом представлении:
+\begin{equation*}
+    \hat{a} \ket{\psi} = \hat{a} f(\hat{a}\con) \ket{0} = f(\hat{a}\con) \underbrace{\hat{a} \ket{0}}_{\equiv 0} + f'(\hat{a}\con) \ket{0}= f'(\hat{a}\con) \ket{0},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{\hat{a} \overset{*}{=}  \partial_{\hat{a}\con}, \ \ \hat{a}\con \overset{*}{=}  \hat{a}\con}.
+\end{equation*}
+где воспользовались равенствами из У10:
+\begin{equation*}
+    [\hat{a},\, (\hat{a}\con)^n] = n (\hat{a}\con)^{n-1},
+    \hspace{10 mm} 
+    \left[\hat{a},\, f(\hat{a}\con)\right] = f'(\hat{a}\con).
+\end{equation*}
+
+
+
+\textbf{Когерентные состояния}. Перепишем в новых обозначениях уравнения для когерентного состояния:
+\begin{equation*}
+    \hat{a} \ket{\alpha} = \alpha \ket{\alpha},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f' = \alpha f.
+\end{equation*}
+Нетрудно получить, что
+\begin{equation*}
+    f(x) = C e^{\alpha x},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \ket{\alpha} = C e^{\alpha\, \hat{a}\con} \ket{0} = C \sum_{n=0}^{\infty} \frac{\alpha^n}{n!} (\hat{a}\con)^n \ket{0} = C \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket{n},
+\end{equation*}
+где нужжно поправить нормировку:
+\begin{equation*}
+    \|\alpha\|^2 = |C|^2 \sum_{n=0}^{\infty} \frac{(\alpha \bar{\alpha})^n}{n!} = |C|^2 e^{|\alpha|^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \ket{\alpha} = e^{-|\alpha|^2/2} \cdot e^{\alpha\, \hat{a}\con} \ket{0}.
+\end{equation*}
+
+
+\textbf{Смысл}. Рассмотрим проекцию $\ket{\psi} = f(\hat{a}\con) \ket{0}$, на когерентное состояние $\ket{\alpha}$:
+\begin{align*}
+    % \bk{\beta}{\psi} = \sum_{n_1=0}^{\infty} \bk{n_1}[e^{-|}]
+    % \ket{\psi} =  \sum_{n=0}^{\infty} c_n \frac{(\hat{a}\con)^n}{\sqrt{n!}} \ket{0}  = 
+    \ket{\alpha} = e^{-|\alpha|^2/2} \cdot e^{\alpha\, \hat{a}\con} \ket{0} = 
+     e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}}\ket{n},
+     \hspace{5 mm} 
+     % \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     % \bra{\alpha} = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \bra{0} \hat{a}^n  =
+     % e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \bra{0} \partial_{\hat{a}\con}^n
+     \ket{\psi} &= \sum_{n=0}^{\infty} c_n \frac{(\hat{a}\con)^n}{\sqrt{n!}} \ket{0} = f(\hat{a}\con) \ket{0} = \sum_{n=0}^{\infty} \frac{f^{(n)}(x)|_{x=0}}{\sqrt{n!}} \ket{n}.
+\end{align*}
+скалярно перемножая, находим:
+\begin{equation*}
+    \bk{\alpha}{\psi} = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{c_n \alpha^n}{\sqrt{n!}} = 
+    % \exp\left(- \frac{|\alpha|^2}{2}\right) 
+    e^{-|\alpha|^2/2}
+    \cdot f(\alpha).
+\end{equation*}
+
+
+\textbf{Разбиение единицы}. Вспомним, что
+\begin{equation*}
+    \alpha = \frac{Q_0 - i P_0}{\sqrt{2}}, \hspace{5 mm} \hat{a}\con = \frac{\hat{Q} - i \hat{P}}{\sqrt{2}}, \hspace{10 mm}   
+    \ket{f} = f(\hat{a}\con) \ket{0}.
+\end{equation*}
+Посмотрим на скалярное произведение:
+\begin{equation*}
+    \bk{f_2}{f_1} = 
+    % \frac{1}{\pi} 
+    \int_{\mathbb{C}} \bar{f}_2 (\alpha) f_1 (\alpha) e^{-|\alpha|^2} \d \alpha \d \bar{\alpha},
+    \hspace{1cm} 
+    \psi(x) = \bk{x}[f(\hat{a}\con)]{0} \ \sim \ 
+    F(\alpha) = 
+    % \frac{1}{\sqrt{\pi}}
+    e^{-|\alpha|^2/2} f(\alpha).
+\end{equation*}
+В этих терминах и посмотрим на матричный элемент для $\hat{a}\con$:
+\begin{equation*}
+    \bk{F_2}[\hat{a}\con]{F_1} = \int_{\mathbb{C}} \bar{F}_2 (\alpha) \, \alpha \, F_1 (\alpha) \d \alpha \d \bar{\alpha},
+\end{equation*}
+и для $\hat{a}$:
+\begin{equation*}
+    \bk{F_2}[\hat{a}]{F_1} = \int_{\mathbb{C}} e^{-|\alpha|^2} \bar{f}_2(\alpha) \partial_\alpha f_1(\alpha) \d \alpha \d \bar{\alpha} = \bigg/ \text{по частям} \bigg/ = 
+    \int_{\mathbb{C}} \bar{F}_2(\alpha) \, \bar{\alpha} \, F_1(\alpha) \d \alpha \d \bar{\alpha}.
+\end{equation*}
+
+
+
+\subsection*{Cжатые состояния}
+
+Общее когерентное состояния для пары операторов координата-импульс должно удовлетворять уравнению
+\begin{equation*}
+    (\hat{x} + i \gamma \hat{p}) \ket{\psi} = \alpha \ket{\psi},
+\end{equation*}
+в котором $\gamma = \frac{q_0}{p_0} = \frac{1}{m \omega}$ -- когерентные состояния гармонического осциллятора. 
+
+Можем посмотреть на друние $\gamma$,  которым соответствуют более/менее широкие гауссовы распределения, чем для основного состояния осциллятора -- \textit{сжатые состояния осциллятора}, которые получим изменением масштаба по координате.
+
+
+Построим оператор сжатия: сжатие по $x$ -- сдвиг по $\ln |x|$, а значит генератор преобразования имеет вид
+\begin{equation*}
+    \hat{G}_0 = - i \hbar \partial_{\ln |x|} = - i \hbar x \partial_x = \hat{x} \hat{p},
+\end{equation*}
+что достаточно забавно, хотя оператор и не эрмитов, но при этом:
+\begin{equation*}
+    \exp\left(\frac{i}{\hbar} k \hat{G}_0 \right) \psi(x) = \psi(e^k x).
+\end{equation*}
+Квадрат нормы при этом тоже уменьшается, так что добавим константу так, чтобы новый оператор оказался эрмитовым:
+\begin{equation*}
+    \hat{G} = - i \hbar \left(x \partial_x + \tfrac{1}{2}\right) = \hat{x} \hat{p} - \frac{i \hbar}{2} = \frac{1}{2} \left(\hat{x} \hat{p} + \hat{p} \hat{x}\right) = - i \hbar \frac{\hat{a}^2 - (\hat{a}\con)^2}{2},
+\end{equation*}
+с автоматически унитарной экспонентой:
+\begin{equation*}
+    \hat{D}_k = \exp\left(\frac{i}{\hbar} k \hat{G}\right) = \exp\left(
+        \frac{k}{2} \left(\hat{a}^2 - (\hat{a}\con)^2\right)
+    \right),
+    \hspace{10 mm}  
+    \hat{D}_k \psi(x) = e^{k/2}\psi(e^k x).
+\end{equation*}
+Теперь удобно проследить за эволюцией сжатого состояния:
+\begin{equation*}
+    \ket{\psi_k} = \hat{D}_k \ket{\psi},
+    \hspace{5 mm} 
+    \ket{\psi_k (t)} = \hat{U}_t \hat{D}_k \hat{U}_{t}^{-1} \hat{U}_t \ket{\psi} = \hat{D}_k^{\text{H}} (-t) \ket{\psi(t)},
+\end{equation*}
+где можем найти явный вид оператора сжатия в представлении Гейзенберга:
+\begin{equation*}
+    \hat{D}_k^{\text{H}} (-t) = \exp \left(
+        \frac{k}{2} \hat{a}_{\text{H}}^2(-t) - \frac{k}{2} \hat{a}\con_{\text{H}}{}^2 (-t)
+    \right) = \exp  \left(
+       \frac{k}{2} e^{2 i \omega t} \hat{a}^2 - \frac{k}{2} e^{-2 i \omega t} (\hat{a}\con)^2
+    \right).
+\end{equation*}
+Итого, сжатое состояние со временем оказывается не когерентным для $\hat{P}, \hat{Q}$, но когерентным для
+\begin{align*}
+    \hat{Q}_{\text{H}} (t) = \cos (\omega t) \hat{Q} + \sin(\omega t) \hat{P}, \\
+    \hat{P}_{\text{H}} (t) = \cos (\omega t) \hat{P} -\sin (\omega t) \hat{Q}.
+\end{align*}
+
+
+\textbf{Матричный элемент оператора эволюции}. Дейстительно, в представлении когерентных состояний:
+\begin{equation*}
+    \bk{\beta}[\hat{U}]{\alpha} = \exp\left(\bar{\beta} \alpha e^{i \omega t}\right).
+\end{equation*}
+Чуть хуже в координатном предсталении:
+\begin{equation*}
+\langle x | \hat{U}| y\rangle = 
+    \int_{\mathbb{C}^2} \frac{ d\alpha \d \bar{\alpha}}{2 \pi i} \frac{ d\beta \d \bar{\beta}}{2 \pi i}  \exp\left(
+        - \alpha \bar{\alpha} - \beta \bar{\beta} - \frac{x^2}{2} + \sqrt{2} \beta x - \frac{\beta^2}{2} - \frac{y^2}{2} + \sqrt{2} \bar{\alpha} y - \frac{\bar{\alpha}^2}{2} + \bar{\beta} \alpha e^{i \varphi}
+    \right)
+    = \frac{1}{8}
+    \frac{\exp \left(- i\frac{  \left(x^2+y^2\right)\cos \varphi -2 x y}{2 \sin \varphi }\right)}{| \sin \varphi | }
+\end{equation*}
+
+
+\newpage
+
+\subsection*{Атом водорода}
+
+\textbf{A}.
+Волновая функция водорода имеет вид
+\begin{equation*}
+    \psi_{nlm} (r, \theta, \varphi) = 
+    \sqrt{\frac{(n-l-1)!}{2n \cdot (n+l)!}} \left(
+        \frac{2}{n a_0}
+    \right)^{3/2}
+    \exp\left(
+        - \frac{r}{n a_0}
+    \right) \left(
+        \frac{2r}{n a_0}
+    \right)^l
+    L_{n-l-1}^{2l+1}\left[\frac{2r}{n a_0}\right] \times Y_{l,m} (\theta, \varphi),
+\end{equation*}
+где сферические функции
+\begin{equation*}
+    Y_{l,m} = \frac{1}{\sqrt{2\pi}} e^{i m \varphi} \Theta_{l,m} (\theta),
+    \hspace{10 mm} 
+    \Theta(\theta)_{l, m} = \sqrt{\frac{2l+1}{2} \frac{(l-m)!}{(l+m)!}} P_l^m[\cos \theta],
+\end{equation*}
+где $P_{l}^m$ -- присоединенные многочлены Лежандра
+\begin{equation*}
+    P_n (x) = \frac{1}{2^n n!} \partial_x^n (x^2-1)^n.
+\end{equation*}
+
+
+
+\textbf{B}.
+Вспоминаем вид лестничных операторов
+\begin{equation*}
+    \hat{l}_{\pm} = e^{\pm i \varphi} \left(
+        \pm \partial_\theta + i \ctg \theta \partial_\varphi
+    \right).
+\end{equation*}
+А также $Y_{l,l}$:
+\begin{equation*}
+    Y_{l,l} (\theta, \varphi) = (-1)^l \sqrt{\frac{(2l+1)!}{4 \pi}} \frac{1}{2^l l!} \sin^l \theta e^{i l \varphi}.
+\end{equation*}
+Применяем несколько раз $\hat{l}_-$:
+\begin{equation*}
+    \hat{l}_-^l Y_{l,l} (\theta, \varphi) = \partial_{\cos \theta}^l \sin^l \theta Y_{l,l} (\theta),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    Y_{l,0} (\theta, \varphi) = \sqrt{\frac{2l + 1}{4 \pi}} \frac{(-1)^l}{2^l l!} \partial_{\cos \theta}^l \sin^{2l} \theta,
+\end{equation*}
+что удобно переписать в терминах полиномов Лежандра:
+\begin{equation*}
+    P_n (x) = \frac{1}{2^n n!} \partial_x^n (x^2-1)^n,
+    \hspace{10 mm} 
+    Y_{l,0} (\theta, \varphi) = \sqrt{\frac{2l+1}{4 \pi}} P_l (\cos \theta).
+\end{equation*}
+% А значит
+% \begin{equation*}
+%     Y_{l, 0} (\theta, \varphi) = \sqrt{\frac{2l+1}{4 \pi}} P_l (\cos \theta).
+% \end{equation*}
+
+
+Также можем пойти назад, через $\hat{l}_+$:
+\begin{equation*}
+    \hat{l}_+ Y_{l,m} (\theta, \varphi) = \sqrt{l (l+1) - m (m+1)} Y_{l, m+1} (\theta, \varphi),
+\end{equation*}
+а значит
+\begin{equation*}
+    Y_{l,m} (\theta, \varphi) = e^{i m \varphi} (-1)^m 
+    \sqrt{\frac{2l+1}{4 \pi} \frac{(l-m)!}{(l+m)!}} P_{l,m} (\cos \theta), \hspace{5 mm} 
+    \hspace{5 mm} 0 \leq m \leq l,
+\end{equation*}
+с \textit{присоединенными полиномами Лежандра}:
+\begin{equation*}
+    P_{l,m} (x) = (1-x^2)^{m/2} \partial_x^m P_l (x).
+\end{equation*}
+
+
+% Для начала 
+% \begin{equation*}
+%     \ket{l, l-m} = \sqrt{\frac{(2l-m)!}{(2l)! m!}}\hat{l}_-^m \ket{l,l},
+% \end{equation*}
+% или просто
+\textbf{С}.
+Для начала 
+\begin{equation*}
+    \hat{l}_- \ket{l, m} = \sqrt{(l+m)(l-m+1)} \ket{l,m-1},
+    \hspace{5 mm} 
+    \hat{l}_- \ket{l, l} = \sqrt{2l} \ket{l, l-1}.
+\end{equation*}
+Подсталяя дифференциальное представление $\hat{l}_-$, находим
+\begin{equation*}
+    Y_{1,0} = \frac{\hat{l}_- Y_{1, 1}}{\sqrt{2}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    Y_{1, 0} = \frac{1}{2} \sqrt{\frac{3}{\pi}} \cos \theta.
+\end{equation*}
+Теперь
+\begin{equation*}
+    Y_{2,0} (\theta, \varphi) = \sqrt{\frac{5}{4 \pi}} P_2 (\cos \theta),
+\end{equation*}
+где $P_2$ можем найти, как
+\begin{equation*}
+    P_2 (x) = \frac{3 x P_1 (x) - P_0(x)}{2} = \frac{3 x^2 -1}{2},
+\end{equation*}
+а значит
+\begin{equation*}
+    Y_{2, 0} = 
+    \frac{1}{4} \sqrt{\frac{5}{\pi}} (3 \cos \theta^2 -1) 
+    = \frac{1}{8} \sqrt{\frac{5}{\pi}} \left(3 \cos (2 \theta) + 1\right).
+\end{equation*}
+Теперь с помощью $\hat{l}_+$, находим
+\begin{align*}
+    \hat{l}_+ Y_{l,m} (\theta, \varphi) = \sqrt{l (l+1) - m (m+1)} Y_{l, m+1} (\theta, \varphi),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    Y_{2, 1} &= \frac{\hat{l}_+ Y_{2,0}}{\sqrt{6}} = - \frac{1}{4} \sqrt{\frac{15}{2 \pi}} e^{i \varphi} \sin(2 \theta), \\
+    Y_{2, 2} &= \frac{\hat{l}_+ Y_{2,1}}{2} =  \frac{1}{4} \sqrt{\frac{15}{\pi}} e^{2 i \varphi} \sin^2 (\theta).
+\end{align*}
+
+
+% Итого, находим
+% \begin{align*}
+%     Y_{2,2} &= \frac{1}{4} \sqrt{\frac{15}{\pi}} e^{2 i \varphi} \sin^2 (\theta), \\
+%     Y_{2,1} &= - \frac{1}{4} \sqrt{\frac{15}{2 \pi}} e^{i \varphi} \sin(2 \theta), \
+% \end{align*}

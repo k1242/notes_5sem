@@ -1,0 +1,56 @@
+В общем и целом нужно найти $A\con$ и $A^{-1}$ для заданного $A$. 
+
+
+\textbf{а) Оператор инверсии}. И так, что же такое оператор инверсии, а это $I \psi(x) = \psi(-x)$.
+Обратный оператор должен по определению
+\begin{equation*}
+	I^{-1} I \psi(x) = \psi(x)
+	\hspace{1 cm}
+	\overset{x \mapsto -x}{\Longrightarrow}
+	\hspace{1 cm}
+	I^{-1} \psi(x) = \psi(-x)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	I^{-1} = I.
+\end{equation*}
+По определению сопряженного оператора $(\bk{\Phi}{I \Psi})\con = \bk{\Psi}{I\con \Phi}$\footnote{тут можно стать свидетелем замены строчной пси на заглавную}.
+Напомним
+$[I\Psi](x) = \Psi(-x)$, что означает уже для состояний $\bk{x}{I \Psi} = \bk{- x}{\Psi}$, c этим знанием
+\begin{equation*}
+	\bk{\Phi}{I \Psi} = \int_{\mathbb{R}} \bk{\Phi}{x} \bk{x}{I \Psi} d x
+	=
+	\int_{\mathbb{R}} \bk{\Phi}{x}\bk{-x}{\Psi} d x =\big/ x \mapsto - x \big/ =  \int_{\mathbb{R}} \bk{\Phi}{- x}\bk{x}{\Psi} d x
+	=
+	\bk{I \Phi}{\Psi} = \bk{\Phi}{I\con \Psi}
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	I^{*} = I.
+\end{equation*}
+То есть получили, что оператор инверсии унитарен $I I\con = \mathbb{E}$ (единичный оператор).
+
+\textbf{б) Оператор трансляции}.
+Оператор трансляции работает $\hat{T}_a \ket{x} = \ket{x+a}$ или так $\bk{x}{T_a\Psi} = \Psi(x + a)$.
+
+Вполне тривиально, что обратный к оператору трансляции это просто $T_{-a}$. Сопряженный же пойдём искать по той же схеме
+\begin{equation*}
+	\bk{\Phi}{T_a \Psi} = \int_{\mathbb{R}} \bk{\Phi}{x} \bk{x+a}{\Psi} d x 
+	= 
+	\big/ x \mapsto x - a\big/
+	=
+	\int_{\mathbb{R}} \bk{\Phi}{x-a} \bk{x}{\Psi} d x 
+	=
+	\bk{T_a^{*}\Phi}{\Psi}
+	=
+	\int_{\mathbb{R}} \bk{T_a^{*}\Phi}{x} \bk{x}{\Psi} d x. 
+\end{equation*}
+Где предпоследние равенство взято просто по определению сопряженного оператора, а последнее неравенство просто по представлению средней величины, тогда видим, что получается следующее
+\begin{equation*}
+	\bk{x}{T_a\con \Phi} = \Phi(x-a)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	T_a\con = T_{-a} = T_a^{-1}.
+\end{equation*}
+Мы вновь получили, что $T_a\con T_a = \mathbb{E}$ -- унитарный оператор.

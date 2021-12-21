@@ -1,0 +1,109 @@
+\subsection*{б) потенциальная яма}
+И так, зададим потенциальную яму и эволюцию нашей системы
+\begin{equation*}
+	U(x) = \left\{\begin{aligned}
+		- U_0 \ , \ &|x| < a/2\\
+		0\ , \ &|x|>a/2
+	\end{aligned}\right.
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\begin{aligned}
+		&\frac{\hbar^2}{2m} \psi''(x) + (U_0 + E) \psi(x) = 0 \ , \ &|x| < a/2\\
+		&\frac{\hbar^2}{2m} \psi''(x) + E \psi(x) = 0 \ , \ &|x|>a/2
+	\end{aligned}
+\end{equation*}
+Мы смотрим на энергию в несвязном состоянии, то есть $E>0$, получаем волновую функцию
+\begin{equation*}
+	\psi(x) = \left\{\begin{aligned}
+		&1 \cdot e^{i k_1 x} + A e^{- i k_1 x}\ , \ & x<a/2 \\
+		&B e^{i k_2 x} + C e^{- i k_2 x} \ , \ & |x|<a/2 \\
+		&D e^{i k_1 x} + 0 \cdot e^{- i k_1 x}\ , \ & x > a/2
+	\end{aligned}\right.
+	\hspace{1 cm}
+	k_1^2 = \frac{2 m E}{\hbar^2},
+	\hspace{0.5 cm}
+	k_2^2 = \frac{2 m (E + U_0)^2}{\hbar^2}.
+\end{equation*}
+Где аналогично Т3, мы выбираем волну падающую из $-\infty$ с единичной амплитудой, и соответсвенно из $+\infty$ к нам ничего не приходит.
+
+Теперь на каждой границе нам нужно взять граничные условия
+\begin{equation*}
+	\left\{\begin{aligned}
+		&\psi(\frac{a}{2} - \varepsilon) = \psi(\frac{a}{2} + \varepsilon)\\
+		&\psi(-\frac{a}{2} - \varepsilon) = \psi(-\frac{a}{2} + \varepsilon)\\
+		&\psi'(\frac{a}{2} - \varepsilon) = \psi'(\frac{a}{2} + \varepsilon)\\
+		&\psi'(-\frac{a}{2} - \varepsilon) = \psi'(-\frac{a}{2} + \varepsilon)
+	\end{aligned}\right.
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\left\{\begin{aligned}
+		&B e^{i k_2 a/2} + C e^{- i k_2 a/2} = D e^{i k_1 a/2}\\
+		&e^{- i k_1 a/2} + A e^{i k_1 a/2} = B e^{i k_2 a/2} + C e^{i k_2 a/2}\\
+		&k_1 e^{-i k_1 a/2} - k_1 A e^{i k_1 a/2} = k_2 B e^{- i k_2 a/2} - k_2 C e^{i k_2 a/2}\\
+		&k_1 D e^{i k_1 a/2} = k_2 B e^{i k_2 a/2} - k_2 C e^{- i a k_2 a/2}
+	\end{aligned}\right.
+\end{equation*}
+В этот раз мы покажаем какие-то алгебраические выкладки, которые ведут к свету, но на самом деле \textit{Wolfram Mathematica} нам в помощь. Удобно заменить экспоненты в степенях $k_1$ и $k_2$ на соответсвующие $\alpha_i$, тогда каким-нибудь Гауссом, система решиться. Здесь приведем просто, что досчитать это реально
+\begin{equation*}
+	\left\{\begin{aligned}
+		&B \alpha_2 + \frac{C}{\alpha_2} = D \alpha_1\\
+		&\frac{1}{\alpha_1} + A \alpha_1 = \frac{B}{\alpha_2} + C \alpha_2 \\
+		&\frac{k_1}{\alpha_1} - A k_1 \alpha_1 = \frac{k_2 B}{\alpha_2} - k_2 C \alpha_2\\
+		&D \alpha_1 k_1 = B \alpha_2 k_2 - \frac{C k_2}{\alpha_2}
+	\end{aligned}\right.
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\ldots (\text{мы в вас верим})
+\end{equation*}
+
+Куда полезней, сейчас понять, что если помучиться и решить данную систему, то мы по сути и найдём ответ на задачу, ведь
+\begin{equation*}
+		j_\text{in} [e^{i k_1 x}] = - \frac{i \hbar}{2 m}(i k_1 + i k_1) = \frac{\hbar k_1}{m},
+		\hspace{1 cm}
+		j_\text{out} [D e^{i k_1 x}] = |D|^2\frac{\hbar k_1}{m},
+		\hspace{1 cm}
+		j_\text{back} [A e^{-i k_1 x}] = |A|^2\frac{-\hbar k_1}{m},
+\end{equation*}
+То есть \text{in} -- падающая волна, амплитуду которой мы выбрали единицей, \text{out} -- ушедшая в $+\infty$ с амплитудой $D$ и \textit{back} отразившаяся обратно в $-\infty$.
+
+Коэффициенты из той системы получаются и соответственно 
+\begin{equation*}
+	R = \left| \frac{j_\text{back}}{j_\text{in}}\right| 
+	= 
+	|A|^2 
+	= 
+	\frac{(k_1^2 - k_2^2)^2 \sin k_1 a}{4 k_2^2 k_1^2 + (k_1^2 + k_2^2)^2 \sin^2 k_1 a},
+\end{equation*}
+\begin{equation*}
+	T = \left| \frac{j_\text{out}}{j_\text{in}}\right|
+	=
+	|D|^2
+	=
+	\frac{4 k_1^2 k_2^2}{4 k_1^2 k_2^2 + (k_1^2 - k_2^2)^2 \sin^2 k_1 a}.
+\end{equation*}
+
+\subsection*{a) потенциальный барьер}
+Всё остаётся почти таким же, только сейчас проследим за сменой знаков кое-где
+\begin{equation*}
+	U(x) = \left\{\begin{aligned}
+		U_0 \ , \ &|x| < a/2\\
+		0\ , \ &|x|>a/2
+	\end{aligned}\right.
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\begin{aligned}
+		&\frac{\hbar^2}{2m} \psi''(x) + ( E - U_0) \psi(x) = 0 \ , \ &|x| < a/2\\
+		&\frac{\hbar^2}{2m} \psi''(x) + E \psi(x) = 0 \ , \ &|x|>a/2
+	\end{aligned}
+\end{equation*}
+Теперь если аналогично предыдущему пункту начать решать задачу, то заметим, что нужно лишь заменить одну! переменную $k_1 \mapsto \kappa_1 = \frac{2 m}{\hbar^2}(U_0 - E)$. При чем, $0 < E < U_0$. И тогда по аналогии $k_1 = i \kappa_1$ получаем:
+\begin{equation*}
+	R = \frac{(\kappa_1^2 + k_2^2)^2 sh^2 \kappa_1 a}{4 \kappa_1^2 k_2^2 + (\kappa_1 + k_2^2)^2 sh^2 \kappa_1 a},
+	\hspace{1 cm}
+	T = \frac{4 \kappa_1^2 k_2^2}{4 \kappa_1^2 k_2^2 + (\kappa_1^2 + k_2^2)^2 sh^2 \kappa_1 a}.
+\end{equation*}
+И главное что в прошлом пункте, что сейчас мы получаем сумму $R + T = 1$ что и ожидается.

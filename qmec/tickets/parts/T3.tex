@@ -1,0 +1,198 @@
+\textbf{a)}
+Задан потенциал $U(x) = - \frac{\hbar^2}{m}\kappa_0 \delta(x)$, который представляет собой дельта-яму. Прежде чем как всегда решать стационарное уравнение шредингера сделаем замечание, что $E < 0$, тогда получим
+\begin{equation*}
+	\hat{H} \psi = - |E| \psi,
+	\hspace{1 cm}
+	\kappa^2 := \frac{2 m |E|}{\hbar}.
+\end{equation*}
+С такой заменой получим вполне красивый диффур второго порядка:
+\begin{equation*}
+	-\frac{\hbar^2}{2m} \psi'' - \frac{\hbar^2}{m}\kappa_0 \delta(x) \psi + |E|\psi = 0
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\psi'' - (\kappa - 2 \kappa_0 \delta(x))\psi=0.
+\end{equation*}
+Мы ожидаем непрерывности от волной функции на границах областей, а именно в точке дельта-ямы, то есть одним из граничных условий будет $\psi(-0) = \psi(+0)$.
+
+Потребовав непрерывности $\psi$, из-за дельта функции,  мы получаем разрыв для первой производной
+\begin{equation*}
+	\psi'' - (\kappa - 2 \kappa_0 \delta(x))\psi=0
+	\hspace{1 cm}
+	\overset{\int_{-\varepsilon}^{+\varepsilon} }{\Longrightarrow}
+	\hspace{1 cm}
+	\psi'(+0) - \psi'(-0) = - 2 \kappa_0 \psi(0).
+\end{equation*}
+
+Вне ямы будем наблюдать спад по экспоненте, сама же яма -- по сути точечна, значит такое же поведение будем ожидать и в связном состоянии, таким образом ищем волновую функцию как
+\begin{equation*}
+	\psi = \left\{\begin{aligned}
+		C_1 e^{-\kappa x} \ , \ & x>0\\
+		C_2 e^{\kappa x} \ , \ & x<0
+	\end{aligned}\right.
+\end{equation*}
+Из непрерывности получим автоматически, что
+\begin{equation*}
+	\psi(-0) = \psi(+0)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	C_2 = C_1 = C.
+\end{equation*}
+Разрыв же первой производной позволит нам найти
+\begin{equation*}
+	\psi'(+0) - \psi'(-0) = - 2 \kappa_0 \psi(0)
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	- 2 \kappa_0 C = C (-\kappa - \kappa)
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\kappa = \kappa_0.
+\end{equation*}
+Таким образом  энергия связного состояния:
+\begin{flushright}
+	$\boxed{E = - \frac{\hbar^2 \kappa_0^2}{2 m}}$
+\end{flushright}
+
+Теперь, осталось проверить нормировку нашей волновой функции
+\begin{equation*}
+	\int_{\mathbb{R}} \psi \psi^* d x = 1
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	C^2 \int_{-\infty}^{+\infty} e^{- 2 \kappa_0 |x|} d x = \frac{C^2}{\kappa_0} \int_{0}^{+\infty} e^{- 2 \kappa_0 x} d 2 \kappa_0 x
+	= 
+	\frac{C^2}{\kappa_0} = 1
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\kappa_0 = C^2.
+\end{equation*}
+Таким образом собирая всё вместе получаем волновую функцию вида:
+\begin{flushright}
+	$\boxed{\psi(x) =  \sqrt{\kappa_0} e^{- \kappa_0|x|}}$
+\end{flushright}
+
+Мы получили волновую функцию в координатном представлении для уровня энергии ноль $\psi(x) = \bk{x}{0}$.
+Тогда в импульсном представлении
+\begin{equation*}
+	\psi(p) = \bk{p}{0} = \int_\mathbb{R} d x \bk{p}{x} \bk{x}{0}
+	=
+	\bigg/
+	\bk{p}{x} = \frac{1}{\sqrt{2 \pi \hbar}} e^{- \frac{i}{\hbar} p x
+	}
+	\bigg/	
+	=
+	\frac{\sqrt{\kappa_0}}{\sqrt{2 \pi \hbar}} \int_\mathbb{R} e^{- \kappa_0 x - \frac{i}{h}p x} d x
+	=
+	\frac{\sqrt{\kappa_0}}{\sqrt{2 \pi \hbar}} \cdot \frac{2 \kappa_0}{\kappa_0^2 + (p/\hbar)^2}
+	= \sqrt{\frac{2}{\pi}} \frac{(\kappa_0 \hbar)^{3/2}}{(\kappa_0 \hbar)^2 + p^2}.
+\end{equation*}
+
+Дальше будет менее широко, честно, а ведь это ещё опущено наше любимое интегрирование по частям.
+\begin{equation*}
+	\boxed{\bk{0}[\hat{p}]{0} = 0},
+	\hspace{1 cm}
+	\boxed{\bk{0}[\hat{x}]{0} = 0}.
+\end{equation*}
+По тому же определению теперь будем получать нечто сложнее чем ноль
+\begin{equation*}
+	\bk{0}[\hat{x}^2]{0} = \int_{\mathbb{R}} \kappa e^{- 2 \kappa_0 |x|} \hat{x}^2 d x = \underbrace{2 \kappa_0}_{\alpha} \int_{0}^{+\infty} e^{- 2 \kappa_0 x} x^2 d x = \alpha \frac{d^2}{d \alpha^2} \int_{0}^{+\infty} e^{- \alpha x}d x = \frac{2}{\alpha^2} = \boxed{\frac{1}{2\kappa_0^2}}.
+\end{equation*}
+Красиво продифференцировали под знаком интеграла и получили ответ, осталось ещё немного, не зря же мы $\psi(p)$ считали, стоит, кстати, обратить внимание, что теперь именно по $\alpha^2$ дифференцируем:
+\begin{equation*}
+	\bk{0}[\hat{p}^2]{0} = \int_{\mathbb{R}} d p \ p^2 \frac{2}{\pi} \frac{(\kappa_0 \hbar)^3}{((\hbar \kappa_0)^2 + p^2)^2} 
+	=
+	\frac{2}{\pi} (\kappa_0 \hbar)^3 (- \frac{d}{d \alpha^2}) \int_{\mathbb{R}} \frac{p^2}{\alpha^2 p^2} d p
+	=
+	\frac{2}{\pi} (\kappa_0 \hbar)^3 (- \frac{d}{d \alpha^2}) \frac{2 \pi i (i \alpha)^2}{2 i \alpha} \big|_{\alpha = \kappa_0 \hbar} = \boxed{(\kappa_0 \hbar)^2}.
+\end{equation*}
+Из-за того, что средние от координаты и импульса нулевые -- дисперсии совпадают с средними квадратами.
+
+Для интереса теперь ещё посмотрим на соотношение неопределенности
+\begin{equation*}
+	\langle(\Delta \hat{x})^2\rangle\langle(\Delta \hat{p})^2\rangle = \frac{1}{2 \kappa_0^2} \kappa_0^2 \hbar^2 = \frac{\hbar^2}{2},
+\end{equation*}
+что больше абсолютного минимума для когерентного состояния осциллятора $ = h^2/4$.
+
+\phantom{42}
+
+\textbf{б)} И казалось бы всё хорошо, всё изучили в связном состоянии, но теперь в той же задаче мы будем смотреть на области непрерывного спектра и решать задачу о рассеянии волны на потенциале.
+
+Запишем тогда наиболее общую волновую функцию, в которой на нижней строчки стоят (условно) волны распространяющиеся левее ямы, а точнее подошедшая из $-\infty$ с амплитудой $C$, и ушедшая в $-\infty$ с амплитудой $D$. Аналогично правее потенциала будет ушедшая в $+\infty$ с амплитудой $A$ и пришедшая из $+\infty$ с амплитудой $B$.
+\begin{equation*}
+	\psi = \left\{\begin{aligned}
+		A e^{i \kappa x} + B e^{- i \kappa x} \ , \ & x >0\\
+		C e^{i \kappa x} + D e^{- i \kappa x} \ , \ & x <0
+	\end{aligned}\right.
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\psi = \left\{\begin{aligned}
+		A e^{i \kappa x}  \ , \ & x >0\\
+		C e^{i \kappa x} + D e^{- i \kappa x} \ , \ & x <0
+	\end{aligned}\right.
+\end{equation*}
+Мы сразу выберем, что волна падала слева, значит $B = 0$, и пусть она это делала с $C = 1$, так как в вопросах рассеивания нас будут интересовать относительные величины.
+
+Тем не менее у нас всё так же должно быть непрерывно для волновой функции и скачкообразно для её производной в нуле:
+\begin{equation*}
+	\begin{gathered}
+		A + B = C + D\\
+		i \kappa (A - B) - i \kappa (C - D) = - 2 \kappa_0 \psi(0)
+	\end{gathered}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	i \kappa [(C - D) - (A - B)] = 2 \kappa_0 (A + B)
+\end{equation*}
+Теперь подставим наши допущения ($B = 0, \ C = 0$) и выразим каппу
+\begin{equation*}
+	\kappa = 2 i \kappa_0 \frac{A + B}{(A - B) - (C - D)} = 2 i \kappa_0 \frac{A}{A - (1 - D)}
+	= i \kappa_0 \frac{A}{A - 1}.
+\end{equation*}
+Тут последнее равенство последовало из непрерывности в нуле: $A + 0 = 1 + D$. И чтобы научиться сравнивать амплитуды возьмём и выразим их все через $\kappa$ и $\kappa_0$, что мы уже можем сделать:
+\begin{equation*}
+	A = \frac{\kappa}{\kappa - i \kappa_0},
+	\hspace{1 cm}
+	D = \frac{i \kappa_0}{\kappa - i \kappa_0}.
+\end{equation*}
+
+Теперь введем такое понятие как плотность потока вероятности, что, если грубо обобщать, является отголоском уравнения непрерывности из какой-нибудь механики сплошной среды или теории поля. И так по определению
+\begin{equation*}
+	j(x) = -\frac{i \hbar}{2 m} (\psi' \psi^* - \psi \psi'^*).
+\end{equation*}
+А так же коэффициенты прохождения и отражения соответственно
+\begin{equation*}
+	T_u = \left| \frac{j_\text{out}}{j_\text{in}}\right|,
+	\hspace{1 cm}
+	R_u = \left| \frac{j_\text{back}}{j_\text{in}}\right|.
+\end{equation*}
+Где подписи \textit{in}, \textit{out}, \textit{back} соответствуют пришедшей, прошедшей, отразившейся волне, а в нашем случае коэффициентам потокам вероятности от волновой функции с коэффициентами $C,\ A, \ D$ соответственно.
+\begin{equation*}
+	\begin{aligned}
+		&j_\textit{in} = j [e^{i \kappa x}]& &= - \frac{i \hbar}{2 m}(i \kappa + i \kappa) &=& \frac{\hbar \kappa}{m}\\
+		&j_\textit{out} = j [A e^{i \kappa x}]& &= - \frac{i \hbar}{2 m}|A|^2(i \kappa + i \kappa) &=& \frac{\hbar \kappa}{m\left(\left(\frac{\kappa}{\kappa_0}\right)^2 + 1\right)}\\
+		&j_\textit{back} = j [D e^{-i \kappa x}]& &= - \frac{i \hbar}{2 m} |D|^2( -i \kappa - i \kappa) &=& -\frac{\hbar \kappa}{m\left(\left(\frac{\kappa}{\kappa_0}\right)^2 + 1\right)}
+	\end{aligned}
+\end{equation*}
+И тогда
+\begin{equation*}
+	\boxed{T = \left|\frac{j_\text{out}}{j_\text{in}}\right| = \frac{\kappa^2}{\kappa^2 + \kappa_0^2}}
+	\hspace{2 cm}
+	\boxed{R = \left|\frac{j_\text{back}}{j_\text{in}}\right| = \frac{\kappa_0^2}{\kappa^2 + \kappa_0^2}}.
+\end{equation*}
+
+
+\phantom{42}
+
+\textbf{в)} Честно, трудно понять, что автор задания имеет в виду под вероятностью "ионизации". Самое правдоподобное --- вылет электрона из ямы при таком её резком изменении, что по аналогии с отрыванием электрона от атома её ионизует. 
+
+То есть при резком изменении параметра глубины ямы, у нас также резко изменится собственная волная функция, состояния наших электронов, тогда, вероятность того, что из ямы что-то вылетит это просто
+\begin{equation*}
+	W = 1 - |\bk{\psi_1}{\psi_0}|^2 = 1 - \frac{4 \kappa_0 \kappa_1}{(\kappa_0 + \kappa_1)^2} = \left(\frac{\kappa_0 - \kappa_1}{\kappa_0 + \kappa_1}\right)^2.
+\end{equation*}
+
+% про скалярное произведение бы написанть в (в).

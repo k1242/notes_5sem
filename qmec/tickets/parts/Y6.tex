@@ -1,0 +1,63 @@
+В этом упражнении казалось бы раскладываем экспоненты в ряд и радуемся жизни. При чем ну ладно даже до третьего члена, всё перемножаем, находим коммутаторы и радуемся жизни. Ведь никогда дальше второго члена всё равно раскладывать не будем\footnote{При чем не только в рамках этого курса, но и весьма вероятно по жизни в принципе.} 
+% Конечно всегда можно устроить комбинаторные игрища, но кому оно надо?\footnote{Есть ещё вариант посмотреть как это сделал Валерий Валерьевич, что я сделаю завтра утром, то есть через три часа. Клянусь.}
+\begin{equation*}
+	e^{\xi A} B e^{- i \xi} = \left(1 + \xi A + \frac{\xi^2 A^2}{2} + \frac{\xi^3 A^3}{6} + \ldots\right) \cdot B \cdot \left(1 - \xi A + \frac{\xi^2 A^2}{2} - \frac{\xi^3 A^3}{6} + \ldots\right)
+	=
+\end{equation*} 
+\begin{equation*}
+	= B + \underbrace{\xi A B - \xi B A}_{\xi[A,B]} + \underbrace{\frac{\xi^2}{2}  A^2 B + \frac{\xi^2}{2} B A^2 - \xi^2 A B A}_{\frac{\xi^2}{2} (A [A,B] - [A,B] A) = \frac{\xi^2}{2}[A, [A,B]]} + \ldots
+	=
+	B + \xi[A,B] + \frac{\xi^2}{2!}[A, [A,B]] + \ldots
+\end{equation*}
+Что и хотелось показать.
+
+Теперь докажем это формальнее, если вдруг очень надо.
+
+Во первых сразу сформулируем общую формулу, которую будем доказывать
+\begin{equation*}
+	e^{A} B e^{-A} = B + \sum_n \underbrace{[A,[A,\ldots[A,B]\ldots]]}_{n}.
+\end{equation*}
+Начнем с вычисления производных от $F(\lambda) = e^{\lambda A} B e^{- \lambda A}$
+\begin{equation*}
+	\frac{d^n}{d \lambda^n} F(\lambda) \bigg|_{\lambda = 0}
+	=
+	\sum_{k=0}^n C_n^k A^k e^{\lambda A} B e^{- \lambda A} A^{n-k} (-1)^{n-k} \bigg|_{\lambda = 0}
+	=
+	\sum_{k=0}^n C_n^k A^k B A^{n-k} (-1)^{n-k},
+\end{equation*}
+Получив удобное представление разложим требуемое соотношение в ряд Тейлора
+\begin{equation*}
+	e^{A} B e^{-A} = F(1) = \sum_n \frac{1}{n!} \sum_{k=0}^n C_n^k A^k B A^{n-k} (-1)^{n-k}.
+\end{equation*}
+Проверим, что мы всё ещё получаем что-то разумное сравнив с тем, что мы в лоб раскрывали выше, например при $n=0$
+\begin{equation*}
+	\sum_{k=0}^{0} A^k B A^{0 - k} (-1)^{n-k} = B.
+\end{equation*}
+Действительно. Теперь осталось доказать, следующее утверждение с коммутатором
+\begin{equation*}
+	\sum_{k=0}^{n} C_n^k A^k B A^{n-k} (-1)^{n-k} = \underbrace{[A,[A,\ldots[A,B]\ldots]]}_{n}.
+\end{equation*}
+Сделаем это по индукции, так для $n=1$
+\begin{equation*}
+	\sum_{k=0}^{1} C_1^k A^k B A^{1-k} (-1)^{1-k} = - B A + A B = [A,B].
+\end{equation*}
+Тогда пусть для $n=m\geq 1$ тоже выполнено, что
+\begin{equation*}
+	\sum_{k=0}^{m} C_m^k A^k B A^{m-k} (-1)^{m-k} = \underbrace{[A,[A,\ldots[A,B]\ldots]]}_{m},
+\end{equation*}
+тогда при следующем $n = m+1$
+\begin{equation*}
+	\sum_{k=0}^{m+1} C_{m+1}^k A^k B A^{m+1-k} (-1)^{m+1-k}
+	=\footnote{Тут использовали $C_{m+1}^k = C_m^k + C_m^{k-1}$, оговорив, что при $k = m+1$ положим $C_m^{m+1} = 0$ и при $k=0$ положим $C_m^{-1} = 0$.}
+	\sum_{k=0}^{m} C_m^k A^k B A^{m+1-k} (-1)^{m+1-k}
+	+
+	\sum_{k=0}^{m+1} C_n^{k-1} A^k B A^{m-(k-1)} (-1)^{m-(k-1)}
+	=
+\end{equation*}\begin{equation*}
+	= - \left(\sum_{k=0}^{m} C_m^k A^k B A^{m-k} (-1)^{m+1-k}\right) A 
+	+ A\left(\sum_{k=1}^{m+1} C_m^{k-1} A^k B A^{m-(k-1)} (-1)^{m-(k-1)}\right)
+	=
+\end{equation*}\begin{equation*}
+	[A, \ \underbrace{[A, [A, \ldots [A,B] \ldots ]]]}_m = \underbrace{[A,[A,\ldots[A,B]\ldots]]}_{m+1}.
+\end{equation*}
+Что и требовалось теперь уже доказать.

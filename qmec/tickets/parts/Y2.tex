@@ -1,0 +1,62 @@
+Теперь будем искать собственные значения и собственные числа для операторов, изученных в предыдущей задаче.
+
+Очень удобно совпала, что и оператор трансляции и оператор инверсии являются унитарными. А для унитарного оператора $\hat{A}$ и его собственного состояния $\hat{A} \ket{\lambda} = \lambda \ket{\lambda}$ легко показать, что
+\begin{equation*}
+\bk{A \lambda}{A \lambda} = \bk{\lambda}{A^\dagger A \lambda} = \bk{\lambda}{\lambda},
+\end{equation*}
+но в то же время, учитывая предыдущую выкладку
+\begin{equation*}
+	\bk{A \lambda}{A \lambda} = \lambda \lambda^*\bk{\lambda}{\lambda}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\bk{\lambda}{\lambda} = 1 = \lambda \lambda^*.
+\end{equation*}
+Тогда имеем $\lambda = e^{i \varphi}$, что приводит к самому виду оператора $\hat{A} = e^{i \hat{\varphi}}$.
+
+\phantom{42}
+
+\textbf*{а) Оператор инверсии}.
+И так, когда мы поняли, что $\hat{I} = e ^{i \hat{\varphi}}$, то уже всё просто
+\begin{equation*}
+	I \psi(x) = \psi(-x) = \lambda \psi(x).
+\end{equation*}
+Угадаем собственные функции, которые удовлетворяют соотношению выше 
+\begin{equation*}
+	\left\{\begin{aligned}
+		&\psi(x) = \psi(-x)\\
+		&\lambda = 1
+	\end{aligned}\right.
+	\hspace{2 cm}
+	\left\{\begin{aligned}
+		&- \psi(x) = \psi(-x)\\
+		&\lambda = -1
+	\end{aligned}\right.
+\end{equation*}
+
+\phantom{42}
+
+\textbf*{б) Оператор трансляции}.
+И так, оператор трансляции у нас тоже в виде $\hat{T}_a = e^{i \hat{\varphi}}$, и оператор фазы записывают в виде $\hat{\varphi} = \frac{1}{\hbar} \vc{a} \cdot \vc{\hat{k}}$, где $\vc{\hat{k}}$ -- оператор квазиимпульса.
+
+Собственные же волновые функции для $\hat{T}_a$ выразим в координатном представлении
+\begin{equation*}
+	\hat{T}_a \ket{\Psi} = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \ket{\Psi}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\bk{\vc{r}}[T_a]{\Psi} = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \ket{\Psi}.
+\end{equation*}
+Они удовлетворяют уравнению
+\begin{equation*}
+	\Psi(\vc{r} + \vc{a}) = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \Psi (r)
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	\Psi(r) = e^{\frac{i}{\hbar} \smallvc{r} \cdot \smallvc{k}} \Phi(r), 
+	\hspace{0.5 cm}
+	\Phi(r + a) = \Phi(r).
+\end{equation*}
+В конце мы представили эти функции в таком периодическом виде, они называются функциями Блоха, и позже мы ещё встретим их в действии.
+
+Собственные значения значит выражаются в виде $\lambda = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}}$.

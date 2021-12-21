@@ -1,0 +1,12 @@
+Посмотрим на дейтсвие на волновую функцию оператора, вида $e^{i \hat{I} \varphi}$:
+\begin{equation*}
+    e^{i \hat{I} \varphi}  \psi(x) = 
+    \sum_{k=0}^{\infty} \frac{1}{k!} \left(i \hat{I} \varphi\right)^k \psi(x) = 
+    \sum_{k=1}^{\infty} \frac{1}{(2k+1)!} \varphi^{2k + 1} i^{2k} \psi(-x) + 
+    \sum_{k=1}^{\infty}  \frac{1}{(2k)!} \varphi^{2k} i^{2k} \psi(x) = 
+    i \sin (\varphi) \psi(-x) + \cos(\varphi) \psi(x).
+\end{equation*}
+Откуда, в операторном смысле, можем записать равенство
+\begin{equation*}
+    e^{i \hat{I} \varphi} = i \sin(\varphi) \hat{I} + \cos(\varphi) \mathbbm{1}
+\end{equation*}
