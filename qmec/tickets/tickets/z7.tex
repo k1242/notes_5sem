@@ -1,0 +1,44 @@
+\Tsec{Задача №7}
+
+\begin{leftrules}
+Найти уровни энергии и волновые функции стационарных состояний частицы в потенциальном ящике
+\begin{equation*}
+    U(x) = \left\{\begin{aligned}
+        &0, &x \in [0, a], \\
+        &+\infty, &x \in \mathbb{R} \backslash [0, a].
+    \end{aligned}\right.
+\end{equation*}
+\end{leftrules}
+
+
+Стационарное уравнение Шрёдингера:
+\begin{equation*}
+    \hat{H}\psi(x) = E \psi(x),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \psi''(x) + \frac{2m E}{\hbar^2} \psi(x)  = 0.
+\end{equation*}
+Тогда решение может быть найдено в виде
+\begin{equation*}
+    \psi(x) = A \sin (kx) + B \cos(kx), \hspace{5 mm} 
+    k^2 = \tfrac{2m}{\hbar^2}E,
+\end{equation*}
+но в силу требования $\psi(x)|_{x \in \{0, a\}} = 0$, сразу получаем $B =0 $, и условие на $k$:
+\begin{equation*}
+    k = k_n = \frac{\pi n}{a},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    E_n = \frac{\hbar^2}{2m a^2} \pi^2 n^2,
+\end{equation*}
+то есть спектр дискретный. 
+
+Из нормировки $\psi$ можем найти
+\begin{equation*}
+    \bk{\psi}{\psi} = \int_0^a \d x |\psi(x)|^2 = \frac{|A|^2}{2} a = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A = \sqrt{\frac{2}{a}}.
+\end{equation*}
+Тогда искомая волнавая функция стационарных состояний и соответсвующие уровни энергии
+\begin{equation*}
+    \psi_n (x) = \sqrt{\frac{2}{a}} \sin \left(\tfrac{\pi n}{a} x\right) ,
+    \hspace{5 mm} 
+    E_n = \frac{\hbar^2}{2m a^2} \pi^2 n^2.
+\end{equation*}
