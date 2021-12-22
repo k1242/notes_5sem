@@ -7,7 +7,9 @@
 
 * **уравнениям математической физики**
 ([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
-[*заметки*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/notes/eqs_phys_notes.pdf));
+[*заметки*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/notes/eqs_phys_notes.pdf),
+[*билеты*](https://github.com/k1242/notes_5sem/blob/main/qmec/tickets/qmec_tickets_I.pdf));
+
 
 * **ТФКП**
 ([*задание (III-VI, от меня)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw/hw_tfcv.pdf),
