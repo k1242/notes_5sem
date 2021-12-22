@@ -1,0 +1,55 @@
+\Tsec{Задача №15}
+\begin{leftrules}
+	Квазиклассическое рассмотрение $\alpha$-распада, закон Гейгера–Неттола.
+\end{leftrules}
+Стоит всё-таки вспомнить потенциал из задания, ведь именно такой потенциал впервые рассматривался в теории $\alpha$-распада.
+И так
+\begin{equation*}
+	U(x) = \left\{
+	\begin{aligned}
+		& - U_0, &\ &0<x<a\\
+		& \tfrac{2 Z e^2}{x}, &\ &x > a
+	\end{aligned}
+	\right.
+\end{equation*}
+ Коэффициент прохождения через такой барьер, как отношение входящего потока к выходящему
+ \begin{equation*}
+ 	\mathcal{T} \sim \exp \left( - \frac{2}{h} \int_a^b |p(x)| d x \right),
+ 	\hspace{1 cm}
+ 	\int_{a}^{b} |p(x)| d x  = \int_a^b \sqrt{2m |E - U(x)|} d x = \sqrt{2 m} \int_{r_0}^{2 Ze^2/E} \sqrt{\frac{2 Z e^2}{x} - E} d x.
+ \end{equation*}
+ Остается только вычислить интеграл, для удобства введём $\beta = \frac{a E}{2 Z e^2}$, тогда
+ \begin{equation*}
+ 	\mathcal{T} \sim \exp\left[- \frac{4 Z e^2}{\hbar} \sqrt{\frac{2 m}{E}} (\arccos \sqrt{\beta} - \sqrt{\beta(1-\beta)})\right]
+ \end{equation*}
+ И если мы уже далеко отошли от пика $x = a$, то $\beta \ll 1$ и соответственно коэффициент пропускания
+ \begin{equation*}
+ 	\mathcal{T} \sim \exp\left(- \frac{2 \pi Z e^2}{\hbar} \sqrt{\frac{2m}{E}}\right).
+ \end{equation*}
+
+ Соответственно альфа частицы из потенциала такого вида могут туннелировать, с известным теперь нам коэффициентом, то есть излучаться. 
+ Таким образом вероятность излучения в единицу времени пропорциональна пропусканию: $w = n \mathcal{T}$, где $n$ -- частота столкновений частиц с барьером.
+ Если ввести характерную скорость частиц в потенциальной яме ($x<a$), то 
+ \begin{equation*}
+ 	n \sim v / a,
+ 	\hspace{1 cm}
+ 	v \sim p/m_\alpha \sim \frac{\hbar}{m_\alpha a}
+ 	\hspace{0.5 cm}
+ 	\Rightarrow
+ 	\hspace{0.5 cm}
+ 	n \sim \frac{\hbar}{m_\alpha a^2}.
+ \end{equation*}
+ Вероятность распада в единицу времени $\lambda$ связан с периодом полураспада $T$
+ \begin{equation*}
+ 	T_{1/2} = \frac{\ln 2}{w} \approx \frac{m_\alpha a^2 \ln 2}{\hbar D} = C_1 \exp\left(\frac{C_2}{\sqrt{E}}\right)
+ 	\hspace{0.5 cm}
+ 	\Rightarrow
+ 	\hspace{0.5 cm}
+ 	\boxed{\ln T_{1/2} = A + \frac{B}{\sqrt{E}}}
+ \end{equation*}
+Конечное равенство представляет собой уравнение \textit{Гейгера-Неттола}. Константы выписывать конечно не интересно, ведь и так наши рассуждения носят оценочный характер, но на всякий случай
+\begin{equation*}
+	A = \ln C_1 \approx \ln \left(\frac{m_\alpha a^2 \ln 2}{\hbar}\right),
+	\hspace{1.5 cm}
+	B = C_2 \approx \frac{2 \pi Z e^2 \sqrt{2 m}}{\hbar}.
+\end{equation*}

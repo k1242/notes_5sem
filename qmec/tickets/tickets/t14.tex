@@ -9,4 +9,36 @@
 		\end{aligned}\right.
 	\end{equation*}
 \end{leftrules}
-
+Нужно быть аккуратными, слева -- бесконечная граница, что требует от нас наложения граничного условия
+\begin{equation*}
+	\psi(0) = 0 
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\psi_{x \geq 0}(x=0) \sim \sin\left(\frac{1}{\hbar} \int_{x=0}^{x_0} p(x) d x + \frac{\pi}{4}\right) = 0.
+\end{equation*}
+Таким образом запишем модифицированное правило квантования Бора-Зоммерфельда
+\begin{equation*}
+	\int_0^{x_0} p(x) d x = \pi \hbar \left(n + \frac{3}{4}\right).
+\end{equation*}
+Подставим импульс как $p(x) = \sqrt{2m(E_n - V(x))}$ возьмём интеграл от $0$ до $x_0 = \sqrt{2E/(m \omega^2)}$ -- то есть в классически разрешенной области
+\begin{equation*}
+	\int_0^{x_0} p(x) d x = \int_0^{x_0} \sqrt{2m E_n -  m^2 \omega^2 x^2} d x = \frac{E_n}{\omega} \int_0^{\pi} \cos^2 \varphi d \varphi = \frac{\pi}{2 \omega} E_n
+	\hspace{0.3 cm}
+	\Rightarrow
+	\hspace{0.3 cm}
+	\boxed{E_n = \hbar \omega  \left(2n + \frac{3}{2}\right)}
+\end{equation*}
+В квазиклассическом приближении $\psi(x) \sim \tfrac{1}{\sqrt{p(x)}} \cdot \exp[\frac{i}{\hbar} \int p(x) dx]$ тогда исходя из правила согласования квазиклассических решений при переходе из запрещенной (затухание) в разрешенную (осцилляция) область 
+\begin{equation*}
+	\psi_n(x) = \left\{
+	\begin{aligned}
+		&0, \phantom{\frac{239}{ftsh}} &\ & x\leq 0\\
+		&\frac{C}{\sqrt{p(x)}} \sin \left(\frac{1}{\hbar} \int_{x}^{x_0} p(\xi) d\xi\right), &\ & 0<x \leq x_0\\
+		&\frac{C}{2\sqrt{|p(x)|}} \exp \left(\frac{1}{\hbar} \int_{x_0}^{x} |p(\xi)| d\xi\right), &\ & x_0 \leq x
+	\end{aligned}\right. 
+\end{equation*}
+Остается только найти константы из условия
+\begin{equation*}
+	C^2 = \frac{4 m}{T} = 4\frac{1}{\int_{0}^{x_0} dx / p(x)} = \frac{2 m \omega}{\pi}.
+\end{equation*}
