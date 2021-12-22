@@ -1,0 +1,46 @@
+\Tsec{Задача №1}
+
+\begin{leftrules}
+    Найти собственные значения и собственные функции оператора трансляции $\hat{T}_{\smallvc{a}}$. Также рассказать про <<квазиимпульс>>, <<функции Блоха>> и <<зону Бриллюэна>>.
+\end{leftrules}
+
+
+Оператор трансляции работает $\hat{T}_a \ket{x} = \ket{x+a}$ или так $\bk{x}{T_a\Psi} = \Psi(x + a)$. \red{Написать про пассивные и активные преобразования.} 
+
+Оператор трансляции унитарный, а для унитарного оператора $\hat{A}$ и его собственных состояний $\hat{A} \ket{\lambda} = \lambda \ket{\lambda}$ легко показать, что
+\begin{equation*}
+\bk{A \lambda}{A \lambda} = \bk{\lambda}{A^\dagger A \lambda} = \bk{\lambda}{\lambda},
+\hspace{5 mm} 
+\bk{A \lambda}{A \lambda} = \lambda \lambda^*\bk{\lambda}{\lambda}
+    \hspace{5 mm} 
+    \Rightarrow
+    \hspace{5 mm} 
+    \bk{\lambda}{\lambda} = 1 = \lambda \lambda^*.
+\end{equation*}
+Тогда имеем $\lambda = e^{i \varphi}$, что приводит к самому виду оператора $\hat{A} = e^{i \hat{\varphi}}$, где $\hat{\varphi}$ -- эрмитов.
+
+
+Оператор трансляции запишем в виде $\hat{T}_{\smallvc{a}} = e^{i \hat{\varphi}}$, и оператор фазы $\hat{\varphi} = \frac{1}{\hbar} \vc{a} \cdot \vc{\hat{k}}$, где $\vc{\hat{k}}$ -- оператор квазиимпульса.
+Собственные же волновые функции для $\hat{T}_{\smallvc{a}}$ выразим в координатном представлении
+\begin{equation*}
+    \hat{T}_{\smallvc{a}} \ket{\Psi} = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \ket{\Psi}
+    \hspace{5 mm} 
+    \Rightarrow
+    \hspace{5 mm} 
+    \bk{\vc{r}}[T_a]{\Psi} = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \ket{\Psi}.
+\end{equation*}
+Они удовлетворяют уравнению
+\begin{equation*}
+    \Psi(\vc{r} + \vc{a}) = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}} \Psi (r)
+    \hspace{5 mm} 
+    \Rightarrow
+    \hspace{5 mm} 
+    \Psi(r) = e^{\frac{i}{\hbar} \smallvc{r} \cdot \smallvc{k}} \Phi(r), 
+    \hspace{0.5 cm}
+    \Phi(r + a) = \Phi(r),
+\end{equation*}
+и называются функциями Блоха.
+
+Собственные значения выражаются в виде $\lambda = e^{\frac{i}{\hbar} \smallvc{a} \cdot \smallvc{k}}$.
+
+
