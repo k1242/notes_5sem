@@ -30,17 +30,20 @@
     P_i = \underbrace{\alpha_{ik} E_k}_{P_i^{\text{лин}}} + \underbrace{\chi_{ikj} E_k E_j}_{P_i^{\text{кв}}}+ \underbrace{\theta_{ikjm} E_k E_j E_m}_{P_i^{\text{куб}}} + \ldots
 \end{equation*}
 
-
+\setcounter{section}{1}
 
 
 \begin{to_def}
-    \textit{Уравнения Максвелла} - система уравнений, связывающих векторы $\mathbf{E}, \mathbf{D}, \mathbf{B}$ и $\mathbf{H}$  во всех средах: $
-    \begin{cases}
-        div \mathbf{D} = 4 \pi \rho \\
-        div \mathbf{B} = 0 \\
-        rot \mathbf{E} = -\dot{\mathbf{B}}/c \\
-        rot \mathbf{H} = 4\pi \mathbf{j}/c + \dot{\mathbf{D}}/c
-    \end{cases}$, где $\mathbf{j}$ и $\rho$ - плостность тока и заряда (соотв.).
+    \textit{Уравнения Максвелла} - система уравнений, связывающих векторы $\mathbf{E}, \mathbf{D}, \mathbf{B}$ и $\mathbf{H}$  во всех средах: 
+    \begin{equation*}
+        \begin{cases}
+        \div \mathbf{D} = 4 \pi \rho \\
+        \div \mathbf{B} = 0 \\
+        \rot \mathbf{E} = - \partial_t \mathbf{B}/c \\
+        \rot \mathbf{H} = 4\pi \mathbf{j}/c + \partial_t \mathbf{D}/c
+        \end{cases}
+    \end{equation*}
+    , где $\mathbf{j}$ и $\rho$ - плостность тока и заряда.
 \end{to_def}
 \begin{to_def}
     \textit{Материальные дополнения} - уравнения, связывающие векторы $\mathbf{E}$ и $\mathbf{D}$, $\mathbf{B}$ и $\mathbf{H}$ в конкретной среде.
@@ -52,21 +55,20 @@
     \textit{Вектор поляризация среды = поляризованность среды $\mathbf{P}$} - дипольный момент единицы объема среды.
 \end{to_def}
 
-Ур-я Максвелла влекут волновое уравнение: $\Delta \mathbf{E}-\ddot{\mathbf{E}}/c=4\pi \mathbf{P}/c^{2}$, которое требует материального уравнения $\mathbf{P} = \mathbf{P}(\mathbf{E})$.
+Уравнения Максвелла влекут волновое уравнение: $\Delta \mathbf{E}- \partial_t^2 \mathbf{E}/c=4\pi \mathbf{P}/c^{2}$, которое требует материального уравнения $\mathbf{P} = \mathbf{P}(\mathbf{E})$.
 
 \begin{to_def}
     \textit{Линейная//нелинейная оптика} - оптика сред, в которых зависимость $\mathbf{P}(\mathbf{E})$ линейна \textit{//} нелинейна.
 \end{to_def}
 
-\textit{Среди причин оптических нелинейностей:} \\
-    \par \textbf{1)} негармонический отклик электронов среды (электронные нелинейности: резонансные и нерезонансные); \\
-    \par \textbf{2)} ''ядерные'' нелинейности (движение атомных и молекулярных остовов).
+\textit{Среди причин оптических нелинейностей:} \textbf{1)} негармонический отклик электронов среды (электронные нелинейности: резонансные и нерезонансные);  \textbf{2)} ''ядерные'' нелинейности (движение атомных и молекулярных остовов).
 
 
-Виды зависимостей $\mathbf{P}(\mathbf{E})$: \\
-     \par \textbf{1)} $P=\chi (\omega) E$ (монохроматические волны); \\
-     \par \textbf{2)} $P=|\chi|E_{0}cos(\omega t + \phi)$ (комплексные числа); \\
-     \par \textbf{3)} $P_{i}=\chi_{ij}E_{j}$ (тензорная связь - анизотропные среды); \\
-     \par \textbf{4)} $P(\mathbf{r}) = \int H(\mathbf{r}-\mathbf{r}') E(\mathbf{r}') d^{3}r'$ (локальная связь); \\
-     \par \textbf{5)} $P(\omega) = \int \chi (\omega, \omega') E(\omega') d\omega'$ (две частоты); \\
-     \par \textbf{6)} другие.
+Виды зависимостей $\mathbf{P}(\mathbf{E})$:
+\begin{enumerate*}
+    \item $P=\chi (\omega) E$ (монохроматические волны); 
+    \item $P=|\chi|E_{0}cos(\omega t + \phi)$ (комплексные числа); 
+    \item $P_{i}=\chi_{ij}E_{j}$ (тензорная связь - анизотропные среды); 
+    \item $P(\mathbf{r}) = \int H(\mathbf{r}-\mathbf{r}') E(\mathbf{r}') d^{3}r'$ (локальная связь); 
+    \item $P(\omega) = \int \chi (\omega, \omega') E(\omega') d\omega'$ (две частоты);
+\end{enumerate*}
