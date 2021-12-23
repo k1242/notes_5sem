@@ -1,0 +1,67 @@
+\Tsec{Задача №13}
+\begin{leftrules}
+	Найти средние значения $1/r$, $1/r^2$ и $p^2$ для nl-состояний атома водорода,
+	используя теорему вириала и теорему Фейнмана–Гельмана.
+\end{leftrules}
+Используя общую теорему о вириале: $2 \langle \hat{T} \rangle = \langle \vc{r} \cdot \tfrac{\partial V(r)}{\partial \smallvc{r}}\rangle$, а также явно потенциал в атоме водорода $V(r) = -\tfrac{e^2}{r}$ явно найдём то, как у нас работает вириал:
+\begin{equation*}
+	\frac{\partial V(r)}{\partial r^\alpha} 
+	= \frac{\partial V(r)}{\partial r} \cdot \frac{r_\alpha}{r} 
+	= - \frac{r_\alpha}{r^2} V(r)
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\vc{r} \cdot \frac{\partial V(r)}{\partial \vc{r}} = - r^\alpha \frac{r_\alpha}{r^2} V(r) = - V(r)
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\langle  T\rangle = - \frac{1}{2} \langle V(r)\rangle
+\end{equation*}
+Тогда, раз мы работаем с атомом водорода, с одной стороны мы знаем энергию на $n$-ом уровне $E_n$, а с другой эта энергия -- есть сумма средних потенциальной и кинетической энергий: 
+\begin{equation*}
+ 	E_n = - \frac{\hbar^2}{2 m a^2}\frac{1}{n^2} = \langle T\rangle + \langle  V \rangle = \frac{1}{2} \langle V \rangle = - \frac{e^2}{2} \langle 1/r\rangle
+ 	\hspace{0.5 cm}
+ 	\Rightarrow
+ 	\hspace{0.5 cm}
+ 	\boxed{\langle 1/r\rangle = \frac{\hbar^2}{2 m e^2} \frac{1}{n^2 a^2} = \frac{1}{a n^2}}
+ \end{equation*} 
+ Сразу же из кинетической энергии получаем:
+ \begin{equation*}
+ 	\langle  T\rangle = - \frac{1}{2} \langle V(r)\rangle \hspace{0.5 cm}
+ 	\Rightarrow
+ 	\hspace{0.5 cm}
+ 	\left\langle \frac{\hat{p}^2}{2m}\right\rangle = \frac{e^2}{2} \left\langle \frac{1}{r}\right\rangle
+ 	\hspace{0.5 cm}
+ 	\Rightarrow
+ 	\hspace{0.5 cm}
+ 	\boxed{\langle \hat{p}^2\rangle = \frac{\hbar^2}{a^2 n^2}}
+ \end{equation*}
+ Чтобы получить последний ответ, воспользуемся теоремой Фейнмана-Геллмана\footnote{он же Хеллман, он же Гельман, он же "окорок" и он же "одноногий"}
+\begin{equation*}
+	\frac{\partial E_n}{\partial t} = \bk{n}[\frac{\partial \hat{H}}{\partial t}]{n},
+	\hspace{1 cm}
+	\hat{H} = \frac{\hat{p}_r^2}{2 m} + \frac{\hbar^2 l (l+1)}{m r^2} - \frac{e^2}{r},
+	\hspace{1 cm}
+	n = n_r + l + 1.
+\end{equation*}
+Тогда заметим, что производная по $l$ и даёт нам среднее от оставшегося выражения:
+\begin{equation*}
+	\left.
+	\begin{aligned}
+		&\frac{\partial \hat{H}}{\partial l} = \frac{\hbar^2(l+\tfrac{1}{2})}{m r^2}\\
+		&\frac{\partial E_n}{\partial l} = \frac{\partial E_n}{\partial n} = \frac{\hbar^2}{m n^3 a^2}
+	\end{aligned}
+	\right\}
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\boxed{\langle 1/r^2\rangle  = \frac{1}{a^2 n^3 (l + \tfrac{1}{2})}}
+\end{equation*}
+
+% Запишем радиальный гамильтониан и его собственные числа, то есть уровни энергии:
+% \begin{equation*}
+% 	\left\{\begin{aligned}
+% 		&\hat{H} = \frac{\hat{p}_r}{2} \frac{l (l+1)}{2 r^2} - \frac{Z}{r}\\
+% 		&E_n = - \frac{Z^2}{2 n^2}
+% 	\end{aligned}\right.
+% \end{equation*}
