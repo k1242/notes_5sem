@@ -1,0 +1,74 @@
+\Tsec{Билет №1}
+
+\begin{leftrules}
+Что нелинейно в нелинейной оптике? Принцип суперпозиции для поляризации среды. Материальные уравнения и их связь с уравнениями Максвелла. Механизмы нелинейного взаимодействия излучения со средами: классификация, особенности.
+\end{leftrules}
+
+Вектор поляризованности $\vc{P}$ в линейной оптике
+\begin{equation*}
+    P_i = \sum_{k=1}^{3} \alpha_{ik} E_k, 
+    \hspace{5 mm} 
+    \text{при } \alpha_{ik} = \alpha \mathbbm{1}
+    \hspace{5 mm} 
+    \vc{P} = \alpha \vc{E},
+\end{equation*}
+при том же векторе для эдектрической индукции $\vc{D}$:
+\begin{equation*}
+    \vc{D} = \vc{E} + 4 \pi \vc{P}.
+\end{equation*}
+В случае квадратичной нелинейности переходим к зависимости, вида
+\begin{equation*}
+    P_i = \sum_{k=1}^{3} \alpha_{ik}[E] E_k,
+    \hspace{5 mm} 
+    \alpha_{ik}[E] = \alpha_{ik} + \sum_{j=1}^{3} \chi_{ikj} E_j + \sum_{j=1}^{3} \sum_{m=1}^{3} \theta_{i k j m} E_j E_m + \ldots,
+\end{equation*} 
+где $\alpha_{ik}$ -- линейная восприимчивость,  $\chi_{ikj}$ -- квадратичная нелинейная восприимчивость, $\theta_{ikjm}$ -- кубическая нелинейная восприимчивость. 
+
+
+Итого, получаем материальное уравнение, вида
+\begin{equation*}
+    P_i = \underbrace{\alpha_{ik} E_k}_{P_i^{\text{лин}}} + \underbrace{\chi_{ikj} E_k E_j}_{P_i^{\text{кв}}}+ \underbrace{\theta_{ikjm} E_k E_j E_m}_{P_i^{\text{куб}}} + \ldots
+\end{equation*}
+
+\setcounter{section}{1}
+
+
+\begin{to_def}
+    \textit{Уравнения Максвелла} - система уравнений, связывающих векторы $\mathbf{E}, \mathbf{D}, \mathbf{B}$ и $\mathbf{H}$  во всех средах: 
+    \begin{equation*}
+        \begin{cases}
+        \div \mathbf{D} = 4 \pi \rho \\
+        \div \mathbf{B} = 0 \\
+        \rot \mathbf{E} = - \partial_t \mathbf{B}/c \\
+        \rot \mathbf{H} = 4\pi \mathbf{j}/c + \partial_t \mathbf{D}/c
+        \end{cases}
+    \end{equation*}
+    , где $\mathbf{j}$ и $\rho$ - плостность тока и заряда.
+\end{to_def}
+\begin{to_def}
+    \textit{Материальные дополнения} - уравнения, связывающие векторы $\mathbf{E}$ и $\mathbf{D}$, $\mathbf{B}$ и $\mathbf{H}$ в конкретной среде.
+\end{to_def}
+
+В оптике в качестве материального уравнения часто берется $\mathbf{H}=\mathbf{B}$, после чего можно исключить эти векторы из рассмотрения.
+
+\begin{to_def}
+    \textit{Вектор поляризация среды = поляризованность среды $\mathbf{P}$} - дипольный момент единицы объема среды.
+\end{to_def}
+
+Уравнения Максвелла влекут волновое уравнение: $\Delta \mathbf{E}- \partial_t^2 \mathbf{E}/c=4\pi \mathbf{P}/c^{2}$, которое требует материального уравнения $\mathbf{P} = \mathbf{P}(\mathbf{E})$.
+
+\begin{to_def}
+    \textit{Линейная//нелинейная оптика} - оптика сред, в которых зависимость $\mathbf{P}(\mathbf{E})$ линейна \textit{//} нелинейна.
+\end{to_def}
+
+\textit{Среди причин оптических нелинейностей:} \textbf{1)} негармонический отклик электронов среды (электронные нелинейности: резонансные и нерезонансные);  \textbf{2)} ''ядерные'' нелинейности (движение атомных и молекулярных остовов).
+
+
+Виды зависимостей $\mathbf{P}(\mathbf{E})$:
+\begin{enumerate*}
+    \item $P=\chi (\omega) E$ (монохроматические волны); 
+    \item $P=|\chi|E_{0}cos(\omega t + \phi)$ (комплексные числа); 
+    \item $P_{i}=\chi_{ij}E_{j}$ (тензорная связь - анизотропные среды); 
+    \item $P(\mathbf{r}) = \int H(\mathbf{r}-\mathbf{r}') E(\mathbf{r}') d^{3}r'$ (локальная связь); 
+    \item $P(\omega) = \int \chi (\omega, \omega') E(\omega') d\omega'$ (две частоты);
+\end{enumerate*}

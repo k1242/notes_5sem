@@ -1,0 +1,59 @@
+\Tsec{Задача №8}
+
+\begin{leftrules}
+    Найти волновую функцию, минимизирующую соотношение неопределенностей $\Delta x \cdot \Delta p = \hbar/2$.
+\end{leftrules}
+
+
+Возьмём операторы импульса $\hat{p} = - i \hbar \partial_x$ и координаты $\hat{x}$.
+Сразу найдём их средние и коммутатор
+\begin{equation*}
+    \bar{x} = \langle x\rangle = \bk{\psi}[\hat{x}]{\psi},
+    \hspace{1 cm}
+    \bar{p} = \langle p\rangle = \bk{\psi}[\hat{p}]{\psi},
+    \hspace{1 cm}
+    [\hat{x}, \hat{p}] = i \hbar.
+\end{equation*}
+Перейдём к несмещенным переменным:
+\begin{equation*}
+    \hat{\xi} = \hat{x} - \bar{x},
+    \hspace{1 cm}
+    \hat{\eta} = \hat{p} - \bar{p},
+    \hspace{1 cm}
+    [\hat{\xi},\hat{\eta}] = i \hbar .
+\end{equation*}
+С неизмененным значением дисперсии
+\begin{equation*}
+    (\Delta \xi)^2 = \bk{\psi}[(\hat{\xi} - \bar{\xi})]{\psi} = \bk{\psi}[(\hat{x} - \bar{x})]{\psi} = (\Delta x)^2,
+    \hspace{1 cm}
+    (\Delta \eta)^2 = (\Delta p)^2.
+\end{equation*}
+Теперь введем функцию $\Phi$ по методу Вейля
+\begin{equation*}
+    \ket{\Phi} = (\hat{\xi} - i \gamma \hat{\eta}) \ket{\psi}.
+\end{equation*}
+И, по определению нормы, $\bk{\Phi}{\Phi} \geq 0$, а значиты
+\begin{equation*}
+    \bk{\psi}[(\hat{\xi} - i \gamma \hat{\eta})^\dagger (\hat{\xi} - i \gamma \hat{\eta})]{\psi}
+    =
+    \bk{\psi}[\hat{\xi}^2 - i \gamma (\hat{\xi} \hat{\eta} - \hat{\eta} \hat{\xi}) + \gamma^2 \hat{\eta}^2]{\psi} \geq 0.
+\end{equation*}
+Неотрицательной должно быть и выражение
+\begin{equation*}
+    (\Delta x)^2 + \hbar \gamma  + \gamma^2 (\Delta p)^2 \geq 0
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \hbar^2 - 4 (\Delta p )^2 (\Delta x )^2 \leq 0,
+\end{equation*}
+что получилось просто из условия на дискриминант для квадратного уравнения на $\gamma$, тогда минимум достигнется просто при нулевом дискриминанте
+\begin{equation*}
+    (\Delta p)^2 (\Delta x)^2 = \frac{\hbar}{4},
+    \hspace{1 cm}
+    \gamma = - 2 \frac{(\Delta x)^2}{\hbar}.
+\end{equation*}
+Таким образом и нашли волновую функцию, которая удовлетворяет минимизации соотношения неопределенности, что мы четко и показали
+\begin{equation*}
+    \ket{\Phi} = \left[\hat{x} - \bar{x} + \tfrac{2i}{\hbar} (\Delta x)^2 (\hat{p} - \bar{p})\right] \ket{\psi},
+\end{equation*}
+для некоторой $\forall  \psi$.

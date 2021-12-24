@@ -1,0 +1,99 @@
+\Tsec{Задача №8}
+
+\begin{leftrules}
+Найти уровни энергии\footnote{
+    Формально <<уровень энергии>>, $\delta$-ямая -- всегда мелкая яма, то есть $\exists !$ связное состояние.
+} и волновые функции стационарных состояний частицы в потенциале $U(x) = - \frac{\hbar^2}{m}\kappa_0 \delta(x)$.
+\end{leftrules}
+
+
+\textbf{Координатное представление}. 
+Cделаем замечание, что $E < 0$, тогда получим
+\begin{equation*}
+    \hat{H} \psi = - |E| \psi,
+    \hspace{1 cm}
+    \kappa^2 \overset{\mathrm{def}}{=}  \frac{2 m |E|}{\hbar}.
+\end{equation*}
+С такой заменой получим:
+\begin{equation*}
+    -\frac{\hbar^2}{2m} \psi'' - \frac{\hbar^2}{m}\kappa_0 \delta(x) \psi + |E|\psi = 0
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \psi'' - (\kappa - 2 \kappa_0 \delta(x))\psi=0.
+\end{equation*}
+Мы ожидаем непрерывности от волной функции на границах областей, а именно в точке дельта-ямы, то есть одним из граничных условий будет $\psi(-0) = \psi(+0)$.
+
+Потребовав непрерывности $\psi$, из-за дельта функции,  мы получаем разрыв для первой производной
+\begin{equation*}
+    \psi'' - (\kappa - 2 \kappa_0 \delta(x))\psi=0
+    \hspace{1 cm}
+    \overset{\int_{-\varepsilon}^{+\varepsilon} }{\Longrightarrow}
+    \hspace{1 cm}
+    \psi'(+0) - \psi'(-0) = - 2 \kappa_0 \psi(0).
+\end{equation*}
+
+Вне ямы будем наблюдать спад по экспоненте, сама же яма -- по сути точечна, значит такое же поведение будем ожидать и в связном состоянии, таким образом ищем волновую функцию как
+\begin{equation*}
+    \psi = \left\{\begin{aligned}
+        C_1 e^{-\kappa x} \ , \ & x>0\\
+        C_2 e^{\kappa x} \ , \ & x<0
+    \end{aligned}\right.
+\end{equation*}
+Из непрерывности получим автоматически, что
+\begin{equation*}
+    \psi(-0) = \psi(+0)
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    C_2 = C_1 = C.
+\end{equation*}
+Разрыв же первой производной позволит нам найти
+\begin{equation*}
+    \psi'(+0) - \psi'(-0) = - 2 \kappa_0 \psi(0)
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    - 2 \kappa_0 C = C (-\kappa - \kappa)
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    \kappa = \kappa_0.
+\end{equation*}
+Таким образом  энергия связного состояния:
+\begin{equation*}
+    E = - \frac{\hbar^2 \kappa_0^2}{2 m}.
+\end{equation*}
+Теперь, осталось проверить нормировку нашей волновой функции
+\begin{equation*}
+    \int_{\mathbb{R}} \psi \psi^* d x = 1
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    C^2 \int_{-\infty}^{+\infty} e^{- 2 \kappa_0 |x|} d x = \frac{C^2}{\kappa_0} \int_{0}^{+\infty} e^{- 2 \kappa_0 x} d 2 \kappa_0 x
+    = 
+    \frac{C^2}{\kappa_0} = 1
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    \kappa_0 = C^2.
+\end{equation*}
+Таким образом собирая всё вместе получаем волновую функцию вида:
+\begin{equation*}
+    \bk{x}{0} = \psi(x) =  \sqrt{\kappa_0} e^{- \kappa_0|x|}.
+\end{equation*}
+
+\textbf{Импульсное представление}. Вставляя разбиение единицы, вида $\mathbbm{1} = \int_{\mathbb{R}} \kb{x}{x} \d x$, находим
+\begin{equation*}
+    \psi(p) = \bk{p}{0} = \int_\mathbb{R} d x \bk{p}{x} \bk{x}{0}
+    =
+    \bigg/
+    \bk{p}{x} = \frac{1}{\sqrt{2 \pi \hbar}} e^{- \frac{i}{\hbar} p x
+    }
+    \bigg/  
+    =
+    \frac{\sqrt{\kappa_0}}{\sqrt{2 \pi \hbar}} \int_\mathbb{R} e^{- \kappa_0 x - \frac{i}{h}p x} d x
+    =
+    \frac{\sqrt{\kappa_0}}{\sqrt{2 \pi \hbar}} \cdot \frac{2 \kappa_0}{\kappa_0^2 + (p/\hbar)^2}
+    = \sqrt{\frac{2}{\pi}} \frac{(\kappa_0 \hbar)^{3/2}}{(\kappa_0 \hbar)^2 + p^2}.
+\end{equation*}

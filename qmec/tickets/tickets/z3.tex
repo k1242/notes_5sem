@@ -1,0 +1,26 @@
+\Tsec{Задача №3}
+
+\begin{leftrules}
+Доказать соотноешния Фейнмана-Гельмана $\partial_\lambda f_n (\lambda) = \bk{n}[\partial_\lambda \hat{f} (\lambda)]{n}$, где $f_n$ -- собственное значение $\hat{f} \ket{n} = f_n \ket{n}$, то есть $f_n = \bk{n}[\hat{f}]{n}$. 
+\end{leftrules}
+
+\begin{proof}[$\triangle$]
+
+
+По формуле Лейбница:
+\begin{align*}
+    \partial_\lambda f_n 
+    &= 
+    \bk{n}[\partial_\lambda \hat{f}]{n} + 
+    \bk{\partial_\lambda n}[\hat{f}]{n} + \bk{n}[\hat{f}]{\partial_\lambda n} 
+    =
+    \bk{n}[\partial_\lambda \hat{f}]{n} + \bk{\partial_\lambda n}{n} f_n + 
+    \bk{n}{\partial_\lambda n} f_n 
+    = \\ &=
+    \bk{n}[\partial_\lambda \hat{f}]{n} + f_n \partial_\lambda \bk{n}{n} 
+    = 
+    \bk{n}[\partial_\lambda \hat{f}]{n},
+\end{align*}
+что и требовалось доказать.
+
+\end{proof}
