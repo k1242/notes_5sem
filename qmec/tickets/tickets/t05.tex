@@ -1,0 +1,41 @@
+\Tsec{Задача 5}
+\begin{leftrules}
+	Вычислить коммутаторы $\hspace{1 cm} [l_\alpha, x_\beta],
+		\hspace{1 cm}
+		[l_\alpha, p_\beta]$.
+\end{leftrules}
+Напомним, что мы работаем с
+\begin{equation*}
+	l_\alpha = \varepsilon_{\alpha}^{\phantom{0} \beta \gamma} r_\beta p_\gamma
+	\hspace{1 cm}
+	[l_\alpha, a_\beta] = i \varepsilon_{\alpha \beta }^{\phantom{0}\phantom{0}\gamma} a_\gamma,
+	\hspace{1 cm}
+	\hat{p}_\gamma = - i \partial_\gamma.
+\end{equation*}
+Тогда подействуем на функцию состояния
+\begin{equation*}
+	[l_\alpha, x_\beta] \psi(x)= [ - i \varepsilon_{\alpha \beta' \gamma} x^{\beta'} \partial^{\gamma}, x_\beta] \psi(x)
+	=
+	- i \varepsilon_{\alpha \beta' \gamma} x^{\beta'} \partial^\gamma (x_\beta \psi(x)) + i \varepsilon_{\alpha \beta' \gamma} x^{\beta'} x_\beta \partial^\gamma \psi(x)
+	=
+	- i \varepsilon_{\alpha \beta' \beta} x^{\beta'} \psi(x)
+\end{equation*}
+Таким образом мы свели действие заданного оператора к
+\begin{equation*}
+	[l_\alpha, x_\beta] = - i \varepsilon_{\alpha \beta \gamma} x^{\beta}s
+\end{equation*}
+Для другого случая действуем абсолютно аналогично
+\begin{equation*}
+	[l_\alpha, p_\beta] \psi(x)
+	=
+	[ - i \varepsilon_{\alpha \beta' \gamma} x^{\beta'} \partial^{\gamma}, -i \partial_\beta] \psi(x)
+	=
+	-\varepsilon_{\alpha \beta' \gamma} x^{\beta'} \partial^{\gamma} \partial_\beta \psi(x)
+	+ \varepsilon_{\alpha \beta' \gamma} \partial_\beta (x^{\beta'} \partial^{\gamma} \psi(x))
+	=
+	\varepsilon_{\alpha \beta \gamma}  \partial^{\gamma} \psi(x)
+\end{equation*}
+Таким образом мы свели действие заданного оператора к
+\begin{equation*}
+	[l_\alpha, p_\beta] = \varepsilon_{\alpha \beta \gamma}  \partial^{\gamma} = - i \varepsilon_{\alpha \beta \gamma} p^\gamma
+\end{equation*}
