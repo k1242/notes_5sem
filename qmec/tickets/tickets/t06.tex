@@ -1,0 +1,47 @@
+\Tsec{Задача №6}
+\begin{leftrules}
+	Доказать равенство $(\vc{\sigma} \cdot \vc{a})(\vc{\sigma} \cdot \vc{b}) = (\vc{a} \cdot \vc{b}) + i \vc{\sigma}\cdot [\vc{a} \times \vc{b}]$, где $\vc{a}, \vc{b}$ -- векторы.
+\end{leftrules}
+Напомним, как выглядят матрицы Паули сами по себе
+\begin{equation*}
+	\vc{\hat{\sigma}}_x = \begin{pmatrix}
+	    0 & 1 \\
+	    1 & 0 \\
+	\end{pmatrix},
+	\hspace{1 cm}
+	\vc{\hat{\sigma}}_y = \begin{pmatrix}
+	    0 & -i \\
+	    i & 0 \\
+	\end{pmatrix},
+	\hspace{1 cm}
+	\vc{\hat{\sigma}}_z = \begin{pmatrix}
+	    1 & 0 \\
+	    0 & -1 \\
+	\end{pmatrix},
+\end{equation*}
+а также как выглядят коммутатор и антикоммутатор
+\begin{equation*}
+	[\vc{\hat{\sigma}}_\alpha, \vc{\hat{\sigma}}_\beta] 
+	= 2 i \varepsilon_{\alpha \beta \gamma} \vc{\hat{\sigma}}_\gamma,
+	\hspace{0.5 cm}
+	\{\vc{\hat{\sigma}}_\alpha, \vc{\hat{\sigma}}_\beta\}
+	= \vc{\hat{\sigma}}_\alpha \vc{\hat{\sigma}}_\beta + \vc{\hat{\sigma}}_\beta \vc{\hat{\sigma}}_\alpha
+	= 2 \delta_{\alpha \beta}
+\end{equation*}
+Таким образом сложив коммутатор и антикоммутатор получим
+\begin{equation*}
+	\vc{\hat{\sigma}}_\alpha \vc{\hat{\sigma}}_\beta  = \frac{1}{2} [\vc{\hat{\sigma}}_\alpha, \vc{\hat{\sigma}}_\beta] + \frac{1}{2} \{\vc{\hat{\sigma}}_\alpha, \vc{\hat{\sigma}}_\beta\}
+	=
+	i \varepsilon_{\alpha \beta \gamma} \vc{\hat{\sigma}}_\gamma + \delta_{\alpha\beta},
+\end{equation*}
+А значит, мы знаем и как найти требуемое скалярное произведение
+\begin{equation*}
+	(\vc{\sigma} \cdot \vc{a})(\vc{\sigma} \cdot \vc{b}) = 
+	\vc{\hat{\sigma}}_\alpha \vc{a}^\alpha + \vc{\hat{\sigma}}_\beta \vc{b}^\beta
+	=
+	i \vc{\hat{\sigma}}_\gamma \varepsilon_{\alpha \beta \gamma} \vc{a}^\alpha \vc{b}^\beta  + \delta_{\alpha\beta} \vc{a}^\alpha \vc{b}^\beta
+	=
+	i \vc{\hat{\sigma}}_\gamma [\vc{a} \times \vc{b}]^\gamma + \vc{a}^\alpha \vc{b}_\alpha
+	=
+	i [\vc{a} \times \vc{b}]\cdot \vc{\hat{\sigma}} + (\vc{a} \cdot \vc{b}).
+\end{equation*}
