@@ -2,7 +2,8 @@
 Заметки пятого семестра МФТИ (ФОПФ). В частности, содержит материалы по:
 
 * **квантовой механике I**
-([*задание*](https://github.com/k1242/notes_5sem/blob/main/qmec/hw/qmec_hw.pdf),
+([*задачи из билетов*](https://github.com/k1242/notes_5sem/blob/main/qmec/tickets/qmec_tickets_I.pdf),
+[*задание*](https://github.com/k1242/notes_5sem/blob/main/qmec/hw/qmec_hw.pdf),
 [*заметки*](https://ibb.co/zNTVnNB));
 
 * **уравнениям математической физики**
