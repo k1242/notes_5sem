@@ -1,0 +1,51 @@
+\subsection{Итоговая картина для двухуровневой системы}
+
+
+Собираем всё вместе, в зависимости от мощности насыщающего лазера некоторое количество атомов будет находиться в возбужденном состоянии:
+\begin{equation*}
+    \frac{\ne}{N} = \frac{s/2}{1 + s + 4 (\Delta_+ \nu)^2/\Gamma^2},
+    \hspace{5 mm} 
+    \frac{\sigma(\nu, v) }{\sigma_0} = \frac{1}{4 (\Delta_{-}\nu)^2 / \Gamma^2 + 1},
+    \hspace{5 mm} 
+    \Delta_{\pm} \nu = \nu - \nu_0(1\pm  v /c).
+\end{equation*}
+Тогда
+\begin{equation}
+    \frac{\sub{I}{out}}{\sub{I}{int}} = \exp\left[
+        - \kappa
+        \int_{-\infty}^{\infty} 
+        \left(
+            1 - 2 \frac{N_e (\nu, v)}{N}
+        \right)
+        \frac{\sigma(\nu, v)}{\sigma_0}  \exp\left(
+        - \frac{m v^2}{2 \sub{k}{B} T} 
+    \right) \d v
+    \right]
+    , 
+\end{equation}
+где
+\begin{equation*}
+    s = \Phi/\sub{\Phi}{sat},
+    \hspace{5 mm} 
+    \sub{\Phi}{sat} = \Gamma/2 \sigma_0,
+    \hspace{5 mm}
+    \kappa = \sigma_0 n l \sqrt{\frac{m}{2 \pi \sub{k}{B} T}},
+\end{equation*}
+можно подставить, но пока не нужно:
+\begin{equation}
+    \frac{\sub{I}{out}}{\sub{I}{int}} = \exp\left[
+        - \kappa
+        \int_{-\infty}^{\infty} 
+        \left(
+            1 - \frac{s}{1 + s + 4 (\Delta_+ \nu)^2/\Gamma^2}
+        \right)
+        \frac{1}{4 (\Delta_{-}\nu)^2 / \Gamma^2 + 1}  \exp\left(
+        - \frac{m v^2}{2 \sub{k}{B} T} 
+    \right) \d v
+    \right] = \exp\left[
+        - \kappa F(s, \nu)
+    \right]
+    .
+    \label{maineq}
+\end{equation}
+

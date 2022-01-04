@@ -1,0 +1,62 @@
+\subsection{Скоростные уравнения}
+
+
+ Населенность в двух состояния описывается скоростными уранениями
+\begin{align*}
+    \dot{\ng} = \phantom{-}\Gamma N_e - \sigma \Phi (\ng - \ne), \\
+    \dot{\ne} = - \Gamma \ne + \sigma \Phi (\ng - \ne),
+\end{align*}
+где первое слагаемое отвечает спонтанной эмиссии, и второе насыщению лазером. $\Phi = I / h \nu$ -- насыщающий поток фотонов. Учитывая, что $\ng + \ne = N = \const $, можем получить диффур первого порядка на $\ne$:
+\begin{equation*}
+    \dot{\ne} = - (\Gamma + 2 \sigma \Phi) \ne + \sigma \Phi N.
+\end{equation*}
+Решение можем быть найдено в виде
+\begin{equation*}
+% ошибка
+    \ne (t) = \left[
+         \ne(0) - \frac{N \sigma \Phi}{\Gamma + 2 \sigma \Phi} 
+    \right] e^{-(\Gamma + 2 \sigma \Phi) t} + \frac{N \sigma \Phi}{\Gamma + 2 \sigma \Phi}.
+\end{equation*}
+
+Заметим, что при $\Phi = 0$:
+\begin{equation*}
+    \ne (t) = \ne (0) e^{- \Gamma t},
+\end{equation*}
+а в случае слаюого насыщающего луча $\sigma \Phi \ll \Gamma$, и изначальной популяции в невозбужденном состоянии,
+\begin{equation*}
+    \ne (t) = \frac{N \sigma \Phi}{\Gamma} \left(1 - e^{- \Gamma t}\right),
+\end{equation*}
+достигающий стационарного состояния после $\Gamma^{-1}$ с $\ne = N \sigma \Phi / \Gamma \ll N$.   Наконец, при $\sigma \Phi \gg \Gamma$, получаем насыщенный переход
+\begin{equation*}
+    \ne (t) = \left[\ne(0) - N/2\right]e^{-2 \sigma \Phi t} + N / 2 \to N/2.
+\end{equation*}
+Под насыщением понимаем, что $\ne = N/2$, большие значения по понятным причинам невозможны $\forall  \Phi$, по крайней мере для двухуровневых систем. 
+
+Также наблюдается увеличение <<мощности>> ширины линии перехода, в пределе $(\Gamma + 2 \sigma \Phi) t \gg 1$, получаем
+\begin{equation*}
+% ошибка
+     \frac{\ne (\infty)}{N} = \frac{\sigma \Phi}{\Gamma + 2 \sigma \Phi}.
+\end{equation*} 
+Вспоминая уранение \eqref{1_4} с $\Delta \nu = \nu - \nu_0(1+  v /c)$ (минус, т.к. допплеровский сдвиг в другую сторону), можем переписать уравнение в виде
+\begin{equation*}
+    \frac{\ne(\infty)}{N} = \frac{\sigma_0 \Phi \Gamma / 4}{\Delta \nu^2 + \Gamma^2/4 + \sigma_0 \Phi \Gamma / 2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{
+        \frac{\ne}{N} = \frac{s/2}{1 + s + 4 \Delta \nu^2/\Gamma^2}
+    }
+\end{equation*}
+, где ввели параметр насыщения $s = \Phi/\sub{\Phi}{sat}$, $\sub{\Phi}{sat} = \Gamma/2 \sigma_0$.
+
+Получился лоренцев профиль с уширением, полуширина (FWHM) которого зависит от $\Phi$:
+\begin{equation*}
+    \text{FWHM} = \frac{\Gamma}{2} \sqrt{1 + \frac{2 \sigma_0 \Phi}{\Gamma}}.
+\end{equation*}
+
+% Таким образом можем посчитать простую насыщенную спектроскопию для двухуронего атома. 
+
+Интенсивность насыщения $\sub{I}{sat}$ может быть выражена, как [1 $\Rightarrow$ 4] 
+\begin{equation*}
+    \sub{I}{sat} = 2 \pi^2 h c \Gamma / 3 \lambda^3.
+\end{equation*}
+Например, для $^{87} \text{Rb}$ с натуральной шириной $\Gamma = 6$ МГц, $\sub{I}{sat} = 1.65 \text{ мВт}/\text{см}^2$.
+
