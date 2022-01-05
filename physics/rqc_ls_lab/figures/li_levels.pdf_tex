@@ -1,0 +1,85 @@
+%% Creator: Inkscape 1.0 (4035a4fb49, 2020-05-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'li_levels.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{252.97499084bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.71271866)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{li_levels.pdf}}%
+    \put(0.35823689,0.66581026){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Уровни ${}^7$Li, $1/\Gamma = 27.2$ нс\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{li_levels.pdf}}%
+    \put(0.02618796,0.48545657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2 ${}^2$P${}_{3/2}$\end{tabular}}}}%
+    \put(0.02618796,0.32289089){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2 ${}^2$P${}_{1/2}$\end{tabular}}}}%
+    \put(0.02618796,0.0980664){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2 ${}^2$S${}_{1/2}$\end{tabular}}}}%
+    \put(0.39686393,0.21041268){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D${}_1$\end{tabular}}}}%
+    \put(0.2599164,0.28675451){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D${}_2$\end{tabular}}}}%
+    \put(0.31607561,0.39873851){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$10.056$ ГГц\end{tabular}}}}%
+    \put(0.36670354,0.11931721){\transparent{0.5}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$670.976$ нм\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{li_levels.pdf}}%
+    \put(0.22933947,0.21055469){\transparent{0.5}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$670.951$ нм\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{li_levels.pdf}}%
+    \put(0.62407266,0.09553067){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$803.5$ МГц\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{li_levels.pdf}}%
+    \put(0.6250608,0.31751408){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$91.8$ МГц\end{tabular}}}}%
+    \put(0.62407266,0.44351467){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$9.2$ МГц\end{tabular}}}}%
+    \put(0.62407266,0.49440913){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$6.2$ МГц\end{tabular}}}}%
+    \put(0.62407177,0.54233887){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3.1$ МГц\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{li_levels.pdf}}%
+    \put(0.83259031,0.5198156){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+{1}/{2}$\end{tabular}}}}%
+    \put(0.83258942,0.15630832){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+{1}/{2}$\end{tabular}}}}%
+    \put(0.83259031,0.4687566){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-{1}/{2}$\end{tabular}}}}%
+    \put(0.83259031,0.35939045){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+{1}/{2}$\end{tabular}}}}%
+    \put(0.83259031,0.570874){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+{3}/{2}$\end{tabular}}}}%
+    \put(0.83259031,0.41769671){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-{3}/{2}$\end{tabular}}}}%
+    \put(0.8325912,0.27489652){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-{1}/{2}$\end{tabular}}}}%
+    \put(0.8325912,0.03475391){\transparent{0.5}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-{1}/{2}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
