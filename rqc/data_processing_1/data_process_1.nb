@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31403,        601]
-NotebookOptionsPosition[     30602,        580]
-NotebookOutlinePosition[     31040,        597]
-CellTagsIndexPosition[     30997,        594]
+NotebookDataLength[     32333,        619]
+NotebookOptionsPosition[     31436,        597]
+NotebookOutlinePosition[     31874,        614]
+CellTagsIndexPosition[     31831,        611]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,7 +48,9 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"scale", " ", "=", " ", "240"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"image", " ", "=", " ", 
   RowBox[{"Multicolumn", "[", 
    RowBox[{"{", "\[IndentingNewLine]", 
@@ -59,7 +61,7 @@ Cell[BoxData[
        RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
        RowBox[{"ImageSize", "\[Rule]", 
         RowBox[{"{", 
-         RowBox[{"300", ",", " ", "300"}], "}"}]}], ",", " ", 
+         RowBox[{"scale", ",", " ", "scale"}], "}"}]}], ",", " ", 
        RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", "\[IndentingNewLine]", 
        RowBox[{"PlotLabel", "\[Rule]", "\"\<D1\>\""}], ",", " ", 
        RowBox[{"AxesLabel", "\[Rule]", 
@@ -74,7 +76,7 @@ Cell[BoxData[
        RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
        RowBox[{"ImageSize", "\[Rule]", 
         RowBox[{"{", 
-         RowBox[{"300", ",", " ", "300"}], "}"}]}], ",", " ", 
+         RowBox[{"scale", ",", " ", "scale"}], "}"}]}], ",", " ", 
        RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", "\[IndentingNewLine]", 
        RowBox[{"PlotLabel", "\[Rule]", "\"\<D2\>\""}], ",", " ", 
        RowBox[{"AxesLabel", "\[Rule]", 
@@ -82,12 +84,19 @@ Cell[BoxData[
          RowBox[{
          "\"\<\:0440\:0430\:0437\:0432\:0451\:0440\:0442\:043a\:0430\>\"", 
           ",", " ", "\"\<PD input, V\>\""}], "}"}]}]}], "]"}]}], 
-    "\[IndentingNewLine]", "}"}], "]"}]}]], "Input",
+    "\[IndentingNewLine]", "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<D12.pdf\>\""}], ",", 
+   " ", "image"}], "]"}]}], "Input",
  CellChangeTimes->{{3.8503030020372534`*^9, 3.850303073443679*^9}, {
   3.8503031892061152`*^9, 3.850303204730772*^9}, {3.850303315012393*^9, 
-  3.850303345188328*^9}, {3.85030338486207*^9, 3.8503034721048326`*^9}},
+  3.850303345188328*^9}, {3.85030338486207*^9, 3.8503034721048326`*^9}, {
+  3.8503035156977787`*^9, 3.8503035351704416`*^9}, {3.8503036119276714`*^9, 
+  3.850303625104966*^9}},
  CellLabel->
-  "In[871]:=",ExpressionUUID->"13c276a7-501a-4790-9070-31f225783cea"],
+  "In[874]:=",ExpressionUUID->"13c276a7-501a-4790-9070-31f225783cea"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -304,7 +313,7 @@ m33/X4H/VlYM53vS8xoroL/oaNNc9nsczRW4NO9ogGZV5oX/A7FdvEA=
       GridLines->{None, None},
       GridLinesStyle->Directive[
         GrayLevel[0.5, 0.4]],
-      ImageSize->{300, 300},
+      ImageSize->{240, 240},
       Method->{
        "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
         "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
@@ -540,7 +549,7 @@ sA==
       GridLines->{None, None},
       GridLinesStyle->Directive[
         GrayLevel[0.5, 0.4]],
-      ImageSize->{300, 300},
+      ImageSize->{240, 240},
       Method->{
        "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
         "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
@@ -568,9 +577,17 @@ sA==
   "Grid"]], "Output",
  CellChangeTimes->{{3.850303013499611*^9, 3.8503030740693502`*^9}, 
    3.850303205267299*^9, 3.8503034066160536`*^9, {3.8503034587735806`*^9, 
-   3.850303473367116*^9}},
+   3.850303473367116*^9}, 3.850303535847598*^9, 3.8503036257148743`*^9},
  CellLabel->
-  "Out[871]=",ExpressionUUID->"5110ffe7-a6b2-40d6-804d-e5de260c39d6"]
+  "Out[875]=",ExpressionUUID->"c0ff619c-f3c8-4784-8e20-d2b74bd7ac8c"],
+
+Cell[BoxData["\<\"D:\\\\Kami\\\\git_folder\\\\notes_5sem\\\\rqc\\\\data_\
+processing_1\\\\D12.pdf\"\>"], "Output",
+ CellChangeTimes->{{3.850303013499611*^9, 3.8503030740693502`*^9}, 
+   3.850303205267299*^9, 3.8503034066160536`*^9, {3.8503034587735806`*^9, 
+   3.850303473367116*^9}, 3.850303535847598*^9, 3.850303626244319*^9},
+ CellLabel->
+  "Out[876]=",ExpressionUUID->"70f59460-9cfa-4027-8814-62141a171ae5"]
 }, Open  ]],
 
 Cell[BoxData["\[IndentingNewLine]"], "Input",
@@ -599,10 +616,11 @@ Notebook[{
 Cell[558, 20, 574, 15, 80, "Input",ExpressionUUID->"36930a94-67a9-4f92-b48d-c183649d3bb9"],
 Cell[1135, 37, 375, 9, 80, "Input",ExpressionUUID->"5a9b3771-b8d2-4806-a280-aff1c3527d5f"],
 Cell[CellGroupData[{
-Cell[1535, 50, 1854, 39, 210, "Input",ExpressionUUID->"13c276a7-501a-4790-9070-31f225783cea"],
-Cell[3392, 91, 27016, 481, 319, "Output",ExpressionUUID->"5110ffe7-a6b2-40d6-804d-e5de260c39d6"]
+Cell[1535, 50, 2228, 48, 263, "Input",ExpressionUUID->"13c276a7-501a-4790-9070-31f225783cea"],
+Cell[3766, 100, 27062, 481, 259, "Output",ExpressionUUID->"c0ff619c-f3c8-4784-8e20-d2b74bd7ac8c"],
+Cell[30831, 583, 411, 6, 32, "Output",ExpressionUUID->"70f59460-9cfa-4027-8814-62141a171ae5"]
 }, Open  ]],
-Cell[30423, 575, 175, 3, 49, "Input",ExpressionUUID->"230b3d84-346f-4619-8bb3-ceb0d44f8bc9"]
+Cell[31257, 592, 175, 3, 49, "Input",ExpressionUUID->"230b3d84-346f-4619-8bb3-ceb0d44f8bc9"]
 }
 ]
 *)
