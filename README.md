@@ -30,7 +30,7 @@
 [*5.2.1*](https://github.com/k1242/notes_5sem/blob/main/labs/5.2.1/lab_5.2.1.pdf),
 [*5.2.2*](https://github.com/k1242/notes_5sem/blob/main/labs/5.2.2/5.2.2.pdf),
 [*5.5.1*](https://github.com/k1242/notes_5sem/blob/main/labs/5.5.1/5.5.1.pdf),
-[*5.5.5*](https://github.com/k1242/notes_5sem/blob/main/labs/5.5.5/lab_5.5.pdf),
+[**5.5.5**](https://github.com/k1242/notes_5sem/blob/main/labs/5.5.5/lab_5.5.pdf),
 [*5.8.1*](https://github.com/k1242/notes_5sem/blob/main/labs/5.8.1/lab_5.8.1.pdf)
 );
 
