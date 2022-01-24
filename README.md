@@ -4,8 +4,7 @@
 * **квантовой механике I**
 ([*задачи из билетов*](https://github.com/k1242/notes_5sem/blob/main/qmec/tickets/qmec_tickets_I.pdf),
 [*задание*](https://github.com/k1242/notes_5sem/blob/main/qmec/hw/qmec_hw.pdf),
-[*заметки*](https://ibb.co/zNTVnNB),
-[*билеты*](https://github.com/k1242/notes_5sem/blob/main/qmec/tickets/qmec_tickets_I.pdf));
+[*заметки*](https://ibb.co/zNTVnNB));
 
 * **уравнениям математической физики**
 ([*задание*](https://github.com/k1242/notes_5sem/blob/main/eqs_phys/hw/eqs_phys_hw.pdf),
@@ -19,8 +18,9 @@
 [*задание (I, от Паши)*](https://github.com/k1242/notes_5sem/blob/main/TFCV/hw_tfcv/hw.pdf));
 
 * **физике**
-([*билеты к ГОСу*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_tickets/gos_tickets.pdf),
+(~~[*билеты к ГОСу*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_tickets/gos_tickets.pdf)~~,
 [*программа ГОСа*](https://github.com/k1242/notes_5sem/blob/main/physics/gos_list/name.pdf),
+[*вопрос по выбору*](https://github.com/k1242/notes_5sem/blob/main/labs/CQ5/CQ5.pdf),
 [*cеминары Раевского А.О.*](https://github.com/k1242/notes_5sem/blob/main/physics/raevskii/raevskii.pdf));
 
 * **вычислительной математике**
