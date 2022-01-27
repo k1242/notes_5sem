@@ -1,31 +1,40 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+% \textbf{Цель работы}. 
+% Создание установки для проведения экспериментов и изучения насыщенной спектроскопии. 
 
+% \phantom{42}
+
+% \textbf{Задачи работы}. 
+% Создание лазерной оптической системы с газовой ячейкой ${}^7$Li для наблюдения линий поглощения с помощью насыщенной спектроскопии.
+% Оценка максимально допустимой контрастности спектроскопии.
+
+
+\section{Введение}
+
+В работе изучалась насыщенная спектроскопия ${}^7$Li. Упор был сделан на получение узких высококонтрастных линий спектра. 
+
+
+Наблюдение контрастных линий спектра атомов может быть полезно для стабилизации лазера, путём запирания его частоты по атомному переходу. Данный метод нашел широкое применение в лазерном охлаждение атомов \cite{phd_mahalov,Rieger_doppler-freesaturation}. Добиваясь более узких и контрастных линий можно получить более чистую стабилизацию. 
+
+В рамках данной работы была собрана установка для наблюдения насыщенной спектроскопии, оценена максимальная контрастность при заданной мощности лазера в приближении двухуровневой системы.
+
+
+
+\section{Оборудование}
+
+В работе использовался лазер типа ECDL-6725R с настраиваемым высококогерентным излучением с центральной длиной волны 671 нм на основе лазерного диода; фотодатчик фирмы ThorLabs модели DET36A/M; ячейка ${}^7$Li с контролируемой температурой.
+
+
+На рисунке \ref{fig:sheme} приведена схема установки. Сигнальный луч дополнительно ослаблялся полупрозрачными зеркалами.
 
 \begin{figure}[h]
     \centering
-    \incfig{Li_levels}
-    \caption{Термы ${}^7$Li}
-    %\label{fig:}
+    \raisebox{0.25\height}{\incfig{scheme2}}
+    \incfig{scheme_photo}
+    \caption{Схема установки и фото установки}
+    \label{fig:sheme}
 \end{figure}
 
+Также на \ref{fig:sheme} приведено фото установки. Данные с фотодетектора снимались осциллографом PicoScope. Красной пунктирной линией показан ход насыщающего пучка, желтой показан ход сигнального луча. 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-\begin{figure}[h]
-    \centering
-    \incfig{scheme}
-    \caption{Схема установки}
-    %\label{fig:}
-\end{figure}
+Насыщающий луч переводит часть атомов в возбужденное состояние, соответственно уменьшается поглощение для сигнального пучка. Так как пучки встречные, то одновременно в резонансе они будут только при $\omega = \sub{\omega}{рез}$, взаимодействуя с группой атомов с нулевой скоростью, соответственно наблюдается линия спектра без доплеровского уширения. Исследуем подробнее механизм насыщения и оценим максимально возможное насыщение.
 

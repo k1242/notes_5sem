@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 Database file #1: sample.bib
-You've used 4 entries,
+Warning--empty booktitle in cross_beams
+You've used 5 entries,
             1791 wiz_defined-function locations,
-            464 strings with 3971 characters,
-and the built_in function-call counts, 569 in all, are:
-= -- 43
-> -- 20
+            468 strings with 4083 characters,
+and the built_in function-call counts, 740 in all, are:
+= -- 54
+> -- 28
 < -- 1
-+ -- 9
-- -- 5
-* -- 17
-:= -- 96
-add.period$ -- 10
-call.type$ -- 4
-change.case$ -- 3
++ -- 12
+- -- 7
+* -- 22
+:= -- 122
+add.period$ -- 13
+call.type$ -- 5
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 29
-empty$ -- 71
-format.name$ -- 5
-if$ -- 128
+cite$ -- 6
+duplicate$ -- 40
+empty$ -- 94
+format.name$ -- 7
+if$ -- 168
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 2
-newline$ -- 21
-num.names$ -- 4
-pop$ -- 20
+int.to.str$ -- 5
+missing$ -- 3
+newline$ -- 26
+num.names$ -- 5
+pop$ -- 28
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 21
 stack$ -- 0
 substring$ -- 0
-swap$ -- 5
+swap$ -- 6
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 40
+warning$ -- 1
+while$ -- 5
+width$ -- 6
+write$ -- 49
+(There was 1 warning)
