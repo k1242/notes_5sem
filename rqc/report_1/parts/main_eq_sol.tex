@@ -1,0 +1,42 @@
+\subsection{Аналитическое решение}
+
+Так как в основном нас сейчас интересует контрастность спектроскопии и высота пиков далее будем считать $\nu = \nu_0$.
+Заметим, что в интеграле \eqref{maineq} участвуют два лоренцовых контура и один гауссов с соответствующими полуширинами:
+\begin{equation*}
+    \sigma_1 = \frac{c \Gamma}{2 \nu_0}\sqrt{1 + s},
+    \hspace{5 mm} 
+    \sigma_2 = \frac{c \Gamma}{2 \nu_0},
+    \hspace{5 mm} 
+    \sigma_3 \approx \sqrt{\frac{\sub{k}{B} T}{m}}.
+\end{equation*}
+Подставляя значения $\Gamma \approx 6$ МГц и $\nu_0$ соответствующую 671 нм, видим, что
+\begin{equation*}
+    \sigma_1 \sim \sigma_2 \ll \sigma_3,
+\end{equation*}
+так что \eqref{maineq} сведется к 
+\begin{equation*}
+    \int_{-\infty}^{\infty} \left(1 - \frac{s}{1+s} \frac{1}{1+(v/\sigma_1)^2}\right) \frac{1}{1+(v/\sigma_2)^2} \d v = \pi \sigma_2 \left(1 - \frac{s}{1+s} \frac{\sigma_1}{\sigma_1 + \sigma_2}\right).
+\end{equation*}
+Подставляя значния $\sigma_1$, $\sigma_2$ находим
+\begin{equation}
+\boxed{
+    \frac{\sub{I}{in}}{\sub{I}{out}} = \exp\left(
+        -\frac{\alpha}{\sqrt{1+s}}
+    \right), \hspace{5 mm} 
+    \alpha = \sigma_0 n l \frac{c \Gamma}{\nu_0} \sqrt{\frac{\pi m}{8 \sub{k}{B} T}}},
+\end{equation}
+где для $T = 300\ {}^\circ$C и $l=10$ см: $\alpha \sim 1$.
+
+
+
+\subsection{Контрастность и относительная высота}
+
+Вместо оптимизации контрастности $K$ бывает содержательнее оптимизировать относительную высоту пика $h$, так что дальше приведем анализ для обеих величин.
+Величину $\beta = \sub{I}{in}/\sub{I}{out}$ при $s=0$ можем найти просто как $e^{-\alpha}$, тогда
+\begin{equation*}
+    K = \frac{1 - \exp\left[\alpha\left(1-\frac{1}{\sqrt{1+s}}\right)\right]}{1-\exp\left[\alpha\right]},
+    \hspace{10 mm} 
+    h = \exp\left({-\frac{\alpha }{\sqrt{s+1}}}\right)-\exp\left({-\alpha }\right).
+\end{equation*}
+
+% Показательно посмотроить зависимость от температуры для $\beta[s=0]$ и, например, $\beta[s=5]$, см. рис. Разницей между двумя кривыми будет $h$, а контрастность -- отношение $h/(1-\beta[s=0])$ (см. рис. )
